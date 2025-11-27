@@ -1,0 +1,18 @@
+{
+  "timestamp": "run-174849",
+  "config": {
+    "csv": "data/bill-of-lading_messages.csv",
+    "meta": "config/meta.yaml",
+    "model": "x-ai/grok-4.1-fast:free",
+    "temperature": 0.3,
+    "max_output_tokens": 64000
+  },
+  "result": {
+    "model_name": "x-ai/grok-4.1-fast:free",
+    "execution_time_sec": 57.19391322135925,
+    "report_length_chars": 4428,
+    "report_length_lines": 185,
+    "success": true,
+    "error_message": ""
+  }
+}

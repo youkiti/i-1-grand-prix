@@ -1,0 +1,18 @@
+{
+  "timestamp": "run-174728",
+  "config": {
+    "csv": "data/ai-plan-test_messages.csv",
+    "meta": "config/meta.yaml",
+    "model": "x-ai/grok-4.1-fast:free",
+    "temperature": 0.3,
+    "max_output_tokens": 64000
+  },
+  "result": {
+    "model_name": "x-ai/grok-4.1-fast:free",
+    "execution_time_sec": 8.973791122436523,
+    "report_length_chars": 0,
+    "report_length_lines": 0,
+    "success": false,
+    "error_message": "Error code: 400 - {'error': {'message': 'This endpoint\\'s maximum context length is 2000000 tokens. However, you requested about 6739744 tokens (6675744 of text input, 64000 in the output). Please reduce the length of either one, or use the \"middle-out\" transform to compress your prompt automatically.', 'code': 400, 'metadata': {'provider_name': None}}}"
+  }
+}
