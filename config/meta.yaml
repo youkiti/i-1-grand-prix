@@ -1,0 +1,9 @@
+interviewTitle: "(タイトルを記入)"
+interviewDescription: "(法案の概要)"
+interviewOverview: "(背景の詳細)"
+interviewThemes: "(主要テーマの箇条書きなど)"
+interviewQuestions: "(主な質問リスト)"
+knowledgeContext: "(参考知識・コンテキスト)"
+# 事前仮説ファイルへのパス（相対パスまたは絶対パス）
+# 例: "deep research/funani/hypothesis.md"
+priorHypothesisFile: ""

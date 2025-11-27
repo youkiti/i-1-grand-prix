@@ -1,0 +1,16 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Run interview analysis (initial)",
+      "type": "python",
+      "request": "launch",
+      "module": "src.interview_analysis.cli",
+      "args": [
+        "--mode", "initial",
+        "--csv", "data/messages.csv"
+      ],
+      "envFile": "${workspaceFolder}/.env"
+    }
+  ]
+}
