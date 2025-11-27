@@ -1,4 +1,5 @@
-google-generativeai
+google-genai
 pandas
 pyyaml
 jinja2
+openai

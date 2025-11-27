@@ -9,7 +9,6 @@ import yaml
 from .logger import create_run_dir, save_json, save_text
 from .pipeline import (
     RunConfig,
-    configure_genai,
     run_hypothesis,
     run_initial,
     run_merge,
@@ -55,14 +54,11 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--max-output-tokens", type=int, default=64000)
     parser.add_argument("--output-length-guidance", default="")
     parser.add_argument("--log-dir", type=Path, default=Path("doc"))
-    parser.add_argument("--api-key", default=os.getenv("GOOGLE_API_KEY"))
     return parser.parse_args()
 
 
 def main() -> None:
     args = parse_args()
-    if not args.api_key:
-        raise SystemExit("GOOGLE_API_KEY が設定されていません (.env などで指定してください)")
 
     cfg = RunConfig(
         mode=args.mode,
@@ -74,8 +70,6 @@ def main() -> None:
 
     meta = load_meta(args.meta)
     prompt_dir: Path = args.prompt_dir
-
-    configure_genai(args.api_key)
 
     if cfg.mode == "hypothesis":
         if not args.csv:

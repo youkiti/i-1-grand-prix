@@ -1,0 +1,11 @@
+{
+  "mode": "hypothesis",
+  "model": "gemini-flash-lite-latest",
+  "temperature": 0.3,
+  "max_output_tokens": 64000,
+  "output_length_guidance": "",
+  "csv": "data/bill-of-lading_messages.csv",
+  "meta": "config/meta.yaml",
+  "previous_report": null,
+  "batch_reports": []
+}
