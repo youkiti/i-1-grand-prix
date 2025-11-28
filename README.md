@@ -37,12 +37,12 @@ graph TB
         CallModel2 --> Generate2[レポート生成<br/>第2部 + FAQ]
     end
 
-    Generate2 --> Combine[統合処理]
+    Generate2 --> CombineStart[統合処理開始]
 
-    subgraph Combine ["統合レポート生成"]
-        Combine --> AddMeta[メタデータ追加]
-        AddMeta --> Merge[Part1 + Part2 統合]
-        Merge --> AddPrompts[プロンプト追加]
+    subgraph CombinePhase ["統合レポート生成"]
+        CombineStart --> AddMeta[メタデータ追加]
+        AddMeta --> MergeParts[Part1 + Part2 統合]
+        MergeParts --> AddPrompts[プロンプト追加]
     end
 
     AddPrompts --> Save[ファイル保存<br/>report.md]
@@ -50,7 +50,7 @@ graph TB
 
     style Part1 fill:#e1f5ff
     style Part2 fill:#fff4e1
-    style Combine fill:#f0f0f0
+    style CombinePhase fill:#f0f0f0
     style Start fill:#c8e6c9
     style End fill:#c8e6c9
 ```
