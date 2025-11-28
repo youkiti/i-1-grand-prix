@@ -8,7 +8,7 @@ from dataclasses import dataclass
 from typing import Optional
 import os
 
-import google.generativeai as genai
+from google import genai
 from openai import OpenAI
 
 
@@ -32,15 +32,15 @@ class ModelProvider(ABC):
 
 
 class GeminiProvider(ModelProvider):
-    """Google Gemini プロバイダー"""
+    """Google Gemini プロバイダー (google-genai)"""
 
     def __init__(self, api_key: str):
-        genai.configure(api_key=api_key)
+        self.client = genai.Client(api_key=api_key)
 
     def generate(self, prompt: str, config: ModelConfig) -> str:
-        model = genai.GenerativeModel(config.model)
-        result = model.generate_content(
-            prompt,
+        response = self.client.models.generate_content(
+            model=config.model,
+            contents=prompt,
             generation_config={
                 "temperature": config.temperature,
                 "max_output_tokens": config.max_output_tokens,
@@ -48,7 +48,7 @@ class GeminiProvider(ModelProvider):
                 "top_k": config.top_k,
             },
         )
-        return result.text
+        return response.text
 
 
 class OpenRouterProvider(ModelProvider):

@@ -5,12 +5,16 @@ from pathlib import Path
 from typing import Any, Dict, List
 
 import yaml
+from dotenv import load_dotenv
 
 from .logger import create_run_dir, save_json, save_text
 from .pipeline import (
     RunConfig,
     run_hypothesis,
     run_initial,
+    run_initial_auto,
+    run_initial_part1,
+    run_initial_part2,
     run_merge,
     run_update,
 )
@@ -45,8 +49,9 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="インタビュー分析 CLI")
     parser.add_argument("--csv", type=Path, required=False, help="メッセージCSVのパス（hypothesis/initial/updateで使用）")
     parser.add_argument("--meta", type=Path, default=Path("config/meta.yaml"), help="メタ情報 YAML/JSON")
-    parser.add_argument("--mode", choices=["hypothesis", "initial", "update", "merge"], required=True)
+    parser.add_argument("--mode", choices=["hypothesis", "initial", "initial_auto", "initial_part1", "initial_part2", "update", "merge"], required=True)
     parser.add_argument("--previous-report", type=Path, help="UPDATE 用の前回レポート")
+    parser.add_argument("--part1-report", type=Path, help="initial_part2 用の Part1 レポート")
     parser.add_argument("--batch-reports", type=Path, nargs="*", help="MERGE 用のレポートファイル群")
     parser.add_argument("--prompt-dir", type=Path, default=Path("prompts"))
     parser.add_argument("--model", default="gemini-flash-lite-latest")
@@ -58,6 +63,7 @@ def parse_args() -> argparse.Namespace:
 
 
 def main() -> None:
+    load_dotenv()
     args = parse_args()
 
     cfg = RunConfig(
@@ -81,6 +87,21 @@ def main() -> None:
             raise SystemExit("--csv を指定してください")
         prompt_path = prompt_dir / "initial.md"
         result = run_initial(prompt_path, meta, args.csv, cfg)
+    elif cfg.mode == "initial_auto":
+        if not args.csv:
+            raise SystemExit("--csv を指定してください")
+        result = run_initial_auto(prompt_dir, meta, args.csv, cfg)
+    elif cfg.mode == "initial_part1":
+        if not args.csv:
+            raise SystemExit("--csv を指定してください")
+        prompt_path = prompt_dir / "initial_part1.md"
+        result = run_initial_part1(prompt_path, meta, args.csv, cfg)
+    elif cfg.mode == "initial_part2":
+        if not args.csv or not args.part1_report:
+            raise SystemExit("--csv と --part1-report を指定してください")
+        part1_report = read_text_file(args.part1_report)
+        prompt_path = prompt_dir / "initial_part2.md"
+        result = run_initial_part2(prompt_path, meta, args.csv, part1_report, cfg)
     elif cfg.mode == "update":
         if not args.csv or not args.previous_report:
             raise SystemExit("--csv と --previous-report を指定してください")
@@ -108,6 +129,7 @@ def main() -> None:
             "csv": str(args.csv) if args.csv else None,
             "meta": str(args.meta),
             "previous_report": str(args.previous_report) if args.previous_report else None,
+            "part1_report": str(args.part1_report) if args.part1_report else None,
             "batch_reports": [str(p) for p in args.batch_reports] if args.batch_reports else [],
         },
     )
@@ -115,7 +137,7 @@ def main() -> None:
     save_text(run_dir / "prompts" / "used_prompt.txt", result["prompt"])
     save_text(run_dir / "outputs" / "report.md", result["report"])
 
-    print(f"✅ 完了: {run_dir}")
+    print(f"[OK] Complete: {run_dir}")
 
 
 if __name__ == "__main__":

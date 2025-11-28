@@ -1,0 +1,25 @@
+interviewTitle: "電子船荷証券法案に対するパブリックコメント分析"
+interviewDescription: "船荷証券の電子化を認める法案に関する市民からの意見を収集・分析する"
+interviewOverview: |
+  本法案は、紙ベースの船荷証券（Bill of Lading, B/L）を電子化し、
+  国際貿易の効率化を図ることを目的としています。
+  UNCITRAL MLETR（電子的移転可能記録に関するモデル法）に準拠し、
+  電子B/Lに紙のB/Lと同等の法的効力（物権的効力）を認めます。
+interviewThemes: |
+  - 電子化による業務効率化とコスト削減
+  - 法的安定性と国際的承認の問題
+  - 中小企業への影響と支援策
+  - サイバーセキュリティとシステム障害リスク
+  - 技術的要件と相互運用性
+interviewQuestions: |
+  - 電子船荷証券の導入に賛成ですか、反対ですか？その理由は？
+  - どのようなメリット・デメリットが予想されますか？
+  - 懸念される点はありますか？
+  - 中小企業への影響をどう考えますか？
+  - 移行期の課題は何だと思いますか？
+knowledgeContext: |
+  - 法制審議会商法（船荷証券等関係）部会での議論
+  - 国際的先行事例（シンガポール、英国、韓国等）
+  - UNCITRAL MLETR の4要件（Singularity, Control, Integrity, Reliability）
+  - 発行義務の不採用と任意制の採用
+priorHypothesisFile: "deep research/funani/hypothesis.md"
