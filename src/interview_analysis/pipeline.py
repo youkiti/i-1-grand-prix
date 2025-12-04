@@ -3,14 +3,14 @@ from datetime import datetime
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
-from .loader import load_messages_csv, build_sessions_data
+from .loader import load_messages_csv, build_sessions_data, load_documents_from_folder, iter_documents_from_folder
 from .prompts import load_and_render
 from .model_provider import create_provider, ModelConfig
 
 
 @dataclass
 class RunConfig:
-    mode: str  # hypothesis | initial | initial_auto | initial_part1 | initial_part2 | update | merge
+    mode: str  # hypothesis | initial | initial_auto | initial_part1 | initial_part2 | update | merge | pre_hypothesis_auto | pre_hypothesis_iterative
     model: str
     temperature: float = 0.3
     max_output_tokens: int = 64000
@@ -75,7 +75,7 @@ def _load_prior_hypothesis(meta: Dict[str, Any]) -> str:
     return prior_hypothesis
 
 
-def build_context(meta: Dict[str, Any], sessions_data: str, session_ids: List[str], output_length_guidance: str) -> Dict[str, Any]:
+def build_context(meta: Dict[str, Any], sessions_data: str, session_ids: List[str], output_length_guidance: str, reference_documents: str = "") -> Dict[str, Any]:
     ctx = {
         "interviewTitle": meta.get("interviewTitle", ""),
         "interviewDescription": meta.get("interviewDescription", ""),
@@ -87,6 +87,7 @@ def build_context(meta: Dict[str, Any], sessions_data: str, session_ids: List[st
         "outputLengthGuidance": output_length_guidance,
         "sessionCount": len(session_ids),
         "sessionsData": sessions_data,
+        "referenceDocuments": reference_documents,
     }
     return ctx
 
@@ -318,3 +319,91 @@ def run_initial_auto(prompt_dir: Path, meta: Dict[str, Any], df_path: Path, cfg:
     combined_prompt = f"=== Part 1 Prompt ===\n{part1_prompt}\n\n=== Part 2 Prompt ===\n{part2_prompt}"
 
     return {"prompt": combined_prompt, "report": combined_report}
+
+
+def run_pre_hypothesis_iterative(prompt_dir: Path, meta: Dict[str, Any], source_path: Path, cfg: RunConfig) -> Dict[str, Any]:
+    """
+    pre_hypothesis_iterative:
+    1. (Map) 各ドキュメントに対して Part1 (論点抽出) を実行
+    2. (Reduce) 抽出された論点群をバッチごとに Part2 (Q&A生成・更新) にかけて、最終的なQ&Aリストを作成
+    """
+    if not source_path.is_dir():
+        raise ValueError("pre_hypothesis_iterative requires a directory path for documents")
+
+    from .loader import iter_documents_from_folder
+    from .prompts import load_template
+
+    # --- Phase 1: Map (Extract Points from each document) ---
+    part1_reports = []
+    part1_prompt_path = prompt_dir / "pre_hypothesis_part1.md"
+    # テンプレート読み込みは1回で良いが、load_and_render内で都度行われる設計なのでループ内で呼ぶか、
+    # ここではプロンプト内容の記録用にテンプレートだけロードしておく
+    part1_prompt_template = load_template(part1_prompt_path)
+
+    # 全ドキュメントを走査
+    # ※ ファイル数が多い場合はここで時間がかかる。進捗表示等はCLI側で行うのが理想だが、ここではシンプルに実装。
+    for filename, content in iter_documents_from_folder(source_path):
+        # コンテキスト構築: referenceDocuments には単一ファイルの内容を入れる
+        ctx1 = build_context(meta, "", [], cfg.output_length_guidance, reference_documents=f"=== File: {filename} ===\n\n{content}")
+        
+        # プロンプト生成 & 実行
+        part1_prompt = load_and_render(part1_prompt_path, ctx1)
+        output = _call_model(part1_prompt, cfg)
+        part1_reports.append(output)
+
+    if not part1_reports:
+        return {"prompt": "", "report": "No documents found or processed."}
+
+    # --- Phase 2: Reduce (Iteratively build Q&A) ---
+    current_qa = "（まだQ&Aはありません）"
+    part2_prompt_path = prompt_dir / "pre_hypothesis_part2_iterative.md"
+    part2_prompt_template = load_template(part2_prompt_path)
+    
+    # バッチサイズ (一度にまとめるPart1レポートの数)
+    BATCH_SIZE = 5
+    
+    # レポートをバッチに分割
+    batches = [part1_reports[i:i + BATCH_SIZE] for i in range(0, len(part1_reports), BATCH_SIZE)]
+    
+    last_part2_prompt = ""
+
+    for i, batch in enumerate(batches):
+        # バッチ内のレポートを結合
+        new_info = "\n\n---\n\n".join(batch)
+        
+        # コンテキスト構築
+        # referenceDocumentsは使わず、currentQA と newInfo を使う
+        # build_context は汎用的なので、追加のキーは update で入れる
+        ctx2 = build_context(meta, "", [], cfg.output_length_guidance)
+        ctx2.update({
+            "currentQA": current_qa,
+            "newInfo": new_info
+        })
+        
+        # プロンプト生成 & 実行
+        part2_prompt = load_and_render(part2_prompt_path, ctx2)
+        last_part2_prompt = part2_prompt # 記録用に保持
+        
+        output = _call_model(part2_prompt, cfg)
+        
+        # 結果を追記 (Append Only)
+        # 最初のイテレーション以外は区切り線を入れるなどの工夫が可能だが、
+        # ここでは単純に追記していく。プロンプト側で「新規分のみ」と指示している前提。
+        if current_qa == "（まだQ&Aはありません）":
+            current_qa = output
+        else:
+            current_qa += "\n\n" + output
+
+    # --- Final Report Construction ---
+    # メタデータ + 最終Q&A + プロンプト(代表)
+    metadata_header = _build_combined_metadata(cfg, len(part1_reports), part1_prompt_template, part2_prompt_template)
+    
+    prompts_section = _build_combined_prompts_section(
+        part1_prompt_template, # テンプレートを表示 (個別のプロンプトは多すぎるため)
+        last_part2_prompt # 最後の更新に使ったプロンプトを表示
+    )
+
+    final_report = metadata_header + "\n\n# 最終成果物 (Q&Aリスト)\n\n" + current_qa + prompts_section
+
+    return {"prompt": last_part2_prompt, "report": final_report}
+

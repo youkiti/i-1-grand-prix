@@ -48,8 +48,9 @@ def load_batch_reports(paths: List[Path]) -> List[str]:
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="インタビュー分析 CLI")
     parser.add_argument("--csv", type=Path, required=False, help="メッセージCSVのパス（hypothesis/initial/updateで使用）")
+    parser.add_argument("--source-dir", type=Path, required=False, help="ドキュメントフォルダのパス（pre_hypothesisで使用）")
     parser.add_argument("--meta", type=Path, default=Path("config/meta.yaml"), help="メタ情報 YAML/JSON")
-    parser.add_argument("--mode", choices=["hypothesis", "initial", "initial_auto", "initial_part1", "initial_part2", "update", "merge"], required=True)
+    parser.add_argument("--mode", choices=["hypothesis", "initial", "initial_auto", "initial_part1", "initial_part2", "update", "merge", "pre_hypothesis_auto", "pre_hypothesis_iterative"], required=True)
     parser.add_argument("--previous-report", type=Path, help="UPDATE 用の前回レポート")
     parser.add_argument("--part1-report", type=Path, help="initial_part2 用の Part1 レポート")
     parser.add_argument("--batch-reports", type=Path, nargs="*", help="MERGE 用のレポートファイル群")
@@ -108,12 +109,24 @@ def main() -> None:
         previous_report = read_text_file(args.previous_report)
         prompt_path = prompt_dir / "initial.md" if not (prompt_dir / "update.md").exists() else prompt_dir / "update.md"
         result = run_update(prompt_path, meta, args.csv, previous_report, cfg)
-    else:  # merge
+    elif cfg.mode == "merge":
         if not args.batch_reports:
             raise SystemExit("--batch-reports を指定してください")
         prompt_path = prompt_dir / "merge.md"
         batch_reports = load_batch_reports(args.batch_reports)
         result = run_merge(prompt_path, meta, batch_reports, cfg)
+    elif cfg.mode == "pre_hypothesis_auto":
+        if not args.source_dir:
+            raise SystemExit("--source-dir を指定してください")
+        from .pipeline import run_pre_hypothesis_auto
+        result = run_pre_hypothesis_auto(prompt_dir, meta, args.source_dir, cfg)
+    elif cfg.mode == "pre_hypothesis_iterative":
+        if not args.source_dir:
+            raise SystemExit("--source-dir を指定してください")
+        from .pipeline import run_pre_hypothesis_iterative
+        result = run_pre_hypothesis_iterative(prompt_dir, meta, args.source_dir, cfg)
+    else:
+        raise ValueError(f"Unknown mode: {cfg.mode}")
 
     run_dir = create_run_dir(args.log_dir)
 
@@ -127,6 +140,7 @@ def main() -> None:
             "max_output_tokens": cfg.max_output_tokens,
             "output_length_guidance": cfg.output_length_guidance,
             "csv": str(args.csv) if args.csv else None,
+            "source_dir": str(args.source_dir) if args.source_dir else None,
             "meta": str(args.meta),
             "previous_report": str(args.previous_report) if args.previous_report else None,
             "part1_report": str(args.part1_report) if args.part1_report else None,

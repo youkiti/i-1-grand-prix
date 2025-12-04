@@ -19,29 +19,6 @@
 
 ## このリポジトリでのAI利用方針
 - 生成系モデルは **Google Gemini 系** を標準とし、デフォルトは `gemini-flash-lite-latest`。`GOOGLE_API_KEY` を `.env` で渡す。
-- **推奨モデル**:
-  - `initial_auto` モード: `x-ai/grok-4.1-fast:free` (OpenRouter経由・無料) または `gemini-flash-lite-latest`
-  - 大量データ処理: 出力トークン制限に達する場合は必ず `initial_auto` モードを使用
-- 個人情報・機微情報をプロンプトに含めない。含まれる場合は匿名化してから投入する。
-- ログにはAPIキーやトークンを絶対に書き出さない（マスク必須）。
-
-## ディレクトリとファイル運用
-- プロンプトは `prompts/` に Markdown で管理し、編集で履歴を追いやすくする。
-  - `initial_part1.md`（新規論点発見・第1部専用）**← initial_auto で使用**
-  - `initial_part2.md`（事前仮説検証・第2部専用）**← initial_auto で使用**
-  - `initial.md`（初回レポート生成・一括版）
-  - `hypothesis.md`（データからテーマ抽出・探索的分析）
-  - `update.md`（既存レポートへの追加データ反映）
-  - `merge.md`（バッチ統合レポート）
-  - `pre_hypothesis_example.md`（真の事前仮説作成用テンプレート）
-- 実験ログは `doc/YYYY-MM-DD/run-<HHMMSS>/` に保存し、次を必ず残す：
-  - 使用したプロンプトのスナップショット
-  - 最終レポート
-  - モデル名・温度・max_tokens などの設定
-  - 実行日時
-- 各バッチの中間ログは不要（依頼に基づく）。
-
-## 実行の流れ（VS Code / CLI 想定）
 
 ### 推奨: initial_auto モード（2段階自動実行）
 
