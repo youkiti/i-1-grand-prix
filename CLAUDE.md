@@ -31,11 +31,13 @@ python -m src.interview_analysis.cli \
   --meta config/meta.yaml \
   --prompt-dir prompts \
   --log-dir doc \
-  --model "x-ai/grok-4.1-fast:free"  # または gemini-flash-lite-latest
+  --model "x-ai/grok-4.1-fast" \
+  --focus "船荷証券の電子化に伴う法制度改正"
 ```
 
 **特徴**:
 - Part1（新規論点発見）とPart2（事前仮説検証）を自動的に順次実行
+- **`--focus` オプション**: 分析の主眼を指定することで、関連性の低い情報（会議運営等）を除外し、重要な論点に集中させます。
 - 1つの統合レポートを生成（メタデータ → 第1部 → 第2部 → プロンプト）
 - 出力トークン制限に達しないよう設計
 - Grok無料版など、出力制限が厳しいモデルでも完全なレポートを生成可能
@@ -94,3 +96,23 @@ python scraping/scraper.py <URL> --output_dir <ダウンロード先ディレク
 - `<URL>`: クロールを開始するURL
 - `--output_dir`: ダウンロードしたファイルを保存するディレクトリ（デフォルト: `downloads`）
 - `--filter`: URLにこのキーワードが含まれる場合のみクロール・ダウンロードします（オプション）
+
+## トラブルシューティング & Tips
+
+### 1. スクリプト実行時の `ModuleNotFoundError`
+`scripts/` フォルダ内のスクリプトを実行する際、`src` モジュールのインポートエラーが発生する場合は、ルートディレクトリから `-m` オプションを使用して実行してください。
+
+```bash
+# NG: python scripts/summarize_report.py
+# OK: python -m scripts.summarize_report
+```
+
+### 2. 大量ファイルの処理（`pre_hypothesis_iterative`）
+ファイル数が多い（例: 100ファイル以上）場合、順次処理では時間がかかります。`ThreadPoolExecutor` を使用した並列処理の実装を検討してください。
+
+### 3. Grok (OpenRouter) のモデル指定
+`model_provider.py` はモデル名に `"/"` または `"grok"` が含まれる場合、自動的に OpenRouter 経由でリクエストします。
+例: `x-ai/grok-4.1-fast:free`
+
+### 4. PDF処理時の警告
+PDF処理時に `Advanced encoding /90msp-RKSJ-H not implemented yet` 等の警告が出ることがありますが、処理自体が止まらなければ無視しても問題ありません。

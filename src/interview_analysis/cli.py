@@ -50,7 +50,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--csv", type=Path, required=False, help="メッセージCSVのパス（hypothesis/initial/updateで使用）")
     parser.add_argument("--source-dir", type=Path, required=False, help="ドキュメントフォルダのパス（pre_hypothesisで使用）")
     parser.add_argument("--meta", type=Path, default=Path("config/meta.yaml"), help="メタ情報 YAML/JSON")
-    parser.add_argument("--mode", choices=["hypothesis", "initial", "initial_auto", "initial_part1", "initial_part2", "update", "merge", "pre_hypothesis_auto", "pre_hypothesis_iterative"], required=True)
+    parser.add_argument("--mode", choices=["hypothesis", "initial", "initial_auto", "initial_part1", "initial_part2", "update", "merge", "pre_hypothesis_auto", "pre_hypothesis_iterative", "pubcom_analysis"], required=True)
     parser.add_argument("--previous-report", type=Path, help="UPDATE 用の前回レポート")
     parser.add_argument("--part1-report", type=Path, help="initial_part2 用の Part1 レポート")
     parser.add_argument("--batch-reports", type=Path, nargs="*", help="MERGE 用のレポートファイル群")
@@ -60,6 +60,8 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--max-output-tokens", type=int, default=64000)
     parser.add_argument("--output-length-guidance", default="")
     parser.add_argument("--log-dir", type=Path, default=Path("doc"))
+    parser.add_argument("--focus", type=str, default="", help="分析のフォーカス（主眼）。指定された場合、このテーマに関連しない内容は除外されます。")
+
     return parser.parse_args()
 
 
@@ -73,6 +75,7 @@ def main() -> None:
         temperature=args.temperature,
         max_output_tokens=args.max_output_tokens,
         output_length_guidance=args.output_length_guidance,
+        focus=args.focus,  # focus を設定
     )
 
     meta = load_meta(args.meta)
@@ -125,6 +128,12 @@ def main() -> None:
             raise SystemExit("--source-dir を指定してください")
         from .pipeline import run_pre_hypothesis_iterative
         result = run_pre_hypothesis_iterative(prompt_dir, meta, args.source_dir, cfg)
+    elif cfg.mode == "pubcom_analysis":
+        if not args.csv or not args.previous_report:
+            raise SystemExit("--csv と --previous-report を指定してください")
+        previous_report = read_text_file(args.previous_report)
+        from .pipeline import run_pubcom_analysis
+        result = run_pubcom_analysis(prompt_dir, meta, args.csv, previous_report, cfg)
     else:
         raise ValueError(f"Unknown mode: {cfg.mode}")
 
@@ -150,6 +159,8 @@ def main() -> None:
 
     save_text(run_dir / "prompts" / "used_prompt.txt", result["prompt"])
     save_text(run_dir / "outputs" / "report.md", result["report"])
+    if "part1_log" in result:
+        save_text(run_dir / "outputs" / "part1_log.md", result["part1_log"])
 
     print(f"[OK] Complete: {run_dir}")
 
