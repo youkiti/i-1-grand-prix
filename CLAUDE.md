@@ -103,3 +103,17 @@ python -m src.interview_analysis.cli --csv <messages.csv> --mode initial_part2 -
 - Markdown 出力では太字（`**`）を使わない等、プロンプト内のスタイル規約を守る。
 - 量的表現・価値判断を避け、客観的で中立な記述を徹底する。
 - 既存ノートブック（`scripts/legacy/interview_analysis_colab.ipynb`）のロジック・パラメータを参照しつつ、ローカル実行に最適化する。
+
+## スクレイピング機能
+
+指定したURLから2階層までクロールし、特定のファイル形式（txt, pptx, xlsx, doc, docx, pdf）をダウンロードします。
+
+### 実行方法
+
+```bash
+python scraping/scraper.py <URL> --output_dir <ダウンロード先ディレクトリ> [--filter <キーワード>]
+```
+
+- `<URL>`: クロールを開始するURL
+- `--output_dir`: ダウンロードしたファイルを保存するディレクトリ（デフォルト: `downloads`）
+- `--filter`: URLにこのキーワードが含まれる場合のみクロール・ダウンロードします（オプション）

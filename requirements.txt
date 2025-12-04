@@ -3,3 +3,6 @@ pyyaml
 jinja2
 openai
 python-dotenv
+
+requests
+beautifulsoup4
