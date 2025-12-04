@@ -81,9 +81,11 @@ def read_file_content(path: Path) -> str:
             from pypdf import PdfReader
             reader = PdfReader(path)
             text = []
-            for page in reader.pages:
-                text.append(page.extract_text())
-            return "\n".join(text)
+            for i, page in enumerate(reader.pages, start=1):
+                page_text = page.extract_text() or ""
+                # ページ番号マーカーを挿入
+                text.append(f"[p.{i}]\n{page_text}")
+            return "\n\n".join(text)
         except ImportError:
             return "[Error] pypdf not installed"
         except Exception as e:

@@ -363,13 +363,14 @@ def run_pre_hypothesis_iterative(prompt_dir: Path, meta: Dict[str, Any], source_
     if not part1_reports:
         return {"prompt": "", "report": "No documents found or processed."}
 
-    # --- Phase 2: Reduce (Iteratively build Q&A) ---
+    # --- Phase 2: Reduce (Rolling Consolidation) ---
     current_qa = "（まだQ&Aはありません）"
     part2_prompt_path = prompt_dir / "pre_hypothesis_part2_iterative.md"
     part2_prompt_template = load_template(part2_prompt_path)
     
-    # バッチサイズ (一度にまとめるPart1レポートの数)
-    BATCH_SIZE = 5
+    # バッチサイズを小さく（出力トークン制限内で全体出力できるように）
+    BATCH_SIZE = 3
+    MAX_QA_SIZE = 200_000  # 200KB - 圧縮バジェット閾値
     
     # レポートをバッチに分割
     batches = [part1_reports[i:i + BATCH_SIZE] for i in range(0, len(part1_reports), BATCH_SIZE)]
@@ -382,8 +383,6 @@ def run_pre_hypothesis_iterative(prompt_dir: Path, meta: Dict[str, Any], source_
         new_info = "\n\n---\n\n".join(batch)
         
         # コンテキスト構築
-        # referenceDocumentsは使わず、currentQA と newInfo を使う
-        # build_context は汎用的なので、追加のキーは update で入れる
         ctx2 = build_context(meta, "", [], cfg.output_length_guidance)
         ctx2.update({
             "currentQA": current_qa,
@@ -393,17 +392,17 @@ def run_pre_hypothesis_iterative(prompt_dir: Path, meta: Dict[str, Any], source_
         
         # プロンプト生成 & 実行
         part2_prompt = load_and_render(part2_prompt_path, ctx2)
-        last_part2_prompt = part2_prompt # 記録用に保持
+        last_part2_prompt = part2_prompt
         
         output = _call_model(part2_prompt, cfg)
         
-        # 結果を追記 (Append Only)
-        # 最初のイテレーション以外は区切り線を入れるなどの工夫が可能だが、
-        # ここでは単純に追記していく。プロンプト側で「新規分のみ」と指示している前提。
-        if current_qa == "（まだQ&Aはありません）":
-            current_qa = output
-        else:
-            current_qa += "\n\n" + output
+        # 結果で置き換え（ローリング統合方式）
+        current_qa = output
+        
+        # サイズ監視: 閾値を超えたら警告（将来的に圧縮ステップを追加可能）
+        current_size = len(current_qa.encode('utf-8'))
+        if current_size > MAX_QA_SIZE:
+            print(f"[Warning] Q&A size ({current_size:,} bytes) exceeds threshold ({MAX_QA_SIZE:,} bytes)", flush=True)
 
     # --- Final Report Construction ---
     # メタデータ + 最終Q&A + プロンプト(代表)

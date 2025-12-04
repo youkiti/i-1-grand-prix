@@ -41,7 +41,7 @@ class GeminiProvider(ModelProvider):
         response = self.client.models.generate_content(
             model=config.model,
             contents=prompt,
-            generation_config={
+            config={
                 "temperature": config.temperature,
                 "max_output_tokens": config.max_output_tokens,
                 "top_p": config.top_p,
