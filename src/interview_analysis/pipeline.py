@@ -454,38 +454,50 @@ def run_pubcom_analysis(prompt_dir: Path, meta: Dict[str, Any], csv_path: Path, 
     session_contents = {sid: "\n".join(msgs) for sid, msgs in session_dict.items()}
     session_ids = list(session_contents.keys())
     
-    map_prompt_path = prompt_dir / "pubcom_map.md"
-    map_reports = []
+    # --- Phase 1.1: Map (Batched Analysis) ---
+    # コメントをバッチ（チャンク）にまとめる
+    MAP_BATCH_SIZE = 20
+    session_batches = [session_ids[i:i + MAP_BATCH_SIZE] for i in range(0, len(session_ids), MAP_BATCH_SIZE)]
     
-    def process_comment(session_id):
-        content = session_contents[session_id]
-        print(f"Processing Pubcom Map for: {session_id}...", flush=True)
+    map_prompt_path = prompt_dir / "pubcom_map.md"
+    
+    def process_map_batch(batch_ids):
+        # バッチ内のコメントを結合
+        combined_content = ""
+        for sid in batch_ids:
+            content = session_contents[sid]
+            combined_content += f"=== Comment ID: {sid} ===\n{content}\n\n"
+            
+        print(f"Processing Pubcom Map Batch ({len(batch_ids)} comments)...", flush=True)
+        
         # コンテキスト構築
-        ctx1 = build_context(meta, "", [], cfg.output_length_guidance, reference_documents=f"=== Comment ID: {session_id} ===\n\n{content}")
+        ctx1 = build_context(meta, "", [], cfg.output_length_guidance, reference_documents=combined_content)
         ctx1["focus"] = cfg.focus
         prompt = load_and_render(map_prompt_path, ctx1)
-        return _call_model(prompt, cfg), session_id, content
+        
+        output = _call_model(prompt, cfg)
+        return output, batch_ids, combined_content
 
     # 並列実行
-    with ThreadPoolExecutor(max_workers=10) as executor:
-        results = list(executor.map(process_comment, session_ids))
+    with ThreadPoolExecutor(max_workers=5) as executor:
+        results = list(executor.map(process_map_batch, session_batches))
     
-    # Reduceフェーズに渡すために、IDを含めたテキストにする
+    # Reduceフェーズに渡すために整形
     map_reports = []
-    for r in results:
-        output_text, sid, content = r
-        # IDを明記して、Reduceフェーズで参照できるようにする
-        map_reports.append(f"### Source Comment ID: {sid}\n\n{output_text}")
+    part1_log_content = "# Pubcom Phase 1 Outputs (Batched Analysis)\n\n"
+    
+    for i, r in enumerate(results):
+        output_text, batch_ids, batch_content = r
+        # Reduce用
+        map_reports.append(output_text)
+        
+        # ログ用
+        part1_log_content += f"## Batch {i+1} (IDs: {batch_ids[0]} - {batch_ids[-1]})\n\n"
+        part1_log_content += f"### Original Content (First 500 chars)\n{batch_content[:500]}...\n\n"
+        part1_log_content += f"### Analysis\n{output_text}\n\n---\n\n"
     
     if not map_reports:
         return {"prompt": "", "report": "No comments processed."}
-
-    # Part 1 Log (Individual Analysis)
-    part1_log_content = "# Pubcom Phase 1 Outputs (Individual Analysis)\n\n"
-    for i, report in enumerate(map_reports):
-        sid = results[i][1]
-        content = results[i][2]
-        part1_log_content += f"## Comment ID: {sid}\n\n### Original Content\n{content}\n\n### Analysis\n{report}\n\n---\n\n"
 
     # --- Phase 1.2: Reduce (Iterative Summary) ---
     current_report = "（まだレポートはありません）"

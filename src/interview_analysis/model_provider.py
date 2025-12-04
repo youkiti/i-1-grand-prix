@@ -61,16 +61,24 @@ class OpenRouterProvider(ModelProvider):
         )
 
     def generate(self, prompt: str, config: ModelConfig) -> str:
-        completion = self.client.chat.completions.create(
-            model=config.model,
-            temperature=config.temperature,
-            max_tokens=config.max_output_tokens,
-            top_p=config.top_p,
-            messages=[
-                {"role": "user", "content": prompt}
-            ],
-        )
-        return completion.choices[0].message.content
+        try:
+            completion = self.client.chat.completions.create(
+                model=config.model,
+                temperature=config.temperature,
+                max_tokens=config.max_output_tokens,
+                top_p=config.top_p,
+                messages=[
+                    {"role": "user", "content": prompt}
+                ],
+            )
+            if not completion or not completion.choices:
+                print(f"[Error] Invalid completion response: {completion}", flush=True)
+                return ""
+            
+            return completion.choices[0].message.content or ""
+        except Exception as e:
+            print(f"[Error] OpenRouter API call failed: {e}", flush=True)
+            return ""
 
 
 def create_provider(model_name: str, api_key: Optional[str] = None) -> ModelProvider:
