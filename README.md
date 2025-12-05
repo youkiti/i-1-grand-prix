@@ -1,290 +1,254 @@
 # i-1-grand-prix
 
-市民対話セッション等のインタビューデータを分析し、Google Gemini API を用いて客観的なレポートを生成するツールです。
+市民対話セッション・パブリックコメント等のデータを分析し、Google Gemini API を用いて客観的なレポートを生成するツールです。
 
 ## 概要
 
-このプロジェクトは、CSV形式のインタビューデータ（メッセージログ）を入力として受け取り、以下のモードで分析レポートを生成します：
+このプロジェクトは、審議会資料やパブリックコメントCSVデータを入力として受け取り、以下の2段階パイプラインで分析レポートを生成します：
 
-- `initial_auto`: **【推奨】** 2段階自動実行（出力トークン制限を回避）
-- `hypothesis`: データからの主要テーマ抽出（探索的分析）
-- `initial`: 初回レポート生成（事前仮説と比較して新しいビューを発見）
-- `update`: 既存レポートへの追加データ反映
-- `merge`: 複数のバッチレポートの統合
-
-生成されるレポートは客観的・中立的な記述を重視し、量的表現や価値判断を避けた形式で出力されます。
-
-### 処理フロー（initial_auto モード）
+### 推奨パイプライン（2段階）
 
 ```mermaid
 graph TB
-    Start([ユーザー実行: initial_auto モード]) --> LoadData[CSVデータ読込<br/>869セッション]
-    LoadData --> LoadMeta[メタ情報読込<br/>事前仮説ファイル含む]
+    subgraph Stage1 ["Stage 1: 事前仮説生成 (pre_hypothesis_iterative)"]
+        S1A["📁 審議会資料フォルダ<br/>(102ファイル)"] --> S1Map
 
-    LoadMeta --> Part1Start[Part 1 実行開始]
+        subgraph S1MapPhase ["Part 1: Map (並列論点抽出)"]
+            S1Map["並列処理<br/>(10ワーカー)"]
+            S1Map --> S1D1["論点A"]
+            S1Map --> S1D2["論点B"]
+            S1Map --> S1D3["..."]
+            S1Map --> S1DN["論点N"]
+        end
 
-    subgraph Part1 ["Part 1: 新規論点発見"]
-        Part1Start --> BuildPrompt1[プロンプト生成<br/>initial_part1.md]
-        BuildPrompt1 --> CallModel1[AI呼び出し<br/>Grok/Gemini]
-        CallModel1 --> Generate1[レポート生成<br/>まとめ + 第1部]
+        subgraph S1ReducePhase ["Part 2: Tree Reduce (階層統合)"]
+            S1D1 --> S1R1["L1: ペア統合"]
+            S1D2 --> S1R1
+            S1D3 --> S1R2["L1: ペア統合"]
+            S1DN --> S1R2
+            S1R1 --> S1R3["L2: 統合"]
+            S1R2 --> S1R3
+            S1R3 --> S1Final["最終統合"]
+        end
+
+        S1Final --> S1Out["📄 事前仮説レポート<br/>(Q&A形式)"]
     end
 
-    Generate1 --> Part2Start[Part 2 実行開始<br/>Part1結果を渡す]
+    S1Out --> S2B
 
-    subgraph Part2 ["Part 2: 事前仮説検証"]
-        Part2Start --> BuildPrompt2[プロンプト生成<br/>initial_part2.md]
-        BuildPrompt2 --> CallModel2[AI呼び出し<br/>Grok/Gemini]
-        CallModel2 --> Generate2[レポート生成<br/>第2部 + FAQ]
+    subgraph Stage2 ["Stage 2: パブコメ比較分析 (pubcom_analysis)"]
+        S2A["📊 パブコメCSV<br/>(869コメント)"] --> S2Map
+
+        subgraph S2MapPhase ["Map: バッチ分析"]
+            S2Map["バッチ分割<br/>(20件×44バッチ)"]
+            S2Map --> S2B1["分析1"]
+            S2Map --> S2B2["分析2"]
+            S2Map --> S2B3["..."]
+            S2Map --> S2BN["分析N"]
+        end
+
+        subgraph S2ReducePhase ["Tree Reduce: 統合"]
+            S2B1 --> S2R1["L1"]
+            S2B2 --> S2R1
+            S2B3 --> S2R2["L1"]
+            S2BN --> S2R2
+            S2R1 --> S2R3["L2"]
+            S2R2 --> S2R3
+            S2R3 --> S2Consolidated["統合レポート"]
+        end
+
+        subgraph S2ComparePhase ["Compare: 比較分析"]
+            S2B["事前仮説"]
+            S2Consolidated --> S2Compare["比較分析<br/>(gemini-3-pro)"]
+            S2B --> S2Compare
+        end
+
+        S2Compare --> S2Out["📝 最終レポート<br/>・仮説検証<br/>・新インサイト<br/>・対応方針案"]
     end
 
-    Generate2 --> CombineStart[統合処理開始]
-
-    subgraph CombinePhase ["統合レポート生成"]
-        CombineStart --> AddMeta[メタデータ追加]
-        AddMeta --> MergeParts[Part1 + Part2 統合]
-        MergeParts --> AddPrompts[プロンプト追加]
-    end
-
-    AddPrompts --> Save[ファイル保存<br/>report.md]
-    Save --> End([完了])
-
-    style Part1 fill:#e1f5ff
-    style Part2 fill:#fff4e1
-    style CombinePhase fill:#f0f0f0
-    style Start fill:#c8e6c9
-    style End fill:#c8e6c9
+    style Stage1 fill:#e1f5ff
+    style Stage2 fill:#fff4e1
+    style S1MapPhase fill:#d4edda
+    style S1ReducePhase fill:#cce5ff
+    style S2MapPhase fill:#d4edda
+    style S2ReducePhase fill:#cce5ff
+    style S2ComparePhase fill:#fff3cd
 ```
 
-**出力トークン制限対策**: 1つの大きなレポートではなく、Part1とPart2を分けて生成することで、各パートが制限内に収まります。最終的に1つの統合レポートとして保存されます。
+| モード | 目的 | 入力 | 出力 |
+|--------|------|------|------|
+| `pre_hypothesis_iterative` | 審議会資料からQ&A形式の事前仮説を生成 | 審議会資料フォルダ | 事前仮説レポート |
+| `pubcom_analysis` | パブコメを事前仮説と比較分析 | パブコメCSV + 事前仮説 | 最終比較レポート |
 
 ### このツールの目的
 
-**事前仮説とくらべて、パブリックコメント等に新しいビュー（視点・論点）がないかを見出すこと**を主眼としています。そのため、分析を開始する前に「真の事前仮説」を用意することが推奨されます。
-
-### 2つのワークフローパターン
-
-#### パターンA: 事前仮説がある場合（推奨）
-
-1. **事前準備**: パブコメデータを見る前に、政策文書・先行研究・専門家意見などから事前仮説を作成
-   - [prompts/pre_hypothesis_example.md](prompts/pre_hypothesis_example.md) をテンプレートとして使用
-   - `config/meta.yaml` の `priorHypothesisFile` にファイルパスを指定
-2. **initial モード**: 事前仮説と比較してレポート生成（新しいビューを発見）
-3. **update モード**: 追加データを反映（必要に応じて）
-4. **merge モード**: 複数バッチを統合（大量データの場合）
-
-#### パターンB: 事前仮説がない場合（探索的アプローチ）
-
-1. **hypothesis モード**: データから主要テーマを抽出（探索）
-   - ⚠️ 注意: このモードはデータから仮説を生成するため、「新しいビューの発見」という本来の目的には適しません
-   - 用途: 事前知識が全くない場合の初期探索や、仮説立案の参考資料作成
-2. **手動で事前仮説を作成**: hypothesis モードの出力を参考に、分析者が事前仮説を整理
-3. **initial モード以降**: パターンAと同様
-
-**推奨**: 可能な限り**パターンA**を採用してください。真の事前仮説があることで、データに埋もれている新しい視点を見逃さずに発見できます。
+**事前仮説（審議会での議論）とくらべて、パブリックコメント等に新しいビュー（視点・論点）がないかを見出すこと**を主眼としています。
 
 ## 特徴
 
-- 複数のAIモデルに対応
-  - Google Gemini API (デフォルト: `gemini-flash-lite-latest`)
-  - OpenRouter 経由で Grok-4.1-fast など
-- プロンプトテンプレートの外部管理 ([prompts/](prompts/))
-- 実験ログの自動記録 (`doc/YYYY-MM-DD/run-HHMMSS/` 形式)
-- メタ情報による分析コンテキストのカスタマイズ
+- **Tree Reduce パイプライン**: 大量データを効率的に並列処理して統合
+- **バッチ並列処理**: Map/Reduce パターンで高速処理
+- **チェックポイント機能**: 中断からの再開が可能
+- **複数AIモデル対応**: Gemini Flash, Gemini Pro など用途に応じて切り替え
+- **詳細なメタデータ記録**: 処理過程を完全にトレース可能
 
 ## セットアップ
 
 ### 必要な環境
 
 - Python 3.8以上
-- 以下のいずれかのAPI Key
-  - Google Cloud API Key (Gemini API)
-  - OpenRouter API Key (Grok など)
+- Google Cloud API Key (Gemini API)
 
 ### インストール
-
-1. リポジトリをクローン
 
 ```bash
 git clone <repository-url>
 cd i-1-grand-prix
-```
-
-2. 依存パッケージのインストール
-
-```bash
 pip install -r requirements.txt
 ```
 
-3. 環境変数の設定
+### 環境変数の設定
 
-`.env` ファイルをプロジェクトルートに作成し、使用するモデルに応じたAPI Keyを設定：
+`.env` ファイルをプロジェクトルートに作成：
 
 ```bash
-# Google Gemini を使う場合
 GOOGLE_API_KEY=your_google_api_key_here
-
-# OpenRouter (Grok など) を使う場合
-OPENROUTER_API_KEY=your_openrouter_api_key_here
-```
-
-両方のキーを設定しておけば、`--model` オプションでモデルを切り替えるだけで使い分け可能です。
-
-4. メタ情報の設定
-
-[config/meta.yaml](config/meta.yaml) を編集して、インタビューの背景情報を記入：
-
-```yaml
-interviewTitle: "インタビューのタイトル"
-interviewDescription: "法案や議題の概要"
-interviewOverview: "背景の詳細"
-interviewThemes: "主要テーマの箇条書き"
-interviewQuestions: "主な質問リスト"
-knowledgeContext: "参考知識・コンテキスト"
-priorHypothesisFile: "deep research/funani/hypothesis.md"  # 任意
 ```
 
 ## 使い方
 
-### 基本コマンド
+### 1. 事前仮説生成 (`pre_hypothesis_iterative`)
 
-```bash
-python -m src.interview_analysis.cli --csv <messages.csv> --mode <mode>
-```
-
-### モード別の使用例
-
-#### 1. 【推奨】2段階自動実行 (`initial_auto`)
-
-**最も推奨される方法**です。大量データや出力トークン制限が厳しいモデル（Grok無料版等）でも完全なレポートを生成できます。
-
-```bash
-# Grok-4.1-fast を使用（推奨・無料）
-python -m src.interview_analysis.cli \
-  --csv data/messages.csv \
-  --mode initial_auto \
-  --meta config/meta.yaml \
-  --prompt-dir prompts \
-  --model "x-ai/grok-4.1-fast:free"
-
-# Gemini を使用
-python -m src.interview_analysis.cli \
-  --csv data/messages.csv \
-  --mode initial_auto \
-  --meta config/meta.yaml \
-  --prompt-dir prompts \
-  --model "gemini-flash-lite-latest"
-```
-
-**特徴**:
-- Part1（新規論点発見）とPart2（事前仮説検証）を自動的に順次実行
-- 1つの統合レポートを生成（メタデータ → 第1部 → 第2部 → プロンプト）
-- 出力トークン制限を回避
-
-**出力構造**:
-```
-report.md
-├─ メタデータ（実行情報）
-├─ まとめ
-├─ 第1部: 新しい切り口（事前仮説になかった論点）
-├─ 第2部: 事前仮説の検証
-├─ よくある質問と市民の疑問
-└─ 使用プロンプト（Part1 + Part2の全文）
-```
-
-#### 2. データからのテーマ抽出 (`hypothesis`)
-
-⚠️ このモードは探索的分析用です。真の事前仮説作成には [prompts/pre_hypothesis_example.md](prompts/pre_hypothesis_example.md) を参照してください。
+審議会資料から構造化された事前仮説レポートを生成します。
 
 ```bash
 python -m src.interview_analysis.cli \
-  --csv data/messages.csv \
-  --mode hypothesis
+  --mode pre_hypothesis_iterative \
+  --source-dir "path/to/committee/documents" \
+  --focus "船荷証券の電子化" \
+  --model gemini-flash-latest
 ```
 
-#### 3. 初回レポート生成 (`initial`)
+**処理フロー:**
+1. **Part 1 (Map)**: 各ドキュメントから論点を抽出（並列処理）
+2. **Part 2 (Tree Reduce)**: 論点を階層的に統合してQ&Aリスト生成
 
-出力トークン制限が緩いモデルを使用する場合、または一括生成を希望する場合:
-
-```bash
-# Gemini を使用（デフォルト）
-python -m src.interview_analysis.cli \
-  --csv data/messages.csv \
-  --mode initial
-
-# 注意: 大量データでは出力が途切れる可能性があります
-# その場合は initial_auto モードを使用してください
+**出力例:**
+```
+doc/2025-12-05/run-111834/outputs/report.md
+├─ 1. 主要な事前仮説・論点
+├─ 2. Q&A形式での論点整理
+├─ 3. 反対意見・懸念点
+├─ 4. 検討課題
+└─ 処理メタデータ
 ```
 
-#### 4. レポートの更新 (`update`)
+### 2. パブコメ比較分析 (`pubcom_analysis`)
 
-前回のレポートに新しいデータを追加反映：
-
-```bash
-python -m src.interview_analysis.cli \
-  --csv data/new_messages.csv \
-  --mode update \
-  --previous-report doc/2025-11-27/run-162754/outputs/report.md
-```
-
-#### 5. 複数レポートの統合 (`merge`)
-
-バッチごとに生成されたレポートを統合：
+パブリックコメントを事前仮説と比較し、仮説の検証・新インサイトを抽出します。
 
 ```bash
 python -m src.interview_analysis.cli \
-  --mode merge \
-  --batch-reports doc/batch1/report.md doc/batch2/report.md doc/batch3/report.md
+  --mode pubcom_analysis \
+  --csv data/comments.csv \
+  --previous-report doc/2025-12-05/run-111834/outputs/report.md \
+  --focus "船荷証券の電子化" \
+  --model gemini-flash-latest \
+  --comparison-model gemini-3-pro-preview
 ```
 
-### オプション
+**処理フロー:**
+1. **Map**: 各コメントを分析してバッチ処理（並列）
+2. **Tree Reduce**: 分析結果を階層的に統合
+3. **Compare**: 事前仮説と比較して最終レポート生成
+
+**オプション:**
+- `--model`: Map/Reduce フェーズで使用するモデル（高速処理向け）
+- `--comparison-model`: Compareフェーズで使用するモデル（高品質向け）
+
+**出力例:**
+```
+doc/2025-12-05/run-113027/outputs/report.md
+├─ 1. パブリックコメントによる仮説の検証
+├─ 2. パブリックコメントによる反対・懸念の顕在化
+├─ 3. 新たなインサイト・論点
+├─ 4. 今後の対応方針案
+├─ 参考: パブリックコメント集約レポート
+└─ 処理メタデータ（両パイプライン統合）
+```
+
+### オプション一覧
 
 | オプション | デフォルト | 説明 |
 |-----------|----------|------|
-| `--csv` | - | メッセージCSVファイルのパス |
-| `--meta` | `config/meta.yaml` | メタ情報ファイル (YAML/JSON) |
-| `--mode` | - | 実行モード (`initial_auto`, `hypothesis`, `initial`, `initial_part1`, `initial_part2`, `update`, `merge`) |
-| `--previous-report` | - | UPDATE用の前回レポートパス |
-| `--part1-report` | - | `initial_part2` 用の Part1 レポートパス |
-| `--batch-reports` | - | MERGE用のレポートファイル群 |
-| `--prompt-dir` | `prompts` | プロンプトテンプレートのディレクトリ |
-| `--model` | `gemini-flash-lite-latest` | 使用するモデル (例: `x-ai/grok-4.1-fast:free`, `gemini-flash-lite-latest`) |
+| `--mode` | - | 実行モード (`pre_hypothesis_iterative`, `pubcom_analysis`) |
+| `--source-dir` | - | 審議会資料フォルダ（pre_hypothesis用） |
+| `--csv` | - | パブコメCSVファイルパス |
+| `--previous-report` | - | 事前仮説レポートパス（pubcom_analysis用） |
+| `--focus` | - | 分析の主眼となるテーマ |
+| `--model` | `gemini-flash-lite-latest` | 使用するモデル |
+| `--comparison-model` | - | 比較フェーズ専用モデル |
 | `--temperature` | 0.3 | 生成温度 (0.0-1.0) |
 | `--max-output-tokens` | 64000 | 最大出力トークン数 |
 | `--log-dir` | `doc` | ログ出力先ディレクトリ |
+
+## パイプライン詳細
+
+### Tree Reduce アルゴリズム
+
+大量データを効率的に統合するため、ペアワイズの階層的統合を行います：
+
+```
+Level 1: [A, B, C, D, E, F, G, H] → [AB, CD, EF, GH]  (4ペア並列)
+Level 2: [AB, CD, EF, GH]       → [ABCD, EFGH]       (2ペア並列)
+Level 3: [ABCD, EFGH]           → [ABCDEFGH]         (1ペア)
+         ↓
+       最終レポート
+```
+
+### チェックポイント機能
+
+処理が中断された場合、`doc/checkpoints/` に保存されたチェックポイントから再開できます：
+
+```bash
+# 同じコマンドを再実行すると、チェックポイントから継続
+python -m src.interview_analysis.cli --mode pubcom_analysis ...
+```
+
+チェックポイントをクリアして最初から実行する場合：
+```bash
+Remove-Item -Recurse -Force "doc\checkpoints\*"
+```
 
 ## ディレクトリ構成
 
 ```
 i-1-grand-prix/
 ├── config/
-│   └── meta.yaml                # メタ情報設定
+│   └── meta.yaml                # メタ情報設定（レガシー）
 ├── data/                        # 入力データ（CSV等）
 ├── doc/                         # 実験ログ出力先
+│   ├── checkpoints/             # 中間チェックポイント
 │   └── YYYY-MM-DD/
 │       └── run-HHMMSS/
 │           ├── config.json      # 実行設定
-│           ├── prompts/
-│           │   └── used_prompt.txt
 │           └── outputs/
 │               └── report.md    # 生成レポート
 ├── prompts/                     # プロンプトテンプレート
-│   ├── initial_part1.md         # ← initial_auto で使用
-│   ├── initial_part2.md         # ← initial_auto で使用
-│   ├── initial.md
-│   ├── hypothesis.md
-│   ├── update.md
-│   ├── merge.md
-│   └── pre_hypothesis_example.md
+│   ├── pre_hypothesis_part1.md  # 論点抽出用
+│   ├── pre_hypothesis_reduce.md # Q&A統合用
+│   ├── pubcom_map.md            # パブコメ分析用
+│   ├── pubcom_reduce.md         # パブコメ統合用
+│   └── pubcom_comparison.md     # 比較分析用
 ├── src/
 │   └── interview_analysis/      # メインモジュール
 │       ├── cli.py               # CLIエントリポイント
 │       ├── pipeline.py          # 実行パイプライン
 │       ├── prompts.py           # プロンプト処理
 │       ├── loader.py            # データローダー
-│       ├── logger.py            # ログ管理
-│       └── model_provider.py    # モデルプロバイダー抽象化
-├── scripts/
-│   └── legacy/                  # 旧Colabノートブック
+│       └── model_provider.py    # モデルプロバイダー
+├── scraping/                    # Webスクレイピング
+│   └── scraper.py               # スクレイパー
 ├── .env                         # 環境変数（要作成）
 ├── CLAUDE.md                    # AIアシスタント向けガイドライン
 ├── requirements.txt             # Python依存パッケージ
@@ -293,24 +257,37 @@ i-1-grand-prix/
 
 ## 出力形式
 
-実行後、`doc/YYYY-MM-DD/run-HHMMSS/` ディレクトリに以下が保存されます：
+### 処理メタデータ
 
-- `config.json`: 実行時の設定（モデル名、温度、トークン数等）
-- `prompts/used_prompt.txt`: 使用されたプロンプトのスナップショット
-- `outputs/report.md`: 生成されたレポート
+レポート末尾に処理過程の詳細が記録されます：
 
-## AI利用に関する注意事項
+```markdown
+## 処理パイプライン: パブリックコメント分析 (pubcom_analysis)
 
-- 個人情報・機微情報を入力データに含めないでください。含まれる場合は匿名化が必要です。
-- APIキーやトークンは絶対にログに出力されません（マスク処理済み）。
-- 生成されるレポートは客観的・中立的な記述を重視します（量的表現・価値判断を避ける）。
-- Markdown出力では太字（`**`）などの装飾は使用しません。
+### Map (コメント分析)
+- **入力**: 869 → **出力**: 44
+- **モデル**: `gemini-flash-latest`
+- **詳細**: 44バッチ (並列5ワーカー)
 
-## 開発者向け情報
+### Tree Reduce (統合)
+- **入力**: 15 → **出力**: 1
+- **モデル**: `gemini-flash-latest`
+- **詳細**: 4レベル並列
 
-- プロンプトテンプレートは [prompts/](prompts/) ディレクトリで管理され、編集履歴が追跡可能です。
-- 旧実装（Colab版）は [scripts/legacy/interview_analysis_colab.ipynb](scripts/legacy/interview_analysis_colab.ipynb) を参照。
-- AI開発ガイドラインは [CLAUDE.md](CLAUDE.md) を参照。
+### Compare (比較分析)
+- **モデル**: `gemini-3-pro-preview`
+```
+
+## トラブルシューティング
+
+### PDF処理時の警告
+`Advanced encoding /90msp-RKSJ-H not implemented yet` 等の警告が出ることがありますが、テキスト抽出自体は正常に動作します。無視して問題ありません。
+
+### API レスポンスの警告
+`Warning: there are non-text parts in the response` は Gemini API の軽微な警告で、処理に影響しません。
+
+### チェックポイントの破損
+チェックポイントに問題がある場合は、`doc/checkpoints/` 内の該当ディレクトリを削除して再実行してください。
 
 ## ライセンス
 
