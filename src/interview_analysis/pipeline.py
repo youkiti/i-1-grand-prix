@@ -44,7 +44,7 @@ def tree_reduce(
     max_workers: int = 10,
     checkpoint=None,
     checkpoint_prefix: str = "reduce"
-) -> str:
+) -> tuple:
     """
     ツリー型並列Reduce
     
@@ -59,15 +59,19 @@ def tree_reduce(
         checkpoint_prefix: チェックポイントのプレフィックス
     
     Returns:
-        最終的に統合された1つの結果
+        (result, stats) のタプル
+        - result: 最終的に統合された1つの結果
+        - stats: {"initial_count": N, "levels": [pairs_per_level]}
     """
     from concurrent.futures import ThreadPoolExecutor
     
+    stats = {"initial_count": len(items), "levels": []}
+    
     if not items:
-        return ""
+        return "", stats
     
     if len(items) == 1:
-        return items[0]
+        return items[0], stats
     
     current_level = items
     level_num = 0
@@ -84,6 +88,7 @@ def tree_reduce(
                 # 奇数の場合、最後のアイテムは空文字とペアにして次へ
                 pairs.append((current_level[i], ""))
         
+        stats["levels"].append(len(pairs))
         print(f"  Tree Reduce Level {level_num}: {len(pairs)} pairs (parallel)...", flush=True)
         
         # 並列実行
@@ -96,7 +101,7 @@ def tree_reduce(
         if checkpoint:
             checkpoint.save_part2_state(level_num * 1000, current_level[0] if len(current_level) == 1 else "\n---\n".join(current_level))
     
-    return current_level[0]
+    return current_level[0], stats
 
 
 def _build_metadata_header(cfg: RunConfig, prompt_template: str, session_count: int) -> str:
@@ -122,6 +127,91 @@ def _build_metadata_header(cfg: RunConfig, prompt_template: str, session_count: 
         "",
     ]
     return "\n".join(lines)
+
+
+def _build_process_metadata(
+    pipeline_name: str,
+    data_sources: list,
+    steps: list,
+    tree_stats: dict = None,
+    focus: str = ""
+) -> str:
+    """処理メタデータセクションを生成"""
+    from datetime import datetime
+    
+    lines = []
+    lines.append("\n\n---\n")
+    lines.append("# 処理メタデータ\n")
+    
+    # 分析フォーカス
+    if focus:
+        lines.append(f"**分析フォーカス**: {focus}\n")
+    
+    # データソース
+    if data_sources:
+        lines.append("## データソース\n")
+        lines.append("| 種別 | パス | 件数 |")
+        lines.append("|------|------|------|")
+        for ds in data_sources:
+            lines.append(f"| {ds['name']} | `{ds['path']}` | {ds['count']:,} {ds.get('unit', '件')} |")
+        lines.append("")
+    
+    # 処理パイプライン
+    lines.append(f"## 処理パイプライン: {pipeline_name}\n")
+    
+    for step in steps:
+        lines.append(f"### {step['name']}")
+        lines.append(f"- **フェーズ**: {step['phase']}")
+        lines.append(f"- **入力**: {step['input']:,} → **出力**: {step['output']:,}")
+        lines.append(f"- **モデル**: `{step['model']}`")
+        if step.get('details'):
+            lines.append(f"- **詳細**: {step['details']}")
+        lines.append("")
+    
+    # ツリーReduce統計
+    if tree_stats and tree_stats.get('levels'):
+        lines.append("## ツリーReduce統計\n")
+        lines.append(f"- 初期バッチ数: {tree_stats['initial_count']}")
+        lines.append(f"- 並列レベル数: {len(tree_stats['levels'])}")
+        level_str = " → ".join([f"L{i+1}:{n}ペア" for i, n in enumerate(tree_stats['levels'])])
+        lines.append(f"- レベル詳細: {level_str}")
+        lines.append("")
+    
+    lines.append(f"\n*生成日時: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}*\n")
+    
+    return "\n".join(lines)
+
+
+def _extract_prior_process_metadata(report: str) -> str:
+    """
+    事前仮説レポートから処理メタデータセクションを抽出
+    
+    Returns:
+        見つかった場合はメタデータセクション、なければ空文字
+    """
+    # "# 処理メタデータ" セクションを探す
+    marker = "# 処理メタデータ"
+    if marker not in report:
+        return ""
+    
+    # セクション開始位置
+    start_idx = report.find(marker)
+    
+    # 次の "---" または "# 実験メタ情報" までを抽出
+    end_markers = ["---\n# 実験メタ情報", "\n---\n# 実験"]
+    end_idx = len(report)
+    for em in end_markers:
+        idx = report.find(em, start_idx)
+        if idx != -1 and idx < end_idx:
+            end_idx = idx
+    
+    extracted = report[start_idx:end_idx].strip()
+    
+    # ヘッダーを "先行処理" として書き換え
+    if extracted:
+        extracted = extracted.replace("# 処理メタデータ", "## 先行処理メタデータ (事前仮説生成)")
+    
+    return extracted
 
 
 def _load_prior_hypothesis(meta: Dict[str, Any]) -> str:
@@ -475,7 +565,10 @@ def run_pre_hypothesis_iterative(prompt_dir: Path, meta: Dict[str, Any], source_
         return _call_model(prompt, cfg)
     
     # ツリー型並列Reduceを実行
-    final_qa = tree_reduce(initial_batches, reduce_pair, max_workers=10, checkpoint=checkpoint)
+    import time
+    reduce_start = time.time()
+    final_qa, reduce_stats = tree_reduce(initial_batches, reduce_pair, max_workers=10, checkpoint=checkpoint)
+    reduce_time = time.time() - reduce_start
     
     # 最終プロンプトを記録（代表としてラスト生成時のものを使用）
     ctx_final = build_context(meta, "", [], cfg.output_length_guidance)
@@ -489,8 +582,36 @@ def run_pre_hypothesis_iterative(prompt_dir: Path, meta: Dict[str, Any], source_
         part1_prompt_template,
         last_part2_prompt
     )
-
-    final_report = metadata_header + "\n\n# 最終成果物 (Q&Aリスト)\n\n" + final_qa + prompts_section
+    
+    # 処理メタデータを生成
+    process_metadata = _build_process_metadata(
+        pipeline_name="事前仮説生成 (pre_hypothesis_iterative)",
+        data_sources=[
+            {"name": "審議会資料", "path": str(source_path), "count": len(items), "unit": "ファイル"}
+        ],
+        steps=[
+            {
+                "name": "Part 1 (Map)",
+                "phase": "論点抽出",
+                "input": len(items),
+                "output": len(part1_reports),
+                "model": cfg.model,
+                "details": "並列10ワーカー"
+            },
+            {
+                "name": "Part 2 (Tree Reduce)",
+                "phase": "Q&A統合",
+                "input": len(initial_batches),
+                "output": 1,
+                "model": cfg.model,
+                "details": f"{len(reduce_stats.get('levels', []))}レベル並列"
+            }
+        ],
+        tree_stats=reduce_stats,
+        focus=cfg.focus
+    )
+    # Final Report Construction - メタ情報は最後に配置（読者はコンテンツを先に見たい）
+    final_report = "# 最終成果物 (Q&Aリスト)\n\n" + final_qa + process_metadata + "\n\n" + metadata_header
 
     # Part 1 Log Construction
     part1_log_content = "# Part 1 Outputs (Individual Document Analysis)\n\n"
@@ -504,12 +625,15 @@ def run_pre_hypothesis_iterative(prompt_dir: Path, meta: Dict[str, Any], source_
     return {"prompt": last_part2_prompt, "report": final_report, "part1_log": part1_log_content}
 
 
-def run_pubcom_analysis(prompt_dir: Path, meta: Dict[str, Any], csv_path: Path, previous_report: str, cfg: RunConfig, use_checkpoint: bool = True) -> Dict[str, Any]:
+def run_pubcom_analysis(prompt_dir: Path, meta: Dict[str, Any], csv_path: Path, previous_report: str, cfg: RunConfig, use_checkpoint: bool = True, comparison_model: Optional[str] = None) -> Dict[str, Any]:
     """
     pubcom_analysis:
     1. (Map) パブコメCSVの各コメントに対して個別分析を実行 (pubcom_map.md)
     2. (Reduce) 個別分析結果をまとめて統合レポートを作成 (pubcom_reduce.md)
     3. (Compare) 事前仮説(previous_report)と統合レポートを比較 (pubcom_comparison.md)
+    
+    Args:
+        comparison_model: Comparisonフェーズで使用するモデル（指定なしでcfg.modelを使用）
     
     チェックポイント機能により、途中再開が可能。
     """
@@ -611,10 +735,12 @@ def run_pubcom_analysis(prompt_dir: Path, meta: Dict[str, Any], csv_path: Path, 
         return _call_model(prompt, cfg)
     
     # ツリー型並列Reduceを実行
-    pubcom_consolidated_report = tree_reduce(initial_batches, reduce_pair, max_workers=10, checkpoint=checkpoint)
+    pubcom_consolidated_report, reduce_stats = tree_reduce(initial_batches, reduce_pair, max_workers=10, checkpoint=checkpoint)
 
     # --- Phase 2: Compare (Synthesis) ---
-    print("Processing Pubcom Comparison...", flush=True)
+    # 比較用モデルが指定されていれば使用
+    compare_model_name = comparison_model if comparison_model else cfg.model
+    print(f"Processing Pubcom Comparison (model: {compare_model_name})...", flush=True)
     compare_prompt_path = prompt_dir / "pubcom_comparison.md"
     
     ctx3 = build_context(meta, "", [], cfg.output_length_guidance)
@@ -625,12 +751,68 @@ def run_pubcom_analysis(prompt_dir: Path, meta: Dict[str, Any], csv_path: Path, 
     })
     
     compare_prompt = load_and_render(compare_prompt_path, ctx3)
-    final_insight = _call_model(compare_prompt, cfg)
-
-    # Final Report Construction
-    metadata_header = _build_combined_metadata(cfg, len(session_ids), "Pubcom Analysis", "Comparison")
     
-    final_report = metadata_header + "\n\n# パブリックコメント分析・統合レポート\n\n" + final_insight + "\n\n---\n\n# 参考: パブリックコメント集約レポート\n\n" + pubcom_consolidated_report
+    # 比較用の設定を作成（モデルのみ変更）
+    compare_cfg = RunConfig(
+        mode=cfg.mode,
+        model=compare_model_name,
+        temperature=cfg.temperature,
+        max_output_tokens=cfg.max_output_tokens,
+        top_p=cfg.top_p,
+        top_k=cfg.top_k,
+        output_length_guidance=cfg.output_length_guidance,
+        focus=cfg.focus
+    )
+    final_insight = _call_model(compare_prompt, compare_cfg)
+
+    # 処理メタデータを生成
+    process_metadata = _build_process_metadata(
+        pipeline_name="パブリックコメント分析 (pubcom_analysis)",
+        data_sources=[
+            {"name": "パブリックコメント", "path": str(csv_path), "count": len(session_ids), "unit": "コメント"}
+        ],
+        steps=[
+            {
+                "name": "Map (コメント分析)",
+                "phase": "個別分析",
+                "input": len(session_ids),
+                "output": len(map_reports),
+                "model": cfg.model,
+                "details": f"{len(session_batches)}バッチ (並列5ワーカー)"
+            },
+            {
+                "name": "Tree Reduce (統合)",
+                "phase": "レポート統合",
+                "input": len(initial_batches),
+                "output": 1,
+                "model": cfg.model,
+                "details": f"{len(reduce_stats.get('levels', []))}レベル並列"
+            },
+            {
+                "name": "Compare (比較分析)",
+                "phase": "仮説との比較",
+                "input": 2,
+                "output": 1,
+                "model": compare_model_name,
+                "details": "事前仮説 + パブコメ統合 → 最終レポート"
+            }
+        ],
+        tree_stats=reduce_stats,
+        focus=cfg.focus
+    )
+
+    # Final Report Construction - メタ情報は最後に配置（読者はコンテンツを先に見たい）
+    metadata_header = _build_combined_metadata(compare_cfg, len(session_ids), "Pubcom Analysis", "Comparison")
+    
+    # 事前仮説レポートからメタデータを抽出
+    prior_metadata = _extract_prior_process_metadata(previous_report)
+    
+    # 統合メタデータセクションを構築
+    combined_metadata = process_metadata
+    if prior_metadata:
+        combined_metadata = combined_metadata + "\n\n" + prior_metadata
+    
+    final_report = final_insight + "\n\n---\n\n# 参考: パブリックコメント集約レポート\n\n" + pubcom_consolidated_report + combined_metadata + "\n\n" + metadata_header
 
     # 完了後、チェックポイントをクリア
     if checkpoint:
@@ -642,3 +824,4 @@ def run_pubcom_analysis(prompt_dir: Path, meta: Dict[str, Any], csv_path: Path, 
         "part1_log": part1_log_content,
         "pubcom_consolidated_report": pubcom_consolidated_report
     }
+
