@@ -38,6 +38,67 @@ def _call_model(prompt: str, cfg: RunConfig) -> str:
     return provider.generate(prompt, model_config)
 
 
+def tree_reduce(
+    items: List[str],
+    reduce_fn,
+    max_workers: int = 10,
+    checkpoint=None,
+    checkpoint_prefix: str = "reduce"
+) -> str:
+    """
+    ツリー型並列Reduce
+    
+    O(n) の逐次処理を O(log n) レベルの並列処理に変換。
+    例: 34アイテム → 5レベル（各レベル並列実行）→ 約7倍高速化
+    
+    Args:
+        items: 処理対象のリスト
+        reduce_fn: 2つのアイテムを統合する関数 (item1, item2) -> merged
+        max_workers: 並列ワーカー数
+        checkpoint: チェックポイントオブジェクト（オプション）
+        checkpoint_prefix: チェックポイントのプレフィックス
+    
+    Returns:
+        最終的に統合された1つの結果
+    """
+    from concurrent.futures import ThreadPoolExecutor
+    
+    if not items:
+        return ""
+    
+    if len(items) == 1:
+        return items[0]
+    
+    current_level = items
+    level_num = 0
+    
+    while len(current_level) > 1:
+        level_num += 1
+        pairs = []
+        
+        # ペアを作成（奇数の場合、最後の1つはそのまま次レベルへ）
+        for i in range(0, len(current_level), 2):
+            if i + 1 < len(current_level):
+                pairs.append((current_level[i], current_level[i + 1]))
+            else:
+                # 奇数の場合、最後のアイテムは空文字とペアにして次へ
+                pairs.append((current_level[i], ""))
+        
+        print(f"  Tree Reduce Level {level_num}: {len(pairs)} pairs (parallel)...", flush=True)
+        
+        # 並列実行
+        with ThreadPoolExecutor(max_workers=max_workers) as executor:
+            results = list(executor.map(lambda p: reduce_fn(p[0], p[1]), pairs))
+        
+        current_level = results
+        
+        # チェックポイント保存（各レベル完了後）
+        if checkpoint:
+            checkpoint.save_part2_state(level_num * 1000, current_level[0] if len(current_level) == 1 else "\n---\n".join(current_level))
+    
+    return current_level[0]
+
+
 def _build_metadata_header(cfg: RunConfig, prompt_template: str, session_count: int) -> str:
     """レポートの先頭に付与するメタ情報を生成"""
     now = datetime.now()
@@ -322,209 +383,235 @@ def run_initial_auto(prompt_dir: Path, meta: Dict[str, Any], df_path: Path, cfg:
     return {"prompt": combined_prompt, "report": combined_report}
 
 
-def run_pre_hypothesis_iterative(prompt_dir: Path, meta: Dict[str, Any], source_path: Path, cfg: RunConfig) -> Dict[str, Any]:
+def run_pre_hypothesis_iterative(prompt_dir: Path, meta: Dict[str, Any], source_path: Path, cfg: RunConfig, use_checkpoint: bool = True) -> Dict[str, Any]:
     """
     pre_hypothesis_iterative:
     1. (Map) 各ドキュメントに対して Part1 (論点抽出) を実行
     2. (Reduce) 抽出された論点群をバッチごとに Part2 (Q&A生成・更新) にかけて、最終的なQ&Aリストを作成
+    
+    チェックポイント機能により、途中再開が可能。
     """
     if not source_path.is_dir():
         raise ValueError("pre_hypothesis_iterative requires a directory path for documents")
 
     from .loader import iter_documents_from_folder
     from .prompts import load_template
+    from .checkpoint import get_checkpoint
+
+    # チェックポイント初期化
+    checkpoint = get_checkpoint(source_path, "pre_hypothesis_iterative", cfg.focus) if use_checkpoint else None
 
     # --- Phase 1: Map (Extract Points from each document) ---
-    part1_reports = []
     part1_prompt_path = prompt_dir / "pre_hypothesis_part1.md"
-    # テンプレート読み込みは1回で良いが、load_and_render内で都度行われる設計なのでループ内で呼ぶか、
-    # ここではプロンプト内容の記録用にテンプレートだけロードしておく
     part1_prompt_template = load_template(part1_prompt_path)
 
-    # 全ドキュメントを走査
-    # ※ ファイル数が多い場合はここで時間がかかる。進捗表示等はCLI側で行うのが理想だが、ここではシンプルに実装。
-    # Parallel processing for Part 1
-    from concurrent.futures import ThreadPoolExecutor
-    
-    def process_document(item):
-        filename, content = item
-        print(f"Processing Part 1 for: {filename}...", flush=True)
-        ctx1 = build_context(meta, "", [], cfg.output_length_guidance, reference_documents=f"=== File: {filename} ===\n\n{content}")
-        ctx1["focus"] = cfg.focus
-        part1_prompt = load_and_render(part1_prompt_path, ctx1)
-        return _call_model(part1_prompt, cfg)
-
-    # Collect all items first
+    # 全ドキュメントを収集
     items = list(iter_documents_from_folder(source_path))
     
-    with ThreadPoolExecutor(max_workers=10) as executor:
-        part1_reports = list(executor.map(process_document, items))
+    # チェックポイントからPart 1を復元
+    part1_results = None
+    if checkpoint and checkpoint.has_part1_checkpoint():
+        part1_results = checkpoint.load_part1()
+        # ファイル数が一致するか確認
+        if part1_results and len(part1_results) == len(items):
+            print(f"[Checkpoint] Using cached Part 1 results ({len(part1_results)} items)", flush=True)
+        else:
+            print(f"[Checkpoint] Part 1 cache invalid (expected {len(items)}, got {len(part1_results) if part1_results else 0}). Re-running.", flush=True)
+            part1_results = None
+    
+    if part1_results is None:
+        # Part 1を実行
+        from concurrent.futures import ThreadPoolExecutor
+        
+        def process_document(item):
+            filename, content = item
+            print(f"Processing Part 1 for: {filename}...", flush=True)
+            ctx1 = build_context(meta, "", [], cfg.output_length_guidance, reference_documents=f"=== File: {filename} ===\n\n{content}")
+            ctx1["focus"] = cfg.focus
+            part1_prompt = load_and_render(part1_prompt_path, ctx1)
+            output = _call_model(part1_prompt, cfg)
+            return (filename, output)
+        
+        with ThreadPoolExecutor(max_workers=10) as executor:
+            part1_results = list(executor.map(process_document, items))
+        
+        # チェックポイント保存
+        if checkpoint:
+            checkpoint.save_part1(part1_results)
 
-    if not part1_reports:
+    if not part1_results:
         return {"prompt": "", "report": "No documents found or processed."}
 
-    # --- Phase 2: Reduce (Rolling Consolidation) ---
-    current_qa = "（まだQ&Aはありません）"
+    # Part 1レポート（出力のみ）のリストを作成
+    part1_reports = [output for _, output in part1_results]
+
+    # --- Phase 2: Reduce (Tree-Based Parallel) ---
     part2_prompt_path = prompt_dir / "pre_hypothesis_part2_iterative.md"
     part2_prompt_template = load_template(part2_prompt_path)
     
-    # バッチサイズを小さく（出力トークン制限内で全体出力できるように）
-    BATCH_SIZE = 3
-    MAX_QA_SIZE = 200_000  # 200KB - 圧縮バジェット閾値
+    # Part 1レポートを初期バッチとして使用（3つずつグループ化）
+    INITIAL_BATCH_SIZE = 3
+    initial_batches = []
+    for i in range(0, len(part1_reports), INITIAL_BATCH_SIZE):
+        batch = part1_reports[i:i + INITIAL_BATCH_SIZE]
+        initial_batches.append("\n\n---\n\n".join(batch))
     
-    # レポートをバッチに分割
-    batches = [part1_reports[i:i + BATCH_SIZE] for i in range(0, len(part1_reports), BATCH_SIZE)]
+    print(f"Starting Tree Reduce: {len(initial_batches)} initial batches", flush=True)
     
-    last_part2_prompt = ""
-
-    for i, batch in enumerate(batches):
-        print(f"Processing Part 2 Batch {i+1}/{len(batches)}...", flush=True)
-        # バッチ内のレポートを結合
-        new_info = "\n\n---\n\n".join(batch)
+    # ツリー型Reduce用の統合関数を定義
+    def reduce_pair(item1: str, item2: str) -> str:
+        """2つのQ&A/レポートを統合"""
+        if not item2:  # 奇数の場合
+            return item1
         
-        # コンテキスト構築
         ctx2 = build_context(meta, "", [], cfg.output_length_guidance)
         ctx2.update({
-            "currentQA": current_qa,
-            "newInfo": new_info,
+            "currentQA": item1,
+            "newInfo": item2,
             "focus": cfg.focus
         })
         
-        # プロンプト生成 & 実行
-        part2_prompt = load_and_render(part2_prompt_path, ctx2)
-        last_part2_prompt = part2_prompt
-        
-        output = _call_model(part2_prompt, cfg)
-        
-        # 結果で置き換え（ローリング統合方式）
-        current_qa = output
-        
-        # サイズ監視: 閾値を超えたら警告（将来的に圧縮ステップを追加可能）
-        current_size = len(current_qa.encode('utf-8'))
-        if current_size > MAX_QA_SIZE:
-            print(f"[Warning] Q&A size ({current_size:,} bytes) exceeds threshold ({MAX_QA_SIZE:,} bytes)", flush=True)
+        prompt = load_and_render(part2_prompt_path, ctx2)
+        return _call_model(prompt, cfg)
+    
+    # ツリー型並列Reduceを実行
+    final_qa = tree_reduce(initial_batches, reduce_pair, max_workers=10, checkpoint=checkpoint)
+    
+    # 最終プロンプトを記録（代表としてラスト生成時のものを使用）
+    ctx_final = build_context(meta, "", [], cfg.output_length_guidance)
+    ctx_final.update({"currentQA": "(accumulated)", "newInfo": "(merged)", "focus": cfg.focus})
+    last_part2_prompt = load_and_render(part2_prompt_path, ctx_final)
 
     # --- Final Report Construction ---
-    # メタデータ + 最終Q&A + プロンプト(代表)
     metadata_header = _build_combined_metadata(cfg, len(part1_reports), part1_prompt_template, part2_prompt_template)
     
     prompts_section = _build_combined_prompts_section(
-        part1_prompt_template, # テンプレートを表示 (個別のプロンプトは多すぎるため)
-        last_part2_prompt # 最後の更新に使ったプロンプトを表示
+        part1_prompt_template,
+        last_part2_prompt
     )
 
-    final_report = metadata_header + "\n\n# 最終成果物 (Q&Aリスト)\n\n" + current_qa + prompts_section
+    final_report = metadata_header + "\n\n# 最終成果物 (Q&Aリスト)\n\n" + final_qa + prompts_section
 
     # Part 1 Log Construction
     part1_log_content = "# Part 1 Outputs (Individual Document Analysis)\n\n"
-    for i, report in enumerate(part1_reports):
-        filename = items[i][0]
+    for filename, report in part1_results:
         part1_log_content += f"## File: {filename}\n\n{report}\n\n---\n\n"
 
-    return {"prompt": last_part2_prompt, "report": final_report, "part1_log": part1_log_content}
+    # 完了後、チェックポイントをクリア
+    if checkpoint:
+        checkpoint.clear()
 
     return {"prompt": last_part2_prompt, "report": final_report, "part1_log": part1_log_content}
 
 
-def run_pubcom_analysis(prompt_dir: Path, meta: Dict[str, Any], csv_path: Path, previous_report: str, cfg: RunConfig) -> Dict[str, Any]:
+def run_pubcom_analysis(prompt_dir: Path, meta: Dict[str, Any], csv_path: Path, previous_report: str, cfg: RunConfig, use_checkpoint: bool = True) -> Dict[str, Any]:
     """
     pubcom_analysis:
     1. (Map) パブコメCSVの各コメントに対して個別分析を実行 (pubcom_map.md)
     2. (Reduce) 個別分析結果をまとめて統合レポートを作成 (pubcom_reduce.md)
     3. (Compare) 事前仮説(previous_report)と統合レポートを比較 (pubcom_comparison.md)
+    
+    チェックポイント機能により、途中再開が可能。
     """
-    from .loader import load_messages_csv, build_sessions_data
+    from .loader import load_messages_csv
     from .prompts import load_template
     from concurrent.futures import ThreadPoolExecutor
+    from collections import defaultdict
+    from .checkpoint import get_checkpoint
+
+    # チェックポイント初期化
+    checkpoint = get_checkpoint(csv_path, "pubcom_analysis", cfg.focus) if use_checkpoint else None
 
     # --- Phase 1.1: Map (Individual Analysis) ---
     df = load_messages_csv(csv_path)
     
     # session_id ごとにコンテンツをまとめる
-    from collections import defaultdict
     session_dict = defaultdict(list)
     for row in df:
         sid = row.get("session_id", "unknown")
-        # メッセージ列を特定（簡易的）
         msg = row.get("message") or row.get("content") or row.get("text") or ""
         session_dict[sid].append(msg)
     
-    # 文字列に結合
     session_contents = {sid: "\n".join(msgs) for sid, msgs in session_dict.items()}
     session_ids = list(session_contents.keys())
     
-    # --- Phase 1.1: Map (Batched Analysis) ---
-    # コメントをバッチ（チャンク）にまとめる
     MAP_BATCH_SIZE = 20
     session_batches = [session_ids[i:i + MAP_BATCH_SIZE] for i in range(0, len(session_ids), MAP_BATCH_SIZE)]
     
     map_prompt_path = prompt_dir / "pubcom_map.md"
     
-    def process_map_batch(batch_ids):
-        # バッチ内のコメントを結合
-        combined_content = ""
-        for sid in batch_ids:
-            content = session_contents[sid]
-            combined_content += f"=== Comment ID: {sid} ===\n{content}\n\n"
+    # チェックポイントからMap結果を復元
+    map_results = None
+    if checkpoint and checkpoint.has_part1_checkpoint():
+        map_results = checkpoint.load_part1()
+        if map_results and len(map_results) == len(session_batches):
+            print(f"[Checkpoint] Using cached Map results ({len(map_results)} batches)", flush=True)
+        else:
+            print(f"[Checkpoint] Map cache invalid. Re-running.", flush=True)
+            map_results = None
+    
+    if map_results is None:
+        def process_map_batch(batch_ids):
+            combined_content = ""
+            for sid in batch_ids:
+                content = session_contents[sid]
+                combined_content += f"=== Comment ID: {sid} ===\n{content}\n\n"
+                
+            print(f"Processing Pubcom Map Batch ({len(batch_ids)} comments)...", flush=True)
             
-        print(f"Processing Pubcom Map Batch ({len(batch_ids)} comments)...", flush=True)
-        
-        # コンテキスト構築
-        ctx1 = build_context(meta, "", [], cfg.output_length_guidance, reference_documents=combined_content)
-        ctx1["focus"] = cfg.focus
-        prompt = load_and_render(map_prompt_path, ctx1)
-        
-        output = _call_model(prompt, cfg)
-        return output, batch_ids, combined_content
+            ctx1 = build_context(meta, "", [], cfg.output_length_guidance, reference_documents=combined_content)
+            ctx1["focus"] = cfg.focus
+            prompt = load_and_render(map_prompt_path, ctx1)
+            
+            output = _call_model(prompt, cfg)
+            return (str(batch_ids), output)
 
-    # 並列実行
-    with ThreadPoolExecutor(max_workers=5) as executor:
-        results = list(executor.map(process_map_batch, session_batches))
-    
-    # Reduceフェーズに渡すために整形
-    map_reports = []
-    part1_log_content = "# Pubcom Phase 1 Outputs (Batched Analysis)\n\n"
-    
-    for i, r in enumerate(results):
-        output_text, batch_ids, batch_content = r
-        # Reduce用
-        map_reports.append(output_text)
+        with ThreadPoolExecutor(max_workers=5) as executor:
+            map_results = list(executor.map(process_map_batch, session_batches))
         
-        # ログ用
-        part1_log_content += f"## Batch {i+1} (IDs: {batch_ids[0]} - {batch_ids[-1]})\n\n"
-        part1_log_content += f"### Original Content (First 500 chars)\n{batch_content[:500]}...\n\n"
-        part1_log_content += f"### Analysis\n{output_text}\n\n---\n\n"
+        if checkpoint:
+            checkpoint.save_part1(map_results)
+    
+    map_reports = [output for _, output in map_results]
+    
+    # ログ構築
+    part1_log_content = "# Pubcom Phase 1 Outputs (Batched Analysis)\n\n"
+    for i, (batch_id_str, output_text) in enumerate(map_results):
+        part1_log_content += f"## Batch {i+1}\n\n### Analysis\n{output_text}\n\n---\n\n"
     
     if not map_reports:
         return {"prompt": "", "report": "No comments processed."}
 
-    # --- Phase 1.2: Reduce (Iterative Summary) ---
-    current_report = "（まだレポートはありません）"
+    # --- Phase 1.2: Reduce (Tree-Based Parallel) ---
     reduce_prompt_path = prompt_dir / "pubcom_reduce.md"
     
-    BATCH_SIZE = 5
-    batches = [map_reports[i:i + BATCH_SIZE] for i in range(0, len(map_reports), BATCH_SIZE)]
+    # Map結果を初期バッチとして使用（3つずつグループ化）
+    INITIAL_BATCH_SIZE = 3
+    initial_batches = []
+    for i in range(0, len(map_reports), INITIAL_BATCH_SIZE):
+        batch = map_reports[i:i + INITIAL_BATCH_SIZE]
+        initial_batches.append("\n\n---\n\n".join(batch))
     
-    for i, batch in enumerate(batches):
-        print(f"Processing Pubcom Reduce Batch {i+1}/{len(batches)}...", flush=True)
-        new_info = "\n\n---\n\n".join(batch)
+    print(f"Starting Pubcom Tree Reduce: {len(initial_batches)} initial batches", flush=True)
+    
+    # ツリー型Reduce用の統合関数を定義
+    def reduce_pair(item1: str, item2: str) -> str:
+        """2つのレポートを統合"""
+        if not item2:
+            return item1
         
         ctx2 = build_context(meta, "", [], cfg.output_length_guidance)
         ctx2.update({
-            "currentReport": current_report,
-            "newInfo": new_info,
+            "currentReport": item1,
+            "newInfo": item2,
             "focus": cfg.focus
         })
         
         prompt = load_and_render(reduce_prompt_path, ctx2)
-        output = _call_model(prompt, cfg)
-        
-        if current_report == "（まだレポートはありません）":
-            current_report = output
-        else:
-            current_report += "\n\n" + output
-
-    pubcom_consolidated_report = current_report
+        return _call_model(prompt, cfg)
+    
+    # ツリー型並列Reduceを実行
+    pubcom_consolidated_report = tree_reduce(initial_batches, reduce_pair, max_workers=10, checkpoint=checkpoint)
 
     # --- Phase 2: Compare (Synthesis) ---
     print("Processing Pubcom Comparison...", flush=True)
@@ -544,6 +631,10 @@ def run_pubcom_analysis(prompt_dir: Path, meta: Dict[str, Any], csv_path: Path, 
     metadata_header = _build_combined_metadata(cfg, len(session_ids), "Pubcom Analysis", "Comparison")
     
     final_report = metadata_header + "\n\n# パブリックコメント分析・統合レポート\n\n" + final_insight + "\n\n---\n\n# 参考: パブリックコメント集約レポート\n\n" + pubcom_consolidated_report
+
+    # 完了後、チェックポイントをクリア
+    if checkpoint:
+        checkpoint.clear()
 
     return {
         "prompt": compare_prompt, 
