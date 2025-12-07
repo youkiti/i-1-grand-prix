@@ -18,6 +18,7 @@ from .pipeline import (
     run_merge,
     run_update,
 )
+from .citation import CitationRegistry, expand_citations_to_links
 
 
 def load_meta(path: Path) -> Dict[str, Any]:
@@ -162,6 +163,15 @@ def main() -> None:
     save_text(run_dir / "outputs" / "report.md", result["report"])
     if "part1_log" in result:
         save_text(run_dir / "outputs" / "part1_log.md", result["part1_log"])
+
+    # Citation Registry の保存
+    if "citation_registry" in result:
+        citation_registry: CitationRegistry = result["citation_registry"]
+        save_json(run_dir / "outputs" / "citation_registry.json", citation_registry.to_dict())
+
+        # URLリンク展開版レポートを生成
+        report_with_links = expand_citations_to_links(result["report"], citation_registry)
+        save_text(run_dir / "outputs" / "report_with_links.md", report_with_links)
 
     print(f"[OK] Complete: {run_dir}")
 
