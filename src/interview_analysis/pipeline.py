@@ -1,11 +1,25 @@
 from dataclasses import dataclass
 from datetime import datetime
 from pathlib import Path
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, List, Optional, Tuple
 
-from .loader import load_messages_csv, build_sessions_data, load_documents_from_folder, iter_documents_from_folder
+from .loader import (
+    load_messages_csv,
+    build_sessions_data,
+    load_documents_from_folder,
+    iter_documents_from_folder,
+    iter_documents_with_metadata,
+    DocumentWithMetadata,
+    load_scraper_metadata
+)
 from .prompts import load_and_render
 from .model_provider import create_provider, ModelConfig
+from .citation import (
+    CitationRegistry,
+    expand_citations_to_links,
+    generate_citation_appendix,
+    load_scraper_metadata as load_citation_metadata
+)
 
 
 @dataclass
@@ -478,26 +492,47 @@ def run_pre_hypothesis_iterative(prompt_dir: Path, meta: Dict[str, Any], source_
     pre_hypothesis_iterative:
     1. (Map) 各ドキュメントに対して Part1 (論点抽出) を実行
     2. (Reduce) 抽出された論点群をバッチごとに Part2 (Q&A生成・更新) にかけて、最終的なQ&Aリストを作成
-    
+
     チェックポイント機能により、途中再開が可能。
+    Citation Registry機能により、出典情報を追跡可能。
     """
     if not source_path.is_dir():
         raise ValueError("pre_hypothesis_iterative requires a directory path for documents")
 
-    from .loader import iter_documents_from_folder
     from .prompts import load_template
     from .checkpoint import get_checkpoint
 
     # チェックポイント初期化
     checkpoint = get_checkpoint(source_path, "pre_hypothesis_iterative", cfg.focus) if use_checkpoint else None
 
+    # --- Citation Registry 構築 ---
+    # スクレイパーのメタデータを読み込み、Citation Registry を初期化
+    scraper_metadata = load_scraper_metadata(source_path)
+    citation_registry = CitationRegistry()
+
+    # ファイル名→引用IDのマッピングを構築
+    filename_to_cite_id: Dict[str, str] = {}
+
     # --- Phase 1: Map (Extract Points from each document) ---
     part1_prompt_path = prompt_dir / "pre_hypothesis_part1.md"
     part1_prompt_template = load_template(part1_prompt_path)
 
-    # 全ドキュメントを収集
-    items = list(iter_documents_from_folder(source_path))
-    
+    # 全ドキュメントをメタデータ付きで収集
+    documents = list(iter_documents_with_metadata(source_path))
+
+    # Citation Registry にドキュメントを登録
+    for doc in documents:
+        cite_id = citation_registry.add_document(
+            file=doc.filename,
+            url=doc.url,
+            page_title=doc.page_title,
+            link_text=doc.link_text
+        )
+        filename_to_cite_id[doc.filename] = cite_id
+
+    # 後方互換性のため items を作成（ただし enriched content を使用）
+    items = [(doc.filename, doc.to_enriched_content()) for doc in documents]
+
     # チェックポイントからPart 1を復元
     part1_results = None
     if checkpoint and checkpoint.has_part1_checkpoint():
@@ -508,11 +543,11 @@ def run_pre_hypothesis_iterative(prompt_dir: Path, meta: Dict[str, Any], source_
         else:
             print(f"[Checkpoint] Part 1 cache invalid (expected {len(items)}, got {len(part1_results) if part1_results else 0}). Re-running.", flush=True)
             part1_results = None
-    
+
     if part1_results is None:
         # Part 1を実行
         from concurrent.futures import ThreadPoolExecutor
-        
+
         def process_document(item):
             filename, content = item
             print(f"Processing Part 1 for: {filename}...", flush=True)
@@ -521,10 +556,10 @@ def run_pre_hypothesis_iterative(prompt_dir: Path, meta: Dict[str, Any], source_
             part1_prompt = load_and_render(part1_prompt_path, ctx1)
             output = _call_model(part1_prompt, cfg)
             return (filename, output)
-        
+
         with ThreadPoolExecutor(max_workers=10) as executor:
             part1_results = list(executor.map(process_document, items))
-        
+
         # チェックポイント保存
         if checkpoint:
             checkpoint.save_part1(part1_results)
@@ -577,12 +612,12 @@ def run_pre_hypothesis_iterative(prompt_dir: Path, meta: Dict[str, Any], source_
 
     # --- Final Report Construction ---
     metadata_header = _build_combined_metadata(cfg, len(part1_reports), part1_prompt_template, part2_prompt_template)
-    
+
     prompts_section = _build_combined_prompts_section(
         part1_prompt_template,
         last_part2_prompt
     )
-    
+
     # 処理メタデータを生成
     process_metadata = _build_process_metadata(
         pipeline_name="事前仮説生成 (pre_hypothesis_iterative)",
@@ -610,8 +645,12 @@ def run_pre_hypothesis_iterative(prompt_dir: Path, meta: Dict[str, Any], source_
         tree_stats=reduce_stats,
         focus=cfg.focus
     )
+
+    # Citation Registry: 出典一覧を生成
+    citation_appendix = generate_citation_appendix(citation_registry)
+
     # Final Report Construction - メタ情報は最後に配置（読者はコンテンツを先に見たい）
-    final_report = "# 最終成果物 (Q&Aリスト)\n\n" + final_qa + process_metadata + "\n\n" + metadata_header
+    final_report = "# 最終成果物 (Q&Aリスト)\n\n" + final_qa + "\n\n---\n\n" + citation_appendix + process_metadata + "\n\n" + metadata_header
 
     # Part 1 Log Construction
     part1_log_content = "# Part 1 Outputs (Individual Document Analysis)\n\n"
@@ -622,22 +661,29 @@ def run_pre_hypothesis_iterative(prompt_dir: Path, meta: Dict[str, Any], source_
     if checkpoint:
         checkpoint.clear()
 
-    return {"prompt": last_part2_prompt, "report": final_report, "part1_log": part1_log_content}
+    return {
+        "prompt": last_part2_prompt,
+        "report": final_report,
+        "part1_log": part1_log_content,
+        "citation_registry": citation_registry,
+        "filename_to_cite_id": filename_to_cite_id
+    }
 
 
-def run_pubcom_analysis(prompt_dir: Path, meta: Dict[str, Any], csv_path: Path, previous_report: str, cfg: RunConfig, use_checkpoint: bool = True, comparison_model: Optional[str] = None) -> Dict[str, Any]:
+def run_pubcom_analysis(prompt_dir: Path, meta: Dict[str, Any], csv_path: Path, previous_report: str, cfg: RunConfig, use_checkpoint: bool = True, comparison_model: Optional[str] = None, prior_citation_registry: Optional[CitationRegistry] = None) -> Dict[str, Any]:
     """
     pubcom_analysis:
     1. (Map) パブコメCSVの各コメントに対して個別分析を実行 (pubcom_map.md)
     2. (Reduce) 個別分析結果をまとめて統合レポートを作成 (pubcom_reduce.md)
     3. (Compare) 事前仮説(previous_report)と統合レポートを比較 (pubcom_comparison.md)
-    
+
     Args:
         comparison_model: Comparisonフェーズで使用するモデル（指定なしでcfg.modelを使用）
-    
+        prior_citation_registry: 事前仮説生成時のCitation Registry（URL情報の引き継ぎ用）
+
     チェックポイント機能により、途中再開が可能。
+    Citation Registry機能により、出典情報を追跡可能。
     """
-    from .loader import load_messages_csv
     from .prompts import load_template
     from concurrent.futures import ThreadPoolExecutor
     from collections import defaultdict
@@ -646,18 +692,37 @@ def run_pubcom_analysis(prompt_dir: Path, meta: Dict[str, Any], csv_path: Path, 
     # チェックポイント初期化
     checkpoint = get_checkpoint(csv_path, "pubcom_analysis", cfg.focus) if use_checkpoint else None
 
+    # --- Citation Registry 構築 ---
+    # 事前仮説からの引用レジストリを引き継ぎ（存在する場合）
+    if prior_citation_registry:
+        citation_registry = CitationRegistry()
+        # 事前仮説のレジストリをコピー
+        citation_registry._doc_counter = prior_citation_registry._doc_counter
+        for cite_id, citation in prior_citation_registry.citations.items():
+            citation_registry.citations[cite_id] = citation
+    else:
+        citation_registry = CitationRegistry()
+
+    # パブコメID→引用IDのマッピング
+    pubcom_to_cite_id: Dict[str, str] = {}
+
     # --- Phase 1.1: Map (Individual Analysis) ---
     df = load_messages_csv(csv_path)
-    
+
     # session_id ごとにコンテンツをまとめる
     session_dict = defaultdict(list)
     for row in df:
         sid = row.get("session_id", "unknown")
         msg = row.get("message") or row.get("content") or row.get("text") or ""
         session_dict[sid].append(msg)
-    
+
     session_contents = {sid: "\n".join(msgs) for sid, msgs in session_dict.items()}
     session_ids = list(session_contents.keys())
+
+    # パブコメをCitation Registryに登録
+    for sid in session_ids:
+        cite_id = citation_registry.add_pubcom(comment_id=sid)
+        pubcom_to_cite_id[sid] = cite_id
     
     MAP_BATCH_SIZE = 20
     session_batches = [session_ids[i:i + MAP_BATCH_SIZE] for i in range(0, len(session_ids), MAP_BATCH_SIZE)]
@@ -803,25 +868,30 @@ def run_pubcom_analysis(prompt_dir: Path, meta: Dict[str, Any], csv_path: Path, 
 
     # Final Report Construction - メタ情報は最後に配置（読者はコンテンツを先に見たい）
     metadata_header = _build_combined_metadata(compare_cfg, len(session_ids), "Pubcom Analysis", "Comparison")
-    
+
     # 事前仮説レポートからメタデータを抽出
     prior_metadata = _extract_prior_process_metadata(previous_report)
-    
+
     # 統合メタデータセクションを構築
     combined_metadata = process_metadata
     if prior_metadata:
         combined_metadata = combined_metadata + "\n\n" + prior_metadata
-    
-    final_report = final_insight + "\n\n---\n\n# 参考: パブリックコメント集約レポート\n\n" + pubcom_consolidated_report + combined_metadata + "\n\n" + metadata_header
+
+    # Citation Registry: 出典一覧を生成
+    citation_appendix = generate_citation_appendix(citation_registry)
+
+    final_report = final_insight + "\n\n---\n\n# 参考: パブリックコメント集約レポート\n\n" + pubcom_consolidated_report + "\n\n---\n\n" + citation_appendix + combined_metadata + "\n\n" + metadata_header
 
     # 完了後、チェックポイントをクリア
     if checkpoint:
         checkpoint.clear()
 
     return {
-        "prompt": compare_prompt, 
-        "report": final_report, 
+        "prompt": compare_prompt,
+        "report": final_report,
         "part1_log": part1_log_content,
-        "pubcom_consolidated_report": pubcom_consolidated_report
+        "pubcom_consolidated_report": pubcom_consolidated_report,
+        "citation_registry": citation_registry,
+        "pubcom_to_cite_id": pubcom_to_cite_id
     }
 

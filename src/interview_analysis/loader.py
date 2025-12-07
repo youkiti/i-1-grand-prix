@@ -1,9 +1,56 @@
 import csv
+import json
 from pathlib import Path
-from typing import Dict, List, Tuple, Iterator
+from typing import Dict, List, Tuple, Iterator, Optional
 from collections import defaultdict
+from dataclasses import dataclass
 
 MESSAGE_CANDIDATE_COLUMNS = ["message", "content", "text", "body"]
+
+
+@dataclass
+class DocumentWithMetadata:
+    """メタデータ付きドキュメント"""
+    filename: str
+    content: str
+    url: str = ""
+    page_title: str = ""
+    link_text: str = ""
+    page_url: str = ""
+
+    def to_enriched_content(self) -> str:
+        """メタデータヘッダー付きのコンテンツを返す"""
+        header_lines = ["[Document Info]"]
+        header_lines.append(f"- file: {self.filename}")
+        if self.url:
+            header_lines.append(f"- url: {self.url}")
+        if self.page_title:
+            header_lines.append(f"- page_title: {self.page_title}")
+        if self.link_text:
+            header_lines.append(f"- link_text: {self.link_text}")
+        if self.page_url:
+            header_lines.append(f"- page_url: {self.page_url}")
+        header_lines.append("[/Document Info]")
+        header_lines.append("")
+
+        return "\n".join(header_lines) + self.content
+
+
+def load_scraper_metadata(folder_path: Path) -> Dict[str, dict]:
+    """
+    スクレイパーが生成したmetadata.jsonを読み込む
+
+    Returns:
+        {filename: metadata_dict} の辞書
+    """
+    metadata_path = folder_path / "metadata.json"
+    if not metadata_path.exists():
+        return {}
+
+    with open(metadata_path, "r", encoding="utf-8") as f:
+        data = json.load(f)
+
+    return data.get("files", {})
 
 
 def load_messages_csv(path: Path) -> List[Dict[str, str]]:
@@ -162,10 +209,71 @@ def iter_documents_from_folder(folder_path: Path) -> Iterator[Tuple[str, str]]:
     if not folder_path.exists():
         raise FileNotFoundError(f"Folder not found: {folder_path}")
 
-    # 隠しファイル以外を対象にする
-    files = sorted([p for p in folder_path.iterdir() if p.is_file() and not p.name.startswith(".")])
+    # 隠しファイル以外を対象にする（metadata.jsonも除外）
+    files = sorted([
+        p for p in folder_path.iterdir()
+        if p.is_file() and not p.name.startswith(".") and p.name != "metadata.json"
+    ])
 
     for file_path in files:
         content = read_file_content(file_path)
         yield file_path.name, content
+
+
+def iter_documents_with_metadata(folder_path: Path) -> Iterator[DocumentWithMetadata]:
+    """
+    指定フォルダ内のファイルをメタデータ付きで順次読み込む
+
+    metadata.json が存在する場合、各ファイルにURL等のメタデータを付与する
+    """
+    if not folder_path.exists():
+        raise FileNotFoundError(f"Folder not found: {folder_path}")
+
+    # スクレイパーのメタデータを読み込み
+    scraper_metadata = load_scraper_metadata(folder_path)
+
+    # 隠しファイルとmetadata.json以外を対象にする
+    files = sorted([
+        p for p in folder_path.iterdir()
+        if p.is_file() and not p.name.startswith(".") and p.name != "metadata.json"
+    ])
+
+    for file_path in files:
+        content = read_file_content(file_path)
+        filename = file_path.name
+
+        # メタデータを取得（存在しない場合は空辞書）
+        meta = scraper_metadata.get(filename, {})
+
+        yield DocumentWithMetadata(
+            filename=filename,
+            content=content,
+            url=meta.get("source_url", ""),
+            page_title=meta.get("page_title", ""),
+            link_text=meta.get("link_text", ""),
+            page_url=meta.get("page_url", "")
+        )
+
+
+def build_document_registry(folder_path: Path) -> Tuple[List[DocumentWithMetadata], dict]:
+    """
+    フォルダ内の全ドキュメントを読み込み、引用レジストリ用の情報を構築
+
+    Returns:
+        (documents, registry_data)
+        - documents: DocumentWithMetadata のリスト
+        - registry_data: {filename: {url, page_title, ...}} の辞書
+    """
+    documents = list(iter_documents_with_metadata(folder_path))
+
+    registry_data = {}
+    for doc in documents:
+        registry_data[doc.filename] = {
+            "url": doc.url,
+            "page_title": doc.page_title,
+            "link_text": doc.link_text,
+            "page_url": doc.page_url
+        }
+
+    return documents, registry_data
 
