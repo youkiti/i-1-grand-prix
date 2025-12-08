@@ -11,4 +11,10 @@ __pycache__/
 **config.json
 **.pdf
 **.txt
+**.docx
+**.doc
+**.pptx
+**.xlsx
+**metadata*.json
+
 deep research/funani/shingikai

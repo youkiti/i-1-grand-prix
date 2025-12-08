@@ -8,11 +8,12 @@ import json
 from datetime import datetime, timezone
 
 class Scraper:
-    def __init__(self, base_url, output_dir, max_depth=2, filter_keyword=None):
+    def __init__(self, base_url, output_dir, max_depth=2, filter_keyword=None, path_prefix=None, link_text_filter=None):
         self.base_url = base_url
         self.output_dir = output_dir
         self.max_depth = max_depth
         self.filter_keyword = filter_keyword
+        self.link_text_filter = link_text_filter
         self.visited_urls = set()
         self.target_extensions = {
             '.txt', '.pptx', '.xlsx', '.doc', '.docx', '.pdf'
@@ -22,8 +23,24 @@ class Scraper:
         self.scrape_start_time = datetime.now(timezone.utc).astimezone()
         self.files_metadata = {}
 
+        # パスプレフィックス設定
+        # None/空: パス制限なし（同一ドメインのみ）
+        # その他: 指定されたプレフィックスで制限
+        if path_prefix and path_prefix != 'none':
+            # 指定されたプレフィックスを正規化
+            self.path_prefix = path_prefix if path_prefix.startswith('/') else '/' + path_prefix
+            if not self.path_prefix.endswith('/'):
+                self.path_prefix += '/'
+        else:
+            self.path_prefix = None  # パス制限なし
+        
+        self.base_domain = urlparse(base_url).netloc
+        
+        print(f"Path prefix restriction: {self.path_prefix or 'None (same domain only)'}")
+
         if not os.path.exists(output_dir):
             os.makedirs(output_dir)
+
 
     def is_valid_url(self, url):
         parsed = urlparse(url)
@@ -131,7 +148,10 @@ class Scraper:
             if 'text/html' not in content_type:
                 return
 
+            # Fix encoding for Japanese pages
+            response.encoding = response.apparent_encoding
             soup = BeautifulSoup(response.text, 'html.parser')
+
 
             # ページタイトルを取得
             page_title = None
@@ -152,7 +172,12 @@ class Scraper:
                 # Check if the link is a file to download
                 link_ext = self.get_extension(absolute_url)
                 if link_ext in self.target_extensions:
-                    # Download files regardless of filter
+                    # Only download files from the same domain as base_url
+                    base_domain = urlparse(self.base_url).netloc
+                    link_domain = urlparse(absolute_url).netloc
+                    if link_domain != base_domain:
+                        continue
+                        
                     self.download_file(
                         absolute_url,
                         page_url=url,
@@ -161,13 +186,27 @@ class Scraper:
                         crawl_depth=current_depth
                     )
                 else:
-                    # Only crawl pages if they match the filter
+                    # Only crawl pages on same domain with optional path prefix
+                    link_parsed = urlparse(absolute_url)
+                    if link_parsed.netloc != self.base_domain:
+                        continue
+                    # Apply path prefix restriction if set
+                    if self.path_prefix and not link_parsed.path.startswith(self.path_prefix):
+                        continue
+                    # Apply filter keyword if specified (matches URL)
                     if self.filter_keyword and self.filter_keyword not in absolute_url:
+                        continue
+                    # Apply link text filter only at depth=0 (first page only)
+                    if current_depth == 0 and self.link_text_filter and self.link_text_filter not in link_text:
                         continue
                     self.crawl(absolute_url, current_depth + 1)
 
+
+
+
         except Exception as e:
             print(f"Error processing {url}: {e}")
+
 
     def save_metadata(self):
         """メタデータをJSONファイルとして保存"""
@@ -185,7 +224,13 @@ class Scraper:
             "files": self.files_metadata
         }
 
-        metadata_path = os.path.join(self.output_dir, "metadata.json")
+        # ベースURLからドメイン名を抽出し、タイムスタンプと組み合わせたファイル名を生成
+        parsed_url = urlparse(self.base_url)
+        domain = parsed_url.netloc.replace("www.", "")  # www.を除去
+        timestamp = self.scrape_start_time.strftime("%Y%m%d_%H%M%S")
+        filename = f"metadata_{domain}_{timestamp}.json"
+        
+        metadata_path = os.path.join(self.output_dir, filename)
         with open(metadata_path, 'w', encoding='utf-8') as f:
             json.dump(metadata, f, ensure_ascii=False, indent=2)
 
@@ -193,15 +238,22 @@ class Scraper:
         return metadata_path
 
 
+
 def main():
     parser = argparse.ArgumentParser(description="Scrape files from a URL with depth 2.")
     parser.add_argument("url", help="The starting URL")
     parser.add_argument("--output_dir", default="downloads", help="Directory to save downloaded files")
-    parser.add_argument("--filter", help="Only crawl/download URLs containing this string")
+    parser.add_argument("--filter", help="Only crawl URLs containing this string")
+    parser.add_argument("--link-text-filter", help="Only crawl links whose text contains this string (e.g., '第194回')")
+    parser.add_argument("--path-prefix", required=True,
+                        help="Path prefix for crawling restriction (REQUIRED). Specify like '/shingi1/' or 'none' for no restriction")
     
     args = parser.parse_args()
 
-    scraper = Scraper(args.url, args.output_dir, max_depth=2, filter_keyword=args.filter)
+    scraper = Scraper(args.url, args.output_dir, max_depth=2, 
+                      filter_keyword=args.filter, path_prefix=args.path_prefix,
+                      link_text_filter=args.link_text_filter)
+
     scraper.crawl(args.url, 0)
     scraper.save_metadata()
 
