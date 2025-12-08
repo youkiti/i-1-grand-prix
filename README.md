@@ -4,7 +4,7 @@
 
 ## 概要
 
-このプロジェクトは、審議会資料やパブリックコメントCSVデータを入力として受け取り、以下の2段階パイプラインで分析レポートを生成します：
+> このプロジェクトは、審議会資料やパブリックコメントCSVデータを入力として受け取り、以下の2段階パイプラインで分析レポートを生成します：
 
 ### 推奨パイプライン（2段階）
 
@@ -75,10 +75,10 @@ graph TB
     style S2ComparePhase fill:#fff3cd
 ```
 
-| モード | 目的 | 入力 | 出力 |
-|--------|------|------|------|
-| `pre_hypothesis_iterative` | 審議会資料からQ&A形式の事前仮説を生成 | 審議会資料フォルダ | 事前仮説レポート |
-| `pubcom_analysis` | パブコメを事前仮説と比較分析 | パブコメCSV + 事前仮説 | 最終比較レポート |
+| モード                       | 目的                                  | 入力                   | 出力             |
+| ---------------------------- | ------------------------------------- | ---------------------- | ---------------- |
+| `pre_hypothesis_iterative` | 審議会資料からQ&A形式の事前仮説を生成 | 審議会資料フォルダ     | 事前仮説レポート |
+| `pubcom_analysis`          | パブコメを事前仮説と比較分析          | パブコメCSV + 事前仮説 | 最終比較レポート |
 
 ### このツールの目的
 
@@ -130,10 +130,12 @@ python -m src.interview_analysis.cli \
 ```
 
 **処理フロー:**
+
 1. **Part 1 (Map)**: 各ドキュメントから論点を抽出（並列処理）
 2. **Part 2 (Tree Reduce)**: 論点を階層的に統合してQ&Aリスト生成
 
 **出力例:**
+
 ```
 doc/2025-12-05/run-111834/outputs/report.md
 ├─ 1. 主要な事前仮説・論点
@@ -158,15 +160,18 @@ python -m src.interview_analysis.cli \
 ```
 
 **処理フロー:**
+
 1. **Map**: 各コメントを分析してバッチ処理（並列）
 2. **Tree Reduce**: 分析結果を階層的に統合
 3. **Compare**: 事前仮説と比較して最終レポート生成
 
 **オプション:**
+
 - `--model`: Map/Reduce フェーズで使用するモデル（高速処理向け）
 - `--comparison-model`: Compareフェーズで使用するモデル（高品質向け）
 
 **出力例:**
+
 ```
 doc/2025-12-05/run-113027/outputs/report.md
 ├─ 1. パブリックコメントによる仮説の検証
@@ -179,18 +184,18 @@ doc/2025-12-05/run-113027/outputs/report.md
 
 ### オプション一覧
 
-| オプション | デフォルト | 説明 |
-|-----------|----------|------|
-| `--mode` | - | 実行モード (`pre_hypothesis_iterative`, `pubcom_analysis`) |
-| `--source-dir` | - | 審議会資料フォルダ（pre_hypothesis用） |
-| `--csv` | - | パブコメCSVファイルパス |
-| `--previous-report` | - | 事前仮説レポートパス（pubcom_analysis用） |
-| `--focus` | - | 分析の主眼となるテーマ |
-| `--model` | `gemini-flash-lite-latest` | 使用するモデル |
-| `--comparison-model` | - | 比較フェーズ専用モデル |
-| `--temperature` | 0.3 | 生成温度 (0.0-1.0) |
-| `--max-output-tokens` | 64000 | 最大出力トークン数 |
-| `--log-dir` | `doc` | ログ出力先ディレクトリ |
+| オプション              | デフォルト                   | 説明                                                           |
+| ----------------------- | ---------------------------- | -------------------------------------------------------------- |
+| `--mode`              | -                            | 実行モード (`pre_hypothesis_iterative`, `pubcom_analysis`) |
+| `--source-dir`        | -                            | 審議会資料フォルダ（pre_hypothesis用）                         |
+| `--csv`               | -                            | パブコメCSVファイルパス                                        |
+| `--previous-report`   | -                            | 事前仮説レポートパス（pubcom_analysis用）                      |
+| `--focus`             | -                            | 分析の主眼となるテーマ                                         |
+| `--model`             | `gemini-flash-lite-latest` | 使用するモデル                                                 |
+| `--comparison-model`  | -                            | 比較フェーズ専用モデル                                         |
+| `--temperature`       | 0.3                          | 生成温度 (0.0-1.0)                                             |
+| `--max-output-tokens` | 64000                        | 最大出力トークン数                                             |
+| `--log-dir`           | `doc`                      | ログ出力先ディレクトリ                                         |
 
 ## パイプライン詳細
 
@@ -216,6 +221,7 @@ python -m src.interview_analysis.cli --mode pubcom_analysis ...
 ```
 
 チェックポイントをクリアして最初から実行する場合：
+
 ```bash
 Remove-Item -Recurse -Force "doc\checkpoints\*"
 ```
@@ -281,12 +287,15 @@ i-1-grand-prix/
 ## トラブルシューティング
 
 ### PDF処理時の警告
+
 `Advanced encoding /90msp-RKSJ-H not implemented yet` 等の警告が出ることがありますが、テキスト抽出自体は正常に動作します。無視して問題ありません。
 
 ### API レスポンスの警告
+
 `Warning: there are non-text parts in the response` は Gemini API の軽微な警告で、処理に影響しません。
 
 ### チェックポイントの破損
+
 チェックポイントに問題がある場合は、`doc/checkpoints/` 内の該当ディレクトリを削除して再実行してください。
 
 ## ライセンス
