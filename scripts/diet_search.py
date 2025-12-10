@@ -129,25 +129,14 @@ def fetch_meeting_meta(issue_id: str, keyword: str) -> Optional[dict]:
     speeches = rec.get("speechRecord", [])
     n_speeches = len(speeches)
 
-    # 会議URLとPDF URLを取得（speechRecordから最初のものを使用）
-    meeting_url = ""
-    pdf_url = ""
-    if speeches:
-        first_speech = speeches[0]
-        meeting_url = first_speech.get("meetingURL", "")
-        pdf_url = first_speech.get("pdfURL", "")
-
     return {
         "issue_id": issue_id,
         "date": rec.get("date", ""),
         "house": rec.get("nameOfHouse", ""),
         "meeting_name": rec.get("nameOfMeeting", ""),
         "session": rec.get("session", ""),
-        "issue_type": rec.get("issueType", ""),
-        "issue_number": rec.get("issue", ""),
+        "meeting_number": rec.get("issue", ""),
         "n_speeches": n_speeches,
-        "meeting_url": meeting_url,
-        "pdf_url": pdf_url,
         "keyword": keyword,
     }
 
@@ -160,11 +149,8 @@ def save_meetings_tsv(meetings: list[dict], output_path: str) -> None:
         "house",
         "meeting_name",
         "session",
-        "issue_type",
-        "issue_number",
+        "meeting_number",
         "n_speeches",
-        "meeting_url",
-        "pdf_url",
         "keyword",
     ]
 
@@ -193,8 +179,9 @@ def main():
     )
     parser.add_argument(
         "--keyword",
+        nargs="+",
         required=True,
-        help="検索キーワード（例: '人工知能基本計画'）",
+        help="検索キーワード（複数指定でOR検索）",
     )
     parser.add_argument(
         "--from",
@@ -217,6 +204,11 @@ def main():
         "--output",
         help="出力ファイル名（省略時は自動生成）",
     )
+    parser.add_argument(
+        "--download",
+        action="store_true",
+        help="議事録（発言内容）もダウンロードする",
+    )
 
     args = parser.parse_args()
 
@@ -224,8 +216,16 @@ def main():
     if args.output_dir and not os.path.exists(args.output_dir):
         os.makedirs(args.output_dir)
 
-    # Step 1: 発言検索から会議 ID を収集
-    issue_ids = collect_issue_ids(args.keyword, args.date_from, args.date_until)
+    # Step 1: 各キーワードで発言検索し、会議IDを収集（重複削除）
+    all_issue_ids = set()
+    keyword_str = " OR ".join(args.keyword)  # 表示用
+    
+    for keyword in args.keyword:
+        ids = collect_issue_ids(keyword, args.date_from, args.date_until)
+        all_issue_ids.update(ids)
+    
+    issue_ids = sorted(all_issue_ids)
+    print(f"\n全キーワード合計: {len(issue_ids)} ユニーク会議")
 
     if not issue_ids:
         print("該当する会議が見つかりませんでした。")
@@ -236,18 +236,19 @@ def main():
     meetings = []
     for i, issue_id in enumerate(issue_ids, 1):
         print(f"  [{i}/{len(issue_ids)}] {issue_id}")
-        meta = fetch_meeting_meta(issue_id, args.keyword)
+        meta = fetch_meeting_meta(issue_id, keyword_str)
         if meta:
             meetings.append(meta)
         # API への負荷軽減
         time.sleep(0.3)
+
 
     # Step 3: TSV として保存
     if args.output:
         output_filename = args.output
     else:
         output_filename = generate_output_filename(
-            args.keyword, args.date_from, args.date_until
+            keyword_str, args.date_from, args.date_until
         )
 
     output_path = os.path.join(args.output_dir, output_filename)
@@ -255,7 +256,7 @@ def main():
 
     # サマリー表示
     print("\n===== サマリー =====")
-    print(f"検索キーワード: {args.keyword}")
+    print(f"検索キーワード: {keyword_str}")
     print(f"検索期間: {args.date_from} ~ {args.date_until}")
     print(f"該当会議数: {len(meetings)}")
 
@@ -269,6 +270,26 @@ def main():
     for house, count in sorted(house_counts.items()):
         print(f"  {house}: {count}")
 
+    # Step 4: 議事録ダウンロード（オプション）
+    if args.download:
+        # TSVファイル名（拡張子なし）と同名のフォルダに保存
+        transcript_dir = os.path.splitext(output_path)[0]
+        if not os.path.exists(transcript_dir):
+            os.makedirs(transcript_dir)
+
+        print(f"\n===== 議事録ダウンロード =====")
+        print(f"保存先: {transcript_dir}")
+
+        import subprocess
+        download_script = os.path.join(os.path.dirname(__file__), "diet_download.py")
+        subprocess.run([
+            sys.executable,
+            download_script,
+            "--input", output_path,
+            "--output-dir", transcript_dir,
+        ])
+
 
 if __name__ == "__main__":
     main()
+
