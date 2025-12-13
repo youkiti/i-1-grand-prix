@@ -21,9 +21,9 @@ Stage 2: pubcom_analysis（パブコメ × 事前仮説 → 比較レポート�
 ```bash
 python -m src.interview_analysis.cli \
   --mode pre_hypothesis_iterative \
-  --source-dir "path/to/committee/documents" \
+  --source "path/to/committee/documents" \
   --focus "船荷証券の電子化" \
-  --model gemini-flash-latest
+  --model "gemini:gemini-flash-lite-latest"
 ```
 
 **処理フロー:**
@@ -38,10 +38,10 @@ python -m src.interview_analysis.cli \
 python -m src.interview_analysis.cli \
   --mode pubcom_analysis \
   --csv data/comments.csv \
-  --previous-report doc/2025-12-05/run-111834/outputs/report.md \
+  --previous-report doc/YYYY-MM-DD/run-HHMMSS/outputs/report.md \
   --focus "船荷証券の電子化" \
-  --model gemini-flash-latest \
-  --comparison-model gemini-3-pro-preview
+  --model "gemini:gemini-flash-lite-latest" \
+  --comparison-model "gemini:gemini-2.0-flash"
 ```
 
 **処理フロー:**
@@ -50,8 +50,18 @@ python -m src.interview_analysis.cli \
 - **Compare**: 事前仮説との比較レポート生成
 
 **推奨モデル構成:**
-- `--model gemini-flash-latest`: Map/Reduce（高速・低コスト）
-- `--comparison-model gemini-3-pro-preview`: Compare（高品質）
+- `--model "gemini:gemini-flash-lite-latest"`: Map/Reduce（高速・低コスト）
+- `--comparison-model "gemini:gemini-2.0-flash"`: Compare（高品質）
+
+## モデルプロバイダー指定
+
+モデル名にプレフィックスを付けてプロバイダーを明示指定:
+
+| プレフィックス | プロバイダー | 例 |
+|---------------|------------|----|
+| `gemini:` | Google Gemini API | `gemini:gemini-flash-lite-latest` |
+| `openrouter:` | OpenRouter API | `openrouter:x-ai/grok-4.1-fast:free` |
+| なし | Gemini（後方互換） | `gemini-flash-lite-latest` |
 
 ## 環境設定
 
@@ -62,13 +72,40 @@ GOOGLE_API_KEY=your_google_api_key_here
 
 ## 重要なプロンプトファイル
 
-| ファイル | 用途 |
-|---------|------|
-| `pre_hypothesis_part1.md` | 審議会資料からの論点抽出 |
-| `pre_hypothesis_reduce.md` | Q&A形式への統合 |
-| `pubcom_map.md` | パブコメ個別分析 |
-| `pubcom_reduce.md` | パブコメ統合（**過度な統合を防ぐルール含む**） |
-| `pubcom_comparison.md` | 事前仮説との比較分析 |
+| ファイル | 用途 | 出力形式 |
+|---------|------|----------|
+| `pre_hypothesis_part1.md` | 審議会資料からの論点抽出 | **YAML** |
+| `pre_hypothesis_part2_iterative.md` | 論点の統合 | **YAML** |
+| `pubcom_map.md` | パブコメ個別分析 | **YAML** |
+| `pubcom_reduce.md` | パブコメ統合 | **YAML** |
+| `pubcom_comparison.md` | 事前仮説との比較分析 | Markdown |
+
+### YAML出力形式（2024-12更新）
+
+すべてのMap/Reduceプロンプトは**YAML形式**で出力:
+
+```yaml
+metadata:
+  focus: "テーマ"
+  source_documents: [...]
+
+topics:
+  - id: "topic_001"
+    title: "論点タイトル"
+    spectrum:  # 対立軸の可視化
+      axis: "A案 ←→ B案"
+      positions: [...]
+      consensus_status: "継続検討"
+    evidence_chunks:  # 原文引用（必須）
+      - verbatim_quote: |  # 原文コピペ
+          「引用文」
+        source_doc_id: "doc_001"
+```
+
+**重要ルール:**
+- `verbatim_quote` は原文をそのままコピペ（要約禁止）
+- `spectrum` で対立軸を可視化
+- `evidence_chunks` は各topicに最低1つ必須
 
 ### pubcom_reduce.md の重要ルール
 
@@ -83,6 +120,20 @@ GOOGLE_API_KEY=your_google_api_key_here
 - 既存の制度・業界への影響に関する意見
 
 **具体的なキーワード（専門用語、固有名詞、技術用語）は省略せず維持**
+
+### pubcom_comparison.md の出力形式（2024-12更新）
+
+比較レポートは以下の構成で出力:
+
+1. **用語解説（Glossary of Terms）**: 高校生にもわかる専門用語解説（5-10個）
+2. **ニュートラルな記述**: 価値判断を含む表現（「強い反対」「大きな支持」等）を避ける
+3. **原文引用必須**: `> 「原文」 [出典: ...]` 形式で根拠を明示
+4. **対立軸の検証**: 審議会の `spectrum` に対するパブコメの反応を整理
+5. **今後の対応方針案（国会アクションカード形式）**:
+   - 論点マップ（何が問題か × どのレイヤーで動くか）
+   - 推奨アクション（質問主意書、委員会質疑、修正案、請願等）
+   - すぐ使える成果物（質問主意書案、委員会質問案3本セット、請願用要約）
+
 
 ## チェックポイント機能
 
@@ -102,8 +153,15 @@ Remove-Item -Recurse -Force "doc\checkpoints\*"
 `Warning: there are non-text parts in the response` は軽微な警告で処理に影響なし。
 
 ### Gemini モデル指定
-- 高速処理: `gemini-flash-latest`, `gemini-flash-lite-latest`
-- 高品質: `gemini-3-pro-preview`
+- 高速処理: `gemini:gemini-flash-lite-latest`
+- 高品質: `gemini:gemini-2.0-flash`
+
+### focus フィルタリング
+
+`--focus` 引数で指定したテーマに**直接関係のない論点は除外**される:
+- 別テーマの政策議論（税制、社会保障、エネルギー等）
+- 背景として軽く触れられているだけの論点
+- 判断基準: その論点がfocusの実現・決定に**直接影響を与えるか**
 
 ## 注意事項
 

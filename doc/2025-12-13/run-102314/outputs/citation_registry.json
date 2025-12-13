@@ -1,0 +1,31 @@
+{
+  "citations": {
+    "P001": {
+      "cite_id": "P001",
+      "cite_type": "pubcom",
+      "comment_id": "f5fd521d-0e80-401c-ad38-361af3fdf182"
+    },
+    "P002": {
+      "cite_id": "P002",
+      "cite_type": "pubcom",
+      "comment_id": "50475e75-ef30-491d-bd0b-5c10a67cebda"
+    },
+    "P003": {
+      "cite_id": "P003",
+      "cite_type": "pubcom",
+      "comment_id": "5c4dcea0-d9cc-4a3c-99cc-7f51728a8fa7"
+    },
+    "P004": {
+      "cite_id": "P004",
+      "cite_type": "pubcom",
+      "comment_id": "ed81b859-3ff0-4ae4-a500-020cdeb7a4da"
+    },
+    "P005": {
+      "cite_id": "P005",
+      "cite_type": "pubcom",
+      "comment_id": "6de695de-ad0d-44b2-b120-3810f95fc166"
+    }
+  },
+  "_doc_counter": 0,
+  "_pubcom_counter": 5
+}
