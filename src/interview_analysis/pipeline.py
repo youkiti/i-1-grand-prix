@@ -212,6 +212,9 @@ def tree_reduce(
         with ThreadPoolExecutor(max_workers=max_workers) as executor:
             results = list(executor.map(lambda p: reduce_fn(p[0], p[1]), pairs))
         
+        # None をフィルタリング（API エラー時の対策）
+        results = [r if r is not None else "" for r in results]
+        
         current_level = results
         
         # チェックポイント保存（各レベル完了後）

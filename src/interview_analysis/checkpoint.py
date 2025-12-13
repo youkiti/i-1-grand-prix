@@ -5,6 +5,7 @@
 """
 import json
 import hashlib
+import shutil
 from datetime import datetime
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
@@ -46,6 +47,9 @@ class Checkpoint:
         self.session_dir = checkpoint_dir / self.session_id
         self.session_dir.mkdir(parents=True, exist_ok=True)
         
+        # 古いセッションをクリーンアップ（同じモードで異なるセッションID）
+        self._cleanup_old_sessions()
+        
         # チェックポイントファイルのパス
         self.part1_file = self.session_dir / "part1_results.json"
         self.part2_state_file = self.session_dir / "part2_state.json"
@@ -53,6 +57,20 @@ class Checkpoint:
         
         # メタデータを保存
         self._save_metadata()
+    
+    def _cleanup_old_sessions(self) -> None:
+        """同じモードで異なるセッションIDの古いチェックポイントを削除"""
+        if not self.checkpoint_dir.exists():
+            return
+        
+        prefix = f"{self.mode}_"
+        for old_dir in self.checkpoint_dir.iterdir():
+            if old_dir.is_dir() and old_dir.name.startswith(prefix) and old_dir.name != self.session_id:
+                try:
+                    shutil.rmtree(old_dir)
+                    print(f"[Checkpoint] Cleaned up old session: {old_dir.name}", flush=True)
+                except Exception as e:
+                    print(f"[Checkpoint] Warning: Could not clean up {old_dir.name}: {e}", flush=True)
     
     def _save_metadata(self) -> None:
         """メタデータを保存"""

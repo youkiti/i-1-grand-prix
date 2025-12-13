@@ -1,5 +1,6 @@
 import csv
 import json
+import re
 from pathlib import Path
 from typing import Dict, List, Tuple, Iterator, Optional
 from collections import defaultdict
@@ -17,6 +18,7 @@ class DocumentWithMetadata:
     page_title: str = ""
     link_text: str = ""
     page_url: str = ""
+    date: str = ""  # 審議会の開催日付など
 
     def to_enriched_content(self) -> str:
         """メタデータヘッダー付きのコンテンツを返す"""
@@ -24,6 +26,8 @@ class DocumentWithMetadata:
         header_lines.append(f"- file: {self.filename}")
         if self.url:
             header_lines.append(f"- url: {self.url}")
+        if self.date:
+            header_lines.append(f"- date: {self.date}")
         if self.page_title:
             header_lines.append(f"- page_title: {self.page_title}")
         if self.link_text:
@@ -36,21 +40,98 @@ class DocumentWithMetadata:
         return "\n".join(header_lines) + self.content
 
 
+def extract_date_from_metadata(page_title: str, link_text: str, filename: str) -> str:
+    """
+    メタデータから日付を抽出する
+    
+    優先順位:
+    1. page_title から抽出（例: 「第１６回会議（令和６年８月２４日開催）」）
+    2. link_text から抽出
+    3. filename から抽出（例: 20210414diji01_minutes.pdf）
+    
+    Returns:
+        抽出された日付文字列（見つからない場合は空文字）
+    """
+    # 和暦パターン: 令和X年Y月Z日、平成X年Y月Z日 等
+    wareki_pattern = r'[（(]?[令平昭]和[０-９0-9元]+年[０-９0-9]+月[０-９0-9]+日[開催）)]*'
+    
+    # より厳密な和暦パターン（開催日を含む）
+    wareki_full_pattern = r'(?:令和|平成|昭和)[０-９0-9元]+年[０-９0-9]+月[０-９0-9]+日(?:開催)?'
+    
+    # 西暦パターン: 2021年4月14日、2021-04-14、2021/04/14
+    seireki_pattern = r'20[0-9]{2}[-/年][0-9]{1,2}[-/月][0-9]{1,2}日?'
+    
+    # ファイル名からの日付パターン: 20210414 (YYYYMMDDの8桁)
+    filename_date_pattern = r'^(20[0-9]{2})(0[1-9]|1[0-2])(0[1-9]|[12][0-9]|3[01])'
+    
+    def normalize_japanese_numerals(text: str) -> str:
+        """全角数字を半角に変換"""
+        trans_table = str.maketrans('０１２３４５６７８９', '0123456789')
+        return text.translate(trans_table)
+    
+    def format_wareki_date(match_text: str) -> str:
+        """和暦マッチを整形して返す"""
+        # 括弧や「開催」を除去して日付部分だけ返す
+        cleaned = re.sub(r'[（()）開催]', '', match_text)
+        return normalize_japanese_numerals(cleaned)
+    
+    # 1. page_title から検索
+    if page_title:
+        match = re.search(wareki_full_pattern, page_title)
+        if match:
+            return format_wareki_date(match.group())
+        match = re.search(seireki_pattern, page_title)
+        if match:
+            return match.group()
+    
+    # 2. link_text から検索
+    if link_text:
+        match = re.search(wareki_full_pattern, link_text)
+        if match:
+            return format_wareki_date(match.group())
+        match = re.search(seireki_pattern, link_text)
+        if match:
+            return match.group()
+    
+    # 3. filename から検索
+    if filename:
+        match = re.match(filename_date_pattern, filename)
+        if match:
+            year, month, day = match.groups()
+            return f"{year}-{month}-{day}"
+    
+    return ""
+
+
 def load_scraper_metadata(folder_path: Path) -> Dict[str, dict]:
     """
-    スクレイパーが生成したmetadata.jsonを読み込む
+    スクレイパーが生成したメタデータファイルを読み込む
+    
+    metadata.json または metadata_*.json パターンのファイルを読み込む。
+    複数ファイルが存在する場合はマージする。
 
     Returns:
         {filename: metadata_dict} の辞書
     """
+    combined_files = {}
+    
+    # metadata.json を読み込み
     metadata_path = folder_path / "metadata.json"
-    if not metadata_path.exists():
-        return {}
-
-    with open(metadata_path, "r", encoding="utf-8") as f:
-        data = json.load(f)
-
-    return data.get("files", {})
+    if metadata_path.exists():
+        with open(metadata_path, "r", encoding="utf-8") as f:
+            data = json.load(f)
+            combined_files.update(data.get("files", {}))
+    
+    # metadata_*.json パターンのファイルを読み込み
+    for meta_file in folder_path.glob("metadata_*.json"):
+        try:
+            with open(meta_file, "r", encoding="utf-8") as f:
+                data = json.load(f)
+                combined_files.update(data.get("files", {}))
+        except (json.JSONDecodeError, IOError) as e:
+            print(f"Warning: Failed to read {meta_file}: {e}")
+    
+    return combined_files
 
 
 def load_messages_csv(path: Path) -> List[Dict[str, str]]:
@@ -245,13 +326,19 @@ def iter_documents_with_metadata(folder_path: Path) -> Iterator[DocumentWithMeta
         # メタデータを取得（存在しない場合は空辞書）
         meta = scraper_metadata.get(filename, {})
 
+        # 日付を抽出
+        page_title = meta.get("page_title", "")
+        link_text = meta.get("link_text", "")
+        extracted_date = extract_date_from_metadata(page_title, link_text, filename)
+
         yield DocumentWithMetadata(
             filename=filename,
             content=content,
             url=meta.get("source_url", ""),
-            page_title=meta.get("page_title", ""),
-            link_text=meta.get("link_text", ""),
-            page_url=meta.get("page_url", "")
+            page_title=page_title,
+            link_text=link_text,
+            page_url=meta.get("page_url", ""),
+            date=extracted_date
         )
 
 
@@ -272,7 +359,8 @@ def build_document_registry(folder_path: Path) -> Tuple[List[DocumentWithMetadat
             "url": doc.url,
             "page_title": doc.page_title,
             "link_text": doc.link_text,
-            "page_url": doc.page_url
+            "page_url": doc.page_url,
+            "date": doc.date
         }
 
     return documents, registry_data

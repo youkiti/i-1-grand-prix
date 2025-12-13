@@ -1,0 +1,461 @@
+{
+  "citations": {
+    "D001": {
+      "cite_id": "D001",
+      "cite_type": "document",
+      "file": "001373713.pdf"
+    },
+    "D002": {
+      "cite_id": "D002",
+      "cite_type": "document",
+      "file": "001375177.pdf"
+    },
+    "D003": {
+      "cite_id": "D003",
+      "cite_type": "document",
+      "file": "001375189.pdf"
+    },
+    "D004": {
+      "cite_id": "D004",
+      "cite_type": "document",
+      "file": "001377877.pdf"
+    },
+    "D005": {
+      "cite_id": "D005",
+      "cite_type": "document",
+      "file": "001379859.pdf"
+    },
+    "D006": {
+      "cite_id": "D006",
+      "cite_type": "document",
+      "file": "001382224.pdf"
+    },
+    "D007": {
+      "cite_id": "D007",
+      "cite_type": "document",
+      "file": "001385305.pdf"
+    },
+    "D008": {
+      "cite_id": "D008",
+      "cite_type": "document",
+      "file": "001390064.pdf"
+    },
+    "D009": {
+      "cite_id": "D009",
+      "cite_type": "document",
+      "file": "001393794.pdf"
+    },
+    "D010": {
+      "cite_id": "D010",
+      "cite_type": "document",
+      "file": "001394826.pdf"
+    },
+    "D011": {
+      "cite_id": "D011",
+      "cite_type": "document",
+      "file": "001394827.pdf"
+    },
+    "D012": {
+      "cite_id": "D012",
+      "cite_type": "document",
+      "file": "001394829.pdf"
+    },
+    "D013": {
+      "cite_id": "D013",
+      "cite_type": "document",
+      "file": "001397730.pdf"
+    },
+    "D014": {
+      "cite_id": "D014",
+      "cite_type": "document",
+      "file": "001402989.pdf"
+    },
+    "D015": {
+      "cite_id": "D015",
+      "cite_type": "document",
+      "file": "001404064.pdf"
+    },
+    "D016": {
+      "cite_id": "D016",
+      "cite_type": "document",
+      "file": "001408123.pdf"
+    },
+    "D017": {
+      "cite_id": "D017",
+      "cite_type": "document",
+      "file": "001411003.pdf"
+    },
+    "D018": {
+      "cite_id": "D018",
+      "cite_type": "document",
+      "file": "001417519.pdf"
+    },
+    "D019": {
+      "cite_id": "D019",
+      "cite_type": "document",
+      "file": "001422019.pdf"
+    },
+    "D020": {
+      "cite_id": "D020",
+      "cite_type": "document",
+      "file": "001423391.pdf"
+    },
+    "D021": {
+      "cite_id": "D021",
+      "cite_type": "document",
+      "file": "20210414digi01_minutes.pdf"
+    },
+    "D022": {
+      "cite_id": "D022",
+      "cite_type": "document",
+      "file": "20210414diji01_agenda.pdf"
+    },
+    "D023": {
+      "cite_id": "D023",
+      "cite_type": "document",
+      "file": "20210414diji01_catalog.pdf"
+    },
+    "D024": {
+      "cite_id": "D024",
+      "cite_type": "document",
+      "file": "20210414diji01_material.pdf"
+    },
+    "D025": {
+      "cite_id": "D025",
+      "cite_type": "document",
+      "file": "20210414diji01_member.pdf"
+    },
+    "D026": {
+      "cite_id": "D026",
+      "cite_type": "document",
+      "file": "20210414diji01_ss1.pdf"
+    },
+    "D027": {
+      "cite_id": "D027",
+      "cite_type": "document",
+      "file": "20210414diji01_ss2.pdf"
+    },
+    "D028": {
+      "cite_id": "D028",
+      "cite_type": "document",
+      "file": "20210414diji01_ss3.pdf"
+    },
+    "D029": {
+      "cite_id": "D029",
+      "cite_type": "document",
+      "file": "20210414diji01_ss4.pdf"
+    },
+    "D030": {
+      "cite_id": "D030",
+      "cite_type": "document",
+      "file": "20210414diji01_ss5.pdf"
+    },
+    "D031": {
+      "cite_id": "D031",
+      "cite_type": "document",
+      "file": "20210414diji01_ss6.pdf"
+    },
+    "D032": {
+      "cite_id": "D032",
+      "cite_type": "document",
+      "file": "20210414diji01_ss7.pdf"
+    },
+    "D033": {
+      "cite_id": "D033",
+      "cite_type": "document",
+      "file": "20210531diji02_agenda.pdf"
+    },
+    "D034": {
+      "cite_id": "D034",
+      "cite_type": "document",
+      "file": "20210531diji02_catalog.pdf"
+    },
+    "D035": {
+      "cite_id": "D035",
+      "cite_type": "document",
+      "file": "20210531diji02_material.pdf"
+    },
+    "D036": {
+      "cite_id": "D036",
+      "cite_type": "document",
+      "file": "20210531diji02_member.pdf"
+    },
+    "D037": {
+      "cite_id": "D037",
+      "cite_type": "document",
+      "file": "20210531diji02_minutes.pdf"
+    },
+    "D038": {
+      "cite_id": "D038",
+      "cite_type": "document",
+      "file": "20210531diji02_referance.pdf"
+    },
+    "D039": {
+      "cite_id": "D039",
+      "cite_type": "document",
+      "file": "20210531diji02_ss10.pdf"
+    },
+    "D040": {
+      "cite_id": "D040",
+      "cite_type": "document",
+      "file": "20210531diji02_ss8.pdf"
+    },
+    "D041": {
+      "cite_id": "D041",
+      "cite_type": "document",
+      "file": "20210531diji02_ss9.pdf"
+    },
+    "D042": {
+      "cite_id": "D042",
+      "cite_type": "document",
+      "file": "20210702diji03_agenda.pdf"
+    },
+    "D043": {
+      "cite_id": "D043",
+      "cite_type": "document",
+      "file": "20210702diji03_catalog.pdf"
+    },
+    "D044": {
+      "cite_id": "D044",
+      "cite_type": "document",
+      "file": "20210702diji03_material.pdf"
+    },
+    "D045": {
+      "cite_id": "D045",
+      "cite_type": "document",
+      "file": "20210702diji03_member.pdf"
+    },
+    "D046": {
+      "cite_id": "D046",
+      "cite_type": "document",
+      "file": "20210702diji03_mimutes.pdf"
+    },
+    "D047": {
+      "cite_id": "D047",
+      "cite_type": "document",
+      "file": "20210702diji03_reference2.pdf"
+    },
+    "D048": {
+      "cite_id": "D048",
+      "cite_type": "document",
+      "file": "20210702diji03_ss11.pdf"
+    },
+    "D049": {
+      "cite_id": "D049",
+      "cite_type": "document",
+      "file": "20210702diji03_ss12.pdf"
+    },
+    "D050": {
+      "cite_id": "D050",
+      "cite_type": "document",
+      "file": "20210819diji04_agenda.pdf"
+    },
+    "D051": {
+      "cite_id": "D051",
+      "cite_type": "document",
+      "file": "20210819diji04_catalog.pdf"
+    },
+    "D052": {
+      "cite_id": "D052",
+      "cite_type": "document",
+      "file": "20210819diji04_material.pdf"
+    },
+    "D053": {
+      "cite_id": "D053",
+      "cite_type": "document",
+      "file": "20210819diji04_member.pdf"
+    },
+    "D054": {
+      "cite_id": "D054",
+      "cite_type": "document",
+      "file": "20210819diji04_minutes.pdf"
+    },
+    "D055": {
+      "cite_id": "D055",
+      "cite_type": "document",
+      "file": "20210819diji04_ss13.pdf"
+    },
+    "D056": {
+      "cite_id": "D056",
+      "cite_type": "document",
+      "file": "20210921diji05_agenda.pdf"
+    },
+    "D057": {
+      "cite_id": "D057",
+      "cite_type": "document",
+      "file": "20210921diji05_catalog.pdf"
+    },
+    "D058": {
+      "cite_id": "D058",
+      "cite_type": "document",
+      "file": "20210921diji05_material.pdf"
+    },
+    "D059": {
+      "cite_id": "D059",
+      "cite_type": "document",
+      "file": "20210921diji05_member.pdf"
+    },
+    "D060": {
+      "cite_id": "D060",
+      "cite_type": "document",
+      "file": "20210921diji05_minutes.pdf"
+    },
+    "D061": {
+      "cite_id": "D061",
+      "cite_type": "document",
+      "file": "20210921diji05_ss15.pdf"
+    },
+    "D062": {
+      "cite_id": "D062",
+      "cite_type": "document",
+      "file": "20211027diji06_agenda.pdf"
+    },
+    "D063": {
+      "cite_id": "D063",
+      "cite_type": "document",
+      "file": "20211027diji06_catalog.pdf"
+    },
+    "D064": {
+      "cite_id": "D064",
+      "cite_type": "document",
+      "file": "20211027diji06_material.pdf"
+    },
+    "D065": {
+      "cite_id": "D065",
+      "cite_type": "document",
+      "file": "20211027diji06_member.pdf"
+    },
+    "D066": {
+      "cite_id": "D066",
+      "cite_type": "document",
+      "file": "20211027diji06_minutes.pdf"
+    },
+    "D067": {
+      "cite_id": "D067",
+      "cite_type": "document",
+      "file": "20211027diji06_ss16.pdf"
+    },
+    "D068": {
+      "cite_id": "D068",
+      "cite_type": "document",
+      "file": "20211130digi07_agenda.pdf"
+    },
+    "D069": {
+      "cite_id": "D069",
+      "cite_type": "document",
+      "file": "20211130digi07_catalog.pdf"
+    },
+    "D070": {
+      "cite_id": "D070",
+      "cite_type": "document",
+      "file": "20211130digi07_material.pdf"
+    },
+    "D071": {
+      "cite_id": "D071",
+      "cite_type": "document",
+      "file": "20211130digi07_member.pdf"
+    },
+    "D072": {
+      "cite_id": "D072",
+      "cite_type": "document",
+      "file": "20211130digi07_minutes.pdf"
+    },
+    "D073": {
+      "cite_id": "D073",
+      "cite_type": "document",
+      "file": "20220119digi08_agenda.pdf"
+    },
+    "D074": {
+      "cite_id": "D074",
+      "cite_type": "document",
+      "file": "20220119digi08_catalog.pdf"
+    },
+    "D075": {
+      "cite_id": "D075",
+      "cite_type": "document",
+      "file": "20220119digi08_material.pdf"
+    },
+    "D076": {
+      "cite_id": "D076",
+      "cite_type": "document",
+      "file": "20220119digi08_member.pdf"
+    },
+    "D077": {
+      "cite_id": "D077",
+      "cite_type": "document",
+      "file": "20220119digi08_minutes.pdf"
+    },
+    "D078": {
+      "cite_id": "D078",
+      "cite_type": "document",
+      "file": "20220119digi08_ss17.pdf"
+    },
+    "D079": {
+      "cite_id": "D079",
+      "cite_type": "document",
+      "file": "20220222digi09_agenda.pdf"
+    },
+    "D080": {
+      "cite_id": "D080",
+      "cite_type": "document",
+      "file": "20220222digi09_catalog.pdf"
+    },
+    "D081": {
+      "cite_id": "D081",
+      "cite_type": "document",
+      "file": "20220222digi09_member.pdf"
+    },
+    "D082": {
+      "cite_id": "D082",
+      "cite_type": "document",
+      "file": "20220222digi09_minutes.pdf"
+    },
+    "D083": {
+      "cite_id": "D083",
+      "cite_type": "document",
+      "file": "20220323digi10_agenda.pdf"
+    },
+    "D084": {
+      "cite_id": "D084",
+      "cite_type": "document",
+      "file": "20220323digi10_catalog.pdf"
+    },
+    "D085": {
+      "cite_id": "D085",
+      "cite_type": "document",
+      "file": "20220323digi10_member.pdf"
+    },
+    "D086": {
+      "cite_id": "D086",
+      "cite_type": "document",
+      "file": "20220323digi10_minutes.pdf"
+    },
+    "D087": {
+      "cite_id": "D087",
+      "cite_type": "document",
+      "file": "metadata_moj.go.jp_20251208_180730.json"
+    },
+    "D088": {
+      "cite_id": "D088",
+      "cite_type": "document",
+      "file": "metadata_shojihomu.or.jp_20251208_175118.json"
+    },
+    "D089": {
+      "cite_id": "D089",
+      "cite_type": "document",
+      "file": "README.md"
+    },
+    "D090": {
+      "cite_id": "D090",
+      "cite_type": "document",
+      "file": "report.pdf"
+    },
+    "D091": {
+      "cite_id": "D091",
+      "cite_type": "document",
+      "file": "sv.pdf"
+    }
+  },
+  "_doc_counter": 91,
+  "_pubcom_counter": 0
+}
