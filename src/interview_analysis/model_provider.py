@@ -85,22 +85,31 @@ def create_provider(model_name: str, api_key: Optional[str] = None) -> ModelProv
     """
     モデル名から適切なプロバイダーを作成
 
+    プレフィックスでプロバイダーを指定:
+      - gemini:model_name → Gemini (例: gemini:gemini-2.0-flash-lite)
+      - openrouter:model_name → OpenRouter (例: openrouter:x-ai/grok-4.1-fast:free)
+      - プレフィックスなし → Gemini (後方互換性)
+
     Args:
-        model_name: モデル名 (例: "gemini-flash-lite-latest", "x-ai/grok-4.1-fast:free")
+        model_name: モデル名
         api_key: APIキー（省略時は環境変数から取得）
 
     Returns:
         ModelProvider インスタンス
     """
-    # OpenRouter のモデル名には "/" が含まれる
-    if "/" in model_name:
+    # プレフィックスで判定
+    if model_name.startswith("openrouter:"):
+        # OpenRouter
+        actual_model = model_name[len("openrouter:"):]
         key = api_key or os.environ.get("OPENROUTER_API_KEY")
         if not key:
             raise ValueError("OPENROUTER_API_KEY が設定されていません")
-        return OpenRouterProvider(key)
+        # 実際のモデル名を設定するためにModelConfigを返す前にmodel_nameを書き換える
+        return OpenRouterProvider(key), actual_model
     else:
-        # Gemini
+        # Gemini (gemini: プレフィックスあり or なし)
+        actual_model = model_name[len("gemini:"):] if model_name.startswith("gemini:") else model_name
         key = api_key or os.environ.get("GOOGLE_API_KEY")
         if not key:
             raise ValueError("GOOGLE_API_KEY が設定されていません")
-        return GeminiProvider(key)
+        return GeminiProvider(key), actual_model

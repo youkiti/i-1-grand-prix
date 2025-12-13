@@ -38,18 +38,121 @@ def _call_model(prompt: str, cfg: RunConfig) -> str:
     """
     モデル名から自動判定してプロバイダーを選択し、生成を実行
 
-    - モデル名に "/" が含まれる → OpenRouter
-    - それ以外 → Gemini
+    プレフィックス:
+      - gemini:model_name → Gemini
+      - openrouter:model_name → OpenRouter
+      - プレフィックスなし → Gemini
     """
-    provider = create_provider(cfg.model)
+    provider, actual_model = create_provider(cfg.model)
     model_config = ModelConfig(
-        model=cfg.model,
+        model=actual_model,
         temperature=cfg.temperature,
         max_output_tokens=cfg.max_output_tokens,
         top_p=cfg.top_p,
         top_k=cfg.top_k,
     )
     return provider.generate(prompt, model_config)
+
+
+# --- YAML Parsing Helpers ---
+
+import yaml
+import re
+
+
+def extract_yaml_from_response(response: str) -> Optional[Dict[str, Any]]:
+    """
+    LLMのレスポンスからYAMLブロックを抽出してパースする。
+    
+    期待フォーマット:
+    ```yaml
+    ...
+    ```
+    
+    Returns:
+        パース成功時はdict、失敗時はNone
+    """
+    # ```yaml ... ``` ブロックを探す
+    yaml_pattern = r"```ya?ml\s*\n(.*?)```"
+    matches = re.findall(yaml_pattern, response, re.DOTALL | re.IGNORECASE)
+    
+    if not matches:
+        # フォールバック: 全体をYAMLとしてパースを試みる
+        try:
+            return yaml.safe_load(response)
+        except yaml.YAMLError:
+            return None
+    
+    # 最初のマッチをパース
+    try:
+        return yaml.safe_load(matches[0])
+    except yaml.YAMLError as e:
+        print(f"Warning: YAML parse error: {e}", flush=True)
+        return None
+
+
+def dump_yaml_output(data: Dict[str, Any]) -> str:
+    """
+    辞書をYAML形式の文字列に変換（マークダウンコードブロック付き）
+    """
+    yaml_str = yaml.dump(data, allow_unicode=True, default_flow_style=False, sort_keys=False)
+    return f"```yaml\n{yaml_str}```"
+
+
+def merge_yaml_topics(current: Dict[str, Any], new: Dict[str, Any]) -> Dict[str, Any]:
+    """
+    2つのYAML構造をマージする（プログラム側での補助統合）
+    
+    Note: 主にLLMが統合を行うが、パース後の補助処理として使用可能
+    """
+    if not current:
+        return new
+    if not new:
+        return current
+    
+    result = {
+        "metadata": {
+            "focus": current.get("metadata", {}).get("focus", new.get("metadata", {}).get("focus", "")),
+            "source_documents": [],
+            "generated_at": datetime.now().isoformat(),
+            "document_summary": ""
+        },
+        "topics": []
+    }
+    
+    # source_documents をマージ（重複排除）
+    seen_filenames = set()
+    doc_counter = 1
+    for doc in current.get("metadata", {}).get("source_documents", []) + new.get("metadata", {}).get("source_documents", []):
+        filename = doc.get("filename", "")
+        if filename and filename not in seen_filenames:
+            seen_filenames.add(filename)
+            doc["id"] = f"doc_{doc_counter:03d}"
+            result["metadata"]["source_documents"].append(doc)
+            doc_counter += 1
+    
+    # topics をマージ（同じタイトルは統合）
+    topic_map: Dict[str, Dict] = {}
+    for topic in current.get("topics", []) + new.get("topics", []):
+        title = topic.get("title", "")
+        if title in topic_map:
+            # 既存のtopicにevidence_chunksを追加
+            existing = topic_map[title]
+            existing["evidence_chunks"] = existing.get("evidence_chunks", []) + topic.get("evidence_chunks", [])
+            # spectrumの更新（新しい方を優先）
+            if topic.get("spectrum"):
+                existing["spectrum"] = topic["spectrum"]
+        else:
+            topic_map[title] = topic.copy()
+    
+    # IDを振り直し
+    for i, (title, topic) in enumerate(topic_map.items(), 1):
+        topic["id"] = f"topic_{i:03d}"
+        for j, chunk in enumerate(topic.get("evidence_chunks", []), 1):
+            chunk["id"] = f"chunk_{j:03d}"
+        result["topics"].append(topic)
+    
+    return result
 
 
 def tree_reduce(

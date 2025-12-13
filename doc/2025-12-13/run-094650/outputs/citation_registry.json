@@ -1,0 +1,16 @@
+{
+  "citations": {
+    "D001": {
+      "cite_id": "D001",
+      "cite_type": "document",
+      "file": "2011-01-24_117705254X00120110124.txt"
+    },
+    "D002": {
+      "cite_id": "D002",
+      "cite_type": "document",
+      "file": "2012-01-26_118005254X00220120126.txt"
+    }
+  },
+  "_doc_counter": 2,
+  "_pubcom_counter": 0
+}
