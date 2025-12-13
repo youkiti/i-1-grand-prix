@@ -303,9 +303,9 @@ def generate_citation_appendix(registry: CitationRegistry) -> str:
     # 出典一覧
 
     ## 審議会資料
-    | ID | ファイル | ページ | URL |
-    |----|----------|--------|-----|
-    | D001 | 第3回議事録.pdf | 5 | [リンク](https://...) |
+    | ID | 資料名 | 審議会/出典 | URL |
+    |----|--------|-------------|-----|
+    | D001 | 第3回議事録 | 商事法務研究会（電子船荷証券） | [リンク](https://...) |
 
     ## パブリックコメント
     | ID | コメントID |
@@ -325,18 +325,21 @@ def generate_citation_appendix(registry: CitationRegistry) -> str:
 
     if doc_citations:
         lines.append("## 審議会資料\n")
-        lines.append("| ID | ファイル | ページ | URL |")
-        lines.append("|----|----------|--------|-----|")
+        lines.append("| ID | 資料名 | 審議会/出典 | URL |")
+        lines.append("|----|--------|-------------|-----|")
         for c in doc_citations:
-            page_str = str(c.page) if c.page else "-"
+            # 資料名: link_text > file をフォールバック
+            title = c.link_text if c.link_text else c.file
+            # 審議会名: page_title を使用
+            source = c.page_title if c.page_title else "-"
             url_str = f"[リンク]({c.url})" if c.url else "-"
-            lines.append(f"| {c.cite_id} | {c.file} | {page_str} | {url_str} |")
+            lines.append(f"| {c.cite_id} | {title} | {source} | {url_str} |")
         lines.append("")
 
     if pubcom_citations:
         lines.append("## パブリックコメント\n")
         lines.append("| ID | コメントID |")
-        lines.append("|----|------------|")
+        lines.append("|----+------------|")
         for c in pubcom_citations:
             lines.append(f"| {c.cite_id} | {c.comment_id} |")
         lines.append("")

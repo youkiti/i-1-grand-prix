@@ -845,24 +845,55 @@ def run_pubcom_analysis(prompt_dir: Path, meta: Dict[str, Any], csv_path: Path, 
             print(f"[Checkpoint] Map cache invalid. Re-running.", flush=True)
             map_results = None
     
+    # 全バッチ完了していない場合、インクリメンタルチェックポイントを確認
+    if map_results is None and checkpoint:
+        consolidated = checkpoint.consolidate_map_batches(len(session_batches))
+        if consolidated:
+            map_results = consolidated
+            print(f"[Checkpoint] Consolidated {len(map_results)} Map batches from incremental checkpoints", flush=True)
+            # Part 1形式で保存（次回高速化のため）
+            checkpoint.save_part1(map_results)
+    
     if map_results is None:
-        def process_map_batch(batch_ids):
+        import threading
+        lock = threading.Lock()
+        
+        # 完了済みバッチを取得
+        completed_batches = checkpoint.load_partial_map_results() if checkpoint else {}
+        remaining_count = len(session_batches) - len(completed_batches)
+        if completed_batches:
+            print(f"[Checkpoint] Resuming: {len(completed_batches)} batches already completed, {remaining_count} remaining", flush=True)
+        
+        def process_map_batch_with_checkpoint(args):
+            idx, batch_ids = args
+            
+            # 既に完了していればスキップ
+            if idx in completed_batches:
+                return (completed_batches[idx][0], completed_batches[idx][1])
+            
             combined_content = ""
             for sid in batch_ids:
                 content = session_contents[sid]
                 combined_content += f"=== Comment ID: {sid} ===\n{content}\n\n"
                 
-            print(f"Processing Pubcom Map Batch ({len(batch_ids)} comments)...", flush=True)
+            print(f"Processing Pubcom Map Batch {idx+1}/{len(session_batches)} ({len(batch_ids)} comments)...", flush=True)
             
             ctx1 = build_context(meta, "", [], cfg.output_length_guidance, reference_documents=combined_content)
             ctx1["focus"] = cfg.focus
             prompt = load_and_render(map_prompt_path, ctx1)
             
             output = _call_model(prompt, cfg)
-            return (str(batch_ids), output)
+            batch_id_str = str(batch_ids)
+            
+            # チェックポイント保存（スレッドセーフ）
+            if checkpoint:
+                with lock:
+                    checkpoint.save_map_batch(idx, batch_id_str, output)
+            
+            return (batch_id_str, output)
 
         with ThreadPoolExecutor(max_workers=5) as executor:
-            map_results = list(executor.map(process_map_batch, session_batches))
+            map_results = list(executor.map(process_map_batch_with_checkpoint, enumerate(session_batches)))
         
         if checkpoint:
             checkpoint.save_part1(map_results)

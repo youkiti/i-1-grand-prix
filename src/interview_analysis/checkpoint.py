@@ -54,6 +54,7 @@ class Checkpoint:
         self.part1_file = self.session_dir / "part1_results.json"
         self.part2_state_file = self.session_dir / "part2_state.json"
         self.metadata_file = self.session_dir / "metadata.json"
+        self.map_batches_dir = self.session_dir / "map_batches"  # インクリメンタルMap保存用
         
         # メタデータを保存
         self._save_metadata()
@@ -119,6 +120,71 @@ class Checkpoint:
         print(f"[Checkpoint] Part 1 loaded: {len(results)} items from {self.part1_file}", flush=True)
         return results
     
+    # --- Map バッチ インクリメンタルチェックポイント ---
+    
+    def save_map_batch(self, batch_index: int, batch_id: str, output: str) -> None:
+        """
+        個別Mapバッチ結果を保存（スレッドセーフ）
+        
+        Args:
+            batch_index: バッチのインデックス (0-based)
+            batch_id: バッチの識別子
+            output: 処理結果
+        """
+        self.map_batches_dir.mkdir(exist_ok=True)
+        batch_file = self.map_batches_dir / f"batch_{batch_index:04d}.json"
+        data = {
+            "batch_id": batch_id,
+            "output": output,
+            "saved_at": datetime.now().isoformat()
+        }
+        batch_file.write_text(json.dumps(data, ensure_ascii=False), encoding="utf-8")
+        print(f"[Checkpoint] Map batch {batch_index} saved -> {batch_file}", flush=True)
+    
+    def load_partial_map_results(self) -> Dict[int, Tuple[str, str]]:
+        """
+        保存済みMapバッチ結果を読み込み
+        
+        Returns:
+            {batch_index: (batch_id, output)} の辞書
+        """
+        if not self.map_batches_dir.exists():
+            return {}
+        
+        results = {}
+        for f in self.map_batches_dir.glob("batch_*.json"):
+            try:
+                idx = int(f.stem.split("_")[1])
+                data = json.loads(f.read_text(encoding="utf-8"))
+                results[idx] = (data["batch_id"], data["output"])
+            except (ValueError, KeyError, json.JSONDecodeError) as e:
+                print(f"[Checkpoint] Warning: Could not load {f}: {e}", flush=True)
+        
+        if results:
+            print(f"[Checkpoint] Loaded {len(results)} partial Map results", flush=True)
+        return results
+    
+    def get_completed_batch_indices(self) -> set:
+        """完了済みMapバッチのインデックス一覧を取得"""
+        return set(self.load_partial_map_results().keys())
+    
+    def consolidate_map_batches(self, total_batches: int) -> Optional[List[Tuple[str, str]]]:
+        """
+        全Mapバッチが完了していれば、Part 1形式に統合
+        
+        Returns:
+            全バッチ完了時は [(batch_id, output), ...] のリスト、未完了時はNone
+        """
+        partial = self.load_partial_map_results()
+        if len(partial) < total_batches:
+            return None
+        
+        # インデックス順にソートして返す
+        results = [partial[i] for i in range(total_batches) if i in partial]
+        if len(results) == total_batches:
+            return results
+        return None
+    
     # --- Part 2 チェックポイント ---
     
     def has_part2_checkpoint(self) -> bool:
@@ -165,6 +231,8 @@ class Checkpoint:
             self.part1_file.unlink()
         if self.part2_state_file.exists():
             self.part2_state_file.unlink()
+        if self.map_batches_dir.exists():
+            shutil.rmtree(self.map_batches_dir)
         print(f"[Checkpoint] Cleared: {self.session_dir}", flush=True)
 
 
