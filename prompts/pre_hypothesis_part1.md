@@ -26,7 +26,6 @@
 
 - 各論点には必ず **evidence_chunks** として原文を引用してください。
 - ドキュメントには `[Document Info]` ヘッダーがある場合があります。そこにURL等のメタ情報があれば `source_documents` に含めてください。
-- ドキュメント内のページマーカー `[p.X]` を参照して、`page` フィールドに記載してください。
 - **verbatim_quote は原文をそのままコピペ**してください。要約ではなく、根拠となる発言・記述そのものを引用します。
 
 ## YAMLスキーマ
@@ -64,7 +63,6 @@ topics:
     evidence_chunks:
       - id: "chunk_001"
         source_doc_id: "doc_001"  # metadata.source_documents の id と対応
-        page: 5  # ページ番号（不明なら null）
         verbatim_quote: |
           「原文をそのまま引用。複数行にわたる場合も
           そのまま記載する。」

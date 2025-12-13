@@ -61,15 +61,16 @@
 ## 引用ルール（重要）
 
 - 各論点には必ず **出典タグ** と **原文引用** の両方を明記してください。
-- 入力YAMLの `evidence_chunks.verbatim_quote` から原文を引用し、その後に出典タグを付与します。
+- **原文引用は入力YAMLの `evidence_chunks.verbatim_quote` からそのままコピペ**してください。新たな引用文を生成しないでください。
+- 出典タグには **ページ番号を含めない**でください。
 
 **引用形式:**
 
 ```
-> 「原文をそのまま引用」 [出典: ファイル名, p.X] または [パブコメ: コメントID]
+> 「入力YAMLのverbatim_quoteをそのまま転記」 [出典: source_doc_id] または [パブコメ: コメントID]
 ```
 
-- 審議会資料からの情報: `[出典: ファイル名, p.X]` （入力YAMLの source_documents と evidence_chunks.page を参照）
+- 審議会資料からの情報: `[出典: source_doc_id]` （入力YAMLの evidence_chunks.source_doc_id を参照）
 - パブリックコメントからの情報: `[パブコメ: コメントID]` （入力YAMLの comment_id を参照）
 - 同一論点が両方に関連する場合は、両方の原文引用と出典を併記してください。
 

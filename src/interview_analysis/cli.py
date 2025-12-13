@@ -57,7 +57,8 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--batch-reports", type=Path, nargs="*", help="MERGE 用のレポートファイル群")
     parser.add_argument("--prompt-dir", type=Path, default=Path("prompts"))
     parser.add_argument("--model", default="gemini-flash-lite-latest")
-    parser.add_argument("--temperature", type=float, default=0.3)
+    parser.add_argument("--temperature", type=float, default=0.0, help="Map/Reduceフェーズの温度（デフォルト: 0.0）")
+    parser.add_argument("--comparison-temperature", type=float, default=1.0, help="Comparisonフェーズの温度（デフォルト: 1.0）")
     parser.add_argument("--max-output-tokens", type=int, default=64000)
     parser.add_argument("--output-length-guidance", default="")
     parser.add_argument("--log-dir", type=Path, default=Path("doc"))
@@ -75,6 +76,7 @@ def main() -> None:
         mode=args.mode,
         model=args.model,
         temperature=args.temperature,
+        comparison_temperature=args.comparison_temperature,
         max_output_tokens=args.max_output_tokens,
         output_length_guidance=args.output_length_guidance,
         focus=args.focus,  # focus を設定

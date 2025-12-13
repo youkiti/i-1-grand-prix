@@ -26,7 +26,8 @@ from .citation import (
 class RunConfig:
     mode: str  # hypothesis | initial | initial_auto | initial_part1 | initial_part2 | update | merge | pre_hypothesis_auto | pre_hypothesis_iterative
     model: str
-    temperature: float = 0.3
+    temperature: float = 0.0  # Map/Reduceフェーズ用（決定論的）
+    comparison_temperature: float = 1.0  # Comparisonフェーズ用（創造的）
     max_output_tokens: int = 64000
     top_p: float = 0.95
     top_k: int = 40
@@ -954,11 +955,12 @@ def run_pubcom_analysis(prompt_dir: Path, meta: Dict[str, Any], csv_path: Path, 
     
     compare_prompt = load_and_render(compare_prompt_path, ctx3)
     
-    # 比較用の設定を作成（モデルのみ変更）
+    # 比較用の設定を作成（モデルと温度を変更）
     compare_cfg = RunConfig(
         mode=cfg.mode,
         model=compare_model_name,
-        temperature=cfg.temperature,
+        temperature=cfg.comparison_temperature,  # 比較フェーズ用の温度を使用
+        comparison_temperature=cfg.comparison_temperature,
         max_output_tokens=cfg.max_output_tokens,
         top_p=cfg.top_p,
         top_k=cfg.top_k,

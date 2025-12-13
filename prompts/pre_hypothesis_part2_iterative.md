@@ -89,7 +89,6 @@ topics:
     evidence_chunks:
       - id: "chunk_001"
         source_doc_id: "doc_001"
-        page: 5
         verbatim_quote: |
           「原文をそのまま引用」
         position: "A案派"
