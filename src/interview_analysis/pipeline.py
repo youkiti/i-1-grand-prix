@@ -637,37 +637,92 @@ def run_pre_hypothesis_iterative(prompt_dir: Path, meta: Dict[str, Any], source_
         )
         filename_to_cite_id[doc.filename] = cite_id
 
-    # 後方互換性のため items を作成（ただし enriched content を使用）
-    items = [(doc.filename, doc.to_enriched_content()) for doc in documents]
 
-    # チェックポイントからPart 1を復元
+    # チェックポイントからPart 1（完全版）を復元
     part1_results = None
     if checkpoint and checkpoint.has_part1_checkpoint():
         part1_results = checkpoint.load_part1()
         # ファイル数が一致するか確認
-        if part1_results and len(part1_results) == len(items):
+        if part1_results and len(part1_results) == len(documents):
             print(f"[Checkpoint] Using cached Part 1 results ({len(part1_results)} items)", flush=True)
         else:
-            print(f"[Checkpoint] Part 1 cache invalid (expected {len(items)}, got {len(part1_results) if part1_results else 0}). Re-running.", flush=True)
+            print(f"[Checkpoint] Part 1 cache invalid (expected {len(documents)}, got {len(part1_results) if part1_results else 0}). Checking partials.", flush=True)
             part1_results = None
+
+    # インクリメンタルチェックポイントの確認
+    if part1_results is None and checkpoint:
+        partial = checkpoint.load_partial_map_results()
+        if len(partial) == len(documents):
+             part1_results = []
+             # index順に並べ替え
+             sorted_indices = sorted(partial.keys())
+             for idx in sorted_indices:
+                 part1_results.append(partial[idx])
+             
+             print(f"[Checkpoint] Consolidated {len(part1_results)} items from incremental checkpoints", flush=True)
+             checkpoint.save_part1(part1_results)
 
     if part1_results is None:
         # Part 1を実行
         from concurrent.futures import ThreadPoolExecutor
+        import threading
+        lock = threading.Lock()
 
-        def process_document(item):
-            filename, content = item
+        # 完了済みアイテムをロード
+        partial_results = checkpoint.load_partial_map_results() if checkpoint else {}
+        
+        if partial_results:
+             print(f"[Checkpoint] Resuming Part 1: {len(partial_results)} items already completed, {len(documents) - len(partial_results)} remaining", flush=True)
+
+        def process_document_with_checkpoint(args):
+            idx, doc = args
+            filename = doc.filename
+            
+            # 既に完了していれば返す
+            if idx in partial_results:
+                return partial_results[idx]
+
             print(f"Processing Part 1 for: {filename}...", flush=True)
+            
+            # 遅延読み込み: このファイルのPDFコンテンツをここで取得
+            content = doc.to_enriched_content()
+            
             ctx1 = build_context(meta, "", [], cfg.output_length_guidance, reference_documents=f"=== File: {filename} ===\n\n{content}")
             ctx1["focus"] = cfg.focus
             part1_prompt = load_and_render(part1_prompt_path, ctx1)
-            output = _call_model(part1_prompt, cfg)
-            return (filename, output)
+            
+            # リトライロジック: 最大3回試行、失敗したらスキップ
+            MAX_RETRIES = 3
+            last_error = None
+            for attempt in range(MAX_RETRIES):
+                try:
+                    output = _call_model(part1_prompt, cfg)
+                    # 成功したらチェックポイント保存
+                    if checkpoint:
+                        with lock:
+                            checkpoint.save_map_batch(idx, filename, output)
+                    return (filename, output)
+                except Exception as e:
+                    last_error = e
+                    if attempt < MAX_RETRIES - 1:
+                        import time
+                        wait_time = 2 ** attempt  # 指数バックオフ: 1, 2, 4秒
+                        print(f"[Retry {attempt + 1}/{MAX_RETRIES}] Error processing {filename}: {e}. Waiting {wait_time}s...", flush=True)
+                        time.sleep(wait_time)
+                    else:
+                        print(f"[Skip] Failed to process {filename} after {MAX_RETRIES} attempts: {e}", flush=True)
+            
+            # 3回失敗したらスキップ（空の結果を返す）
+            skip_output = f"[SKIPPED: {filename} - Error: {last_error}]"
+            if checkpoint:
+                with lock:
+                    checkpoint.save_map_batch(idx, filename, skip_output)
+            return (filename, skip_output)
 
-        with ThreadPoolExecutor(max_workers=10) as executor:
-            part1_results = list(executor.map(process_document, items))
+        with ThreadPoolExecutor(max_workers=3) as executor:  # 503エラー防止のため並列数を削減
+            part1_results = list(executor.map(process_document_with_checkpoint, enumerate(documents)))
 
-        # チェックポイント保存
+        # チェックポイント保存 (Complete)
         if checkpoint:
             checkpoint.save_part1(part1_results)
 

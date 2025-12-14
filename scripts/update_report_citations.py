@@ -104,6 +104,7 @@ def main():
     report_paths = [
         Path("doc/2025-12-13/run-163728/outputs/report.md"),
         Path("doc/2025-12-13/run-174907/outputs/report.md"),
+        Path("doc/2025-12-13/run-185716/outputs/report.md"),  # 最新の実行
     ]
     
     # メタデータ読み込み
