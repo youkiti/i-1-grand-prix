@@ -139,6 +139,10 @@ def load_messages_csv(path: Path) -> List[Dict[str, str]]:
     if not path.exists():
         raise FileNotFoundError(f"CSVが見つかりません: {path}")
 
+    # 大きなフィールド（議事録全文など）に対応するため制限を拡大
+    # Windows では sys.maxsize が C long を超えるため、安全な最大値を使用
+    csv.field_size_limit(2**31 - 1)  # ~2GB
+
     rows = []
     with open(path, 'r', encoding='utf-8') as f:
         reader = csv.DictReader(f)

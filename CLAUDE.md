@@ -30,6 +30,19 @@ python -m src.interview_analysis.cli \
 - **Part 1 (Map)**: 各ドキュメントから論点を並列抽出
 - **Part 2 (Tree Reduce)**: 階層的統合でQ&Aリスト生成
 
+#### 複数ソースからの事前仮説統合（Concat方式）
+
+審議会資料と国会議事録など、複数のソースから事前仮説を生成した場合は、**単純なテキスト連結（concat）**で統合します。
+
+```bash
+# 例: Phase 1A (審議会) と Phase 1B (国会) を連結
+Get-Content report_1a.md, report_1b.md | Set-Content merged_hypothesis.md
+```
+
+- `merge` モードは**インタビュー分析のバッチ統合用**であり、Pre-Hypothesis (YAML) の統合には使用しない
+- `pubcom_comparison` は複数の YAML ブロックを入力として理解可能
+- 将来的には `pre_hypothesis_merge` モードを追加予定
+
 ### Stage 2: パブコメ比較分析
 
 パブコメを事前仮説と比較し、仮説の検証・新インサイトを抽出。

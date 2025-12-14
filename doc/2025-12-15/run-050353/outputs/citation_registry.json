@@ -1,0 +1,3625 @@
+{
+  "citations": {
+    "D001": {
+      "cite_id": "D001",
+      "cite_type": "document",
+      "file": "ai_ep_settigami.pdf",
+      "page_title": "人工知能戦略専門調査会 - 科学技術・イノベーション - 内閣府",
+      "link_text": "設置紙（PDF形式：104KB）"
+    },
+    "D002": {
+      "cite_id": "D002",
+      "cite_type": "document",
+      "file": "ai_gl_2025_draft2.pdf",
+      "page_title": "人工知能関連技術の研究開発及び活用の適性性確保に関する指針 - 科学技術・イノベーション - 内閣府",
+      "link_text": "人工知能関連技術の研究開発及び活用の適正性確保に関する指針（案）（PDF形式：454KB）"
+    },
+    "D003": {
+      "cite_id": "D003",
+      "cite_type": "document",
+      "file": "ai_gl_2025_draft2_1.pdf",
+      "page_title": "人工知能関連技術の研究開発及び活用の適性性確保に関する指針 - 科学技術・イノベーション - 内閣府",
+      "link_text": "人工知能関連技術の研究開発及び活用の適正性確保に関する指針（案）（PDF形式：454KB）"
+    },
+    "D004": {
+      "cite_id": "D004",
+      "cite_type": "document",
+      "file": "ai_gl_2025g_draft2_en.pdf",
+      "page_title": "人工知能関連技術の研究開発及び活用の適性性確保に関する指針 - 科学技術・イノベーション - 内閣府",
+      "link_text": "人工知能関連技術の研究開発及び活用の適正性確保に関する指針（案）英語仮訳（PDF形式：253KB）"
+    },
+    "D005": {
+      "cite_id": "D005",
+      "cite_type": "document",
+      "file": "ai_gl_2025g_draft2_en_1.pdf",
+      "page_title": "人工知能関連技術の研究開発及び活用の適性性確保に関する指針 - 科学技術・イノベーション - 内閣府",
+      "link_text": "人工知能関連技術の研究開発及び活用の適正性確保に関する指針（案）英語仮訳（PDF形式：253KB）"
+    },
+    "D006": {
+      "cite_id": "D006",
+      "cite_type": "document",
+      "file": "ai_hou_gaiyou.pdf",
+      "page_title": "人工知能関連技術の研究開発及び活用の推進に関する法律（ＡＩ法） - 科学技術・イノベーション - 内閣府",
+      "link_text": "概要（PDF形式：396KB）"
+    },
+    "D007": {
+      "cite_id": "D007",
+      "cite_type": "document",
+      "file": "ai_hou_gaiyou_1.pdf",
+      "page_title": "人工知能関連技術の研究開発及び活用の推進に関する法律（ＡＩ法） - 科学技術・イノベーション - 内閣府",
+      "link_text": "概要（PDF形式：396KB）"
+    },
+    "D008": {
+      "cite_id": "D008",
+      "cite_type": "document",
+      "file": "ai_hou_gaiyou_en.pdf",
+      "page_title": "人工知能関連技術の研究開発及び活用の推進に関する法律（ＡＩ法） - 科学技術・イノベーション - 内閣府",
+      "link_text": "【概要（英語仮訳）】 the AI Act（Overview）(Provisional Translation)(PDF形式：415KB)"
+    },
+    "D009": {
+      "cite_id": "D009",
+      "cite_type": "document",
+      "file": "ai_hou_gaiyou_en_1.pdf",
+      "page_title": "人工知能関連技術の研究開発及び活用の推進に関する法律（ＡＩ法） - 科学技術・イノベーション - 内閣府",
+      "link_text": "【概要（英語仮訳）】 the AI Act（Overview）(Provisional Translation)(PDF形式：415KB)"
+    },
+    "D010": {
+      "cite_id": "D010",
+      "cite_type": "document",
+      "file": "ai_hou_sangiin_futai.pdf",
+      "page_title": "人工知能関連技術の研究開発及び活用の推進に関する法律（ＡＩ法） - 科学技術・イノベーション - 内閣府",
+      "link_text": "人工知能関連技術の研究開発及び活用の推進に関する法律案に対する附帯決議（参議院内閣委員会）（PDF形式：129KB）"
+    },
+    "D011": {
+      "cite_id": "D011",
+      "cite_type": "document",
+      "file": "ai_hou_sangiin_futai_1.pdf",
+      "page_title": "人工知能関連技術の研究開発及び活用の推進に関する法律（ＡＩ法） - 科学技術・イノベーション - 内閣府",
+      "link_text": "人工知能関連技術の研究開発及び活用の推進に関する法律案に対する附帯決議（参議院内閣委員会）（PDF形式：129KB）"
+    },
+    "D012": {
+      "cite_id": "D012",
+      "cite_type": "document",
+      "file": "aigensoku.pdf",
+      "page_title": "人間中心のＡＩ社会原則会議 - 科学技術・イノベーション - 内閣府",
+      "link_text": "人間中心のAI 社会原則（統合イノベーション戦略推進会議決定）（PDF形式：80KB）"
+    },
+    "D013": {
+      "cite_id": "D013",
+      "cite_type": "document",
+      "file": "aigensoku_1.pdf",
+      "page_title": "人間中心のＡＩ社会原則会議 - 科学技術・イノベーション - 内閣府",
+      "link_text": "人間中心のAI 社会原則（統合イノベーション戦略推進会議決定）（PDF形式：80KB）"
+    },
+    "D014": {
+      "cite_id": "D014",
+      "cite_type": "document",
+      "file": "aiplan2025_draft4.pdf",
+      "page_title": "人工知能基本計画 - 科学技術・イノベーション - 内閣府",
+      "link_text": "人工知能基本計画（案）（PDF形式：864KB）"
+    },
+    "D015": {
+      "cite_id": "D015",
+      "cite_type": "document",
+      "file": "aiplan2025_draft4_1.pdf",
+      "page_title": "人工知能基本計画 - 科学技術・イノベーション - 内閣府",
+      "link_text": "人工知能基本計画（案）（PDF形式：864KB）"
+    },
+    "D016": {
+      "cite_id": "D016",
+      "cite_type": "document",
+      "file": "aistratagy2019.pdf",
+      "page_title": "人工知能基本計画 - 科学技術・イノベーション - 内閣府",
+      "link_text": "AI 戦略 2019（PDF形式：1254KB）"
+    },
+    "D017": {
+      "cite_id": "D017",
+      "cite_type": "document",
+      "file": "aistratagy2019_1.pdf",
+      "page_title": "人工知能基本計画 - 科学技術・イノベーション - 内閣府",
+      "link_text": "AI 戦略 2019（PDF形式：1254KB）"
+    },
+    "D018": {
+      "cite_id": "D018",
+      "cite_type": "document",
+      "file": "aistratagy2019_2.pdf",
+      "page_title": "イノベーション政策強化推進のための有識者会議「ＡＩ戦略」（ＡＩ戦略実行会議） - 科学技術・イノベーション - 内閣府",
+      "link_text": "AI 戦略 2019（PDF形式：1254KB）"
+    },
+    "D019": {
+      "cite_id": "D019",
+      "cite_type": "document",
+      "file": "aistratagy2019_3.pdf",
+      "page_title": "イノベーション政策強化推進のための有識者会議「ＡＩ戦略」（ＡＩ戦略実行会議） - 科学技術・イノベーション - 内閣府",
+      "link_text": "AI 戦略 2019（PDF形式：1254KB）"
+    },
+    "D020": {
+      "cite_id": "D020",
+      "cite_type": "document",
+      "file": "aistratagy2019en.pdf",
+      "page_title": "人工知能基本計画 - 科学技術・イノベーション - 内閣府",
+      "link_text": "【英語仮訳】AI Strategy 2019（tentative translation）（PDF形式：943KB）"
+    },
+    "D021": {
+      "cite_id": "D021",
+      "cite_type": "document",
+      "file": "aistratagy2019en_1.pdf",
+      "page_title": "人工知能基本計画 - 科学技術・イノベーション - 内閣府",
+      "link_text": "【英語仮訳】AI Strategy 2019（tentative translation）（PDF形式：943KB）"
+    },
+    "D022": {
+      "cite_id": "D022",
+      "cite_type": "document",
+      "file": "aistratagy2019en_2.pdf",
+      "page_title": "イノベーション政策強化推進のための有識者会議「ＡＩ戦略」（ＡＩ戦略実行会議） - 科学技術・イノベーション - 内閣府",
+      "link_text": "AI Strategy 2019（tentative translation）（PDF形式：943KB）"
+    },
+    "D023": {
+      "cite_id": "D023",
+      "cite_type": "document",
+      "file": "aistratagy2019en_3.pdf",
+      "page_title": "イノベーション政策強化推進のための有識者会議「ＡＩ戦略」（ＡＩ戦略実行会議） - 科学技術・イノベーション - 内閣府",
+      "link_text": "AI Strategy 2019（tentative translation）（PDF形式：943KB）"
+    },
+    "D024": {
+      "cite_id": "D024",
+      "cite_type": "document",
+      "file": "aistratagy2022en.pdf",
+      "page_title": "人工知能基本計画 - 科学技術・イノベーション - 内閣府",
+      "link_text": "【本文（英語仮訳）】AI Strategy 2022(Tentative Translation)（PDF形式：365KB）"
+    },
+    "D025": {
+      "cite_id": "D025",
+      "cite_type": "document",
+      "file": "aistratagy2022en_1.pdf",
+      "page_title": "人工知能基本計画 - 科学技術・イノベーション - 内閣府",
+      "link_text": "【本文（英語仮訳）】AI Strategy 2022(Tentative Translation)（PDF形式：365KB）"
+    },
+    "D026": {
+      "cite_id": "D026",
+      "cite_type": "document",
+      "file": "aistratagy2022en_2.pdf",
+      "page_title": "イノベーション政策強化推進のための有識者会議「ＡＩ戦略」（ＡＩ戦略実行会議） - 科学技術・イノベーション - 内閣府",
+      "link_text": "AI Strategy 2022（tentative translation）（PDF形式：365KB）"
+    },
+    "D027": {
+      "cite_id": "D027",
+      "cite_type": "document",
+      "file": "aistratagy2022en_3.pdf",
+      "page_title": "イノベーション政策強化推進のための有識者会議「ＡＩ戦略」（ＡＩ戦略実行会議） - 科学技術・イノベーション - 内閣府",
+      "link_text": "AI Strategy 2022（tentative translation）（PDF形式：365KB）"
+    },
+    "D028": {
+      "cite_id": "D028",
+      "cite_type": "document",
+      "file": "aistratagy2022en_ov.pdf",
+      "page_title": "人工知能基本計画 - 科学技術・イノベーション - 内閣府",
+      "link_text": "【概要（英語仮訳）】AI Strategy 2022(overview)(Tentative Translation)（PDF形式：316KB）"
+    },
+    "D029": {
+      "cite_id": "D029",
+      "cite_type": "document",
+      "file": "aistratagy2022en_ov_1.pdf",
+      "page_title": "人工知能基本計画 - 科学技術・イノベーション - 内閣府",
+      "link_text": "【概要（英語仮訳）】AI Strategy 2022(overview)(Tentative Translation)（PDF形式：316KB）"
+    },
+    "D030": {
+      "cite_id": "D030",
+      "cite_type": "document",
+      "file": "aistratagy2022en_ov_2.pdf",
+      "page_title": "イノベーション政策強化推進のための有識者会議「ＡＩ戦略」（ＡＩ戦略実行会議） - 科学技術・イノベーション - 内閣府",
+      "link_text": "AI Strategy 2022（overview）（PDF形式：316KB）"
+    },
+    "D031": {
+      "cite_id": "D031",
+      "cite_type": "document",
+      "file": "aistratagy2022en_ov_3.pdf",
+      "page_title": "イノベーション政策強化推進のための有識者会議「ＡＩ戦略」（ＡＩ戦略実行会議） - 科学技術・イノベーション - 内閣府",
+      "link_text": "AI Strategy 2022（overview）（PDF形式：316KB）"
+    },
+    "D032": {
+      "cite_id": "D032",
+      "cite_type": "document",
+      "file": "aistrategy2019_fu_bessi.pdf",
+      "page_title": "人工知能基本計画 - 科学技術・イノベーション - 内閣府",
+      "link_text": "別紙（PDF形式：1353KB）"
+    },
+    "D033": {
+      "cite_id": "D033",
+      "cite_type": "document",
+      "file": "aistrategy2019_fu_bessi_1.pdf",
+      "page_title": "人工知能基本計画 - 科学技術・イノベーション - 内閣府",
+      "link_text": "別紙（PDF形式：1353KB）"
+    },
+    "D034": {
+      "cite_id": "D034",
+      "cite_type": "document",
+      "file": "aistrategy2019_fu_bessi_2.pdf",
+      "page_title": "イノベーション政策強化推進のための有識者会議「ＡＩ戦略」（ＡＩ戦略実行会議） - 科学技術・イノベーション - 内閣府",
+      "link_text": "(別紙)（PDF形式：1353KB）"
+    },
+    "D035": {
+      "cite_id": "D035",
+      "cite_type": "document",
+      "file": "aistrategy2019_fu_bessi_3.pdf",
+      "page_title": "イノベーション政策強化推進のための有識者会議「ＡＩ戦略」（ＡＩ戦略実行会議） - 科学技術・イノベーション - 内閣府",
+      "link_text": "(別紙)（PDF形式：1353KB）"
+    },
+    "D036": {
+      "cite_id": "D036",
+      "cite_type": "document",
+      "file": "aistrategy2019_fu_gaiyo.pdf",
+      "page_title": "人工知能基本計画 - 科学技術・イノベーション - 内閣府",
+      "link_text": "概要（PDF形式：663KB）"
+    },
+    "D037": {
+      "cite_id": "D037",
+      "cite_type": "document",
+      "file": "aistrategy2019_fu_gaiyo_1.pdf",
+      "page_title": "人工知能基本計画 - 科学技術・イノベーション - 内閣府",
+      "link_text": "概要（PDF形式：663KB）"
+    },
+    "D038": {
+      "cite_id": "D038",
+      "cite_type": "document",
+      "file": "aistrategy2019_fu_gaiyo_2.pdf",
+      "page_title": "イノベーション政策強化推進のための有識者会議「ＡＩ戦略」（ＡＩ戦略実行会議） - 科学技術・イノベーション - 内閣府",
+      "link_text": "(概要)（PDF形式：663KB）"
+    },
+    "D039": {
+      "cite_id": "D039",
+      "cite_type": "document",
+      "file": "aistrategy2019_fu_gaiyo_3.pdf",
+      "page_title": "イノベーション政策強化推進のための有識者会議「ＡＩ戦略」（ＡＩ戦略実行会議） - 科学技術・イノベーション - 内閣府",
+      "link_text": "(概要)（PDF形式：663KB）"
+    },
+    "D040": {
+      "cite_id": "D040",
+      "cite_type": "document",
+      "file": "aistrategy2019_fu_honbun.pdf",
+      "page_title": "人工知能基本計画 - 科学技術・イノベーション - 内閣府",
+      "link_text": "本文（PDF形式：460KB）"
+    },
+    "D041": {
+      "cite_id": "D041",
+      "cite_type": "document",
+      "file": "aistrategy2019_fu_honbun_1.pdf",
+      "page_title": "人工知能基本計画 - 科学技術・イノベーション - 内閣府",
+      "link_text": "本文（PDF形式：460KB）"
+    },
+    "D042": {
+      "cite_id": "D042",
+      "cite_type": "document",
+      "file": "aistrategy2019_fu_honbun_2.pdf",
+      "page_title": "イノベーション政策強化推進のための有識者会議「ＡＩ戦略」（ＡＩ戦略実行会議） - 科学技術・イノベーション - 内閣府",
+      "link_text": "(本文)（PDF形式：460KB）"
+    },
+    "D043": {
+      "cite_id": "D043",
+      "cite_type": "document",
+      "file": "aistrategy2019_fu_honbun_3.pdf",
+      "page_title": "イノベーション政策強化推進のための有識者会議「ＡＩ戦略」（ＡＩ戦略実行会議） - 科学技術・イノベーション - 内閣府",
+      "link_text": "(本文)（PDF形式：460KB）"
+    },
+    "D044": {
+      "cite_id": "D044",
+      "cite_type": "document",
+      "file": "aistrategy2019_fu_sanko.pdf",
+      "page_title": "人工知能基本計画 - 科学技術・イノベーション - 内閣府",
+      "link_text": "参考資料：AI 戦略 2019（2020.06 フォローアップ版）（PDF形式：1738KB）"
+    },
+    "D045": {
+      "cite_id": "D045",
+      "cite_type": "document",
+      "file": "aistrategy2019_fu_sanko_1.pdf",
+      "page_title": "人工知能基本計画 - 科学技術・イノベーション - 内閣府",
+      "link_text": "参考資料：AI 戦略 2019（2020.06 フォローアップ版）（PDF形式：1738KB）"
+    },
+    "D046": {
+      "cite_id": "D046",
+      "cite_type": "document",
+      "file": "aistrategy2019_fu_sanko_2.pdf",
+      "page_title": "イノベーション政策強化推進のための有識者会議「ＡＩ戦略」（ＡＩ戦略実行会議） - 科学技術・イノベーション - 内閣府",
+      "link_text": "参考資料：AI 戦略 2019（2020.06 フォローアップ版）（PDF形式：1738KB）"
+    },
+    "D047": {
+      "cite_id": "D047",
+      "cite_type": "document",
+      "file": "aistrategy2019_fu_sanko_3.pdf",
+      "page_title": "イノベーション政策強化推進のための有識者会議「ＡＩ戦略」（ＡＩ戦略実行会議） - 科学技術・イノベーション - 内閣府",
+      "link_text": "参考資料：AI 戦略 2019（2020.06 フォローアップ版）（PDF形式：1738KB）"
+    },
+    "D048": {
+      "cite_id": "D048",
+      "cite_type": "document",
+      "file": "aistrategy2021_bessi.pdf",
+      "page_title": "人工知能基本計画 - 科学技術・イノベーション - 内閣府",
+      "link_text": "別紙（PDF形式：1745KB）"
+    },
+    "D049": {
+      "cite_id": "D049",
+      "cite_type": "document",
+      "file": "aistrategy2021_bessi_1.pdf",
+      "page_title": "人工知能基本計画 - 科学技術・イノベーション - 内閣府",
+      "link_text": "別紙（PDF形式：1745KB）"
+    },
+    "D050": {
+      "cite_id": "D050",
+      "cite_type": "document",
+      "file": "aistrategy2021_bessi_2.pdf",
+      "page_title": "イノベーション政策強化推進のための有識者会議「ＡＩ戦略」（ＡＩ戦略実行会議） - 科学技術・イノベーション - 内閣府",
+      "link_text": "(別紙)（PDF形式：1745KB）"
+    },
+    "D051": {
+      "cite_id": "D051",
+      "cite_type": "document",
+      "file": "aistrategy2021_bessi_3.pdf",
+      "page_title": "イノベーション政策強化推進のための有識者会議「ＡＩ戦略」（ＡＩ戦略実行会議） - 科学技術・イノベーション - 内閣府",
+      "link_text": "(別紙)（PDF形式：1745KB）"
+    },
+    "D052": {
+      "cite_id": "D052",
+      "cite_type": "document",
+      "file": "aistrategy2021_gaiyo.pdf",
+      "page_title": "人工知能基本計画 - 科学技術・イノベーション - 内閣府",
+      "link_text": "概要（PDF形式：325KB）"
+    },
+    "D053": {
+      "cite_id": "D053",
+      "cite_type": "document",
+      "file": "aistrategy2021_gaiyo_1.pdf",
+      "page_title": "人工知能基本計画 - 科学技術・イノベーション - 内閣府",
+      "link_text": "概要（PDF形式：325KB）"
+    },
+    "D054": {
+      "cite_id": "D054",
+      "cite_type": "document",
+      "file": "aistrategy2021_gaiyo_2.pdf",
+      "page_title": "イノベーション政策強化推進のための有識者会議「ＡＩ戦略」（ＡＩ戦略実行会議） - 科学技術・イノベーション - 内閣府",
+      "link_text": "(概要)（PDF形式：325KB）"
+    },
+    "D055": {
+      "cite_id": "D055",
+      "cite_type": "document",
+      "file": "aistrategy2021_gaiyo_3.pdf",
+      "page_title": "イノベーション政策強化推進のための有識者会議「ＡＩ戦略」（ＡＩ戦略実行会議） - 科学技術・イノベーション - 内閣府",
+      "link_text": "(概要)（PDF形式：325KB）"
+    },
+    "D056": {
+      "cite_id": "D056",
+      "cite_type": "document",
+      "file": "aistrategy2021_honbun.pdf",
+      "page_title": "人工知能基本計画 - 科学技術・イノベーション - 内閣府",
+      "link_text": "本文（PDF形式：1271KB）"
+    },
+    "D057": {
+      "cite_id": "D057",
+      "cite_type": "document",
+      "file": "aistrategy2021_honbun_1.pdf",
+      "page_title": "人工知能基本計画 - 科学技術・イノベーション - 内閣府",
+      "link_text": "本文（PDF形式：1271KB）"
+    },
+    "D058": {
+      "cite_id": "D058",
+      "cite_type": "document",
+      "file": "aistrategy2021_honbun_2.pdf",
+      "page_title": "イノベーション政策強化推進のための有識者会議「ＡＩ戦略」（ＡＩ戦略実行会議） - 科学技術・イノベーション - 内閣府",
+      "link_text": "(本文)（PDF形式：1271KB）"
+    },
+    "D059": {
+      "cite_id": "D059",
+      "cite_type": "document",
+      "file": "aistrategy2021_honbun_3.pdf",
+      "page_title": "イノベーション政策強化推進のための有識者会議「ＡＩ戦略」（ＡＩ戦略実行会議） - 科学技術・イノベーション - 内閣府",
+      "link_text": "(本文)（PDF形式：1271KB）"
+    },
+    "D060": {
+      "cite_id": "D060",
+      "cite_type": "document",
+      "file": "aistrategy2022_bessi.pdf",
+      "page_title": "人工知能基本計画 - 科学技術・イノベーション - 内閣府",
+      "link_text": "別紙（PDF形式：282KB）"
+    },
+    "D061": {
+      "cite_id": "D061",
+      "cite_type": "document",
+      "file": "aistrategy2022_bessi_1.pdf",
+      "page_title": "人工知能基本計画 - 科学技術・イノベーション - 内閣府",
+      "link_text": "別紙（PDF形式：282KB）"
+    },
+    "D062": {
+      "cite_id": "D062",
+      "cite_type": "document",
+      "file": "aistrategy2022_bessi_2.pdf",
+      "page_title": "イノベーション政策強化推進のための有識者会議「ＡＩ戦略」（ＡＩ戦略実行会議） - 科学技術・イノベーション - 内閣府",
+      "link_text": "(別紙)（PDF形式：282KB）"
+    },
+    "D063": {
+      "cite_id": "D063",
+      "cite_type": "document",
+      "file": "aistrategy2022_bessi_3.pdf",
+      "page_title": "イノベーション政策強化推進のための有識者会議「ＡＩ戦略」（ＡＩ戦略実行会議） - 科学技術・イノベーション - 内閣府",
+      "link_text": "(別紙)（PDF形式：282KB）"
+    },
+    "D064": {
+      "cite_id": "D064",
+      "cite_type": "document",
+      "file": "aistrategy2022_gaiyo.pdf",
+      "page_title": "人工知能基本計画 - 科学技術・イノベーション - 内閣府",
+      "link_text": "概要（PDF形式：455KB）"
+    },
+    "D065": {
+      "cite_id": "D065",
+      "cite_type": "document",
+      "file": "aistrategy2022_gaiyo_1.pdf",
+      "page_title": "人工知能基本計画 - 科学技術・イノベーション - 内閣府",
+      "link_text": "概要（PDF形式：455KB）"
+    },
+    "D066": {
+      "cite_id": "D066",
+      "cite_type": "document",
+      "file": "aistrategy2022_gaiyo_2.pdf",
+      "page_title": "イノベーション政策強化推進のための有識者会議「ＡＩ戦略」（ＡＩ戦略実行会議） - 科学技術・イノベーション - 内閣府",
+      "link_text": "(概要)（PDF形式：605KB）"
+    },
+    "D067": {
+      "cite_id": "D067",
+      "cite_type": "document",
+      "file": "aistrategy2022_gaiyo_3.pdf",
+      "page_title": "イノベーション政策強化推進のための有識者会議「ＡＩ戦略」（ＡＩ戦略実行会議） - 科学技術・イノベーション - 内閣府",
+      "link_text": "(概要)（PDF形式：605KB）"
+    },
+    "D068": {
+      "cite_id": "D068",
+      "cite_type": "document",
+      "file": "aistrategy2022_honbun.pdf",
+      "page_title": "人工知能基本計画 - 科学技術・イノベーション - 内閣府",
+      "link_text": "本文（PDF形式：455KB）"
+    },
+    "D069": {
+      "cite_id": "D069",
+      "cite_type": "document",
+      "file": "aistrategy2022_honbun_1.pdf",
+      "page_title": "人工知能基本計画 - 科学技術・イノベーション - 内閣府",
+      "link_text": "本文（PDF形式：455KB）"
+    },
+    "D070": {
+      "cite_id": "D070",
+      "cite_type": "document",
+      "file": "aistrategy2022_honbun_2.pdf",
+      "page_title": "イノベーション政策強化推進のための有識者会議「ＡＩ戦略」（ＡＩ戦略実行会議） - 科学技術・イノベーション - 内閣府",
+      "link_text": "(本文)（PDF形式：455KB）"
+    },
+    "D071": {
+      "cite_id": "D071",
+      "cite_type": "document",
+      "file": "aistrategy2022_honbun_3.pdf",
+      "page_title": "イノベーション政策強化推進のための有識者会議「ＡＩ戦略」（ＡＩ戦略実行会議） - 科学技術・イノベーション - 内閣府",
+      "link_text": "(本文)（PDF形式：455KB）"
+    },
+    "D072": {
+      "cite_id": "D072",
+      "cite_type": "document",
+      "file": "chizai2023.pdf",
+      "page_title": "AI戦略チーム（関係省庁連携）（第７回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "知的財産推進計画2023について（PDF形式：1496KB）"
+    },
+    "D073": {
+      "cite_id": "D073",
+      "cite_type": "document",
+      "file": "giji.pdf",
+      "page_title": "ＡＩ戦略会議 - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF形式：299KB）"
+    },
+    "D074": {
+      "cite_id": "D074",
+      "cite_type": "document",
+      "file": "giji_1.pdf",
+      "page_title": "人間中心のＡＩ社会原則会議 - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF形式：416KB）"
+    },
+    "D075": {
+      "cite_id": "D075",
+      "cite_type": "document",
+      "file": "giji_10.pdf",
+      "page_title": "人間中心のＡＩ社会原則会議 - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF形式：416KB）"
+    },
+    "D076": {
+      "cite_id": "D076",
+      "cite_type": "document",
+      "file": "giji_11.pdf",
+      "page_title": "人間中心のＡＩ社会原則会議 - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF形式：369KB）"
+    },
+    "D077": {
+      "cite_id": "D077",
+      "cite_type": "document",
+      "file": "giji_12.pdf",
+      "page_title": "人間中心のＡＩ社会原則会議 - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF形式：376KB）"
+    },
+    "D078": {
+      "cite_id": "D078",
+      "cite_type": "document",
+      "file": "giji_13.pdf",
+      "page_title": "人間中心のＡＩ社会原則会議 - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF形式：275KB）"
+    },
+    "D079": {
+      "cite_id": "D079",
+      "cite_type": "document",
+      "file": "giji_14.pdf",
+      "page_title": "人間中心のＡＩ社会原則会議 - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF形式：239KB）"
+    },
+    "D080": {
+      "cite_id": "D080",
+      "cite_type": "document",
+      "file": "giji_15.pdf",
+      "page_title": "人間中心のＡＩ社会原則会議 - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF形式：264KB）"
+    },
+    "D081": {
+      "cite_id": "D081",
+      "cite_type": "document",
+      "file": "giji_16.pdf",
+      "page_title": "人間中心のＡＩ社会原則会議 - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF形式：262KB）"
+    },
+    "D082": {
+      "cite_id": "D082",
+      "cite_type": "document",
+      "file": "giji_17.pdf",
+      "page_title": "人間中心のＡＩ社会原則会議 - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF形式：206KB）"
+    },
+    "D083": {
+      "cite_id": "D083",
+      "cite_type": "document",
+      "file": "giji_18.pdf",
+      "page_title": "人間中心のＡＩ社会原則会議 - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF形式：459KB）"
+    },
+    "D084": {
+      "cite_id": "D084",
+      "cite_type": "document",
+      "file": "giji_19.pdf",
+      "page_title": "AI戦略チーム（関係省庁連携） - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF：153KB）"
+    },
+    "D085": {
+      "cite_id": "D085",
+      "cite_type": "document",
+      "file": "giji_1kai.pdf",
+      "page_title": "AIセーフティ・インスティテュート(AISI)関係府省庁等連絡会議 - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF形式：180KB）"
+    },
+    "D086": {
+      "cite_id": "D086",
+      "cite_type": "document",
+      "file": "giji_1kai_1.pdf",
+      "page_title": "AIセーフティ・インスティテュート(AISI)関係府省庁等連絡会議 - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF形式：180KB）"
+    },
+    "D087": {
+      "cite_id": "D087",
+      "cite_type": "document",
+      "file": "giji_2.pdf",
+      "page_title": "人間中心のＡＩ社会原則会議 - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF形式：369KB）"
+    },
+    "D088": {
+      "cite_id": "D088",
+      "cite_type": "document",
+      "file": "giji_20.pdf",
+      "page_title": "AI戦略チーム（関係省庁連携） - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF：130KB）"
+    },
+    "D089": {
+      "cite_id": "D089",
+      "cite_type": "document",
+      "file": "giji_21.pdf",
+      "page_title": "AI戦略チーム（関係省庁連携） - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF：147KB）"
+    },
+    "D090": {
+      "cite_id": "D090",
+      "cite_type": "document",
+      "file": "giji_22.pdf",
+      "page_title": "AI戦略チーム（関係省庁連携） - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF：135KB）"
+    },
+    "D091": {
+      "cite_id": "D091",
+      "cite_type": "document",
+      "file": "giji_23.pdf",
+      "page_title": "AI戦略チーム（関係省庁連携） - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF：136KB）"
+    },
+    "D092": {
+      "cite_id": "D092",
+      "cite_type": "document",
+      "file": "giji_24.pdf",
+      "page_title": "AI戦略チーム（関係省庁連携） - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF：137KB）"
+    },
+    "D093": {
+      "cite_id": "D093",
+      "cite_type": "document",
+      "file": "giji_25.pdf",
+      "page_title": "AI戦略チーム（関係省庁連携） - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF：153KB）"
+    },
+    "D094": {
+      "cite_id": "D094",
+      "cite_type": "document",
+      "file": "giji_26.pdf",
+      "page_title": "AI戦略チーム（関係省庁連携） - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF：130KB）"
+    },
+    "D095": {
+      "cite_id": "D095",
+      "cite_type": "document",
+      "file": "giji_27.pdf",
+      "page_title": "AI戦略チーム（関係省庁連携） - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF：147KB）"
+    },
+    "D096": {
+      "cite_id": "D096",
+      "cite_type": "document",
+      "file": "giji_28.pdf",
+      "page_title": "AI戦略チーム（関係省庁連携） - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF：135KB）"
+    },
+    "D097": {
+      "cite_id": "D097",
+      "cite_type": "document",
+      "file": "giji_29.pdf",
+      "page_title": "AI戦略チーム（関係省庁連携） - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF：136KB）"
+    },
+    "D098": {
+      "cite_id": "D098",
+      "cite_type": "document",
+      "file": "giji_2kai.pdf",
+      "page_title": "AIセーフティ・インスティテュート(AISI)関係府省庁等連絡会議 - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF形式：155KB）"
+    },
+    "D099": {
+      "cite_id": "D099",
+      "cite_type": "document",
+      "file": "giji_2kai_1.pdf",
+      "page_title": "AIセーフティ・インスティテュート(AISI)関係府省庁等連絡会議 - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF形式：155KB）"
+    },
+    "D100": {
+      "cite_id": "D100",
+      "cite_type": "document",
+      "file": "giji_3.pdf",
+      "page_title": "人間中心のＡＩ社会原則会議 - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF形式：376KB）"
+    },
+    "D101": {
+      "cite_id": "D101",
+      "cite_type": "document",
+      "file": "giji_30.pdf",
+      "page_title": "AI戦略チーム（関係省庁連携） - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF：137KB）"
+    },
+    "D102": {
+      "cite_id": "D102",
+      "cite_type": "document",
+      "file": "giji_31.pdf",
+      "page_title": "イノベーション政策強化推進のための有識者会議「ＡＩ戦略」（ＡＩ戦略実行会議） - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF形式：53KB）"
+    },
+    "D103": {
+      "cite_id": "D103",
+      "cite_type": "document",
+      "file": "giji_32.pdf",
+      "page_title": "イノベーション政策強化推進のための有識者会議「ＡＩ戦略」（ＡＩ戦略実行会議） - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF形式：55KB）"
+    },
+    "D104": {
+      "cite_id": "D104",
+      "cite_type": "document",
+      "file": "giji_33.pdf",
+      "page_title": "イノベーション政策強化推進のための有識者会議「ＡＩ戦略」（ＡＩ戦略実行会議） - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF形式：143KB）"
+    },
+    "D105": {
+      "cite_id": "D105",
+      "cite_type": "document",
+      "file": "giji_34.pdf",
+      "page_title": "イノベーション政策強化推進のための有識者会議「ＡＩ戦略」（ＡＩ戦略実行会議） - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF形式：114KB）"
+    },
+    "D106": {
+      "cite_id": "D106",
+      "cite_type": "document",
+      "file": "giji_35.pdf",
+      "page_title": "イノベーション政策強化推進のための有識者会議「ＡＩ戦略」（ＡＩ戦略実行会議） - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF形式：262KB）"
+    },
+    "D107": {
+      "cite_id": "D107",
+      "cite_type": "document",
+      "file": "giji_36.pdf",
+      "page_title": "イノベーション政策強化推進のための有識者会議「ＡＩ戦略」（ＡＩ戦略実行会議） - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF形式：11KB）"
+    },
+    "D108": {
+      "cite_id": "D108",
+      "cite_type": "document",
+      "file": "giji_37.pdf",
+      "page_title": "イノベーション政策強化推進のための有識者会議「ＡＩ戦略」（ＡＩ戦略実行会議） - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF形式：104KB）"
+    },
+    "D109": {
+      "cite_id": "D109",
+      "cite_type": "document",
+      "file": "giji_38.pdf",
+      "page_title": "イノベーション政策強化推進のための有識者会議「ＡＩ戦略」（ＡＩ戦略実行会議） - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF形式：144KB）"
+    },
+    "D110": {
+      "cite_id": "D110",
+      "cite_type": "document",
+      "file": "giji_39.pdf",
+      "page_title": "イノベーション政策強化推進のための有識者会議「ＡＩ戦略」（ＡＩ戦略実行会議） - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF形式：147KB）"
+    },
+    "D111": {
+      "cite_id": "D111",
+      "cite_type": "document",
+      "file": "giji_4.pdf",
+      "page_title": "人間中心のＡＩ社会原則会議 - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF形式：275KB）"
+    },
+    "D112": {
+      "cite_id": "D112",
+      "cite_type": "document",
+      "file": "giji_40.pdf",
+      "page_title": "イノベーション政策強化推進のための有識者会議「ＡＩ戦略」（ＡＩ戦略実行会議） - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF形式：143KB）"
+    },
+    "D113": {
+      "cite_id": "D113",
+      "cite_type": "document",
+      "file": "giji_41.pdf",
+      "page_title": "イノベーション政策強化推進のための有識者会議「ＡＩ戦略」（ＡＩ戦略実行会議） - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF形式：14KB）"
+    },
+    "D114": {
+      "cite_id": "D114",
+      "cite_type": "document",
+      "file": "giji_42.pdf",
+      "page_title": "イノベーション政策強化推進のための有識者会議「ＡＩ戦略」（ＡＩ戦略実行会議） - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF形式：53KB）"
+    },
+    "D115": {
+      "cite_id": "D115",
+      "cite_type": "document",
+      "file": "giji_43.pdf",
+      "page_title": "イノベーション政策強化推進のための有識者会議「ＡＩ戦略」（ＡＩ戦略実行会議） - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF形式：55KB）"
+    },
+    "D116": {
+      "cite_id": "D116",
+      "cite_type": "document",
+      "file": "giji_44.pdf",
+      "page_title": "イノベーション政策強化推進のための有識者会議「ＡＩ戦略」（ＡＩ戦略実行会議） - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF形式：143KB）"
+    },
+    "D117": {
+      "cite_id": "D117",
+      "cite_type": "document",
+      "file": "giji_45.pdf",
+      "page_title": "イノベーション政策強化推進のための有識者会議「ＡＩ戦略」（ＡＩ戦略実行会議） - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF形式：114KB）"
+    },
+    "D118": {
+      "cite_id": "D118",
+      "cite_type": "document",
+      "file": "giji_46.pdf",
+      "page_title": "イノベーション政策強化推進のための有識者会議「ＡＩ戦略」（ＡＩ戦略実行会議） - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF形式：11KB）"
+    },
+    "D119": {
+      "cite_id": "D119",
+      "cite_type": "document",
+      "file": "giji_47.pdf",
+      "page_title": "イノベーション政策強化推進のための有識者会議「ＡＩ戦略」（ＡＩ戦略実行会議） - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF形式：104KB）"
+    },
+    "D120": {
+      "cite_id": "D120",
+      "cite_type": "document",
+      "file": "giji_48.pdf",
+      "page_title": "イノベーション政策強化推進のための有識者会議「ＡＩ戦略」（ＡＩ戦略実行会議） - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF形式：144KB）"
+    },
+    "D121": {
+      "cite_id": "D121",
+      "cite_type": "document",
+      "file": "giji_49.pdf",
+      "page_title": "イノベーション政策強化推進のための有識者会議「ＡＩ戦略」（ＡＩ戦略実行会議） - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF形式：147KB）"
+    },
+    "D122": {
+      "cite_id": "D122",
+      "cite_type": "document",
+      "file": "giji_5.pdf",
+      "page_title": "人間中心のＡＩ社会原則会議 - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF形式：239KB）"
+    },
+    "D123": {
+      "cite_id": "D123",
+      "cite_type": "document",
+      "file": "giji_50.pdf",
+      "page_title": "イノベーション政策強化推進のための有識者会議「ＡＩ戦略」（ＡＩ戦略実行会議） - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF形式：143KB）"
+    },
+    "D124": {
+      "cite_id": "D124",
+      "cite_type": "document",
+      "file": "giji_51.pdf",
+      "page_title": "イノベーション政策強化推進のための有識者会議「ＡＩ戦略」（ＡＩ戦略実行会議） - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF形式：14KB）"
+    },
+    "D125": {
+      "cite_id": "D125",
+      "cite_type": "document",
+      "file": "giji_52.pdf",
+      "page_title": "新ＡＩ戦略検討会議 - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF形式：216KB）"
+    },
+    "D126": {
+      "cite_id": "D126",
+      "cite_type": "document",
+      "file": "giji_53.pdf",
+      "page_title": "新ＡＩ戦略検討会議 - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF形式：200KB）"
+    },
+    "D127": {
+      "cite_id": "D127",
+      "cite_type": "document",
+      "file": "giji_54.pdf",
+      "page_title": "新ＡＩ戦略検討会議 - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF形式：193KB）"
+    },
+    "D128": {
+      "cite_id": "D128",
+      "cite_type": "document",
+      "file": "giji_55.pdf",
+      "page_title": "新ＡＩ戦略検討会議 - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF形式：237KB）"
+    },
+    "D129": {
+      "cite_id": "D129",
+      "cite_type": "document",
+      "file": "giji_56.pdf",
+      "page_title": "新ＡＩ戦略検討会議 - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF形式：231KB）"
+    },
+    "D130": {
+      "cite_id": "D130",
+      "cite_type": "document",
+      "file": "giji_57.pdf",
+      "page_title": "新ＡＩ戦略検討会議 - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF形式：216KB）"
+    },
+    "D131": {
+      "cite_id": "D131",
+      "cite_type": "document",
+      "file": "giji_58.pdf",
+      "page_title": "新ＡＩ戦略検討会議 - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF形式：200KB）"
+    },
+    "D132": {
+      "cite_id": "D132",
+      "cite_type": "document",
+      "file": "giji_59.pdf",
+      "page_title": "新ＡＩ戦略検討会議 - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF形式：193KB）"
+    },
+    "D133": {
+      "cite_id": "D133",
+      "cite_type": "document",
+      "file": "giji_6.pdf",
+      "page_title": "人間中心のＡＩ社会原則会議 - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF形式：264KB）"
+    },
+    "D134": {
+      "cite_id": "D134",
+      "cite_type": "document",
+      "file": "giji_60.pdf",
+      "page_title": "新ＡＩ戦略検討会議 - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF形式：237KB）"
+    },
+    "D135": {
+      "cite_id": "D135",
+      "cite_type": "document",
+      "file": "giji_61.pdf",
+      "page_title": "新ＡＩ戦略検討会議 - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF形式：231KB）"
+    },
+    "D136": {
+      "cite_id": "D136",
+      "cite_type": "document",
+      "file": "giji_62.pdf",
+      "page_title": "数理・データサイエンス・ＡＩ教育プログラム認定制度検討会議 - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF形式：193KB）"
+    },
+    "D137": {
+      "cite_id": "D137",
+      "cite_type": "document",
+      "file": "giji_63.pdf",
+      "page_title": "数理・データサイエンス・ＡＩ教育プログラム認定制度検討会議 - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF形式：169KB）"
+    },
+    "D138": {
+      "cite_id": "D138",
+      "cite_type": "document",
+      "file": "giji_64.pdf",
+      "page_title": "数理・データサイエンス・ＡＩ教育プログラム認定制度検討会議 - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF形式：176KB）"
+    },
+    "D139": {
+      "cite_id": "D139",
+      "cite_type": "document",
+      "file": "giji_65.pdf",
+      "page_title": "数理・データサイエンス・ＡＩ教育プログラム認定制度検討会議 - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF形式：155KB）"
+    },
+    "D140": {
+      "cite_id": "D140",
+      "cite_type": "document",
+      "file": "giji_66.pdf",
+      "page_title": "数理・データサイエンス・ＡＩ教育プログラム認定制度検討会議 - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF形式：483KB）"
+    },
+    "D141": {
+      "cite_id": "D141",
+      "cite_type": "document",
+      "file": "giji_67.pdf",
+      "page_title": "数理・データサイエンス・ＡＩ教育プログラム認定制度検討会議 - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF形式：178KB）"
+    },
+    "D142": {
+      "cite_id": "D142",
+      "cite_type": "document",
+      "file": "giji_68.pdf",
+      "page_title": "数理・データサイエンス・ＡＩ教育プログラム認定制度検討会議 - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF形式：29KB）"
+    },
+    "D143": {
+      "cite_id": "D143",
+      "cite_type": "document",
+      "file": "giji_69.pdf",
+      "page_title": "数理・データサイエンス・ＡＩ教育プログラム認定制度検討会議 - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF形式：168KB）"
+    },
+    "D144": {
+      "cite_id": "D144",
+      "cite_type": "document",
+      "file": "giji_7.pdf",
+      "page_title": "人間中心のＡＩ社会原則会議 - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF形式：262KB）"
+    },
+    "D145": {
+      "cite_id": "D145",
+      "cite_type": "document",
+      "file": "giji_70.pdf",
+      "page_title": "数理・データサイエンス・ＡＩ教育プログラム認定制度検討会議 - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF形式：13KB）"
+    },
+    "D146": {
+      "cite_id": "D146",
+      "cite_type": "document",
+      "file": "giji_71.pdf",
+      "page_title": "数理・データサイエンス・ＡＩ教育プログラム認定制度検討会議 - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF形式13KB）"
+    },
+    "D147": {
+      "cite_id": "D147",
+      "cite_type": "document",
+      "file": "giji_72.pdf",
+      "page_title": "数理・データサイエンス・ＡＩ教育プログラム認定制度検討会議 - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF形式：165KB）"
+    },
+    "D148": {
+      "cite_id": "D148",
+      "cite_type": "document",
+      "file": "giji_73.pdf",
+      "page_title": "数理・データサイエンス・ＡＩ教育プログラム認定制度検討会議 - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF形式：166KB）"
+    },
+    "D149": {
+      "cite_id": "D149",
+      "cite_type": "document",
+      "file": "giji_74.pdf",
+      "page_title": "数理・データサイエンス・ＡＩ教育プログラム認定制度検討会議 - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF形式：14KB）"
+    },
+    "D150": {
+      "cite_id": "D150",
+      "cite_type": "document",
+      "file": "giji_75.pdf",
+      "page_title": "数理・データサイエンス・ＡＩ教育プログラム認定制度検討会議 - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF形式：193KB）"
+    },
+    "D151": {
+      "cite_id": "D151",
+      "cite_type": "document",
+      "file": "giji_76.pdf",
+      "page_title": "数理・データサイエンス・ＡＩ教育プログラム認定制度検討会議 - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF形式：169KB）"
+    },
+    "D152": {
+      "cite_id": "D152",
+      "cite_type": "document",
+      "file": "giji_77.pdf",
+      "page_title": "数理・データサイエンス・ＡＩ教育プログラム認定制度検討会議 - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF形式：176KB）"
+    },
+    "D153": {
+      "cite_id": "D153",
+      "cite_type": "document",
+      "file": "giji_78.pdf",
+      "page_title": "数理・データサイエンス・ＡＩ教育プログラム認定制度検討会議 - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF形式：155KB）"
+    },
+    "D154": {
+      "cite_id": "D154",
+      "cite_type": "document",
+      "file": "giji_79.pdf",
+      "page_title": "数理・データサイエンス・ＡＩ教育プログラム認定制度検討会議 - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF形式：483KB）"
+    },
+    "D155": {
+      "cite_id": "D155",
+      "cite_type": "document",
+      "file": "giji_8.pdf",
+      "page_title": "人間中心のＡＩ社会原則会議 - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF形式：206KB）"
+    },
+    "D156": {
+      "cite_id": "D156",
+      "cite_type": "document",
+      "file": "giji_80.pdf",
+      "page_title": "数理・データサイエンス・ＡＩ教育プログラム認定制度検討会議 - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF形式：178KB）"
+    },
+    "D157": {
+      "cite_id": "D157",
+      "cite_type": "document",
+      "file": "giji_81.pdf",
+      "page_title": "数理・データサイエンス・ＡＩ教育プログラム認定制度検討会議 - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF形式：29KB）"
+    },
+    "D158": {
+      "cite_id": "D158",
+      "cite_type": "document",
+      "file": "giji_82.pdf",
+      "page_title": "数理・データサイエンス・ＡＩ教育プログラム認定制度検討会議 - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF形式：168KB）"
+    },
+    "D159": {
+      "cite_id": "D159",
+      "cite_type": "document",
+      "file": "giji_83.pdf",
+      "page_title": "数理・データサイエンス・ＡＩ教育プログラム認定制度検討会議 - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF形式：13KB）"
+    },
+    "D160": {
+      "cite_id": "D160",
+      "cite_type": "document",
+      "file": "giji_84.pdf",
+      "page_title": "数理・データサイエンス・ＡＩ教育プログラム認定制度検討会議 - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF形式13KB）"
+    },
+    "D161": {
+      "cite_id": "D161",
+      "cite_type": "document",
+      "file": "giji_85.pdf",
+      "page_title": "数理・データサイエンス・ＡＩ教育プログラム認定制度検討会議 - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF形式：165KB）"
+    },
+    "D162": {
+      "cite_id": "D162",
+      "cite_type": "document",
+      "file": "giji_86.pdf",
+      "page_title": "数理・データサイエンス・ＡＩ教育プログラム認定制度検討会議 - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF形式：166KB）"
+    },
+    "D163": {
+      "cite_id": "D163",
+      "cite_type": "document",
+      "file": "giji_87.pdf",
+      "page_title": "数理・データサイエンス・ＡＩ教育プログラム認定制度検討会議 - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF形式：14KB）"
+    },
+    "D164": {
+      "cite_id": "D164",
+      "cite_type": "document",
+      "file": "giji_9.pdf",
+      "page_title": "人間中心のＡＩ社会原則会議 - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF形式：459KB）"
+    },
+    "D165": {
+      "cite_id": "D165",
+      "cite_type": "document",
+      "file": "gijigaiyo.pdf",
+      "page_title": "人工知能戦略本部　開催状況 - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事概要（PDF形式：304KB）"
+    },
+    "D166": {
+      "cite_id": "D166",
+      "cite_type": "document",
+      "file": "gijiyoushi.pdf",
+      "page_title": "人工知能戦略専門調査会 - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事概要（PDF形式：357KB）"
+    },
+    "D167": {
+      "cite_id": "D167",
+      "cite_type": "document",
+      "file": "gijiyoushi10kai.pdf",
+      "page_title": "ＡＩ戦略会議 - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF形式：108KB）"
+    },
+    "D168": {
+      "cite_id": "D168",
+      "cite_type": "document",
+      "file": "gijiyoushi10kai_1.pdf",
+      "page_title": "AI戦略チーム（関係省庁連携） - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF：112KB）"
+    },
+    "D169": {
+      "cite_id": "D169",
+      "cite_type": "document",
+      "file": "gijiyoushi10kai_2.pdf",
+      "page_title": "AI戦略チーム（関係省庁連携） - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF：112KB）"
+    },
+    "D170": {
+      "cite_id": "D170",
+      "cite_type": "document",
+      "file": "gijiyoushi2kai.pdf",
+      "page_title": "ＡＩ戦略会議 - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF形式：294KB）"
+    },
+    "D171": {
+      "cite_id": "D171",
+      "cite_type": "document",
+      "file": "gijiyoushi3kai.pdf",
+      "page_title": "ＡＩ戦略会議 - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF形式：220KB）"
+    },
+    "D172": {
+      "cite_id": "D172",
+      "cite_type": "document",
+      "file": "gijiyoushi4kai.pdf",
+      "page_title": "ＡＩ戦略会議 - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF形式：267KB）"
+    },
+    "D173": {
+      "cite_id": "D173",
+      "cite_type": "document",
+      "file": "gijiyoushi5kai.pdf",
+      "page_title": "ＡＩ戦略会議 - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF形式：259KB）"
+    },
+    "D174": {
+      "cite_id": "D174",
+      "cite_type": "document",
+      "file": "gijiyoushi6kai.pdf",
+      "page_title": "ＡＩ戦略会議 - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF形式：258KB）"
+    },
+    "D175": {
+      "cite_id": "D175",
+      "cite_type": "document",
+      "file": "gijiyoushi7kai.pdf",
+      "page_title": "ＡＩ戦略会議 - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF形式：240KB）"
+    },
+    "D176": {
+      "cite_id": "D176",
+      "cite_type": "document",
+      "file": "gijiyoushi7kai_1.pdf",
+      "page_title": "AI戦略チーム（関係省庁連携） - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF：136KB）"
+    },
+    "D177": {
+      "cite_id": "D177",
+      "cite_type": "document",
+      "file": "gijiyoushi7kai_2.pdf",
+      "page_title": "AI戦略チーム（関係省庁連携） - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF：136KB）"
+    },
+    "D178": {
+      "cite_id": "D178",
+      "cite_type": "document",
+      "file": "gijiyoushi8kai.pdf",
+      "page_title": "ＡＩ戦略会議 - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF形式：112KB）"
+    },
+    "D179": {
+      "cite_id": "D179",
+      "cite_type": "document",
+      "file": "gijiyoushi8kai_1.pdf",
+      "page_title": "AI戦略チーム（関係省庁連携） - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF：133KB）"
+    },
+    "D180": {
+      "cite_id": "D180",
+      "cite_type": "document",
+      "file": "gijiyoushi8kai_2.pdf",
+      "page_title": "AI戦略チーム（関係省庁連携） - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF：133KB）"
+    },
+    "D181": {
+      "cite_id": "D181",
+      "cite_type": "document",
+      "file": "gijiyoushi9kai.pdf",
+      "page_title": "ＡＩ戦略会議 - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF形式：267KB）"
+    },
+    "D182": {
+      "cite_id": "D182",
+      "cite_type": "document",
+      "file": "gijiyoushi9kai_1.pdf",
+      "page_title": "AI戦略チーム（関係省庁連携） - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF：133KB）"
+    },
+    "D183": {
+      "cite_id": "D183",
+      "cite_type": "document",
+      "file": "gijiyoushi9kai_2.pdf",
+      "page_title": "AI戦略チーム（関係省庁連携） - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF：133KB）"
+    },
+    "D184": {
+      "cite_id": "D184",
+      "cite_type": "document",
+      "file": "gijiyoushi_1.pdf",
+      "page_title": "人工知能戦略専門調査会 - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事概要（PDF形式：363KB）"
+    },
+    "D185": {
+      "cite_id": "D185",
+      "cite_type": "document",
+      "file": "gijiyoushi_10.pdf",
+      "page_title": "AI制度研究会 - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF形式：296KB）"
+    },
+    "D186": {
+      "cite_id": "D186",
+      "cite_type": "document",
+      "file": "gijiyoushi_11.pdf",
+      "page_title": "AI制度研究会 - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF形式：290KB）"
+    },
+    "D187": {
+      "cite_id": "D187",
+      "cite_type": "document",
+      "file": "gijiyoushi_12.pdf",
+      "page_title": "AI制度研究会 - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF形式：330KB）"
+    },
+    "D188": {
+      "cite_id": "D188",
+      "cite_type": "document",
+      "file": "gijiyoushi_13.pdf",
+      "page_title": "AI制度研究会 - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF形式：317KB）"
+    },
+    "D189": {
+      "cite_id": "D189",
+      "cite_type": "document",
+      "file": "gijiyoushi_14.pdf",
+      "page_title": "AI制度研究会 - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF形式：314KB）"
+    },
+    "D190": {
+      "cite_id": "D190",
+      "cite_type": "document",
+      "file": "gijiyoushi_15.pdf",
+      "page_title": "AI制度研究会 - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF形式：238KB）"
+    },
+    "D191": {
+      "cite_id": "D191",
+      "cite_type": "document",
+      "file": "gijiyoushi_16.pdf",
+      "page_title": "AI制度研究会 - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF形式：284KB）"
+    },
+    "D192": {
+      "cite_id": "D192",
+      "cite_type": "document",
+      "file": "gijiyoushi_17.pdf",
+      "page_title": "AI制度研究会 - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF形式：296KB）"
+    },
+    "D193": {
+      "cite_id": "D193",
+      "cite_type": "document",
+      "file": "gijiyoushi_18.pdf",
+      "page_title": "AI制度研究会 - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF形式：290KB）"
+    },
+    "D194": {
+      "cite_id": "D194",
+      "cite_type": "document",
+      "file": "gijiyoushi_19.pdf",
+      "page_title": "AI制度研究会 - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF形式：330KB）"
+    },
+    "D195": {
+      "cite_id": "D195",
+      "cite_type": "document",
+      "file": "gijiyoushi_2.pdf",
+      "page_title": "ＡＩ戦略会議 - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF形式：322KB）"
+    },
+    "D196": {
+      "cite_id": "D196",
+      "cite_type": "document",
+      "file": "gijiyoushi_20.pdf",
+      "page_title": "AI戦略推進関係省庁会議 - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨(PDF形式:243KB)"
+    },
+    "D197": {
+      "cite_id": "D197",
+      "cite_type": "document",
+      "file": "gijiyoushi_21.pdf",
+      "page_title": "AI戦略推進関係省庁会議 - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨(PDF形式:211KB)"
+    },
+    "D198": {
+      "cite_id": "D198",
+      "cite_type": "document",
+      "file": "gijiyoushi_22.pdf",
+      "page_title": "AI戦略推進関係省庁会議 - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨(PDF形式:243KB)"
+    },
+    "D199": {
+      "cite_id": "D199",
+      "cite_type": "document",
+      "file": "gijiyoushi_23.pdf",
+      "page_title": "AI戦略推進関係省庁会議 - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨(PDF形式:211KB)"
+    },
+    "D200": {
+      "cite_id": "D200",
+      "cite_type": "document",
+      "file": "gijiyoushi_3.pdf",
+      "page_title": "ＡＩ戦略会議 - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF形式：317KB）"
+    },
+    "D201": {
+      "cite_id": "D201",
+      "cite_type": "document",
+      "file": "gijiyoushi_4.pdf",
+      "page_title": "ＡＩ戦略会議 - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF形式：314KB）"
+    },
+    "D202": {
+      "cite_id": "D202",
+      "cite_type": "document",
+      "file": "gijiyoushi_5.pdf",
+      "page_title": "ＡＩ戦略会議 - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF形式：330KB）"
+    },
+    "D203": {
+      "cite_id": "D203",
+      "cite_type": "document",
+      "file": "gijiyoushi_6.pdf",
+      "page_title": "AI制度研究会 - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF形式：317KB）"
+    },
+    "D204": {
+      "cite_id": "D204",
+      "cite_type": "document",
+      "file": "gijiyoushi_7.pdf",
+      "page_title": "AI制度研究会 - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF形式：314KB）"
+    },
+    "D205": {
+      "cite_id": "D205",
+      "cite_type": "document",
+      "file": "gijiyoushi_8.pdf",
+      "page_title": "AI制度研究会 - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF形式：238KB）"
+    },
+    "D206": {
+      "cite_id": "D206",
+      "cite_type": "document",
+      "file": "gijiyoushi_9.pdf",
+      "page_title": "AI制度研究会 - 科学技術・イノベーション - 内閣府",
+      "link_text": "議事要旨（PDF形式：284KB）"
+    },
+    "D207": {
+      "cite_id": "D207",
+      "cite_type": "document",
+      "file": "humancentricai.pdf",
+      "page_title": "人間中心のＡＩ社会原則会議 - 科学技術・イノベーション - 内閣府",
+      "link_text": "Social Principles of Human-Centric AI（tentative translation）（PDF形式：260KB）"
+    },
+    "D208": {
+      "cite_id": "D208",
+      "cite_type": "document",
+      "file": "humancentricai_1.pdf",
+      "page_title": "人間中心のＡＩ社会原則会議 - 科学技術・イノベーション - 内閣府",
+      "link_text": "Social Principles of Human-Centric AI（tentative translation）（PDF形式：260KB）"
+    },
+    "D209": {
+      "cite_id": "D209",
+      "cite_type": "document",
+      "file": "interim_report.pdf",
+      "page_title": "人工知能基本計画 - 科学技術・イノベーション - 内閣府",
+      "link_text": "本文（PDF形式：1485KB）"
+    },
+    "D210": {
+      "cite_id": "D210",
+      "cite_type": "document",
+      "file": "interim_report_1.pdf",
+      "page_title": "人工知能基本計画 - 科学技術・イノベーション - 内閣府",
+      "link_text": "本文（PDF形式：1485KB）"
+    },
+    "D211": {
+      "cite_id": "D211",
+      "cite_type": "document",
+      "file": "interim_report_en.pdf",
+      "page_title": "人工知能基本計画 - 科学技術・イノベーション - 内閣府",
+      "link_text": "【本文（英語仮訳）】 Interim Report (Provisional Translation)（PDF形式：3495KB）"
+    },
+    "D212": {
+      "cite_id": "D212",
+      "cite_type": "document",
+      "file": "interim_report_en_1.pdf",
+      "page_title": "人工知能基本計画 - 科学技術・イノベーション - 内閣府",
+      "link_text": "【本文（英語仮訳）】 Interim Report (Provisional Translation)（PDF形式：3495KB）"
+    },
+    "D213": {
+      "cite_id": "D213",
+      "cite_type": "document",
+      "file": "interim_report_ga_en.pdf",
+      "page_title": "人工知能基本計画 - 科学技術・イノベーション - 内閣府",
+      "link_text": "【概要（英語仮訳）】 Interim Report (Overview)(Provisional Translation)（PDF形式：463KB）"
+    },
+    "D214": {
+      "cite_id": "D214",
+      "cite_type": "document",
+      "file": "interim_report_ga_en_1.pdf",
+      "page_title": "人工知能基本計画 - 科学技術・イノベーション - 内閣府",
+      "link_text": "【概要（英語仮訳）】 Interim Report (Overview)(Provisional Translation)（PDF形式：463KB）"
+    },
+    "D215": {
+      "cite_id": "D215",
+      "cite_type": "document",
+      "file": "interim_report_gaiyo.pdf",
+      "page_title": "人工知能基本計画 - 科学技術・イノベーション - 内閣府",
+      "link_text": "概要（PDF形式：526KB）"
+    },
+    "D216": {
+      "cite_id": "D216",
+      "cite_type": "document",
+      "file": "interim_report_gaiyo_1.pdf",
+      "page_title": "人工知能基本計画 - 科学技術・イノベーション - 内閣府",
+      "link_text": "概要（PDF形式：526KB）"
+    },
+    "D217": {
+      "cite_id": "D217",
+      "cite_type": "document",
+      "file": "kousei.pdf",
+      "page_title": "AI戦略チーム（関係省庁連携）（第１回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "構成員一覧（PDF：100KB）"
+    },
+    "D218": {
+      "cite_id": "D218",
+      "cite_type": "document",
+      "file": "meibo7gatsu.pdf",
+      "page_title": "AI戦略チーム（関係省庁連携）（第９回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "AI戦略チーム員名簿（PDF形式：106KB）"
+    },
+    "D219": {
+      "cite_id": "D219",
+      "cite_type": "document",
+      "file": "meibo9gatsu.pdf",
+      "page_title": "AI戦略チーム（関係省庁連携）（第１０回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "AI戦略チーム員名簿（PDF形式：73KB）"
+    },
+    "D220": {
+      "cite_id": "D220",
+      "cite_type": "document",
+      "file": "nictllm.pdf",
+      "page_title": "AI戦略チーム（関係省庁連携）（第９回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "NICTにおける大規模言語モデルの試行構築について（PDF形式：1379KB）"
+    },
+    "D221": {
+      "cite_id": "D221",
+      "cite_type": "document",
+      "file": "ninteisousetu.pdf",
+      "page_title": "数理・データサイエンス・ＡＩ教育プログラム認定制度検討会議 - 科学技術・イノベーション - 内閣府",
+      "link_text": "「数理・データサイエンス・AI 教育プログラム認定制度（リテラシーレベル）」の創設について（PDF形式：389KB）"
+    },
+    "D222": {
+      "cite_id": "D222",
+      "cite_type": "document",
+      "file": "ninteisousetu_1.pdf",
+      "page_title": "数理・データサイエンス・ＡＩ教育プログラム認定制度検討会議 - 科学技術・イノベーション - 内閣府",
+      "link_text": "「数理・データサイエンス・AI 教育プログラム認定制度（リテラシーレベル）」の創設について（PDF形式：389KB）"
+    },
+    "D223": {
+      "cite_id": "D223",
+      "cite_type": "document",
+      "file": "ouyoukiso.pdf",
+      "page_title": "数理・データサイエンス・ＡＩ教育プログラム認定制度検討会議 - 科学技術・イノベーション - 内閣府",
+      "link_text": "「数理・データサイエンス・ＡＩ教育プログラム認定制度（応用基礎レベル）」の創設について（PDF形式：1577KB）"
+    },
+    "D224": {
+      "cite_id": "D224",
+      "cite_type": "document",
+      "file": "ouyoukiso_1.pdf",
+      "page_title": "数理・データサイエンス・ＡＩ教育プログラム認定制度検討会議 - 科学技術・イノベーション - 内閣府",
+      "link_text": "「数理・データサイエンス・ＡＩ教育プログラム認定制度（応用基礎レベル）」の創設について（PDF形式：1577KB）"
+    },
+    "D225": {
+      "cite_id": "D225",
+      "cite_type": "document",
+      "file": "ronten_honbun.pdf",
+      "page_title": "人工知能基本計画 - 科学技術・イノベーション - 内閣府",
+      "link_text": "本文（PDF形式：488KB）"
+    },
+    "D226": {
+      "cite_id": "D226",
+      "cite_type": "document",
+      "file": "ronten_honbun_1.pdf",
+      "page_title": "人工知能基本計画 - 科学技術・イノベーション - 内閣府",
+      "link_text": "本文（PDF形式：488KB）"
+    },
+    "D227": {
+      "cite_id": "D227",
+      "cite_type": "document",
+      "file": "ronten_youshi.pdf",
+      "page_title": "人工知能基本計画 - 科学技術・イノベーション - 内閣府",
+      "link_text": "要旨（PDF形式：217KB）"
+    },
+    "D228": {
+      "cite_id": "D228",
+      "cite_type": "document",
+      "file": "ronten_youshi_1.pdf",
+      "page_title": "人工知能基本計画 - 科学技術・イノベーション - 内閣府",
+      "link_text": "要旨（PDF形式：217KB）"
+    },
+    "D229": {
+      "cite_id": "D229",
+      "cite_type": "document",
+      "file": "ronten_youshi_yaku.pdf",
+      "page_title": "人工知能基本計画 - 科学技術・イノベーション - 内閣府",
+      "link_text": "【要旨（英語仮訳）】TENTATIVE SUMMARY OF AI ISSUES(Provisional Translation)（PDF形式：270KB）"
+    },
+    "D230": {
+      "cite_id": "D230",
+      "cite_type": "document",
+      "file": "ronten_youshi_yaku_1.pdf",
+      "page_title": "人工知能基本計画 - 科学技術・イノベーション - 内閣府",
+      "link_text": "【要旨（英語仮訳）】TENTATIVE SUMMARY OF AI ISSUES(Provisional Translation)（PDF形式：270KB）"
+    },
+    "D231": {
+      "cite_id": "D231",
+      "cite_type": "document",
+      "file": "sanko.pdf",
+      "page_title": "AI戦略推進関係省庁会議（第2回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "AI戦略推進関係省庁会議の開催について（PDF形式：168KB）"
+    },
+    "D232": {
+      "cite_id": "D232",
+      "cite_type": "document",
+      "file": "sanko1.pdf",
+      "page_title": "人間中心のAI社会原則会議（令和5年度 第1回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "令和４年度 第２回 人間中心のAI社会原則会議 議事要旨（PDF形式：391KB）"
+    },
+    "D233": {
+      "cite_id": "D233",
+      "cite_type": "document",
+      "file": "sanko1_1.pdf",
+      "page_title": "人間中心のAI社会原則会議（令和4年度 第2回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "令和４年度 第１回 人間中心のAI社会原則会議 議事要旨（PDF形式：377KB）"
+    },
+    "D234": {
+      "cite_id": "D234",
+      "cite_type": "document",
+      "file": "sanko1_10.pdf",
+      "page_title": "第１回　イノベーション政策強化推進のための有識者会議「ＡＩ戦略」（ＡＩ戦略実行会議） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "「イノベーション政策強化推進のための有識者会議」の設置について（PDF形式：8KB）"
+    },
+    "D235": {
+      "cite_id": "D235",
+      "cite_type": "document",
+      "file": "sanko1_11.pdf",
+      "page_title": "新ＡＩ戦略検討会議（第５回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "新ＡＩ戦略検討会議（第４回）議事要旨（PDF形式：199KB）"
+    },
+    "D236": {
+      "cite_id": "D236",
+      "cite_type": "document",
+      "file": "sanko1_12.pdf",
+      "page_title": "新ＡＩ戦略検討会議（第４回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "新ＡＩ戦略検討会議（第３回）議事要旨（PDF形式：194KB）"
+    },
+    "D237": {
+      "cite_id": "D237",
+      "cite_type": "document",
+      "file": "sanko1_13.pdf",
+      "page_title": "新ＡＩ戦略検討会議（第３回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "新ＡＩ戦略検討会議（第２回）議事要旨（PDF形式：193KB）"
+    },
+    "D238": {
+      "cite_id": "D238",
+      "cite_type": "document",
+      "file": "sanko1_14.pdf",
+      "page_title": "新ＡＩ戦略検討会議（第２回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "新AI 戦略検討会議（第１回）議事要旨（PDF形式：233KB）"
+    },
+    "D239": {
+      "cite_id": "D239",
+      "cite_type": "document",
+      "file": "sanko1_15.pdf",
+      "page_title": "新ＡＩ戦略検討会議（第１回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "「新ＡＩ戦略検討会議」の開催について（PDF形式：115KB）"
+    },
+    "D240": {
+      "cite_id": "D240",
+      "cite_type": "document",
+      "file": "sanko1_16.pdf",
+      "page_title": "数理・データサイエンス・ＡＩ 教育プログラム認定制度検討会議（令和2年度 第7回） - 科学技術・イノベーション - 内閣府",
+      "link_text": "数理・データサイエンス・AI 教育プログラム認定制度検討会議\r\n（令和２年度第 6 回）議事要旨（PDF形式：408KB）"
+    },
+    "D241": {
+      "cite_id": "D241",
+      "cite_type": "document",
+      "file": "sanko1_17.pdf",
+      "page_title": "数理・データサイエンス・ＡＩ 教育プログラム認定制度検討会議（令和2年度 第6回） - 科学技術・イノベーション - 内閣府",
+      "link_text": "数理・データサイエンス・AI 教育プログラム認定制度検討会議 （令和２年度第５回）議事要旨（PDF形式：181KB）"
+    },
+    "D242": {
+      "cite_id": "D242",
+      "cite_type": "document",
+      "file": "sanko1_18.pdf",
+      "page_title": "数理・データサイエンス・ＡＩ 教育プログラム認定制度検討会議（令和2年度 第5回） - 科学技術・イノベーション - 内閣府",
+      "link_text": "数理・データサイエンス・ＡＩ教育プログラム認定制度検討会議（令和２年度第４回）議事要旨（PDF形式：155KB）"
+    },
+    "D243": {
+      "cite_id": "D243",
+      "cite_type": "document",
+      "file": "sanko1_19.pdf",
+      "page_title": "数理・データサイエンス・ＡＩ 教育プログラム認定制度検討会議（令和2年度 第4回） - 科学技術・イノベーション - 内閣府",
+      "link_text": "数理・データサイエンス・ＡＩ教育プログラム認定制度検討会議（令和２年度第３回）議事要旨（PDF形式：465KB）"
+    },
+    "D244": {
+      "cite_id": "D244",
+      "cite_type": "document",
+      "file": "sanko1_2.pdf",
+      "page_title": "人間中心のAI社会原則会議（令和4年度 第1回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "人間中心のAI社会原則会議（令和３年度 第３回）議事要旨（PDF形式：589KB）"
+    },
+    "D245": {
+      "cite_id": "D245",
+      "cite_type": "document",
+      "file": "sanko1_20.pdf",
+      "page_title": "数理・データサイエンス・ＡＩ 教育プログラム認定制度検討会議（令和2年度 第3回） - 科学技術・イノベーション - 内閣府",
+      "link_text": "数理・データサイエンス・ＡＩ教育プログラム認定制度検討会議（令和２年度第２回）議事要旨（PDF形式：458KB）"
+    },
+    "D246": {
+      "cite_id": "D246",
+      "cite_type": "document",
+      "file": "sanko1_21.pdf",
+      "page_title": "数理・データサイエンス・ＡＩ 教育プログラム認定制度検討会議（令和2年度 第2回） - 科学技術・イノベーション - 内閣府",
+      "link_text": "数理・データサイエンス・ＡＩ教育プログラム認定制度検討会議（令和２年度第１回）議事要旨（PDF形式：336KB）"
+    },
+    "D247": {
+      "cite_id": "D247",
+      "cite_type": "document",
+      "file": "sanko1_22.pdf",
+      "page_title": "数理・データサイエンス・ＡＩ 教育プログラム認定制度検討会議（令和2年度 第1回） - 科学技術・イノベーション - 内閣府",
+      "link_text": "「数理・データサイエンス・AI教育プログラム認定制度検討会議」の開催について（PDF形式：169KB）"
+    },
+    "D248": {
+      "cite_id": "D248",
+      "cite_type": "document",
+      "file": "sanko1_23.pdf",
+      "page_title": "数理・データサイエンス・ＡＩ 教育プログラム認定制度検討会議（令和元年度 第6回） - 科学技術・イノベーション - 内閣府",
+      "link_text": "数理・データサイエンス・AI教育プログラム認定制度検討会議（第5回） 議事要旨（案）（PDF形式：398KB）"
+    },
+    "D249": {
+      "cite_id": "D249",
+      "cite_type": "document",
+      "file": "sanko1_24.pdf",
+      "page_title": "数理・データサイエンス・ＡＩ 教育プログラム認定制度検討会議（令和元年度 第5回） - 科学技術・イノベーション - 内閣府",
+      "link_text": "数理・データサイエンス・AI教育プログラム認定制度検討会議（第4回） 議事要旨（案）（PDF形式：15KB）"
+    },
+    "D250": {
+      "cite_id": "D250",
+      "cite_type": "document",
+      "file": "sanko1_25.pdf",
+      "page_title": "数理・データサイエンス・ＡＩ 教育プログラム認定制度検討会議（令和元年度 第4回） - 科学技術・イノベーション - 内閣府",
+      "link_text": "数理・データサイエンス・AI教育プログラム認定制度検討会議（第3回）議事要旨（案）（PDF形式：290KB）"
+    },
+    "D251": {
+      "cite_id": "D251",
+      "cite_type": "document",
+      "file": "sanko1_26.pdf",
+      "page_title": "数理・データサイエンス・ＡＩ 教育プログラム認定制度検討会議（令和元年度 第3回） - 科学技術・イノベーション - 内閣府",
+      "link_text": "第２回　数理・データサイエンス・AI教育プログラム認定制度検討会議議事要旨（案）（PDF形式：192KB）"
+    },
+    "D252": {
+      "cite_id": "D252",
+      "cite_type": "document",
+      "file": "sanko1_27.pdf",
+      "page_title": "数理・データサイエンス・ＡＩ 教育プログラム認定制度検討会議（令和元年度 第2回） - 科学技術・イノベーション - 内閣府",
+      "link_text": "第１回　数理・データサイエンス・AI教育プログラム認定制度検討会議議事要旨（案）（PDF形式：180KB）"
+    },
+    "D253": {
+      "cite_id": "D253",
+      "cite_type": "document",
+      "file": "sanko1_28.pdf",
+      "page_title": "数理・データサイエンス・ＡＩ 教育プログラム認定制度検討会議（令和元年度 第１回） - 科学技術・イノベーション - 内閣府",
+      "link_text": "ＡＩ戦略 ２０１９（PDF形式：983KB）"
+    },
+    "D254": {
+      "cite_id": "D254",
+      "cite_type": "document",
+      "file": "sanko1_3.pdf",
+      "page_title": "人間中心のAI社会原則会議（令和3年度 第3回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "人間中心のAI社会原則会議（令和３年度 第２回）議事要旨（PDF形式：250KB）"
+    },
+    "D255": {
+      "cite_id": "D255",
+      "cite_type": "document",
+      "file": "sanko1_4.pdf",
+      "page_title": "人間中心のAI社会原則会議（令和3年度 第2回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "人間中心のAI社会原則会議（令和３年度 第１回）議事要旨（PDF形式：275KB）"
+    },
+    "D256": {
+      "cite_id": "D256",
+      "cite_type": "document",
+      "file": "sanko1_5.pdf",
+      "page_title": "人間中心のAI社会原則会議（令和3年度 第1回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "人間中心の AI 社会原則会議（令和２年度第１回）議事要旨（PDF形式：1939KB）"
+    },
+    "D257": {
+      "cite_id": "D257",
+      "cite_type": "document",
+      "file": "sanko1_6.pdf",
+      "page_title": "人間中心のAI社会原則会議（令和２年度 第２回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "人間中心のAI 社会原則会議（令和２年度 第１回）議事要旨（PDF形式：209KB）"
+    },
+    "D258": {
+      "cite_id": "D258",
+      "cite_type": "document",
+      "file": "sanko1_7.pdf",
+      "page_title": "人間中心のAI社会原則会議（令和２年度 第1回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "「人間中心のＡＩ社会原則会議」の設置について（PDF形式：241KB）"
+    },
+    "D259": {
+      "cite_id": "D259",
+      "cite_type": "document",
+      "file": "sanko1_8.pdf",
+      "page_title": "人間中心のAI社会原則会議（令和２年度 第1回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "人間中心のAI 社会原則（PDF形式：107KB）"
+    },
+    "D260": {
+      "cite_id": "D260",
+      "cite_type": "document",
+      "file": "sanko1_9.pdf",
+      "page_title": "ＡＩ戦略会議（第１１回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "ＡＩ戦略会議 構成員名簿（PDF形式：164KB）"
+    },
+    "D261": {
+      "cite_id": "D261",
+      "cite_type": "document",
+      "file": "sanko2.pdf",
+      "page_title": "人間中心のAI社会原則会議（令和5年度 第1回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "人間中心のAI社会原則会議 構成員名簿（PDF形式：180KB）"
+    },
+    "D262": {
+      "cite_id": "D262",
+      "cite_type": "document",
+      "file": "sanko2_1.pdf",
+      "page_title": "人間中心のAI社会原則会議（令和4年度 第2回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "人間中心のAI社会原則会議 構成員名簿（PDF形式：182KB）"
+    },
+    "D263": {
+      "cite_id": "D263",
+      "cite_type": "document",
+      "file": "sanko2_10.pdf",
+      "page_title": "数理・データサイエンス・ＡＩ 教育プログラム認定制度検討会議（令和2年度 第3回） - 科学技術・イノベーション - 内閣府",
+      "link_text": "諸外国の数理・データサイエンス・ＡＩ教育プログラム事例一覧 （PDF形式：429KB）"
+    },
+    "D264": {
+      "cite_id": "D264",
+      "cite_type": "document",
+      "file": "sanko2_11.pdf",
+      "page_title": "数理・データサイエンス・ＡＩ 教育プログラム認定制度検討会議（令和2年度 第2回） - 科学技術・イノベーション - 内閣府",
+      "link_text": "「数理・データサイエンス・ＡＩ教育プログラム認定制度」について （令和２年度第１回検討会議資料１）、及び 数理・データサイエンス・ＡＩ教育プログラム認定制度（応用基礎レベル）の対象範囲の検討に向けた一考察 （令和２年度第１回検討会議資料３）（PDF形式：1831KB）"
+    },
+    "D265": {
+      "cite_id": "D265",
+      "cite_type": "document",
+      "file": "sanko2_12.pdf",
+      "page_title": "数理・データサイエンス・ＡＩ 教育プログラム認定制度検討会議（令和2年度 第1回） - 科学技術・イノベーション - 内閣府",
+      "link_text": "「数理・データサイエンス・AI教育プログラム認定制度（リテラシーレベル）」の創設について（PDF形式：1518KB）"
+    },
+    "D266": {
+      "cite_id": "D266",
+      "cite_type": "document",
+      "file": "sanko2_13.pdf",
+      "page_title": "数理・データサイエンス・ＡＩ 教育プログラム認定制度検討会議（令和元年度 第2回） - 科学技術・イノベーション - 内閣府",
+      "link_text": "新学習指導要領における高等学校数学等について（PDF形式：834KB）"
+    },
+    "D267": {
+      "cite_id": "D267",
+      "cite_type": "document",
+      "file": "sanko2_14.pdf",
+      "page_title": "数理・データサイエンス・ＡＩ 教育プログラム認定制度検討会議（令和元年度 第１回） - 科学技術・イノベーション - 内閣府",
+      "link_text": "ＡＩ戦略 ２０１９【概要】（PDF形式：1614KB）"
+    },
+    "D268": {
+      "cite_id": "D268",
+      "cite_type": "document",
+      "file": "sanko2_2.pdf",
+      "page_title": "人間中心のAI社会原則会議（令和4年度 第1回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "構成員名簿（PDF形式：180KB）"
+    },
+    "D269": {
+      "cite_id": "D269",
+      "cite_type": "document",
+      "file": "sanko2_3.pdf",
+      "page_title": "人間中心のAI社会原則会議（令和3年度 第3回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "ユネスコ総会資料（AI倫理勧告関連抜粋）（PDF形式：257KB）"
+    },
+    "D270": {
+      "cite_id": "D270",
+      "cite_type": "document",
+      "file": "sanko2_4.pdf",
+      "page_title": "人間中心のAI社会原則会議（令和3年度 第2回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "ユネスコAI倫理勧告（案）（PDF形式：380KB）"
+    },
+    "D271": {
+      "cite_id": "D271",
+      "cite_type": "document",
+      "file": "sanko2_5.pdf",
+      "page_title": "人間中心のAI社会原則会議（令和3年度 第1回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "「我が国のＡＩガバナンスの在り方 ver.1.0」（ＡＩ社会実装アーキテクチャ検討会 中間報告書）（PDF形式：1311KB）"
+    },
+    "D272": {
+      "cite_id": "D272",
+      "cite_type": "document",
+      "file": "sanko2_6.pdf",
+      "page_title": "ＡＩ戦略会議（第１１回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "ＡＩ制度研究会 構成員名簿（PDF形式：239KB）"
+    },
+    "D273": {
+      "cite_id": "D273",
+      "cite_type": "document",
+      "file": "sanko2_7.pdf",
+      "page_title": "第10回　AI戦略実行会議（イノベーション政策強化推進のための有識者会議「AI戦略」）- 科学技術・イノベーション - 内閣府",
+      "link_text": "AI Strategy 2022 (tentative translation)（PDF形式：408KB）"
+    },
+    "D274": {
+      "cite_id": "D274",
+      "cite_type": "document",
+      "file": "sanko2_8.pdf",
+      "page_title": "新ＡＩ戦略検討会議（第４回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "諸外国の公共部門における「AIによるガバナンス」の事例調査結果（令和3年12月27日令和3年度第3回人間中心のAI社会原則会議【資料２】）（PDF形式：1962KB）"
+    },
+    "D275": {
+      "cite_id": "D275",
+      "cite_type": "document",
+      "file": "sanko2_9.pdf",
+      "page_title": "新ＡＩ戦略検討会議（第２回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "「新AI 戦略検討会議」の開催について（PDF形式：115KB）"
+    },
+    "D276": {
+      "cite_id": "D276",
+      "cite_type": "document",
+      "file": "sanko3.pdf",
+      "page_title": "数理・データサイエンス・ＡＩ 教育プログラム認定制度検討会議（令和2年度 第1回） - 科学技術・イノベーション - 内閣府",
+      "link_text": "数理・データサイエンス・AI（リテラシーレベル）モデルカリキュラム（PDF形式1246：KB）"
+    },
+    "D277": {
+      "cite_id": "D277",
+      "cite_type": "document",
+      "file": "sanko3_1.pdf",
+      "page_title": "数理・データサイエンス・ＡＩ 教育プログラム認定制度検討会議（令和元年度 第2回） - 科学技術・イノベーション - 内閣府",
+      "link_text": "アメリカにおける「見習い制度」及び各国のＡＩ等戦略における予算規模 （PDF形式：172KB）"
+    },
+    "D278": {
+      "cite_id": "D278",
+      "cite_type": "document",
+      "file": "sanko3_2.pdf",
+      "page_title": "数理・データサイエンス・ＡＩ 教育プログラム認定制度検討会議（令和元年度 第１回） - 科学技術・イノベーション - 内閣府",
+      "link_text": "国内大学等において実施されているＡＩ等教育プログラムの主な事例（一覧）（PDF形式：606KB）"
+    },
+    "D279": {
+      "cite_id": "D279",
+      "cite_type": "document",
+      "file": "sanko4.pdf",
+      "page_title": "数理・データサイエンス・ＡＩ 教育プログラム認定制度検討会議（令和2年度 第1回） - 科学技術・イノベーション - 内閣府",
+      "link_text": "国内大学等において実施されているAI等教育プログラムの主な事例（一覧）（PDF形式：602KB）"
+    },
+    "D280": {
+      "cite_id": "D280",
+      "cite_type": "document",
+      "file": "sanko4_1.pdf",
+      "page_title": "数理・データサイエンス・ＡＩ 教育プログラム認定制度検討会議（令和元年度 第2回） - 科学技術・イノベーション - 内閣府",
+      "link_text": "教育プログラム認定制度事例 （PDF形式：318KB）"
+    },
+    "D281": {
+      "cite_id": "D281",
+      "cite_type": "document",
+      "file": "sanko4_2.pdf",
+      "page_title": "数理・データサイエンス・ＡＩ 教育プログラム認定制度検討会議（令和元年度 第１回） - 科学技術・イノベーション - 内閣府",
+      "link_text": "認定制度等の参考事例（PDF形式：333KB）"
+    },
+    "D282": {
+      "cite_id": "D282",
+      "cite_type": "document",
+      "file": "sankou.pdf",
+      "page_title": "ＡＩ制度研究会（第４回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "AI制度研究会 構成員名簿（PDF形式：245KB）"
+    },
+    "D283": {
+      "cite_id": "D283",
+      "cite_type": "document",
+      "file": "sankou1.pdf",
+      "page_title": "AIセーフティ・インスティテュート(AISI)関係府省庁等連絡会議（第2回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "AISI関係府省庁等連絡会議設置要綱（PDF形式：131KB）"
+    },
+    "D284": {
+      "cite_id": "D284",
+      "cite_type": "document",
+      "file": "sankou1_1.pdf",
+      "page_title": "ＡＩ戦略会議（第１３回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "ＡＩ戦略会議 構成員名簿（PDF形式：164KB）"
+    },
+    "D285": {
+      "cite_id": "D285",
+      "cite_type": "document",
+      "file": "sankou1_2.pdf",
+      "page_title": "ＡＩ戦略会議（第１２回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "ＡＩ戦略会議 構成員名簿（PDF形式：164KB）"
+    },
+    "D286": {
+      "cite_id": "D286",
+      "cite_type": "document",
+      "file": "sankou1_3.pdf",
+      "page_title": "ＡＩ制度研究会（第５回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "ＡＩ制度研究会 構成員名簿（PDF形式：195KB）"
+    },
+    "D287": {
+      "cite_id": "D287",
+      "cite_type": "document",
+      "file": "sankou2.pdf",
+      "page_title": "AIセーフティ・インスティテュート(AISI)関係府省庁等連絡会議（第2回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "米国におけるAI政策最新動向調査（PDF形式：4624KB）"
+    },
+    "D288": {
+      "cite_id": "D288",
+      "cite_type": "document",
+      "file": "sankou2_1.pdf",
+      "page_title": "ＡＩ戦略会議（第１３回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "ＡＩ制度研究会 構成員名簿（PDF形式：262KB）"
+    },
+    "D289": {
+      "cite_id": "D289",
+      "cite_type": "document",
+      "file": "sankou2_2.pdf",
+      "page_title": "ＡＩ戦略会議（第１２回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "ＡＩ制度研究会 構成員名簿（PDF形式：255KB）"
+    },
+    "D290": {
+      "cite_id": "D290",
+      "cite_type": "document",
+      "file": "sankou3.pdf",
+      "page_title": "AIセーフティ・インスティテュート(AISI)関係府省庁等連絡会議（第2回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "米国におけるAIのセキュリティ脅威・リスクの認知調査（PDF形式：1791KB）"
+    },
+    "D291": {
+      "cite_id": "D291",
+      "cite_type": "document",
+      "file": "sankou_1.pdf",
+      "page_title": "ＡＩ制度研究会（第３回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "AI制度研究会 構成員名簿（PDF形式：245KB）"
+    },
+    "D292": {
+      "cite_id": "D292",
+      "cite_type": "document",
+      "file": "sankou_2.pdf",
+      "page_title": "ＡＩ制度研究会（第２回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "AI制度研究会 構成員名簿（PDF形式：239KB）"
+    },
+    "D293": {
+      "cite_id": "D293",
+      "cite_type": "document",
+      "file": "shiryo.pdf",
+      "page_title": "人工知能戦略推進会議（第2回） - 内閣府",
+      "link_text": "「人工知能戦略推進会議幹事会の開催について」の一部改正について（案）（PDF形式：345KB）"
+    },
+    "D294": {
+      "cite_id": "D294",
+      "cite_type": "document",
+      "file": "shiryo1.pdf",
+      "page_title": "人工知能戦略推進会議（第1回） - 内閣府",
+      "link_text": "人工知能戦略推進会議の開催について（PDF形式：279KB）"
+    },
+    "D295": {
+      "cite_id": "D295",
+      "cite_type": "document",
+      "file": "shiryo1_1.pdf",
+      "page_title": "人工知能戦略専門調査会（第２回） - 科学技術・イノベーション - 内閣府",
+      "link_text": "人工知能基本計画骨子案（PDF形式：817KB）"
+    },
+    "D296": {
+      "cite_id": "D296",
+      "cite_type": "document",
+      "file": "shiryo1_1_1.pdf",
+      "page_title": "人工知能戦略専門調査会（第１回） - 科学技術・イノベーション - 内閣府",
+      "link_text": "人工知能戦略専門調査会の設置について（PDF形式：175KB）"
+    },
+    "D297": {
+      "cite_id": "D297",
+      "cite_type": "document",
+      "file": "shiryo1_1_2.pdf",
+      "page_title": "人工知能戦略本部（第1回） - 科学技術・イノベーション - 内閣府",
+      "link_text": "⼈⼯知能戦略本部の運営について（案）（PDF形式：104KB）"
+    },
+    "D298": {
+      "cite_id": "D298",
+      "cite_type": "document",
+      "file": "shiryo1_2.pdf",
+      "page_title": "人工知能戦略専門調査会（第２回） - 科学技術・イノベーション - 内閣府",
+      "link_text": "人工知能基本計画骨子案に係る関係府省庁の取組について（PDF形式：2,307KB）"
+    },
+    "D299": {
+      "cite_id": "D299",
+      "cite_type": "document",
+      "file": "shiryo1_2_1.pdf",
+      "page_title": "人工知能戦略専門調査会（第１回） - 科学技術・イノベーション - 内閣府",
+      "link_text": "人工知能戦略専門調査会 委員名簿（PDF形式：257KB）"
+    },
+    "D300": {
+      "cite_id": "D300",
+      "cite_type": "document",
+      "file": "shiryo1_2_2.pdf",
+      "page_title": "人工知能戦略本部（第1回） - 科学技術・イノベーション - 内閣府",
+      "link_text": "⼈⼯知能戦略本部の後援等名義の使⽤について（案）（PDF形式：95KB）"
+    },
+    "D301": {
+      "cite_id": "D301",
+      "cite_type": "document",
+      "file": "shiryo1_3.pdf",
+      "page_title": "人工知能戦略専門調査会（第１回） - 科学技術・イノベーション - 内閣府",
+      "link_text": "人工知能戦略専門調査会運営規則（PDF形式：260KB）"
+    },
+    "D302": {
+      "cite_id": "D302",
+      "cite_type": "document",
+      "file": "shiryo1_3_1.pdf",
+      "page_title": "人工知能戦略本部（第1回） - 科学技術・イノベーション - 内閣府",
+      "link_text": "⼈⼯知能戦略専⾨調査会の設置について（案）（PDF形式：79KB）"
+    },
+    "D303": {
+      "cite_id": "D303",
+      "cite_type": "document",
+      "file": "shiryo1_4.pdf",
+      "page_title": "人工知能戦略本部（第1回） - 科学技術・イノベーション - 内閣府",
+      "link_text": "⼈⼯知能戦略推進会議の開催について（案）（PDF形式：129KB）"
+    },
+    "D304": {
+      "cite_id": "D304",
+      "cite_type": "document",
+      "file": "shiryo1_5.pdf",
+      "page_title": "ＡＩ戦略会議（第１１回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "ＡＩ政策の現状と制度課題について（PDF形式：927KB）"
+    },
+    "D305": {
+      "cite_id": "D305",
+      "cite_type": "document",
+      "file": "shiryo1_6.pdf",
+      "page_title": "AI戦略推進関係省庁会議（第2回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "行政の進化と革新のためのAI政府調達・利活用ガイドライン（案）について（PDF形式：1055KB）"
+    },
+    "D306": {
+      "cite_id": "D306",
+      "cite_type": "document",
+      "file": "shiryo1_7.pdf",
+      "page_title": "AI戦略推進関係省庁会議（第1回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "AI戦略推進関係省庁会議の開催について（案）（PDF形式：165KB）"
+    },
+    "D307": {
+      "cite_id": "D307",
+      "cite_type": "document",
+      "file": "shiryo1_8.pdf",
+      "page_title": "AI戦略チーム（関係省庁連携）（第２回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "G7デジタル大臣会合の報告（PDF：1143KB）"
+    },
+    "D308": {
+      "cite_id": "D308",
+      "cite_type": "document",
+      "file": "shiryo2.pdf",
+      "page_title": "人工知能戦略推進会議（第1回） - 内閣府",
+      "link_text": "人工知能戦略推進会議の運営について（案）（PDF形式：277KB）"
+    },
+    "D309": {
+      "cite_id": "D309",
+      "cite_type": "document",
+      "file": "shiryo2_1.pdf",
+      "page_title": "人工知能戦略専門調査会（第２回） - 科学技術・イノベーション - 内閣府",
+      "link_text": "AI法に基づく指針骨子（たたき台）概要（PDF形式：680KB）"
+    },
+    "D310": {
+      "cite_id": "D310",
+      "cite_type": "document",
+      "file": "shiryo2_1_1.pdf",
+      "page_title": "人工知能戦略専門調査会（第１回） - 科学技術・イノベーション - 内閣府",
+      "link_text": "人工知能基本計画の骨子（たたき台）の概要について（PDF形式：726KB）"
+    },
+    "D311": {
+      "cite_id": "D311",
+      "cite_type": "document",
+      "file": "shiryo2_1_2.pdf",
+      "page_title": "人工知能戦略本部（第1回） - 科学技術・イノベーション - 内閣府",
+      "link_text": "⼈⼯知能基本計画の⾻⼦（たたき台）の概要について（PDF形式：493KB）"
+    },
+    "D312": {
+      "cite_id": "D312",
+      "cite_type": "document",
+      "file": "shiryo2_2.pdf",
+      "page_title": "人工知能戦略専門調査会（第１回） - 科学技術・イノベーション - 内閣府",
+      "link_text": "人工知能基本計画の骨子（たたき台）について（PDF形式：745KB）"
+    },
+    "D313": {
+      "cite_id": "D313",
+      "cite_type": "document",
+      "file": "shiryo2_2_1.pdf",
+      "page_title": "人工知能戦略本部（第1回） - 科学技術・イノベーション - 内閣府",
+      "link_text": "⼈⼯知能基本計画の⾻⼦（たたき台）について（PDF形式：408KB）"
+    },
+    "D314": {
+      "cite_id": "D314",
+      "cite_type": "document",
+      "file": "shiryo2_3.pdf",
+      "page_title": "人工知能戦略専門調査会（第１回） - 科学技術・イノベーション - 内閣府",
+      "link_text": "ＡＩ法に基づく適正性確保に関する指針の整備ついて（PDF形式：840KB）"
+    },
+    "D315": {
+      "cite_id": "D315",
+      "cite_type": "document",
+      "file": "shiryo2_3_1.pdf",
+      "page_title": "人工知能戦略本部（第1回） - 科学技術・イノベーション - 内閣府",
+      "link_text": "ＡＩ法に基づく適正性確保に関する指針（案）の概要について（PDF形式：346KB）"
+    },
+    "D316": {
+      "cite_id": "D316",
+      "cite_type": "document",
+      "file": "shiryo2_4.pdf",
+      "page_title": "人工知能戦略専門調査会（第１回） - 科学技術・イノベーション - 内閣府",
+      "link_text": "ＡＩ法に基づく調査研究等について【報告】（PDF形式：853KB）"
+    },
+    "D317": {
+      "cite_id": "D317",
+      "cite_type": "document",
+      "file": "shiryo2_4_1.pdf",
+      "page_title": "人工知能戦略本部（第1回） - 科学技術・イノベーション - 内閣府",
+      "link_text": "ＡＩ法に基づく調査研究等について【報告】（PDF形式：853KB）"
+    },
+    "D318": {
+      "cite_id": "D318",
+      "cite_type": "document",
+      "file": "shiryo2_5.pdf",
+      "page_title": "ＡＩ戦略会議（第１１回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "構成員提出資料（PDF形式：1829KB）"
+    },
+    "D319": {
+      "cite_id": "D319",
+      "cite_type": "document",
+      "file": "shiryo2_6.pdf",
+      "page_title": "AI戦略推進関係省庁会議（第2回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "AIディスカッションペーパー（第1.0版）の公表について（PDF形式：518KB）"
+    },
+    "D320": {
+      "cite_id": "D320",
+      "cite_type": "document",
+      "file": "shiryo2_7.pdf",
+      "page_title": "AI戦略推進関係省庁会議（第1回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "AI戦略会議　AI制度研究会　中間とりまとめ（案）（PDF形式：1489KB）"
+    },
+    "D321": {
+      "cite_id": "D321",
+      "cite_type": "document",
+      "file": "shiryo2_8.pdf",
+      "page_title": "AI戦略チーム（関係省庁連携）（第２回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "教育における生成AIの利用について（PDF：177KB）"
+    },
+    "D322": {
+      "cite_id": "D322",
+      "cite_type": "document",
+      "file": "shiryo3.pdf",
+      "page_title": "人工知能戦略推進会議（第1回） - 内閣府",
+      "link_text": "人工知能戦略推進会議幹事会の開催について（案）（PDF形式：164KB）"
+    },
+    "D323": {
+      "cite_id": "D323",
+      "cite_type": "document",
+      "file": "shiryo3_1.pdf",
+      "page_title": "人工知能戦略本部（第1回） - 科学技術・イノベーション - 内閣府",
+      "link_text": "今後の検討事項について（PDF形式：93KB）"
+    },
+    "D324": {
+      "cite_id": "D324",
+      "cite_type": "document",
+      "file": "shiryo3_2.pdf",
+      "page_title": "人工知能戦略本部（第1回） - 科学技術・イノベーション - 内閣府",
+      "link_text": "令和８年度ＡＩ関連予算について【報告】（PDF形式：275KB）"
+    },
+    "D325": {
+      "cite_id": "D325",
+      "cite_type": "document",
+      "file": "shiryo3_3.pdf",
+      "page_title": "AI戦略推進関係省庁会議（第2回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "GENIACｰPRIZE（NEDO懸賞金活用型プログラム）の概要（PDF形式：1159KB）"
+    },
+    "D326": {
+      "cite_id": "D326",
+      "cite_type": "document",
+      "file": "shiryo3_4.pdf",
+      "page_title": "AI戦略チーム（関係省庁連携）（第２回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "諸外国におけるルール等国際動向との関係について（PDF：539KB）"
+    },
+    "D327": {
+      "cite_id": "D327",
+      "cite_type": "document",
+      "file": "shiryo_1.pdf",
+      "page_title": "AI戦略チーム（関係省庁連携）（第４回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "G7プロセスの結果（PDF：289KB）"
+    },
+    "D328": {
+      "cite_id": "D328",
+      "cite_type": "document",
+      "file": "shiryo_2.pdf",
+      "page_title": "AI戦略チーム（関係省庁連携）（第３回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "AIと著作権の関係について（PDF：380KB）"
+    },
+    "D329": {
+      "cite_id": "D329",
+      "cite_type": "document",
+      "file": "shiryou1-1.pdf",
+      "page_title": "AIセーフティ・インスティテュート(AISI)関係府省庁等連絡会議（第2回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "AI戦略の課題と対応（PDF形式：2466KB）"
+    },
+    "D330": {
+      "cite_id": "D330",
+      "cite_type": "document",
+      "file": "shiryou1-2.pdf",
+      "page_title": "AIセーフティ・インスティテュート(AISI)関係府省庁等連絡会議（第2回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "「AI制度に関する考え方」について（概要）（PDF形式：646KB）"
+    },
+    "D331": {
+      "cite_id": "D331",
+      "cite_type": "document",
+      "file": "shiryou1-3.pdf",
+      "page_title": "AIセーフティ・インスティテュート(AISI)関係府省庁等連絡会議（第2回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "統合イノベーション戦略2024　AIパート　抜粋（PDF形式：561KB）"
+    },
+    "D332": {
+      "cite_id": "D332",
+      "cite_type": "document",
+      "file": "shiryou1.pdf",
+      "page_title": "ＡＩ戦略会議（第１３回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "「中間とりまとめ（案）」に対する意⾒募集結果（PDF形式：1327KB）"
+    },
+    "D333": {
+      "cite_id": "D333",
+      "cite_type": "document",
+      "file": "shiryou1_1.pdf",
+      "page_title": "ＡＩ戦略会議（第１２回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "ＡＩ戦略会議　ＡＩ制度研究会　中間とりまとめ（案）（PDF形式：1432KB）"
+    },
+    "D334": {
+      "cite_id": "D334",
+      "cite_type": "document",
+      "file": "shiryou1_2.pdf",
+      "page_title": "ＡＩ制度研究会（第５回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "ＡＩ戦略会議　ＡＩ制度研究会　中間とりまとめ（案）（PDF形式：1432KB）"
+    },
+    "D335": {
+      "cite_id": "D335",
+      "cite_type": "document",
+      "file": "shiryou1_3.pdf",
+      "page_title": "ＡＩ制度研究会（第４回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "Google Asia Pacific　発表資料（PDF形式：646KB）"
+    },
+    "D336": {
+      "cite_id": "D336",
+      "cite_type": "document",
+      "file": "shiryou1_4.pdf",
+      "page_title": "ＡＩ制度研究会（第３回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "株式会社ABEJA　発表資料（PDF形式：967KB）"
+    },
+    "D337": {
+      "cite_id": "D337",
+      "cite_type": "document",
+      "file": "shiryou1_5.pdf",
+      "page_title": "ＡＩ制度研究会（第２回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "東京大学大学院法学政治学研究科　宍戸常寿教授　発表資料（PDF形式：482KB）"
+    },
+    "D338": {
+      "cite_id": "D338",
+      "cite_type": "document",
+      "file": "shiryou2.pdf",
+      "page_title": "AIセーフティ・インスティテュート(AISI)関係府省庁等連絡会議（第2回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "海外出張報告（PDF形式：474KB）"
+    },
+    "D339": {
+      "cite_id": "D339",
+      "cite_type": "document",
+      "file": "shiryou2_1.pdf",
+      "page_title": "ＡＩ戦略会議（第１３回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "ＡＩ戦略会議　ＡＩ制度研究会　中間とりまとめ（案）（PDF形式：2743KB）"
+    },
+    "D340": {
+      "cite_id": "D340",
+      "cite_type": "document",
+      "file": "shiryou2_2.pdf",
+      "page_title": "ＡＩ制度研究会（第５回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "構成員提出資料（PDF形式：3398KB）"
+    },
+    "D341": {
+      "cite_id": "D341",
+      "cite_type": "document",
+      "file": "shiryou2_3.pdf",
+      "page_title": "ＡＩ制度研究会（第４回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "日本マイクロソフト株式会社　発表資料（PDF形式：2290KB）"
+    },
+    "D342": {
+      "cite_id": "D342",
+      "cite_type": "document",
+      "file": "shiryou2_4.pdf",
+      "page_title": "ＡＩ制度研究会（第３回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "株式会社Preferred Networks　発表資料（PDF形式：679KB）"
+    },
+    "D343": {
+      "cite_id": "D343",
+      "cite_type": "document",
+      "file": "shiryou2_5.pdf",
+      "page_title": "ＡＩ制度研究会（第２回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "株式会社ベネッセコーポレーション　発表資料（PDF形式：906KB）"
+    },
+    "D344": {
+      "cite_id": "D344",
+      "cite_type": "document",
+      "file": "shiryou3-1.pdf",
+      "page_title": "AIセーフティ・インスティテュート(AISI)関係府省庁等連絡会議（第2回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "AISIの取組状況と今後の取組予定（PDF形式：1059KB）"
+    },
+    "D345": {
+      "cite_id": "D345",
+      "cite_type": "document",
+      "file": "shiryou3-2.pdf",
+      "page_title": "AIセーフティ・インスティテュート(AISI)関係府省庁等連絡会議（第2回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "諸外国の取組状況との比較（PDF形式：257KB）"
+    },
+    "D346": {
+      "cite_id": "D346",
+      "cite_type": "document",
+      "file": "shiryou3.pdf",
+      "page_title": "ＡＩ制度研究会（第４回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "Facebook Japan合同会社　発表資料（PDF形式：2137KB）"
+    },
+    "D347": {
+      "cite_id": "D347",
+      "cite_type": "document",
+      "file": "shiryou3_1.pdf",
+      "page_title": "ＡＩ制度研究会（第３回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "一般社団法人情報処理学会ISO/IEC SC42WG1国内委員会　発表資料（PDF形式：473KB）"
+    },
+    "D348": {
+      "cite_id": "D348",
+      "cite_type": "document",
+      "file": "shiryou3_2.pdf",
+      "page_title": "ＡＩ制度研究会（第２回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "神戸市　発表資料（PDF形式：1931KB）"
+    },
+    "D349": {
+      "cite_id": "D349",
+      "cite_type": "document",
+      "file": "shiryou4.pdf",
+      "page_title": "ＡＩ制度研究会（第４回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "中央大学国際情報学部 須藤修教授　発表資料（PDF形式：4289KB）"
+    },
+    "D350": {
+      "cite_id": "D350",
+      "cite_type": "document",
+      "file": "shiryou4_1.pdf",
+      "page_title": "ＡＩ制度研究会（第２回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "人工知能研究開発ネットワーク（AI JAPAN）　発表資料（PDF形式：4043KB）"
+    },
+    "D351": {
+      "cite_id": "D351",
+      "cite_type": "document",
+      "file": "shiryou5.pdf",
+      "page_title": "ＡＩ制度研究会（第４回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "日本電信電話株式会社　発表資料（PDF形式：1288KB）"
+    },
+    "D352": {
+      "cite_id": "D352",
+      "cite_type": "document",
+      "file": "shiryou5_1.pdf",
+      "page_title": "ＡＩ制度研究会（第２回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "桃尾・松尾・難波法律事務所 松尾剛行弁護士　発表資料（PDF形式：2,804KB）"
+    },
+    "D353": {
+      "cite_id": "D353",
+      "cite_type": "document",
+      "file": "shiryou6.pdf",
+      "page_title": "ＡＩ制度研究会（第４回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "株式会社三井住友フィナンシャルグループ　発表資料（PDF形式：888KB）"
+    },
+    "D354": {
+      "cite_id": "D354",
+      "cite_type": "document",
+      "file": "shiryouchuuikanki.pdf",
+      "page_title": "AI戦略チーム（関係省庁連携）（第６回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "生成AIサービスの利用に関する注意喚起等について（PDF：364KB）"
+    },
+    "D355": {
+      "cite_id": "D355",
+      "cite_type": "document",
+      "file": "shiryoukoyou.pdf",
+      "page_title": "AI戦略チーム（関係省庁連携）（第６回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "AI等の新たなテクノロジーが雇用に与える影響について（PDF：825KB）"
+    },
+    "D356": {
+      "cite_id": "D356",
+      "cite_type": "document",
+      "file": "shiryoushokugyo.pdf",
+      "page_title": "AI戦略チーム（関係省庁連携）（第６回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "AIが及ぼす職業へのインパクト（内閣府まとめ）（PDF：390KB）"
+    },
+    "D357": {
+      "cite_id": "D357",
+      "cite_type": "document",
+      "file": "siryo1-1.pdf",
+      "page_title": "人間中心のAI社会原則会議（令和3年度 第2回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "ユネスコの概要と日本による関与 （外務省提出資料）（PDF形式：431KB）"
+    },
+    "D358": {
+      "cite_id": "D358",
+      "cite_type": "document",
+      "file": "siryo1-1_1.pdf",
+      "page_title": "人間中心のAI社会原則会議（令和２年度 第２回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "１（PDF形式：1899KB）"
+    },
+    "D359": {
+      "cite_id": "D359",
+      "cite_type": "document",
+      "file": "siryo1-1_2.pdf",
+      "page_title": "人間中心のAI社会原則会議（第1回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "国内外の動向（PDF形式：170KB）"
+    },
+    "D360": {
+      "cite_id": "D360",
+      "cite_type": "document",
+      "file": "siryo1-1_3.pdf",
+      "page_title": "第１回　ＡＩステアリングコミッティー - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "「ＡＩステアリングコミッティー」について（PDF形式：622KB）"
+    },
+    "D361": {
+      "cite_id": "D361",
+      "cite_type": "document",
+      "file": "siryo1-1_4.pdf",
+      "page_title": "数理・データサイエンス・ＡＩ 教育プログラム認定制度検討会議（令和2年度 第4回） - 科学技術・イノベーション - 内閣府",
+      "link_text": "文部科学省資料「数理・データサイエンス・ＡＩ教育プログラム認定制度（リテラシーレベル）」（PDF形式：164KB）"
+    },
+    "D362": {
+      "cite_id": "D362",
+      "cite_type": "document",
+      "file": "siryo1-1_5.pdf",
+      "page_title": "数理・データサイエンス・ＡＩ 教育プログラム認定制度検討会議（令和元年度 第１回） - 科学技術・イノベーション - 内閣府",
+      "link_text": "「数理・データサイエンス・ＡＩ 教育プログラム認定制度検討会議」の開催について （PDF形式：273KB）"
+    },
+    "D363": {
+      "cite_id": "D363",
+      "cite_type": "document",
+      "file": "siryo1-2.pdf",
+      "page_title": "人間中心のAI社会原則会議（令和3年度 第2回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "ユネスコを通じたAIの倫理分野の支援 （外務省提出資料）（PDF形式：171KB）"
+    },
+    "D364": {
+      "cite_id": "D364",
+      "cite_type": "document",
+      "file": "siryo1-2_1.pdf",
+      "page_title": "人間中心のAI社会原則会議（令和２年度 第２回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "２（PDF形式：1819KB）"
+    },
+    "D365": {
+      "cite_id": "D365",
+      "cite_type": "document",
+      "file": "siryo1-2_2.pdf",
+      "page_title": "人間中心のAI社会原則会議（第1回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "「人間中心のＡＩ社会原則」（案）（PDF形式：350KB）"
+    },
+    "D366": {
+      "cite_id": "D366",
+      "cite_type": "document",
+      "file": "siryo1-2_3.pdf",
+      "page_title": "第１回　ＡＩステアリングコミッティー - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "ＡＩステアリングコミッティーの開催について（PDF形式：251KB）"
+    },
+    "D367": {
+      "cite_id": "D367",
+      "cite_type": "document",
+      "file": "siryo1-2_4.pdf",
+      "page_title": "数理・データサイエンス・ＡＩ 教育プログラム認定制度検討会議（令和元年度 第１回） - 科学技術・イノベーション - 内閣府",
+      "link_text": "「数理・データサイエンス・ＡＩ 教育プログラム認定制度」の構築に向けた検討について （PDF形式：545KB）"
+    },
+    "D368": {
+      "cite_id": "D368",
+      "cite_type": "document",
+      "file": "siryo1-3-1.pdf",
+      "page_title": "第１回　ＡＩステアリングコミッティー - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "１（PDF形式：1612KB）"
+    },
+    "D369": {
+      "cite_id": "D369",
+      "cite_type": "document",
+      "file": "siryo1-3-2.pdf",
+      "page_title": "第１回　ＡＩステアリングコミッティー - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "２（PDF形式：1418KB）"
+    },
+    "D370": {
+      "cite_id": "D370",
+      "cite_type": "document",
+      "file": "siryo1-3.pdf",
+      "page_title": "人間中心のAI社会原則会議（令和3年度 第2回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "ユネスコのAI倫理勧告案の現状 （総務省提出資料）（PDF形式：496KB）"
+    },
+    "D371": {
+      "cite_id": "D371",
+      "cite_type": "document",
+      "file": "siryo1-3_1.pdf",
+      "page_title": "人間中心のAI社会原則会議（第1回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "AI活用戦略～AI-Readyな社会の実現に向けて～(経団連) [概要]（PDF形式：1386KB）"
+    },
+    "D372": {
+      "cite_id": "D372",
+      "cite_type": "document",
+      "file": "siryo1-3_2.pdf",
+      "page_title": "数理・データサイエンス・ＡＩ 教育プログラム認定制度検討会議（令和元年度 第１回） - 科学技術・イノベーション - 内閣府",
+      "link_text": "数理・データサイエンス教育強化拠点コンソーシアム モデルカリキュラム（リテラシーレベル）の検討状況について（PDF形式：234KB）"
+    },
+    "D373": {
+      "cite_id": "D373",
+      "cite_type": "document",
+      "file": "siryo1-4.pdf",
+      "page_title": "第１回　ＡＩステアリングコミッティー - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "理化学研究所報告資料（PDF形式：1291KB）"
+    },
+    "D374": {
+      "cite_id": "D374",
+      "cite_type": "document",
+      "file": "siryo1-5.pdf",
+      "page_title": "第１回　ＡＩステアリングコミッティー - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "産業技術総合研究所報告資料（PDF形式：1601KB）"
+    },
+    "D375": {
+      "cite_id": "D375",
+      "cite_type": "document",
+      "file": "siryo1-6.pdf",
+      "page_title": "第１回　ＡＩステアリングコミッティー - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "ＡＩステアリングコミッティーのアクションプランの策定について（PDF形式：1303KB）"
+    },
+    "D376": {
+      "cite_id": "D376",
+      "cite_type": "document",
+      "file": "siryo1-7.pdf",
+      "page_title": "第１回　ＡＩステアリングコミッティー - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "「ＡＩ研究開発ネットワーク」について（PDF形式：655KB）"
+    },
+    "D377": {
+      "cite_id": "D377",
+      "cite_type": "document",
+      "file": "siryo1.pdf",
+      "page_title": "AIセーフティ・インスティテュート(AISI)関係府省庁等連絡会議（第1回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "AISI関係府省庁等連絡会議設置要綱（PDF形式：100KB）"
+    },
+    "D378": {
+      "cite_id": "D378",
+      "cite_type": "document",
+      "file": "siryo1_1.pdf",
+      "page_title": "人間中心のAI社会原則会議（令和5年度 第1回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "ソニーグループのAI倫理活動（ソニー提出資料)（PDF形式：877KB）"
+    },
+    "D379": {
+      "cite_id": "D379",
+      "cite_type": "document",
+      "file": "siryo1_10.pdf",
+      "page_title": "第８回　AI戦略実行会議（イノベーション政策強化推進のための有識者会議「AI戦略」）- 科学技術・イノベーション - 内閣府",
+      "link_text": "「新ＡＩ戦略検討会議」の開催について（案）（PDF形式：113KB）"
+    },
+    "D380": {
+      "cite_id": "D380",
+      "cite_type": "document",
+      "file": "siryo1_11.pdf",
+      "page_title": "第７回　AI戦略実行会議（イノベーション政策強化推進のための有識者会議「AI戦略」）- 科学技術・イノベーション - 内閣府",
+      "link_text": "「AI戦略２０１９」の進捗状況及び「AI戦略２０２１」への見直し、並びに新AI戦略の策定について（案）（PDF形式：326KB）"
+    },
+    "D381": {
+      "cite_id": "D381",
+      "cite_type": "document",
+      "file": "siryo1_12.pdf",
+      "page_title": "第6回　イノベーション政策強化推進のための有識者会議「ＡＩ戦略」（ＡＩ戦略実行会議） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "「ＡＩ戦略2019」フォローアップ（案）（PDF形式：466KB）"
+    },
+    "D382": {
+      "cite_id": "D382",
+      "cite_type": "document",
+      "file": "siryo1_13.pdf",
+      "page_title": "第5回　イノベーション政策強化推進のための有識者会議「ＡＩ戦略」（ＡＩ戦略実行会議） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "「ＡＩステアリングコミッティー」の開催について（案）（PDF形式：228KB）"
+    },
+    "D383": {
+      "cite_id": "D383",
+      "cite_type": "document",
+      "file": "siryo1_14.pdf",
+      "page_title": "第3回　イノベーション政策強化推進のための有識者会議「ＡＩ戦略」（ＡＩ戦略実行会議） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "「人間中心のＡＩ社会原則」（案） （PDF形式：420KB）"
+    },
+    "D384": {
+      "cite_id": "D384",
+      "cite_type": "document",
+      "file": "siryo1_15.pdf",
+      "page_title": "第2回　イノベーション政策強化推進のための有識者会議「ＡＩ戦略」（ＡＩ戦略実行会議） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "「人間中心のＡＩ社会原則検討会議」の設置について（案）（PDF形式：308KB）"
+    },
+    "D385": {
+      "cite_id": "D385",
+      "cite_type": "document",
+      "file": "siryo1_16.pdf",
+      "page_title": "第１回　イノベーション政策強化推進のための有識者会議「ＡＩ戦略」（ＡＩ戦略実行会議） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "イノベーション政策強化推進のための有識者会議「ＡＩ戦略」（ＡＩ戦略実行会議）の開催について（PDF形式：9KB）"
+    },
+    "D386": {
+      "cite_id": "D386",
+      "cite_type": "document",
+      "file": "siryo1_17.pdf",
+      "page_title": "新ＡＩ戦略検討会議（第５回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "新たなＡＩ戦略の概要（案）（事務局説明資料）（PDF形式：1976KB）"
+    },
+    "D387": {
+      "cite_id": "D387",
+      "cite_type": "document",
+      "file": "siryo1_18.pdf",
+      "page_title": "新ＡＩ戦略検討会議（第４回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "AI戦略2021 の大目標と具体目標の一覧（事務局説明資料）（PDF形式：928KB）"
+    },
+    "D388": {
+      "cite_id": "D388",
+      "cite_type": "document",
+      "file": "siryo1_19.pdf",
+      "page_title": "新ＡＩ戦略検討会議（第３回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "国土交通省説明資料（PDF形式：1271KB）"
+    },
+    "D389": {
+      "cite_id": "D389",
+      "cite_type": "document",
+      "file": "siryo1_2.pdf",
+      "page_title": "人間中心のAI社会原則会議（令和4年度 第2回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "GPAIサミット2022について（総務省提出資料）（PDF形式：1154KB）"
+    },
+    "D390": {
+      "cite_id": "D390",
+      "cite_type": "document",
+      "file": "siryo1_20.pdf",
+      "page_title": "新ＡＩ戦略検討会議（第２回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "総務省説明資料（PDF形式：1849KB）"
+    },
+    "D391": {
+      "cite_id": "D391",
+      "cite_type": "document",
+      "file": "siryo1_21.pdf",
+      "page_title": "新ＡＩ戦略検討会議（第１回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "新たなＡＩ戦略の策定に向けた検討について（事務局資料）（PDF形式：575KB）"
+    },
+    "D392": {
+      "cite_id": "D392",
+      "cite_type": "document",
+      "file": "siryo1_22.pdf",
+      "page_title": "第３回　ＡＩステアリングコミッティー - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "研究開発工程表について（PDF形式：436KB）"
+    },
+    "D393": {
+      "cite_id": "D393",
+      "cite_type": "document",
+      "file": "siryo1_23.pdf",
+      "page_title": "第２回　ＡＩステアリングコミッティー - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "研究環境整備 文部科学省報告資料（PDF形式：225KB）"
+    },
+    "D394": {
+      "cite_id": "D394",
+      "cite_type": "document",
+      "file": "siryo1_24.pdf",
+      "page_title": "数理・データサイエンス・ＡＩ 教育プログラム認定制度検討会議（令和2年度 第7回） - 科学技術・イノベーション - 内閣府",
+      "link_text": "数理・データサイエンス・AI_モデルカリキュラム（応用基礎レベル）検討状況（PDF形式：1607KB）"
+    },
+    "D395": {
+      "cite_id": "D395",
+      "cite_type": "document",
+      "file": "siryo1_25.pdf",
+      "page_title": "数理・データサイエンス・ＡＩ 教育プログラム認定制度検討会議（令和2年度 第6回） - 科学技術・イノベーション - 内閣府",
+      "link_text": "「第５回検討会での議論のポイント」（PDF形式：352KB）"
+    },
+    "D396": {
+      "cite_id": "D396",
+      "cite_type": "document",
+      "file": "siryo1_26.pdf",
+      "page_title": "数理・データサイエンス・ＡＩ 教育プログラム認定制度検討会議（令和2年度 第5回） - 科学技術・イノベーション - 内閣府",
+      "link_text": "事務局資料 「第４回検討会での議論のポイント」（PDF形式：147KB）"
+    },
+    "D397": {
+      "cite_id": "D397",
+      "cite_type": "document",
+      "file": "siryo1_27.pdf",
+      "page_title": "数理・データサイエンス・ＡＩ 教育プログラム認定制度検討会議（令和2年度 第3回） - 科学技術・イノベーション - 内閣府",
+      "link_text": "第２回検討会議での議論を踏まえた論点について（事務局資料）（PDF形式：1413KB）"
+    },
+    "D398": {
+      "cite_id": "D398",
+      "cite_type": "document",
+      "file": "siryo1_28.pdf",
+      "page_title": "数理・データサイエンス・ＡＩ 教育プログラム認定制度検討会議（令和2年度 第2回） - 科学技術・イノベーション - 内閣府",
+      "link_text": "第１回検討会議での議論のポイント （PDF形式：417KB）"
+    },
+    "D399": {
+      "cite_id": "D399",
+      "cite_type": "document",
+      "file": "siryo1_29.pdf",
+      "page_title": "数理・データサイエンス・ＡＩ 教育プログラム認定制度検討会議（令和2年度 第1回） - 科学技術・イノベーション - 内閣府",
+      "link_text": "「数理・データサイエンス・AI教育プログラム認定制度」について（PDF形式：KB）"
+    },
+    "D400": {
+      "cite_id": "D400",
+      "cite_type": "document",
+      "file": "siryo1_3.pdf",
+      "page_title": "人間中心のAI社会原則会議（令和4年度 第1回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "AI倫理に関する国際対応について（総務省提出資料）（PDF形式：1545KB）"
+    },
+    "D401": {
+      "cite_id": "D401",
+      "cite_type": "document",
+      "file": "siryo1_30.pdf",
+      "page_title": "数理・データサイエンス・ＡＩ 教育プログラム認定制度検討会議（令和元年度 第6回） - 科学技術・イノベーション - 内閣府",
+      "link_text": "「数理・データサイエンス・AI教育プログラム認定制度（リテラシーレベル）」の創設について（案）（PDF形式：1577KB）"
+    },
+    "D402": {
+      "cite_id": "D402",
+      "cite_type": "document",
+      "file": "siryo1_31.pdf",
+      "page_title": "数理・データサイエンス・ＡＩ 教育プログラム認定制度検討会議（令和元年度 第5回） - 科学技術・イノベーション - 内閣府",
+      "link_text": "数理・データサイエンス・AI教育プログラム認定基準（原案）（PDF形式：34KB）"
+    },
+    "D403": {
+      "cite_id": "D403",
+      "cite_type": "document",
+      "file": "siryo1_32.pdf",
+      "page_title": "数理・データサイエンス・ＡＩ 教育プログラム認定制度検討会議（令和元年度 第3回） - 科学技術・イノベーション - 内閣府",
+      "link_text": "須藤氏発表資料 （PDF形式：1534KB）"
+    },
+    "D404": {
+      "cite_id": "D404",
+      "cite_type": "document",
+      "file": "siryo1_4.pdf",
+      "page_title": "人間中心のAI社会原則会議（令和3年度 第3回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "国際的ＡＩ政策議論の状況 （総務省提出資料）（PDF形式：581KB）"
+    },
+    "D405": {
+      "cite_id": "D405",
+      "cite_type": "document",
+      "file": "siryo1_5.pdf",
+      "page_title": "人間中心のAI社会原則会議（令和3年度 第1回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "Artificial Intelligence Act Proposed by EU CommissionA Tentative Summary (without proof-reading)（平野構成員提出資料）（PDF形式：1939KB）"
+    },
+    "D406": {
+      "cite_id": "D406",
+      "cite_type": "document",
+      "file": "siryo1_6.pdf",
+      "page_title": "人間中心のAI社会原則会議（令和２年度 第1回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "関係府省庁におけるＡＩ関連指針・原則・ガイドラインの策定状況（PDF形式：826KB）"
+    },
+    "D407": {
+      "cite_id": "D407",
+      "cite_type": "document",
+      "file": "siryo1_7.pdf",
+      "page_title": "第11回　AI戦略実行会議（イノベーション政策強化推進のための有識者会議「AI戦略」）- 科学技術・イノベーション - 内閣府",
+      "link_text": "「ＡＩ戦略2022」の進捗状況（PDF形式：375KB）"
+    },
+    "D408": {
+      "cite_id": "D408",
+      "cite_type": "document",
+      "file": "siryo1_8.pdf",
+      "page_title": "第10回　AI戦略実行会議（イノベーション政策強化推進のための有識者会議「AI戦略」）- 科学技術・イノベーション - 内閣府",
+      "link_text": "ＡＩ戦略2021の取組状況（PDF形式：374KB）"
+    },
+    "D409": {
+      "cite_id": "D409",
+      "cite_type": "document",
+      "file": "siryo1_9.pdf",
+      "page_title": "第９回　AI戦略実行会議（イノベーション政策強化推進のための有識者会議「AI戦略」）- 科学技術・イノベーション - 内閣府",
+      "link_text": "ＡＩ戦略2022（案）の概要（PDF形式：611KB）"
+    },
+    "D410": {
+      "cite_id": "D410",
+      "cite_type": "document",
+      "file": "siryo1_bessi.pdf",
+      "page_title": "第6回　イノベーション政策強化推進のための有識者会議「ＡＩ戦略」（ＡＩ戦略実行会議） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "「ＡＩ戦略2019」フォローアップ別紙（案）（PDF形式：1,392KB）"
+    },
+    "D411": {
+      "cite_id": "D411",
+      "cite_type": "document",
+      "file": "siryo2-1-1.pdf",
+      "page_title": "数理・データサイエンス・ＡＩ 教育プログラム認定制度検討会議（令和2年度 第1回） - 科学技術・イノベーション - 内閣府",
+      "link_text": "１（PDF形式：991KB）"
+    },
+    "D412": {
+      "cite_id": "D412",
+      "cite_type": "document",
+      "file": "siryo2-1-2.pdf",
+      "page_title": "数理・データサイエンス・ＡＩ 教育プログラム認定制度検討会議（令和2年度 第1回） - 科学技術・イノベーション - 内閣府",
+      "link_text": "２（PDF形式：1535KB）"
+    },
+    "D413": {
+      "cite_id": "D413",
+      "cite_type": "document",
+      "file": "siryo2-1.pdf",
+      "page_title": "人間中心のAI社会原則会議（第1回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "人間中心のＡＩ社会原則（案）に関する意見募集に寄せられた主な意見に対する対応（案）（PDF形式：48KB）"
+    },
+    "D414": {
+      "cite_id": "D414",
+      "cite_type": "document",
+      "file": "siryo2-1_1.pdf",
+      "page_title": "第９回　AI戦略実行会議（イノベーション政策強化推進のための有識者会議「AI戦略」）- 科学技術・イノベーション - 内閣府",
+      "link_text": "ＡＩ戦略2022（案）（PDF形式：455KB）"
+    },
+    "D415": {
+      "cite_id": "D415",
+      "cite_type": "document",
+      "file": "siryo2-2.pdf",
+      "page_title": "人間中心のAI社会原則会議（第1回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "「人間中心のＡＩ社会原則」(案)に関する意見募集に対して提出された意見（PDF形式：412KB）"
+    },
+    "D416": {
+      "cite_id": "D416",
+      "cite_type": "document",
+      "file": "siryo2-2_1.pdf",
+      "page_title": "第９回　AI戦略実行会議（イノベーション政策強化推進のための有識者会議「AI戦略」）- 科学技術・イノベーション - 内閣府",
+      "link_text": "「ＡＩ戦略2022」別紙～AI 戦略2022 の取組一覧～（PDF形式：303KB）"
+    },
+    "D417": {
+      "cite_id": "D417",
+      "cite_type": "document",
+      "file": "siryo2-2_2.pdf",
+      "page_title": "数理・データサイエンス・ＡＩ 教育プログラム認定制度検討会議（令和2年度 第1回） - 科学技術・イノベーション - 内閣府",
+      "link_text": "体系的学びのすすめ（大阪大学プレゼンテーション資料）（PDF形式1145：KB）"
+    },
+    "D418": {
+      "cite_id": "D418",
+      "cite_type": "document",
+      "file": "siryo2.pdf",
+      "page_title": "AIセーフティ・インスティテュート(AISI)関係府省庁等連絡会議（第1回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "AISIの今後の活動について（PDF形式：879KB）"
+    },
+    "D419": {
+      "cite_id": "D419",
+      "cite_type": "document",
+      "file": "siryo2_1.pdf",
+      "page_title": "人間中心のAI社会原則会議（令和5年度 第1回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "国際的な場におけるAIガバナンスに関する議論の近況（総務省提出資料）（PDF形式：853KB）"
+    },
+    "D420": {
+      "cite_id": "D420",
+      "cite_type": "document",
+      "file": "siryo2_10.pdf",
+      "page_title": "第７回　AI戦略実行会議（イノベーション政策強化推進のための有識者会議「AI戦略」）- 科学技術・イノベーション - 内閣府",
+      "link_text": "「AI戦略２０２１」（案）（PDF形式：764KB）"
+    },
+    "D421": {
+      "cite_id": "D421",
+      "cite_type": "document",
+      "file": "siryo2_11.pdf",
+      "page_title": "第6回　イノベーション政策強化推進のための有識者会議「ＡＩ戦略」（ＡＩ戦略実行会議） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "「ＡＩ戦略2019」フォローアップ（概要）(案)（PDF形式：687KB）"
+    },
+    "D422": {
+      "cite_id": "D422",
+      "cite_type": "document",
+      "file": "siryo2_12.pdf",
+      "page_title": "第5回　イノベーション政策強化推進のための有識者会議「ＡＩ戦略」（ＡＩ戦略実行会議） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "「数理・データサイエンス・ＡＩ教育プログラム認定制度検討会議」の開催について（案）（PDF形式：267KB）"
+    },
+    "D423": {
+      "cite_id": "D423",
+      "cite_type": "document",
+      "file": "siryo2_13.pdf",
+      "page_title": "第3回　イノベーション政策強化推進のための有識者会議「ＡＩ戦略」（ＡＩ戦略実行会議） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "「ＡＩ戦略」（有識者提案）（PDF形式：388KB）"
+    },
+    "D424": {
+      "cite_id": "D424",
+      "cite_type": "document",
+      "file": "siryo2_14.pdf",
+      "page_title": "第2回　イノベーション政策強化推進のための有識者会議「ＡＩ戦略」（ＡＩ戦略実行会議） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "「人間中心のＡＩ社会原則」（案）（PDF形式：388KB）"
+    },
+    "D425": {
+      "cite_id": "D425",
+      "cite_type": "document",
+      "file": "siryo2_15.pdf",
+      "page_title": "第１回　イノベーション政策強化推進のための有識者会議「ＡＩ戦略」（ＡＩ戦略実行会議） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "有識者ペーパー（ＡＩ戦略（案）全体俯瞰図）（PDF形式：152KB）"
+    },
+    "D426": {
+      "cite_id": "D426",
+      "cite_type": "document",
+      "file": "siryo2_16.pdf",
+      "page_title": "新ＡＩ戦略検討会議（第５回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "ＡＩ戦略 2022（素案）（事務局説明資料）（PDF形式：450KB）"
+    },
+    "D427": {
+      "cite_id": "D427",
+      "cite_type": "document",
+      "file": "siryo2_17.pdf",
+      "page_title": "新ＡＩ戦略検討会議（第４回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "とりまとめに向けた検討資料（事務局説明資料）（PDF形式：448KB）"
+    },
+    "D428": {
+      "cite_id": "D428",
+      "cite_type": "document",
+      "file": "siryo2_18.pdf",
+      "page_title": "新ＡＩ戦略検討会議（第３回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "厚生労働省説明資料（PDF形式：1538KB）"
+    },
+    "D429": {
+      "cite_id": "D429",
+      "cite_type": "document",
+      "file": "siryo2_19.pdf",
+      "page_title": "新ＡＩ戦略検討会議（第２回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "理研（文部科学省）説明資料（PDF形式：1143KB）"
+    },
+    "D430": {
+      "cite_id": "D430",
+      "cite_type": "document",
+      "file": "siryo2_2.pdf",
+      "page_title": "人間中心のAI社会原則会議（令和4年度 第2回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "経済産業省におけるAIガバナンスに関する取組（経済産業省提出資料）（PDF形式：1109KB）"
+    },
+    "D431": {
+      "cite_id": "D431",
+      "cite_type": "document",
+      "file": "siryo2_20.pdf",
+      "page_title": "第３回　ＡＩステアリングコミッティー - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "これまでの研究成果と今後の方向性について 産業総合研究所報告資料（PDF形式：1245KB）"
+    },
+    "D432": {
+      "cite_id": "D432",
+      "cite_type": "document",
+      "file": "siryo2_21.pdf",
+      "page_title": "第２回　ＡＩステアリングコミッティー - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "研究環境整備 経済産業省報告資料（PDF形式：189KB）"
+    },
+    "D433": {
+      "cite_id": "D433",
+      "cite_type": "document",
+      "file": "siryo2_22.pdf",
+      "page_title": "数理・データサイエンス・ＡＩ 教育プログラム認定制度検討会議（令和2年度 第7回） - 科学技術・イノベーション - 内閣府",
+      "link_text": "「数理・データサイエンス・AI 教育プログラム認定制度（応用基礎レベル）」の創設について（案）（PDF形式：1674KB）"
+    },
+    "D434": {
+      "cite_id": "D434",
+      "cite_type": "document",
+      "file": "siryo2_23.pdf",
+      "page_title": "数理・データサイエンス・ＡＩ 教育プログラム認定制度検討会議（令和2年度 第5回） - 科学技術・イノベーション - 内閣府",
+      "link_text": "中央大学資料 （PDF形式：1640KB）"
+    },
+    "D435": {
+      "cite_id": "D435",
+      "cite_type": "document",
+      "file": "siryo2_24.pdf",
+      "page_title": "数理・データサイエンス・ＡＩ 教育プログラム認定制度検討会議（令和2年度 第4回） - 科学技術・イノベーション - 内閣府",
+      "link_text": "事務局資料「第３回検討会議での議論を踏まえた論点について」（PDF形式：728KB）"
+    },
+    "D436": {
+      "cite_id": "D436",
+      "cite_type": "document",
+      "file": "siryo2_25.pdf",
+      "page_title": "数理・データサイエンス・ＡＩ 教育プログラム認定制度検討会議（令和2年度 第3回） - 科学技術・イノベーション - 内閣府",
+      "link_text": "関西学院大学におけるＡＩ活用人材教育（村田構成員資料）（PDF形式：1887KB）"
+    },
+    "D437": {
+      "cite_id": "D437",
+      "cite_type": "document",
+      "file": "siryo2_26.pdf",
+      "page_title": "数理・データサイエンス・ＡＩ 教育プログラム認定制度検討会議（令和2年度 第2回） - 科学技術・イノベーション - 内閣府",
+      "link_text": "五十嵐構成員資料 （PDF形式：1940KB）"
+    },
+    "D438": {
+      "cite_id": "D438",
+      "cite_type": "document",
+      "file": "siryo2_27.pdf",
+      "page_title": "数理・データサイエンス・ＡＩ 教育プログラム認定制度検討会議（令和元年度 第5回） - 科学技術・イノベーション - 内閣府",
+      "link_text": "「数理・データサイエンス・AI教育プログラム認定制度」の創設について（骨子）（PDF形式：167KB）"
+    },
+    "D439": {
+      "cite_id": "D439",
+      "cite_type": "document",
+      "file": "siryo2_28.pdf",
+      "page_title": "数理・データサイエンス・ＡＩ 教育プログラム認定制度検討会議（令和元年度 第3回） - 科学技術・イノベーション - 内閣府",
+      "link_text": "辻氏発表資料（PDF形式：1687KB）"
+    },
+    "D440": {
+      "cite_id": "D440",
+      "cite_type": "document",
+      "file": "siryo2_29.pdf",
+      "page_title": "数理・データサイエンス・ＡＩ 教育プログラム認定制度検討会議（令和元年度 第１回） - 科学技術・イノベーション - 内閣府",
+      "link_text": "制度設計における検討事項（案）（PDF形式：56KB）"
+    },
+    "D441": {
+      "cite_id": "D441",
+      "cite_type": "document",
+      "file": "siryo2_3.pdf",
+      "page_title": "人間中心のAI社会原則会議（令和4年度 第1回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "富士通におけるDX及びAI倫理の取組事例について（富士通提出資料）（PDF形式：1897KB）"
+    },
+    "D442": {
+      "cite_id": "D442",
+      "cite_type": "document",
+      "file": "siryo2_4.pdf",
+      "page_title": "人間中心のAI社会原則会議（令和3年度 第3回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "諸外国の公共部門における「AIによるガバナンス」の事例調査結果 （事務局準備資料）（PDF形式：1958KB）"
+    },
+    "D443": {
+      "cite_id": "D443",
+      "cite_type": "document",
+      "file": "siryo2_5.pdf",
+      "page_title": "人間中心のAI社会原則会議（令和3年度 第1回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "我が国のＡＩガバナンスの在り方 （経産省提出資料）（PDF形式：521KB）"
+    },
+    "D444": {
+      "cite_id": "D444",
+      "cite_type": "document",
+      "file": "siryo2_6.pdf",
+      "page_title": "人間中心のAI社会原則会議（令和２年度 第２回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "AIエージェントの法的位置づけ（PDF形式：1521KB）"
+    },
+    "D445": {
+      "cite_id": "D445",
+      "cite_type": "document",
+      "file": "siryo2_7.pdf",
+      "page_title": "人間中心のAI社会原則会議（令和２年度 第1回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "AIに関する国際的議論の動向（PDF形式：1119KB）"
+    },
+    "D446": {
+      "cite_id": "D446",
+      "cite_type": "document",
+      "file": "siryo2_8.pdf",
+      "page_title": "第11回　AI戦略実行会議（イノベーション政策強化推進のための有識者会議「AI戦略」）- 科学技術・イノベーション - 内閣府",
+      "link_text": "「ＡＩ戦略2022」の取組（2023年4月時点）（PDF形式：274KB）"
+    },
+    "D447": {
+      "cite_id": "D447",
+      "cite_type": "document",
+      "file": "siryo2_9.pdf",
+      "page_title": "第10回　AI戦略実行会議（イノベーション政策強化推進のための有識者会議「AI戦略」）- 科学技術・イノベーション - 内閣府",
+      "link_text": "ＡＩ戦略2021 の取組状況詳細（PDF形式：941KB）"
+    },
+    "D448": {
+      "cite_id": "D448",
+      "cite_type": "document",
+      "file": "siryo2_bessi.pdf",
+      "page_title": "第７回　AI戦略実行会議（イノベーション政策強化推進のための有識者会議「AI戦略」）- 科学技術・イノベーション - 内閣府",
+      "link_text": "「AI戦略２０２１」別紙（案）（PDF形式：953KB）"
+    },
+    "D449": {
+      "cite_id": "D449",
+      "cite_type": "document",
+      "file": "siryo3-1.pdf",
+      "page_title": "人間中心のAI社会原則会議（令和２年度 第1回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "AI研究最前線（福田構成員プレゼンテーション）（PDF形式：1581KB）"
+    },
+    "D450": {
+      "cite_id": "D450",
+      "cite_type": "document",
+      "file": "siryo3-1_1.pdf",
+      "page_title": "新ＡＩ戦略検討会議（第３回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "経済産業省（産業技術総合研究所）説明資料（PDF形式：953KB）"
+    },
+    "D451": {
+      "cite_id": "D451",
+      "cite_type": "document",
+      "file": "siryo3-1_2.pdf",
+      "page_title": "新ＡＩ戦略検討会議（第２回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "農林水産省説明資料（PDF形式：1545KB）"
+    },
+    "D452": {
+      "cite_id": "D452",
+      "cite_type": "document",
+      "file": "siryo3-1_3.pdf",
+      "page_title": "数理・データサイエンス・ＡＩ 教育プログラム認定制度検討会議（令和2年度 第4回） - 科学技術・イノベーション - 内閣府",
+      "link_text": "（株）ＮＴＴデータ下垣氏資料「ＡＩ人財について」（PDF形式：1269KB）"
+    },
+    "D453": {
+      "cite_id": "D453",
+      "cite_type": "document",
+      "file": "siryo3-1_4.pdf",
+      "page_title": "数理・データサイエンス・ＡＩ 教育プログラム認定制度検討会議（令和2年度 第3回） - 科学技術・イノベーション - 内閣府",
+      "link_text": "数理・データサイエンス教育強化拠点コンソーシアムモデルカリキュラム（応用基礎レベル）の全国展開に関する特別委員会の検討状況（岡本構成員資料）（PDF形式：111KB）"
+    },
+    "D454": {
+      "cite_id": "D454",
+      "cite_type": "document",
+      "file": "siryo3-1_5.pdf",
+      "page_title": "数理・データサイエンス・ＡＩ 教育プログラム認定制度検討会議（令和元年度 第１回） - 科学技術・イノベーション - 内閣府",
+      "link_text": "国内大学等におけるＡＩ等教育プログラムの主な事例（全体概要）（PDF形式：621KB）"
+    },
+    "D455": {
+      "cite_id": "D455",
+      "cite_type": "document",
+      "file": "siryo3-2-1.pdf",
+      "page_title": "数理・データサイエンス・ＡＩ 教育プログラム認定制度検討会議（令和2年度 第4回） - 科学技術・イノベーション - 内閣府",
+      "link_text": "１（PDF形式：1927KB）"
+    },
+    "D456": {
+      "cite_id": "D456",
+      "cite_type": "document",
+      "file": "siryo3-2-2.pdf",
+      "page_title": "数理・データサイエンス・ＡＩ 教育プログラム認定制度検討会議（令和2年度 第4回） - 科学技術・イノベーション - 内閣府",
+      "link_text": "２（PDF形式：1944KB）"
+    },
+    "D457": {
+      "cite_id": "D457",
+      "cite_type": "document",
+      "file": "siryo3-2-3.pdf",
+      "page_title": "数理・データサイエンス・ＡＩ 教育プログラム認定制度検討会議（令和2年度 第4回） - 科学技術・イノベーション - 内閣府",
+      "link_text": "３（PDF形式：1791KB）"
+    },
+    "D458": {
+      "cite_id": "D458",
+      "cite_type": "document",
+      "file": "siryo3-2.pdf",
+      "page_title": "人間中心のAI社会原則会議（令和２年度 第1回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "AIのELSI（平野構成員プレゼンテーション）（PDF形式：1659KB）"
+    },
+    "D459": {
+      "cite_id": "D459",
+      "cite_type": "document",
+      "file": "siryo3-2_1.pdf",
+      "page_title": "新ＡＩ戦略検討会議（第３回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "経済産業省説明資料（PDF形式：1353KB）"
+    },
+    "D460": {
+      "cite_id": "D460",
+      "cite_type": "document",
+      "file": "siryo3-2_2.pdf",
+      "page_title": "数理・データサイエンス・ＡＩ 教育プログラム認定制度検討会議（令和2年度 第2回） - 科学技術・イノベーション - 内閣府",
+      "link_text": "ルゾンカ構成員資料（PDF形式：666KB）"
+    },
+    "D461": {
+      "cite_id": "D461",
+      "cite_type": "document",
+      "file": "siryo3-2_3.pdf",
+      "page_title": "数理・データサイエンス・ＡＩ 教育プログラム認定制度検討会議（令和元年度 第１回） - 科学技術・イノベーション - 内閣府",
+      "link_text": "諸外国のＡＩ戦略（教育関係）の概要（PDF形式：165KB）"
+    },
+    "D462": {
+      "cite_id": "D462",
+      "cite_type": "document",
+      "file": "siryo3-3.pdf",
+      "page_title": "数理・データサイエンス・ＡＩ 教育プログラム認定制度検討会議（令和元年度 第１回） - 科学技術・イノベーション - 内閣府",
+      "link_text": "諸外国のＡＩ等教育プログラム事例（PDF形式：1066KB）"
+    },
+    "D463": {
+      "cite_id": "D463",
+      "cite_type": "document",
+      "file": "siryo3.pdf",
+      "page_title": "人間中心のAI社会原則会議（令和5年度 第1回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "AIガバナンスに関する議論の方向性について（内閣府提出資料）（PDF形式：1726KB）"
+    },
+    "D464": {
+      "cite_id": "D464",
+      "cite_type": "document",
+      "file": "siryo3_1.pdf",
+      "page_title": "人間中心のAI社会原則会議（令和4年度 第2回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "米国のAI権利章典（AI Bill of Rights）について（内閣府提出資料)（PDF形式：788KB）"
+    },
+    "D465": {
+      "cite_id": "D465",
+      "cite_type": "document",
+      "file": "siryo3_10.pdf",
+      "page_title": "第２回　ＡＩステアリングコミッティー - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "人工知能研究開発ネットワーク 産業技術総合研究所報告資料（PDF形式：229KB）"
+    },
+    "D466": {
+      "cite_id": "D466",
+      "cite_type": "document",
+      "file": "siryo3_11.pdf",
+      "page_title": "数理・データサイエンス・ＡＩ 教育プログラム認定制度検討会議（令和2年度 第7回） - 科学技術・イノベーション - 内閣府",
+      "link_text": "数理・データサイエンス・AI 教育プログラム認定制度（応用基礎レベル）【概要版】（PDF形式：1158KB）"
+    },
+    "D467": {
+      "cite_id": "D467",
+      "cite_type": "document",
+      "file": "siryo3_12.pdf",
+      "page_title": "数理・データサイエンス・ＡＩ 教育プログラム認定制度検討会議（令和2年度 第5回） - 科学技術・イノベーション - 内閣府",
+      "link_text": "事務局資料 「応用基礎レベルの認定制度について（案）」（PDF形式：469KB）"
+    },
+    "D468": {
+      "cite_id": "D468",
+      "cite_type": "document",
+      "file": "siryo3_13.pdf",
+      "page_title": "数理・データサイエンス・ＡＩ 教育プログラム認定制度検討会議（令和2年度 第1回） - 科学技術・イノベーション - 内閣府",
+      "link_text": "数理・データサイエンス・ＡＩ教育プログラム認定制度（応用基礎レベル）の対象範囲の検討に向けた一考察 （PDF形式：1390KB）"
+    },
+    "D469": {
+      "cite_id": "D469",
+      "cite_type": "document",
+      "file": "siryo3_14.pdf",
+      "page_title": "数理・データサイエンス・ＡＩ 教育プログラム認定制度検討会議（令和元年度 第2回） - 科学技術・イノベーション - 内閣府",
+      "link_text": "村田構成員資料（PDF形式：1429KB）"
+    },
+    "D470": {
+      "cite_id": "D470",
+      "cite_type": "document",
+      "file": "siryo3_2.pdf",
+      "page_title": "人間中心のAI社会原則会議（令和4年度 第1回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "AIネットワーク社会推進会議「報告書2022」の概要について（総務省提出資料）（PDF形式：1122KB）"
+    },
+    "D471": {
+      "cite_id": "D471",
+      "cite_type": "document",
+      "file": "siryo3_3.pdf",
+      "page_title": "人間中心のAI社会原則会議（令和3年度 第3回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "政府機関におけるAI利活用推進上の主な阻害要因に関する調査結果（事務局準備資料）（PDF形式：814KB）"
+    },
+    "D472": {
+      "cite_id": "D472",
+      "cite_type": "document",
+      "file": "siryo3_4.pdf",
+      "page_title": "人間中心のAI社会原則会議（令和3年度 第2回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "海外公共部門でのAI活用状況の調査結果（事務局準備資料）（PDF形式：1078KB）"
+    },
+    "D473": {
+      "cite_id": "D473",
+      "cite_type": "document",
+      "file": "siryo3_5.pdf",
+      "page_title": "第９回　AI戦略実行会議（イノベーション政策強化推進のための有識者会議「AI戦略」）- 科学技術・イノベーション - 内閣府",
+      "link_text": "ＡＩ戦略2022（案）の概要（「総合科学技術・イノベーション会議」提出資料案）（PDF形式：384KB）"
+    },
+    "D474": {
+      "cite_id": "D474",
+      "cite_type": "document",
+      "file": "siryo3_6.pdf",
+      "page_title": "第７回　AI戦略実行会議（イノベーション政策強化推進のための有識者会議「AI戦略」）- 科学技術・イノベーション - 内閣府",
+      "link_text": "「AI戦略２０１９」の進捗状況及び「AI戦略２０２１」への見直し、並びに新AI戦略の策定について（案）（「統合イノベーション戦略推進会議」提出資料案）（PDF形式：295KB）"
+    },
+    "D475": {
+      "cite_id": "D475",
+      "cite_type": "document",
+      "file": "siryo3_7.pdf",
+      "page_title": "第6回　イノベーション政策強化推進のための有識者会議「ＡＩ戦略」（ＡＩ戦略実行会議） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "文部科学省提出資料（PDF形式：601KB）"
+    },
+    "D476": {
+      "cite_id": "D476",
+      "cite_type": "document",
+      "file": "siryo3_8.pdf",
+      "page_title": "新ＡＩ戦略検討会議（第１回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "イギリス公共部門におけるAI・データ戦略の調査結果（事務局資料）（PDF形式：1894KB）"
+    },
+    "D477": {
+      "cite_id": "D477",
+      "cite_type": "document",
+      "file": "siryo3_9.pdf",
+      "page_title": "第３回　ＡＩステアリングコミッティー - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "これまでの研究成果と今後の方向性について 理化学研究所報告資料（PDF形式：1007KB）"
+    },
+    "D478": {
+      "cite_id": "D478",
+      "cite_type": "document",
+      "file": "siryo4-1.pdf",
+      "page_title": "数理・データサイエンス・ＡＩ 教育プログラム認定制度検討会議（令和2年度 第3回） - 科学技術・イノベーション - 内閣府",
+      "link_text": "１（PDF形式：1983KB）"
+    },
+    "D479": {
+      "cite_id": "D479",
+      "cite_type": "document",
+      "file": "siryo4-2.pdf",
+      "page_title": "数理・データサイエンス・ＡＩ 教育プログラム認定制度検討会議（令和2年度 第3回） - 科学技術・イノベーション - 内閣府",
+      "link_text": "２（PDF形式：1975KB）"
+    },
+    "D480": {
+      "cite_id": "D480",
+      "cite_type": "document",
+      "file": "siryo4-3.pdf",
+      "page_title": "数理・データサイエンス・ＡＩ 教育プログラム認定制度検討会議（令和2年度 第3回） - 科学技術・イノベーション - 内閣府",
+      "link_text": "３（PDF形式：1508KB）"
+    },
+    "D481": {
+      "cite_id": "D481",
+      "cite_type": "document",
+      "file": "siryo4.pdf",
+      "page_title": "人間中心のAI社会原則会議（令和5年度 第1回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "政府機関におけるAIの導入促進にむけた調査（内閣府提出資料）（PDF形式：1181KB）"
+    },
+    "D482": {
+      "cite_id": "D482",
+      "cite_type": "document",
+      "file": "siryo4_1.pdf",
+      "page_title": "人間中心のAI社会原則会議（令和4年度 第2回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "政府機関におけるAIの導入促進にむけた調査・検討（内閣府提出資料）（PDF形式：974KB）"
+    },
+    "D483": {
+      "cite_id": "D483",
+      "cite_type": "document",
+      "file": "siryo4_10.pdf",
+      "page_title": "数理・データサイエンス・ＡＩ 教育プログラム認定制度検討会議（令和元年度 第2回） - 科学技術・イノベーション - 内閣府",
+      "link_text": "山中構成員資料（PDF形式：1485KB）"
+    },
+    "D484": {
+      "cite_id": "D484",
+      "cite_type": "document",
+      "file": "siryo4_11.pdf",
+      "page_title": "数理・データサイエンス・ＡＩ 教育プログラム認定制度検討会議（令和元年度 第１回） - 科学技術・イノベーション - 内閣府",
+      "link_text": "今後の予定について（PDF形式：65KB）"
+    },
+    "D485": {
+      "cite_id": "D485",
+      "cite_type": "document",
+      "file": "siryo4_2.pdf",
+      "page_title": "第９回　AI戦略実行会議（イノベーション政策強化推進のための有識者会議「AI戦略」）- 科学技術・イノベーション - 内閣府",
+      "link_text": "総務省提出資料（PDF形式：891KB）"
+    },
+    "D486": {
+      "cite_id": "D486",
+      "cite_type": "document",
+      "file": "siryo4_3.pdf",
+      "page_title": "第７回　AI戦略実行会議（イノベーション政策強化推進のための有識者会議「AI戦略」）- 科学技術・イノベーション - 内閣府",
+      "link_text": "総務省提出資料（PDF形式：733KB）"
+    },
+    "D487": {
+      "cite_id": "D487",
+      "cite_type": "document",
+      "file": "siryo4_4.pdf",
+      "page_title": "第6回　イノベーション政策強化推進のための有識者会議「ＡＩ戦略」（ＡＩ戦略実行会議） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "経済産業省提出資料（PDF形式：1,863KB）"
+    },
+    "D488": {
+      "cite_id": "D488",
+      "cite_type": "document",
+      "file": "siryo4_5.pdf",
+      "page_title": "新ＡＩ戦略検討会議（第３回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "事務局説明資料（PDF形式：284KB）"
+    },
+    "D489": {
+      "cite_id": "D489",
+      "cite_type": "document",
+      "file": "siryo4_6.pdf",
+      "page_title": "新ＡＩ戦略検討会議（第２回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "AI 社会実装の現状把握に関する調査の結果概要（事務局資料）（PDF形式：608KB）"
+    },
+    "D490": {
+      "cite_id": "D490",
+      "cite_type": "document",
+      "file": "siryo4_7.pdf",
+      "page_title": "第３回　ＡＩステアリングコミッティー - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "これまでの研究成果と今後の方向性について 情報通信研究機構報告資料（PDF形式：1579KB）"
+    },
+    "D491": {
+      "cite_id": "D491",
+      "cite_type": "document",
+      "file": "siryo4_8.pdf",
+      "page_title": "第２回　ＡＩステアリングコミッティー - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "研究開発工程表 情報通信研究機構報告資料（PDF形式：379KB）"
+    },
+    "D492": {
+      "cite_id": "D492",
+      "cite_type": "document",
+      "file": "siryo4_9.pdf",
+      "page_title": "数理・データサイエンス・ＡＩ 教育プログラム認定制度検討会議（令和2年度 第4回） - 科学技術・イノベーション - 内閣府",
+      "link_text": "事務局資料「応用基礎レベルの概形について」（一部非公開資料）（PDF形式：1732KB）"
+    },
+    "D493": {
+      "cite_id": "D493",
+      "cite_type": "document",
+      "file": "siryo5.pdf",
+      "page_title": "第９回　AI戦略実行会議（イノベーション政策強化推進のための有識者会議「AI戦略」）- 科学技術・イノベーション - 内閣府",
+      "link_text": "文部科学省提出資料（PDF形式：956KB）"
+    },
+    "D494": {
+      "cite_id": "D494",
+      "cite_type": "document",
+      "file": "siryo5_1.pdf",
+      "page_title": "第７回　AI戦略実行会議（イノベーション政策強化推進のための有識者会議「AI戦略」）- 科学技術・イノベーション - 内閣府",
+      "link_text": "文部科学省提出資料（PDF形式：599KB）"
+    },
+    "D495": {
+      "cite_id": "D495",
+      "cite_type": "document",
+      "file": "siryo5_2.pdf",
+      "page_title": "第6回　イノベーション政策強化推進のための有識者会議「ＡＩ戦略」（ＡＩ戦略実行会議） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "総務省提出資料（PDF形式：1,680KB）"
+    },
+    "D496": {
+      "cite_id": "D496",
+      "cite_type": "document",
+      "file": "siryo5_3.pdf",
+      "page_title": "第３回　ＡＩステアリングコミッティー - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "アクションプランについて（PDF形式：282KB）"
+    },
+    "D497": {
+      "cite_id": "D497",
+      "cite_type": "document",
+      "file": "siryo5_4.pdf",
+      "page_title": "第２回　ＡＩステアリングコミッティー - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "研究開発工程表 理化学研究所報告資料（PDF形式：233KB）"
+    },
+    "D498": {
+      "cite_id": "D498",
+      "cite_type": "document",
+      "file": "siryo6.pdf",
+      "page_title": "第９回　AI戦略実行会議（イノベーション政策強化推進のための有識者会議「AI戦略」）- 科学技術・イノベーション - 内閣府",
+      "link_text": "経済産業省提出資料（PDF形式：579KB）"
+    },
+    "D499": {
+      "cite_id": "D499",
+      "cite_type": "document",
+      "file": "siryo6_1.pdf",
+      "page_title": "第７回　AI戦略実行会議（イノベーション政策強化推進のための有識者会議「AI戦略」）- 科学技術・イノベーション - 内閣府",
+      "link_text": "経済産業省提出資料（PDF形式：739KB）"
+    },
+    "D500": {
+      "cite_id": "D500",
+      "cite_type": "document",
+      "file": "siryo6_2.pdf",
+      "page_title": "第6回　イノベーション政策強化推進のための有識者会議「ＡＩ戦略」（ＡＩ戦略実行会議） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "厚生労働省提出資料（PDF形式：1,390KB）"
+    },
+    "D501": {
+      "cite_id": "D501",
+      "cite_type": "document",
+      "file": "siryo6_3.pdf",
+      "page_title": "第２回　ＡＩステアリングコミッティー - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "研究開発工程表 経済産業省報告資料（PDF形式：264KB）"
+    },
+    "D502": {
+      "cite_id": "D502",
+      "cite_type": "document",
+      "file": "siryo7.pdf",
+      "page_title": "第９回　AI戦略実行会議（イノベーション政策強化推進のための有識者会議「AI戦略」）- 科学技術・イノベーション - 内閣府",
+      "link_text": "防衛省提出資料（PDF形式：458KB）"
+    },
+    "D503": {
+      "cite_id": "D503",
+      "cite_type": "document",
+      "file": "siryo7_1.pdf",
+      "page_title": "第6回　イノベーション政策強化推進のための有識者会議「ＡＩ戦略」（ＡＩ戦略実行会議） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "農林水産省提出資料（PDF形式：1,244KB）"
+    },
+    "D504": {
+      "cite_id": "D504",
+      "cite_type": "document",
+      "file": "siryo8.pdf",
+      "page_title": "第6回　イノベーション政策強化推進のための有識者会議「ＡＩ戦略」（ＡＩ戦略実行会議） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "国土交通省提出資料（PDF形式：1,371KB）"
+    },
+    "D505": {
+      "cite_id": "D505",
+      "cite_type": "document",
+      "file": "siyro2-1.pdf",
+      "page_title": "人間中心のAI社会原則会議（令和3年度 第2回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "１（PDF形式：1155KB）"
+    },
+    "D506": {
+      "cite_id": "D506",
+      "cite_type": "document",
+      "file": "siyro2-2.pdf",
+      "page_title": "人間中心のAI社会原則会議（令和3年度 第2回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "２（PDF形式：1779KB）"
+    },
+    "D507": {
+      "cite_id": "D507",
+      "cite_type": "document",
+      "file": "siyro2-3.pdf",
+      "page_title": "人間中心のAI社会原則会議（令和3年度 第2回） - 総合科学技術・イノベーション会議 - 内閣府",
+      "link_text": "３（PDF形式：1082KB）"
+    },
+    "D508": {
+      "cite_id": "D508",
+      "cite_type": "document",
+      "file": "yosan_5nendo_hosei.pdf",
+      "page_title": "AI戦略 - 科学技術・イノベーション - 内閣府",
+      "link_text": "令和５年度補正予算（PDF形式：523KB）"
+    },
+    "D509": {
+      "cite_id": "D509",
+      "cite_type": "document",
+      "file": "yosan_5nendo_hosei_1.pdf",
+      "page_title": "AI戦略 - 科学技術・イノベーション - 内閣府",
+      "link_text": "令和５年度補正予算（PDF形式：523KB）"
+    },
+    "D510": {
+      "cite_id": "D510",
+      "cite_type": "document",
+      "file": "yosan_6nendo.pdf",
+      "page_title": "AI戦略 - 科学技術・イノベーション - 内閣府",
+      "link_text": "令和６年度予算（PDF形式：546KB）"
+    },
+    "D511": {
+      "cite_id": "D511",
+      "cite_type": "document",
+      "file": "yosan_6nendo_1.pdf",
+      "page_title": "AI戦略 - 科学技術・イノベーション - 内閣府",
+      "link_text": "令和６年度予算（PDF形式：546KB）"
+    },
+    "D512": {
+      "cite_id": "D512",
+      "cite_type": "document",
+      "file": "yosan_6nendo_hosei.pdf",
+      "page_title": "AI戦略 - 科学技術・イノベーション - 内閣府",
+      "link_text": "令和６年度補正予算（PDF形式：547KB）"
+    },
+    "D513": {
+      "cite_id": "D513",
+      "cite_type": "document",
+      "file": "yosan_6nendo_hosei_1.pdf",
+      "page_title": "AI戦略 - 科学技術・イノベーション - 内閣府",
+      "link_text": "令和６年度補正予算（PDF形式：547KB）"
+    },
+    "D514": {
+      "cite_id": "D514",
+      "cite_type": "document",
+      "file": "yosan_7nendo.pdf",
+      "page_title": "AI戦略 - 科学技術・イノベーション - 内閣府",
+      "link_text": "令和７年度予算（PDF形式：553KB）"
+    },
+    "D515": {
+      "cite_id": "D515",
+      "cite_type": "document",
+      "file": "yosan_7nendo_1.pdf",
+      "page_title": "AI戦略 - 科学技術・イノベーション - 内閣府",
+      "link_text": "令和７年度予算（PDF形式：553KB）"
+    },
+    "D516": {
+      "cite_id": "D516",
+      "cite_type": "document",
+      "file": "yosan_suii.pdf",
+      "page_title": "AI戦略 - 科学技術・イノベーション - 内閣府",
+      "link_text": "AI関連予算の推移（PDF形式：267KB）"
+    },
+    "D517": {
+      "cite_id": "D517",
+      "cite_type": "document",
+      "file": "yosan_suii_1.pdf",
+      "page_title": "AI戦略 - 科学技術・イノベーション - 内閣府",
+      "link_text": "AI関連予算の推移（PDF形式：267KB）"
+    }
+  },
+  "_doc_counter": 517,
+  "_pubcom_counter": 0
+}

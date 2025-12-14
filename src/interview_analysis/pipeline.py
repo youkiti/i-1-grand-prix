@@ -161,13 +161,14 @@ def tree_reduce(
     reduce_fn,
     max_workers: int = 10,
     checkpoint=None,
-    checkpoint_prefix: str = "reduce"
+    checkpoint_prefix: str = "reduce",
+    merge_size: int = 5  # 一度にマージする数
 ) -> tuple:
     """
     ツリー型並列Reduce
     
-    O(n) の逐次処理を O(log n) レベルの並列処理に変換。
-    例: 34アイテム → 5レベル（各レベル並列実行）→ 約7倍高速化
+    O(n) の逐次処理を O(log_k n) レベルの並列処理に変換。
+    k = merge_size (デフォルト5)
     
     Args:
         items: 処理対象のリスト
@@ -175,13 +176,52 @@ def tree_reduce(
         max_workers: 並列ワーカー数
         checkpoint: チェックポイントオブジェクト（オプション）
         checkpoint_prefix: チェックポイントのプレフィックス
+        merge_size: 一度にマージする数（デフォルト5）
     
     Returns:
         (result, stats) のタプル
         - result: 最終的に統合された1つの結果
-        - stats: {"initial_count": N, "levels": [pairs_per_level]}
+        - stats: {"initial_count": N, "levels": [groups_per_level]}
     """
     from concurrent.futures import ThreadPoolExecutor
+    import time
+    
+    # リトライロジックのラッパー（複数アイテムを順次マージ）
+    def reduce_group_with_retry(args):
+        index, group = args
+        if len(group) == 1:
+            return group[0]
+        
+        print(f"    [Group {index}] Processing {len(group)} items...", flush=True)
+        import time
+        start_t = time.time()
+        
+        MAX_RETRIES = 3
+        # グループ内のアイテムを順次マージ
+        result = group[0]
+        for i in range(1, len(group)):
+            item2 = group[i]
+            if not item2:  # 空文字はスキップ
+                continue
+            
+            last_error = None
+            for attempt in range(MAX_RETRIES):
+                try:
+                    result = reduce_fn(result, item2)
+                    break
+                except Exception as e:
+                    last_error = e
+                    if attempt < MAX_RETRIES - 1:
+                        wait_time = 2 ** attempt
+                        print(f"    [Group {index} - Retry {attempt + 1}/{MAX_RETRIES}] Error: {e}. Waiting {wait_time}s...", flush=True)
+                        time.sleep(wait_time)
+                    else:
+                        print(f"    [Group {index} - Skip] Failed after {MAX_RETRIES} attempts: {e}", flush=True)
+                        # 失敗時は現在の結果を保持
+        
+        elapsed = time.time() - start_t
+        print(f"    [Group {index}] Finished in {elapsed:.1f}s", flush=True)
+        return result
     
     stats = {"initial_count": len(items), "levels": []}
     
@@ -196,22 +236,19 @@ def tree_reduce(
     
     while len(current_level) > 1:
         level_num += 1
-        pairs = []
+        groups = []
         
-        # ペアを作成（奇数の場合、最後の1つはそのまま次レベルへ）
-        for i in range(0, len(current_level), 2):
-            if i + 1 < len(current_level):
-                pairs.append((current_level[i], current_level[i + 1]))
-            else:
-                # 奇数の場合、最後のアイテムは空文字とペアにして次へ
-                pairs.append((current_level[i], ""))
+        # merge_size個ずつグループ化
+        for i in range(0, len(current_level), merge_size):
+            group = current_level[i:i + merge_size]
+            groups.append((len(groups) + 1, group))  # インデックスを付与
         
-        stats["levels"].append(len(pairs))
-        print(f"  Tree Reduce Level {level_num}: {len(pairs)} pairs (parallel)...", flush=True)
+        stats["levels"].append(len(groups))
+        print(f"  Tree Reduce Level {level_num}: {len(groups)} groups (parallel, {merge_size}-way merge)...", flush=True)
         
-        # 並列実行
+        # 並列実行（リトライロジック付き）
         with ThreadPoolExecutor(max_workers=max_workers) as executor:
-            results = list(executor.map(lambda p: reduce_fn(p[0], p[1]), pairs))
+            results = list(executor.map(reduce_group_with_retry, groups))
         
         # None をフィルタリング（API エラー時の対策）
         results = [r if r is not None else "" for r in results]
@@ -608,6 +645,7 @@ def run_pre_hypothesis_iterative(prompt_dir: Path, meta: Dict[str, Any], source_
 
     from .prompts import load_template
     from .checkpoint import get_checkpoint
+    import os
 
     # チェックポイント初期化
     checkpoint = get_checkpoint(source_path, "pre_hypothesis_iterative", cfg.focus) if use_checkpoint else None
@@ -624,35 +662,31 @@ def run_pre_hypothesis_iterative(prompt_dir: Path, meta: Dict[str, Any], source_
     part1_prompt_path = prompt_dir / "pre_hypothesis_part1.md"
     part1_prompt_template = load_template(part1_prompt_path)
 
-    # 全ドキュメントをメタデータ付きで収集
-    documents = list(iter_documents_with_metadata(source_path))
-
-    # Citation Registry にドキュメントを登録
-    for doc in documents:
-        cite_id = citation_registry.add_document(
-            file=doc.filename,
-            url=doc.url,
-            page_title=doc.page_title,
-            link_text=doc.link_text
-        )
-        filename_to_cite_id[doc.filename] = cite_id
-
-
-    # チェックポイントからPart 1（完全版）を復元
+    # === 最適化：まずチェックポイントを確認し、Part 1 が完了していればPDF読み込みをスキップ ===
     part1_results = None
+    documents = None  # 遅延初期化
+    
+    # ファイル数のみを高速に取得（PDFコンテンツは読み込まない）
+    target_exts = ('.pdf', '.txt')
+    pdf_files = sorted([f for f in os.listdir(source_path) if f.lower().endswith(target_exts)])
+    num_files = len(pdf_files)
+    
+    # チェックポイントからPart 1（完全版）を復元
     if checkpoint and checkpoint.has_part1_checkpoint():
         part1_results = checkpoint.load_part1()
-        # ファイル数が一致するか確認
-        if part1_results and len(part1_results) == len(documents):
-            print(f"[Checkpoint] Using cached Part 1 results ({len(part1_results)} items)", flush=True)
+        # キャッシュがあれば使用（ファイル数の完全一致は不要）
+        if part1_results:
+            print(f"[Checkpoint] Using cached Part 1 results ({len(part1_results)} items, directory has {num_files} files) - Skipping PDF loading", flush=True)
         else:
-            print(f"[Checkpoint] Part 1 cache invalid (expected {len(documents)}, got {len(part1_results) if part1_results else 0}). Checking partials.", flush=True)
+            print(f"[Checkpoint] Part 1 cache empty. Checking partials.", flush=True)
             part1_results = None
 
+    # 事前にpartialを読み込み（重複読み込み防止）
+    partial = checkpoint.load_partial_map_results() if checkpoint else {}
+    
     # インクリメンタルチェックポイントの確認
     if part1_results is None and checkpoint:
-        partial = checkpoint.load_partial_map_results()
-        if len(partial) == len(documents):
+        if len(partial) == num_files:
              part1_results = []
              # index順に並べ替え
              sorted_indices = sorted(partial.keys())
@@ -662,14 +696,40 @@ def run_pre_hypothesis_iterative(prompt_dir: Path, meta: Dict[str, Any], source_
              print(f"[Checkpoint] Consolidated {len(part1_results)} items from incremental checkpoints", flush=True)
              checkpoint.save_part1(part1_results)
 
+    # Part 1 結果がある場合：Citation Registryをファイル名リストから構築（PDFコンテンツ不要）
+    if part1_results is not None:
+        # スクレイパーメタデータからCitation Registryを構築（PDF読み込み不要）
+        for filename in pdf_files:
+            metadata = scraper_metadata.get(filename, {})
+            cite_id = citation_registry.add_document(
+                file=filename,
+                url=metadata.get('url', ''),
+                page_title=metadata.get('page_title', ''),
+                link_text=metadata.get('link_text', '')
+            )
+            filename_to_cite_id[filename] = cite_id
+
     if part1_results is None:
-        # Part 1を実行
+        # Part 1を実行 - この場合のみPDFを読み込む
+        print(f"[Map Phase] Loading {num_files} PDF documents...", flush=True)
+        documents = list(iter_documents_with_metadata(source_path))
+        
+        # Citation Registry にドキュメントを登録
+        for doc in documents:
+            cite_id = citation_registry.add_document(
+                file=doc.filename,
+                url=doc.url,
+                page_title=doc.page_title,
+                link_text=doc.link_text
+            )
+            filename_to_cite_id[doc.filename] = cite_id
+        
         from concurrent.futures import ThreadPoolExecutor
         import threading
         lock = threading.Lock()
 
-        # 完了済みアイテムをロード
-        partial_results = checkpoint.load_partial_map_results() if checkpoint else {}
+        # 完了済みアイテムをロード（上で読み込み済みのpartialを再利用）
+        partial_results = partial
         
         if partial_results:
              print(f"[Checkpoint] Resuming Part 1: {len(partial_results)} items already completed, {len(documents) - len(partial_results)} remaining", flush=True)
@@ -736,13 +796,40 @@ def run_pre_hypothesis_iterative(prompt_dir: Path, meta: Dict[str, Any], source_
     part2_prompt_path = prompt_dir / "pre_hypothesis_part2_iterative.md"
     part2_prompt_template = load_template(part2_prompt_path)
     
-    # Part 1レポートを初期バッチとして使用（3つずつグループ化）
-    INITIAL_BATCH_SIZE = 3
+    # 動的バッチサイズ計算（トークン制限最適化）
+    # Gemini Flash: 1M input, 65K output
+    MAX_INPUT_TOKENS = 1_000_000
+    TARGET_TOKENS_PER_BATCH = 100_000  # 安全マージン込みで10万トークン/バッチ
+    
+    # 平均トークン数を推定（日本語: 約1.5文字/トークン）
+    total_chars = sum(len(r) for r in part1_reports)
+    avg_chars_per_report = total_chars / len(part1_reports) if part1_reports else 1000
+    avg_tokens_per_report = avg_chars_per_report / 1.5  # 日本語概算
+    
+    # 最適バッチサイズを計算
+    optimal_batch_size = max(1, int(TARGET_TOKENS_PER_BATCH / avg_tokens_per_report))
+    optimal_batch_size = min(optimal_batch_size, 10)  # 最大10 (latency対策)
+    optimal_batch_size = max(optimal_batch_size, 3)   # 最小3
+    
+    # マージサイズも動的調整（バッチが大きければマージ数を減らす）
+    optimal_merge_size = max(2, min(5, 50000 // int(avg_tokens_per_report * optimal_batch_size)))
+    
+    print(f"[Token Optimization] Avg tokens/report: {int(avg_tokens_per_report)}, batch_size: {optimal_batch_size}, merge_size: {optimal_merge_size}", flush=True)
+    
     initial_batches = []
-    for i in range(0, len(part1_reports), INITIAL_BATCH_SIZE):
-        batch = part1_reports[i:i + INITIAL_BATCH_SIZE]
+    for i in range(0, len(part1_reports), optimal_batch_size):
+        batch = part1_reports[i:i + optimal_batch_size]
         initial_batches.append("\n\n---\n\n".join(batch))
     
+    # チェックポイントからPart 2途中経過を復元（リジューム機能）
+    if checkpoint:
+        part2_data = checkpoint.load_part2_state()
+        if part2_data:
+            _, content = part2_data
+            # NOTE: tree_reduceは結果を "\n---\n" で結合して保存している
+            initial_batches = content.split("\n---\n")
+            print(f"[Checkpoint] Resuming Part 2 from last saved state: {len(initial_batches)} items", flush=True)
+
     print(f"Starting Tree Reduce: {len(initial_batches)} initial batches", flush=True)
     
     # ツリー型Reduce用の統合関数を定義
@@ -764,7 +851,7 @@ def run_pre_hypothesis_iterative(prompt_dir: Path, meta: Dict[str, Any], source_
     # ツリー型並列Reduceを実行
     import time
     reduce_start = time.time()
-    final_qa, reduce_stats = tree_reduce(initial_batches, reduce_pair, max_workers=10, checkpoint=checkpoint)
+    final_qa, reduce_stats = tree_reduce(initial_batches, reduce_pair, max_workers=3, checkpoint=checkpoint, merge_size=optimal_merge_size)
     reduce_time = time.time() - reduce_start
     
     # 最終プロンプトを記録（代表としてラスト生成時のものを使用）
@@ -784,13 +871,13 @@ def run_pre_hypothesis_iterative(prompt_dir: Path, meta: Dict[str, Any], source_
     process_metadata = _build_process_metadata(
         pipeline_name="事前仮説生成 (pre_hypothesis_iterative)",
         data_sources=[
-            {"name": "審議会資料", "path": str(source_path), "count": len(items), "unit": "ファイル"}
+            {"name": "審議会資料", "path": str(source_path), "count": len(part1_reports), "unit": "ファイル"}
         ],
         steps=[
             {
                 "name": "Part 1 (Map)",
                 "phase": "論点抽出",
-                "input": len(items),
+                "input": len(part1_reports),
                 "output": len(part1_reports),
                 "model": cfg.model,
                 "details": "並列10ワーカー"
@@ -832,7 +919,7 @@ def run_pre_hypothesis_iterative(prompt_dir: Path, meta: Dict[str, Any], source_
     }
 
 
-def run_pubcom_analysis(prompt_dir: Path, meta: Dict[str, Any], csv_path: Path, previous_report: str, cfg: RunConfig, use_checkpoint: bool = True, comparison_model: Optional[str] = None, prior_citation_registry: Optional[CitationRegistry] = None) -> Dict[str, Any]:
+def run_pubcom_analysis(prompt_dir: Path, meta: Dict[str, Any], csv_path: Path, previous_report: str, cfg: RunConfig, use_checkpoint: bool = True, comparison_model: Optional[str] = None, prior_citation_registry: Optional[CitationRegistry] = None, max_map_batches: Optional[int] = None) -> Dict[str, Any]:
     """
     pubcom_analysis:
     1. (Map) パブコメCSVの各コメントに対して個別分析を実行 (pubcom_map.md)
@@ -938,7 +1025,23 @@ def run_pubcom_analysis(prompt_dir: Path, meta: Dict[str, Any], csv_path: Path, 
             ctx1["focus"] = cfg.focus
             prompt = load_and_render(map_prompt_path, ctx1)
             
-            output = _call_model(prompt, cfg)
+            # リトライロジック: 429エラー時は待機して再試行
+            import time
+            MAX_RETRIES = 3
+            for attempt in range(MAX_RETRIES):
+                try:
+                    output = _call_model(prompt, cfg)
+                    break  # 成功
+                except Exception as e:
+                    if "429" in str(e) or "RESOURCE_EXHAUSTED" in str(e):
+                        wait_time = 5 * (2 ** attempt)  # 5, 10, 20秒
+                        print(f"[Retry {attempt+1}/{MAX_RETRIES}] Rate limited. Waiting {wait_time}s...", flush=True)
+                        time.sleep(wait_time)
+                        if attempt == MAX_RETRIES - 1:
+                            raise  # 最終試行でも失敗なら再送出
+                    else:
+                        raise  # 429以外のエラーはそのまま送出
+
             batch_id_str = str(batch_ids)
             
             # チェックポイント保存（スレッドセーフ）
@@ -948,13 +1051,30 @@ def run_pubcom_analysis(prompt_dir: Path, meta: Dict[str, Any], csv_path: Path, 
             
             return (batch_id_str, output)
 
-        with ThreadPoolExecutor(max_workers=5) as executor:
-            map_results = list(executor.map(process_map_batch_with_checkpoint, enumerate(session_batches)))
+        # max_map_batches が指定されている場合、処理対象を制限
+        batches_to_process = list(enumerate(session_batches))
+        if max_map_batches is not None:
+            # 未完了バッチのみをカウント
+            remaining_batches = [(idx, batch) for idx, batch in batches_to_process if idx not in completed_batches]
+            if len(remaining_batches) > max_map_batches:
+                print(f"[Batch Limit] Processing {max_map_batches} batches (of {len(remaining_batches)} remaining)", flush=True)
+                batches_to_process = [(idx, batch) for idx, batch in batches_to_process if idx in completed_batches]  # 完了済み
+                batches_to_process += remaining_batches[:max_map_batches]  # + 新規処理分
+
+        with ThreadPoolExecutor(max_workers=3) as executor:  # 並列処理
+            map_results = list(executor.map(process_map_batch_with_checkpoint, batches_to_process))
+        
+        # 部分完了チェック
+        if max_map_batches is not None:
+            completed_after = checkpoint.load_partial_map_results() if checkpoint else {}
+            if len(completed_after) < len(session_batches):
+                print(f"[Batch Limit] Partial completion: {len(completed_after)}/{len(session_batches)} batches done. Run again to continue.", flush=True)
+                return {"prompt": "", "report": f"Partial Map: {len(completed_after)}/{len(session_batches)} batches completed. Run again to continue."}
         
         if checkpoint:
             checkpoint.save_part1(map_results)
     
-    map_reports = [output for _, output in map_results]
+    map_reports = [output for _, output in map_results if output is not None]
     
     # ログ構築
     part1_log_content = "# Pubcom Phase 1 Outputs (Batched Analysis)\n\n"

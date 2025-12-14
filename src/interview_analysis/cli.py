@@ -64,6 +64,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--log-dir", type=Path, default=Path("doc"))
     parser.add_argument("--focus", type=str, default="", help="分析のフォーカス（主眼）。指定された場合、このテーマに関連しない内容は除外されます。")
     parser.add_argument("--comparison-model", type=str, default=None, help="pubcom_analysisの比較フェーズで使用するモデル")
+    parser.add_argument("--max-map-batches", type=int, default=None, help="pubcom_analysis Map フェーズで1回の実行で処理する最大バッチ数（API クォータ管理用）")
 
     return parser.parse_args()
 
@@ -137,7 +138,7 @@ def main() -> None:
             raise SystemExit("--csv と --previous-report を指定してください")
         previous_report = read_text_file(args.previous_report)
         from .pipeline import run_pubcom_analysis
-        result = run_pubcom_analysis(prompt_dir, meta, args.csv, previous_report, cfg, comparison_model=args.comparison_model)
+        result = run_pubcom_analysis(prompt_dir, meta, args.csv, previous_report, cfg, comparison_model=args.comparison_model, max_map_batches=args.max_map_batches)
     else:
         raise ValueError(f"Unknown mode: {cfg.mode}")
 
