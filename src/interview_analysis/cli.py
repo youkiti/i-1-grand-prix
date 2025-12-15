@@ -51,7 +51,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--csv", type=Path, required=False, help="メッセージCSVのパス（hypothesis/initial/updateで使用）")
     parser.add_argument("--source-dir", type=Path, required=False, help="ドキュメントフォルダのパス（pre_hypothesisで使用）")
     parser.add_argument("--meta", type=Path, default=Path("config/meta.yaml"), help="メタ情報 YAML/JSON")
-    parser.add_argument("--mode", choices=["hypothesis", "initial", "initial_auto", "initial_part1", "initial_part2", "update", "merge", "pre_hypothesis_auto", "pre_hypothesis_iterative", "pubcom_analysis"], required=True)
+    parser.add_argument("--mode", choices=["hypothesis", "initial", "initial_auto", "initial_part1", "initial_part2", "update", "merge", "pre_hypothesis_auto", "pre_hypothesis_iterative", "pubcom_analysis", "pubcom_aggregate", "pubcom_compare"], required=True)
     parser.add_argument("--previous-report", type=Path, help="UPDATE 用の前回レポート")
     parser.add_argument("--part1-report", type=Path, help="initial_part2 用の Part1 レポート")
     parser.add_argument("--batch-reports", type=Path, nargs="*", help="MERGE 用のレポートファイル群")
@@ -65,6 +65,8 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--focus", type=str, default="", help="分析のフォーカス（主眼）。指定された場合、このテーマに関連しない内容は除外されます。")
     parser.add_argument("--comparison-model", type=str, default=None, help="pubcom_analysisの比較フェーズで使用するモデル")
     parser.add_argument("--max-map-batches", type=int, default=None, help="pubcom_analysis Map フェーズで1回の実行で処理する最大バッチ数（API クォータ管理用）")
+    parser.add_argument("--pubcom-report", type=Path, default=None, help="pubcom_compare用: 集約済みパブコメレポートのパス")
+    parser.add_argument("--prior-hypothesis", type=Path, default=None, help="pubcom_compare用: 事前仮説レポートのパス（--previous-reportと同義）")
 
     return parser.parse_args()
 
@@ -139,6 +141,21 @@ def main() -> None:
         previous_report = read_text_file(args.previous_report)
         from .pipeline import run_pubcom_analysis
         result = run_pubcom_analysis(prompt_dir, meta, args.csv, previous_report, cfg, comparison_model=args.comparison_model, max_map_batches=args.max_map_batches)
+    elif cfg.mode == "pubcom_aggregate":
+        if not args.csv:
+            raise SystemExit("--csv を指定してください")
+        from .pipeline import run_pubcom_aggregate
+        result = run_pubcom_aggregate(prompt_dir, meta, args.csv, cfg, max_map_batches=args.max_map_batches)
+    elif cfg.mode == "pubcom_compare":
+        # --pubcom-report と --prior-hypothesis (または --previous-report) が必要
+        pubcom_report_path = args.pubcom_report
+        prior_hypothesis_path = args.prior_hypothesis or args.previous_report
+        if not pubcom_report_path or not prior_hypothesis_path:
+            raise SystemExit("--pubcom-report と --prior-hypothesis (または --previous-report) を指定してください")
+        pubcom_report = read_text_file(pubcom_report_path)
+        prior_hypothesis = read_text_file(prior_hypothesis_path)
+        from .pipeline import run_pubcom_compare
+        result = run_pubcom_compare(prompt_dir, meta, pubcom_report, prior_hypothesis, cfg, comparison_model=args.comparison_model)
     else:
         raise ValueError(f"Unknown mode: {cfg.mode}")
 
@@ -166,6 +183,10 @@ def main() -> None:
     save_text(run_dir / "outputs" / "report.md", result["report"])
     if "part1_log" in result:
         save_text(run_dir / "outputs" / "part1_log.md", result["part1_log"])
+    
+    # パブコメ集約レポートの独立保存（再利用可能）
+    if "pubcom_consolidated_report" in result:
+        save_text(run_dir / "outputs" / "pubcom_report.md", result["pubcom_consolidated_report"])
 
     # Citation Registry の保存
     if "citation_registry" in result:

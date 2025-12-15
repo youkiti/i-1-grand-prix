@@ -30,18 +30,9 @@
 
 ## YAMLスキーマ
 
-```yaml
-metadata:
-  focus: "{{ focus }}"
-  source_documents:
-    - id: "doc_001"  # 連番で付与
-      filename: "ファイル名.pdf"
-      url: "https://... （あれば）"
-      date: "YYYY-MM-DD（わかれば）"
-  generated_at: "生成日時"
-  document_summary: |
-    ドキュメント全体の概要。いつの時点の議論か、どのような会議体か等を簡潔に記載。
+**注意**: metadataセクションは出力しないでください。ソース情報はevidence_chunks内で直接保持されます。
 
+```yaml
 topics:
   - id: "topic_001"
     title: "論点のタイトル"
@@ -58,17 +49,18 @@ topics:
           description: "B案を支持する立場の概要"
       consensus_status: "継続検討"  # 決着(採用:X案) / 継続検討 / 両論併記
       consensus_detail: "何が未解決か、なぜ決着したか等の補足"
-    
-    # 根拠チャンク（原文引用） - 必須
-    evidence_chunks:
-      - id: "chunk_001"
-        source_doc_id: "doc_001"  # metadata.source_documents の id と対応
-        verbatim_quote: |
-          「原文をそのまま引用。複数行にわたる場合も
-          そのまま記載する。」
-        position: "A案派"  # spectrum.positions の label と対応（対立がない場合は null）
-        speaker: "○○委員"  # 発言者（わかれば、不明なら null）
-        context: "冒頭発言"  # どのような文脈での発言か（任意）
+
+evidence_chunks:
+  - id: "chunk_001"
+    source_filename: "ファイル名.pdf"  # ソースファイル名
+    source_url: "https://..."  # URL（あれば）
+    source_date: "YYYY-MM-DD"  # 日付（わかれば）
+    verbatim_quote: |
+      「原文をそのまま引用。複数行にわたる場合も
+      そのまま記載する。」
+    position: "A案派"  # spectrum.positions の label と対応（対立がない場合は null）
+    speaker: "○○委員"  # 発言者（わかれば、不明なら null）
+    context: "冒頭発言"  # どのような文脈での発言か（分析のインサイト）
 ```
 
 ## 出力時の注意

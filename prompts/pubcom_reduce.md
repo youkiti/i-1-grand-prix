@@ -24,26 +24,23 @@
 
 # 統合ルール（重要）
 
-## 1. metadata の統合
-
-- **batch_comment_ids**: 両方のYAMLから重複排除してマージ。
-- **total_comments**: コメント数を更新。
-
-## 2. topics の統合
+## 1. topics の統合
 
 - **同じ論点の統合**: タイトルや内容が同一・類似の topic は **1つにマージ**。
   - `id` は統合後の連番で振り直す（`topic_001`, `topic_002`, ...）
   - `summary` は両方の内容を統合して更新
 
-- **evidence_chunks のマージ**:
-  - 同じ topic にマージする場合、両方の `evidence_chunks` を結合
-  - `id` は統合後の連番で振り直す（`chunk_001`, `chunk_002`, ...）
-  - **verbatim_quote は削除・省略しない**（原文引用は全て維持）
-
 - **spectrum の統合**:
   - 同じ対立軸なら1つにまとめる
   - 新しい position が見つかったら `positions` 配列に追加
   - `comment_count` を更新（該当コメント数をカウント）
+
+## 2. evidence_chunks の統合
+
+- 両方の `evidence_chunks` を結合
+- `id` は統合後の連番で振り直す（`chunk_001`, `chunk_002`, ...）
+- **verbatim_quote は削除・省略しない**（原文引用は全て維持）
+- **comment_id は必ず維持**（トレーサビリティの根拠）
 
 ## 3. 過度な統合を避けるルール
 
@@ -57,6 +54,7 @@
 
 - **evidence_chunks の verbatim_quote を要約・省略しない**（原文をそのまま維持）
 - **根拠のない topic を作成しない**（必ず evidence_chunks が必要）
+- **metadataセクションは出力しない**（comment_idはevidence_chunks内で維持）
 
 # 出力フォーマット
 
@@ -65,13 +63,9 @@
 
 ## YAMLスキーマ
 
-```yaml
-metadata:
-  focus: "{{ focus }}"
-  total_comments: 20  # 統合後の総コメント数
-  batch_comment_ids: ["id1", "id2", ...]  # 全コメントIDリスト
-  generated_at: "生成日時"
+**注意**: metadataセクションは出力しないでください。comment_idはevidence_chunks内で保持されます。
 
+```yaml
 topics:
   - id: "topic_001"
     title: "論点のタイトル"
@@ -88,14 +82,14 @@ topics:
           description: "反対理由の概要"
           comment_count: 3
       consensus_status: null
-    
-    evidence_chunks:
-      - id: "chunk_001"
-        comment_id: "12345"
-        verbatim_quote: |
-          「原文をそのまま引用」
-        position: "賛成派"
-        context: "任意"
+
+evidence_chunks:
+  - id: "chunk_001"
+    comment_id: "12345"  # パブコメID（トレーサビリティの根拠）
+    verbatim_quote: |
+      「原文をそのまま引用」
+    position: "賛成派"
+    context: "分析のインサイト"
 ```
 
 ## 出力時の注意

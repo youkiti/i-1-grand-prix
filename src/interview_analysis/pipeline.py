@@ -55,6 +55,119 @@ def _call_model(prompt: str, cfg: RunConfig) -> str:
     return provider.generate(prompt, model_config)
 
 
+# --- Token Estimation and Dynamic Batching ---
+
+def estimate_tokens(text: str) -> int:
+    """
+    テキストのトークン数を推定
+    
+    日本語/英語混在テキストの場合、1 token ≈ 4 characters で概算
+    """
+    return max(1, len(text) // 4)
+
+
+def calculate_dynamic_batch_size(
+    session_contents: Dict[str, str],
+    session_ids: List[str],
+    prompt_template_tokens: int = 2000,
+    max_input_tokens: int = 1_048_576,
+    target_utilization: float = 0.8,
+    min_batch_size: int = 5,
+    max_batch_size: int = 100
+) -> int:
+    """
+    トークン上限に基づいて動的にバッチサイズを計算
+    
+    Args:
+        session_contents: セッションIDとコンテンツのマッピング
+        session_ids: 処理対象のセッションIDリスト
+        prompt_template_tokens: プロンプトテンプレートの予想トークン数
+        max_input_tokens: モデルの入力トークン上限
+        target_utilization: トークン上限の目標使用率 (0.0-1.0)
+        min_batch_size: 最小バッチサイズ
+        max_batch_size: 最大バッチサイズ
+    
+    Returns:
+        最適なバッチサイズ
+    """
+    if not session_ids:
+        return min_batch_size
+    
+    # 各セッションの平均トークン数を推定
+    sample_size = min(50, len(session_ids))
+    sample_ids = session_ids[:sample_size]
+    total_tokens = sum(estimate_tokens(session_contents.get(sid, "")) for sid in sample_ids)
+    avg_tokens_per_session = total_tokens / sample_size if sample_size > 0 else 500
+    
+    # ヘッダー（=== Comment ID: xxx ===\n\n）のオーバーヘッド
+    header_overhead = 50  # tokens per comment
+    
+    # 目標トークン数を計算
+    target_tokens = int(max_input_tokens * target_utilization) - prompt_template_tokens
+    
+    # バッチサイズを計算
+    tokens_per_session = avg_tokens_per_session + header_overhead
+    calculated_batch_size = int(target_tokens / tokens_per_session) if tokens_per_session > 0 else min_batch_size
+    
+    # 上下限でクリップ
+    batch_size = max(min_batch_size, min(max_batch_size, calculated_batch_size))
+    
+    print(f"[Dynamic Batching] avg tokens/session: {avg_tokens_per_session:.0f}, "
+          f"target: {target_tokens:,} tokens ({target_utilization*100:.0f}% of {max_input_tokens:,}), "
+          f"batch size: {batch_size}", flush=True)
+    
+    return batch_size
+
+
+def calculate_dynamic_merge_size(
+    items: List[str],
+    prompt_template_tokens: int = 2000,
+    max_input_tokens: int = 1_048_576,
+    target_utilization: float = 0.8,
+    min_merge_size: int = 2,
+    max_merge_size: int = 20
+) -> int:
+    """
+    Tree Reduceのmerge_sizeをトークン上限に基づいて動的に計算
+    
+    Args:
+        items: マージ対象のアイテム（YAMLレポート等）
+        prompt_template_tokens: プロンプトテンプレートの予想トークン数
+        max_input_tokens: モデルの入力トークン上限
+        target_utilization: トークン上限の目標使用率 (0.0-1.0)
+        min_merge_size: 最小マージサイズ
+        max_merge_size: 最大マージサイズ
+    
+    Returns:
+        最適なマージサイズ
+    """
+    if not items or len(items) <= 1:
+        return min_merge_size
+    
+    # 各アイテムの平均トークン数を推定
+    sample_size = min(10, len(items))
+    sample_items = items[:sample_size]
+    total_tokens = sum(estimate_tokens(item) for item in sample_items)
+    avg_tokens_per_item = total_tokens / sample_size if sample_size > 0 else 1000
+    
+    # 目標トークン数を計算
+    target_tokens = int(max_input_tokens * target_utilization) - prompt_template_tokens
+    
+    # マージサイズを計算（currentReport + newInfo の2つのコンテンツを渡すので2倍）
+    # merge_size個のアイテムを1グループとして処理するが、順次マージなので
+    # 最大でnewInfo分のトークンが増える
+    calculated_merge_size = int(target_tokens / avg_tokens_per_item) if avg_tokens_per_item > 0 else min_merge_size
+    
+    # 上下限でクリップ
+    merge_size = max(min_merge_size, min(max_merge_size, calculated_merge_size))
+    
+    print(f"[Dynamic Merge] avg tokens/item: {avg_tokens_per_item:.0f}, "
+          f"target: {target_tokens:,} tokens ({target_utilization*100:.0f}% of {max_input_tokens:,}), "
+          f"merge size: {merge_size}", flush=True)
+    
+    return merge_size
+
+
 # --- YAML Parsing Helpers ---
 
 import yaml
@@ -90,6 +203,61 @@ def extract_yaml_from_response(response: str) -> Optional[Dict[str, Any]]:
     except yaml.YAMLError as e:
         print(f"Warning: YAML parse error: {e}", flush=True)
         return None
+
+
+def merge_prior_hypothesis_yamls(text: str) -> str:
+    """
+    テキストから複数のYAMLブロックを抽出し、統合された単一のYAML文字列を返す。
+    
+    複数のpre_hypothesis_iterativeレポート（審議会 + 国会など）を
+    統合して単一の事前仮説として扱うための前処理。
+    
+    Args:
+        text: 複数のYAMLブロックを含む可能性のあるテキスト
+        
+    Returns:
+        統合されたYAML文字列（```yaml ... ``` 形式）
+    """
+    import re
+    
+    # YAMLブロックを全て抽出
+    pattern = r"```yaml\s*(.*?)```"
+    matches = re.findall(pattern, text, re.DOTALL)
+    
+    if not matches:
+        # YAMLブロックがない場合はそのまま返す
+        return text
+    
+    if len(matches) == 1:
+        # 単一のYAMLブロックの場合はそのまま返す
+        return text
+    
+    print(f"[Merge] Found {len(matches)} YAML blocks, merging into single prior hypothesis...", flush=True)
+    
+    # 複数のYAMLをパースしてマージ
+    merged: Optional[Dict[str, Any]] = None
+    
+    for i, yaml_text in enumerate(matches):
+        try:
+            parsed = yaml.safe_load(yaml_text)
+            if parsed:
+                if merged is None:
+                    merged = parsed
+                else:
+                    merged = merge_yaml_topics(merged, parsed)
+                print(f"  [Merge] Block {i+1}/{len(matches)}: {len(parsed.get('topics', []))} topics", flush=True)
+        except yaml.YAMLError as e:
+            print(f"  [Merge] Block {i+1} parse error: {e}", flush=True)
+            continue
+    
+    if merged is None:
+        return text
+    
+    # 統合結果をYAML文字列に変換
+    yaml_str = yaml.dump(merged, allow_unicode=True, default_flow_style=False, sort_keys=False)
+    print(f"  [Merge] Result: {len(merged.get('topics', []))} total topics, {len(merged.get('metadata', {}).get('source_documents', []))} source docs", flush=True)
+    
+    return f"```yaml\n{yaml_str}```"
 
 
 def dump_yaml_output(data: Dict[str, Any]) -> str:
@@ -973,7 +1141,14 @@ def run_pubcom_analysis(prompt_dir: Path, meta: Dict[str, Any], csv_path: Path, 
         cite_id = citation_registry.add_pubcom(comment_id=sid)
         pubcom_to_cite_id[sid] = cite_id
     
-    MAP_BATCH_SIZE = 20
+    # 動的バッチサイズ計算（トークン上限の80%を目標）
+    MAP_BATCH_SIZE = calculate_dynamic_batch_size(
+        session_contents=session_contents,
+        session_ids=session_ids,
+        prompt_template_tokens=2000,
+        max_input_tokens=1_048_576,
+        target_utilization=0.8
+    )
     session_batches = [session_ids[i:i + MAP_BATCH_SIZE] for i in range(0, len(session_ids), MAP_BATCH_SIZE)]
     
     map_prompt_path = prompt_dir / "pubcom_map.md"
@@ -1112,8 +1287,17 @@ def run_pubcom_analysis(prompt_dir: Path, meta: Dict[str, Any], csv_path: Path, 
         prompt = load_and_render(reduce_prompt_path, ctx2)
         return _call_model(prompt, cfg)
     
+    # 動的マージサイズ計算（トークン上限の80%を目標）
+    dynamic_merge_size = calculate_dynamic_merge_size(
+        items=initial_batches,
+        prompt_template_tokens=2000,
+        max_input_tokens=1_048_576,
+        target_utilization=0.8,
+        max_merge_size=5  # 安全のため上限を抑制
+    )
+    
     # ツリー型並列Reduceを実行
-    pubcom_consolidated_report, reduce_stats = tree_reduce(initial_batches, reduce_pair, max_workers=10, checkpoint=checkpoint)
+    pubcom_consolidated_report, reduce_stats = tree_reduce(initial_batches, reduce_pair, max_workers=10, checkpoint=checkpoint, merge_size=dynamic_merge_size)
 
     # --- Phase 2: Compare (Synthesis) ---
     # 比較用モデルが指定されていれば使用
@@ -1121,9 +1305,12 @@ def run_pubcom_analysis(prompt_dir: Path, meta: Dict[str, Any], csv_path: Path, 
     print(f"Processing Pubcom Comparison (model: {compare_model_name})...", flush=True)
     compare_prompt_path = prompt_dir / "pubcom_comparison.md"
     
+    # 複数のYAMLブロックがある場合は統合（1A+1B など）
+    merged_prior_hypothesis = merge_prior_hypothesis_yamls(previous_report)
+    
     ctx3 = build_context(meta, "", [], cfg.output_length_guidance)
     ctx3.update({
-        "priorHypothesis": previous_report,
+        "priorHypothesis": merged_prior_hypothesis,
         "pubcomReport": pubcom_consolidated_report,
         "focus": cfg.focus
     })
@@ -1209,3 +1396,250 @@ def run_pubcom_analysis(prompt_dir: Path, meta: Dict[str, Any], csv_path: Path, 
         "pubcom_to_cite_id": pubcom_to_cite_id
     }
 
+
+def run_pubcom_aggregate(prompt_dir: Path, meta: Dict[str, Any], csv_path: Path, cfg: RunConfig, use_checkpoint: bool = True, max_map_batches: Optional[int] = None) -> Dict[str, Any]:
+    """
+    pubcom_aggregate: パブコメ集約のみ（Map + Reduce）
+    
+    1. (Map) パブコメCSVの各コメントに対して個別分析を実行 (pubcom_map.md)
+    2. (Reduce) 個別分析結果をまとめて統合レポートを作成 (pubcom_reduce.md)
+    
+    出力: pubcom_report.md（再利用可能なYAML形式の集約レポート）
+    """
+    from .prompts import load_template
+    from concurrent.futures import ThreadPoolExecutor
+    from collections import defaultdict
+    from .checkpoint import get_checkpoint
+
+    # チェックポイント初期化
+    checkpoint = get_checkpoint(csv_path, "pubcom_aggregate", cfg.focus) if use_checkpoint else None
+
+    # Citation Registry
+    citation_registry = CitationRegistry()
+    pubcom_to_cite_id: Dict[str, str] = {}
+
+    # --- Phase 1: Map (Individual Analysis) ---
+    df = load_messages_csv(csv_path)
+
+    # session_id ごとにコンテンツをまとめる
+    session_dict = defaultdict(list)
+    for row in df:
+        sid = row.get("session_id", "unknown")
+        msg = row.get("message") or row.get("content") or row.get("text") or ""
+        session_dict[sid].append(msg)
+
+    session_contents = {sid: "\n".join(msgs) for sid, msgs in session_dict.items()}
+    session_ids = list(session_contents.keys())
+
+    # パブコメをCitation Registryに登録
+    for sid in session_ids:
+        cite_id = citation_registry.add_pubcom(comment_id=sid)
+        pubcom_to_cite_id[sid] = cite_id
+    
+    # 動的バッチサイズ計算（トークン上限の80%を目標）
+    MAP_BATCH_SIZE = calculate_dynamic_batch_size(
+        session_contents=session_contents,
+        session_ids=session_ids,
+        prompt_template_tokens=2000,
+        max_input_tokens=1_048_576,
+        target_utilization=0.8
+    )
+    session_batches = [session_ids[i:i + MAP_BATCH_SIZE] for i in range(0, len(session_ids), MAP_BATCH_SIZE)]
+    
+    map_prompt_path = prompt_dir / "pubcom_map.md"
+    
+    # チェックポイントからMap結果を復元
+    map_results = None
+    if checkpoint and checkpoint.has_part1_checkpoint():
+        map_results = checkpoint.load_part1()
+        if map_results and len(map_results) == len(session_batches):
+            print(f"[Checkpoint] Using cached Map results ({len(map_results)} batches)", flush=True)
+        else:
+            print(f"[Checkpoint] Map cache invalid. Re-running.", flush=True)
+            map_results = None
+    
+    # 全バッチ完了していない場合、インクリメンタルチェックポイントを確認
+    if map_results is None and checkpoint:
+        consolidated = checkpoint.consolidate_map_batches(len(session_batches))
+        if consolidated:
+            map_results = consolidated
+            print(f"[Checkpoint] Consolidated {len(map_results)} Map batches from incremental checkpoints", flush=True)
+            checkpoint.save_part1(map_results)
+    
+    if map_results is None:
+        import threading
+        lock = threading.Lock()
+        
+        # 完了済みバッチを取得
+        completed_batches = checkpoint.load_partial_map_results() if checkpoint else {}
+        remaining_count = len(session_batches) - len(completed_batches)
+        if completed_batches:
+            print(f"[Checkpoint] Resuming: {len(completed_batches)} batches already completed, {remaining_count} remaining", flush=True)
+        
+        def process_map_batch_with_checkpoint(args):
+            idx, batch_ids = args
+            
+            if idx in completed_batches:
+                return (completed_batches[idx][0], completed_batches[idx][1])
+            
+            combined_content = ""
+            for sid in batch_ids:
+                content = session_contents[sid]
+                combined_content += f"=== Comment ID: {sid} ===\n{content}\n\n"
+                
+            print(f"Processing Pubcom Map Batch {idx+1}/{len(session_batches)} ({len(batch_ids)} comments)...", flush=True)
+            
+            ctx1 = build_context(meta, "", [], cfg.output_length_guidance, reference_documents=combined_content)
+            ctx1["focus"] = cfg.focus
+            prompt = load_and_render(map_prompt_path, ctx1)
+            
+            output = _call_model(prompt, cfg)
+            
+            batch_id_str = str(batch_ids)
+            
+            if checkpoint:
+                with lock:
+                    checkpoint.save_map_batch(idx, batch_id_str, output)
+            
+            return (batch_id_str, output)
+
+        batches_to_process = list(enumerate(session_batches))
+        if max_map_batches is not None:
+            remaining_batches = [(idx, batch) for idx, batch in batches_to_process if idx not in completed_batches]
+            if len(remaining_batches) > max_map_batches:
+                print(f"[Batch Limit] Processing {max_map_batches} batches (of {len(remaining_batches)} remaining)", flush=True)
+                batches_to_process = [(idx, batch) for idx, batch in batches_to_process if idx in completed_batches]
+                batches_to_process += remaining_batches[:max_map_batches]
+
+        with ThreadPoolExecutor(max_workers=5) as executor:
+            map_results = list(executor.map(process_map_batch_with_checkpoint, batches_to_process))
+        
+        if max_map_batches is not None:
+            completed_after = checkpoint.load_partial_map_results() if checkpoint else {}
+            if len(completed_after) < len(session_batches):
+                print(f"[Batch Limit] Partial completion: {len(completed_after)}/{len(session_batches)} batches done. Run again to continue.", flush=True)
+                return {"prompt": "", "report": f"Partial Map: {len(completed_after)}/{len(session_batches)} batches completed. Run again to continue."}
+        
+        if checkpoint:
+            checkpoint.save_part1(map_results)
+    
+    # --- Phase 2: Reduce (Tree Reduce) ---
+    map_reports = [output for batch_id_str, output in map_results if output]
+    
+    part1_log_content = "# Pubcom Map Output Log\n\n"
+    for batch_id_str, output in map_results:
+        if output:
+            part1_log_content += f"## Batch: {batch_id_str}\n\n{output}\n\n---\n\n"
+    
+    reduce_prompt_path = prompt_dir / "pubcom_reduce.md"
+    
+    REDUCE_BATCH_SIZE = 5
+    initial_batches = ["\n\n---\n\n".join(map_reports[i:i + REDUCE_BATCH_SIZE]) for i in range(0, len(map_reports), REDUCE_BATCH_SIZE)]
+    
+    # チェックポイントからPart 2途中経過を復元（API料金節約）
+    if checkpoint:
+        part2_data = checkpoint.load_part2_state()
+        if part2_data:
+            _, content = part2_data
+            # NOTE: tree_reduceは結果を "\n---\n" で結合して保存している
+            initial_batches = content.split("\n---\n")
+            print(f"[Checkpoint] Resuming Part 2 from last saved state: {len(initial_batches)} items", flush=True)
+    
+    print(f"Starting Tree Reduce: {len(map_reports)} map reports -> {len(initial_batches)} initial batches", flush=True)
+    
+    # ツリー型Reduce用の統合関数を定義
+    def reduce_pair(item1: str, item2: str) -> str:
+        """2つのパブコメレポートを統合"""
+        if not item2:
+            return item1
+        
+        combined = f"{item1}\n\n---\n\n{item2}"
+        ctx = build_context(meta, "", [], cfg.output_length_guidance)
+        ctx.update({
+            "currentReport": item1,
+            "newInfo": item2,
+            "focus": cfg.focus
+        })
+        
+        prompt = load_and_render(reduce_prompt_path, ctx)
+        return _call_model(prompt, cfg)
+    
+    # 動的マージサイズ計算（トークン上限の80%を目標）
+    dynamic_merge_size = calculate_dynamic_merge_size(
+        items=initial_batches,
+        prompt_template_tokens=2000,
+        max_input_tokens=1_048_576,
+        target_utilization=0.8,
+        max_merge_size=5  # 安全のため上限を抑制
+    )
+    
+    pubcom_consolidated_report, reduce_stats = tree_reduce(
+        initial_batches,
+        reduce_pair,
+        max_workers=5,
+        checkpoint=checkpoint,
+        merge_size=dynamic_merge_size
+    )
+    
+    # YAMLコードブロックでラップ
+    if not pubcom_consolidated_report.strip().startswith("```yaml"):
+        pubcom_consolidated_report = f"```yaml\n{pubcom_consolidated_report}\n```"
+    
+    # チェックポイントをクリア
+    if checkpoint:
+        checkpoint.clear()
+
+    return {
+        "prompt": "",
+        "report": pubcom_consolidated_report,
+        "part1_log": part1_log_content,
+        "pubcom_consolidated_report": pubcom_consolidated_report,
+        "citation_registry": citation_registry,
+        "pubcom_to_cite_id": pubcom_to_cite_id
+    }
+
+
+def run_pubcom_compare(prompt_dir: Path, meta: Dict[str, Any], pubcom_report: str, prior_hypothesis: str, cfg: RunConfig, comparison_model: Optional[str] = None) -> Dict[str, Any]:
+    """
+    pubcom_compare: 比較分析のみ
+    
+    入力:
+        - pubcom_report: 集約済みパブコメレポート（YAML形式）
+        - prior_hypothesis: 事前仮説レポート（複数YAMLブロック可）
+    
+    出力: 最終比較レポート
+    """
+    # 複数のYAMLブロックがある場合は統合（1A+1B など）
+    merged_prior_hypothesis = merge_prior_hypothesis_yamls(prior_hypothesis)
+    
+    compare_model_name = comparison_model if comparison_model else cfg.model
+    print(f"Processing Pubcom Comparison (model: {compare_model_name})...", flush=True)
+    compare_prompt_path = prompt_dir / "pubcom_comparison.md"
+    
+    ctx = build_context(meta, "", [], cfg.output_length_guidance)
+    ctx.update({
+        "priorHypothesis": merged_prior_hypothesis,
+        "pubcomReport": pubcom_report,
+        "focus": cfg.focus
+    })
+    
+    compare_prompt = load_and_render(compare_prompt_path, ctx)
+    
+    compare_cfg = RunConfig(
+        mode=cfg.mode,
+        model=compare_model_name,
+        temperature=cfg.comparison_temperature,
+        comparison_temperature=cfg.comparison_temperature,
+        max_output_tokens=cfg.max_output_tokens,
+        top_p=cfg.top_p,
+        top_k=cfg.top_k,
+        output_length_guidance=cfg.output_length_guidance,
+        focus=cfg.focus
+    )
+    final_insight = _call_model(compare_prompt, compare_cfg)
+
+    return {
+        "prompt": compare_prompt,
+        "report": final_insight,
+        "pubcom_consolidated_report": pubcom_report
+    }
