@@ -298,9 +298,14 @@ def expand_citations_to_links(text: str, registry: CitationRegistry) -> str:
 def generate_citation_appendix(registry: CitationRegistry) -> str:
     """
     引用一覧（Appendix）を生成
-
+    
     出力例:
     # 出典一覧
+    
+    ## 国会会議録
+    | ID | 資料名 | URL | 日付 |
+    |----|--------|-----|------|
+    | kokkai_001 | 第217回国会 衆議院 内閣委員会 第14号 | [会議録](https://...) | 2025-04-16 |
 
     ## 審議会資料
     | ID | 資料名 | 審議会/出典 | URL |
@@ -312,16 +317,93 @@ def generate_citation_appendix(registry: CitationRegistry) -> str:
     |----|------------|
     | P001 | 12345 |
     """
+    from .diet_api import fetch_meeting_meta
+
     doc_citations = []
     pubcom_citations = []
+    kokkai_citations = []
 
     for cite_id, citation in sorted(registry.citations.items()):
         if citation.cite_type == "document":
-            doc_citations.append(citation)
+            # Kokkai detection heuristic
+            is_kokkai = False
+            if "kokkai" in cite_id.lower():
+                is_kokkai = True
+            else:
+                # Check for session_id format in filename
+                # Formats: "121704889X01420250416", "2011-01-24_117705254X00120110124.txt"
+                filename = citation.file
+                if "_" in filename:
+                    # Extract potential issue_id after the underscore
+                    parts = filename.split("_")
+                    for part in parts:
+                        # Remove .txt if present
+                        part_clean = part.replace(".txt", "")
+                        if len(part_clean) >= 18 and "X" in part_clean and part_clean[0].isdigit():
+                            is_kokkai = True
+                            break
+                elif len(filename) >= 20 and "X" in filename and filename[0].isdigit():
+                    is_kokkai = True
+            
+            if is_kokkai:
+                kokkai_citations.append(citation)
+            else:
+                doc_citations.append(citation)
         else:
             pubcom_citations.append(citation)
 
     lines = ["# 出典一覧\n"]
+
+    if kokkai_citations:
+        lines.append("## 国会会議録\n")
+        lines.append("| ID | 資料名 | URL | 日付 |")
+        lines.append("|----|--------|-----|------|")
+        
+        for c in kokkai_citations:
+            # Try to resolve session_id from file or extract it
+            session_id = None
+            # If the filename itself is the session ID or contains it
+            filename = c.file
+            if len(filename) >= 20 and "X" in filename:
+                # Extract issue_id from various formats:
+                # - "117705254X00120110124" (just the ID)
+                # - "2011-01-24_117705254X00120110124.txt" (date prefix + ID + extension)
+                # - "117705254X00120110124.txt" (ID + extension)
+                
+                # Remove .txt extension if present
+                if filename.endswith(".txt"):
+                    filename = filename[:-4]
+                
+                # Check for date prefix pattern: YYYY-MM-DD_
+                if "_" in filename:
+                    parts = filename.split("_")
+                    # Take the part that contains 'X' (the issue_id)
+                    for part in parts:
+                        if "X" in part and len(part) >= 18:
+                            session_id = part
+                            break
+                else:
+                    session_id = filename
+            
+            display_title = c.link_text if c.link_text else c.file
+            url_str = f"[リンク]({c.url})" if c.url else "-"
+            date_str = "-"
+            
+            if session_id:
+                meta = fetch_meeting_meta(session_id)
+                if meta:
+                    # Construct detailed name
+                    display_title = f"{meta.get('house', '')} {meta.get('meeting_name', '')} 第{meta.get('meeting_number', '')}号 (第{meta.get('session')}回国会)"
+                    
+                    if meta.get('date'):
+                        date_str = meta.get('date')
+                    
+                    if meta.get('page_url'):
+                        url_str = f"[会議録]({meta.get('page_url')})"
+
+            lines.append(f"| {c.cite_id} | {display_title} | {url_str} | {date_str} |")
+
+        lines.append("")
 
     if doc_citations:
         lines.append("## 審議会資料\n")
@@ -370,3 +452,229 @@ def parse_legacy_citation(text: str) -> List[Tuple[str, Optional[int]]]:
         results.append(("pubcom", comment_id, None))
 
     return results
+
+
+def finalize_report_citations(
+    report_text: str,
+    citation_registries: List[CitationRegistry],
+    merged_hypothesis_path: Optional[Path] = None
+) -> str:
+    """
+    レポートの引用を最終化する（一般化されたロジック）
+    
+    1. 複数のレジストリを統合
+    2. merged_hypothesis.md があればスキャンしてID解決
+    3. 国会会議録APIでメタデータをエンリッチ
+    4. 本文中の [出典: ...] をリンクに変換
+    5. 出典一覧（Appendix）を生成して付与
+    """
+    from .diet_api import fetch_meeting_meta
+
+    # 1. Merge Registries
+    citation_map = {}
+    
+    # helper to add to map
+    def add_to_map(c_data):
+        # ID, File, LinkText map
+        cid = c_data.get("cite_id")
+        if cid: citation_map[cid] = c_data
+        
+        filename = c_data.get("file")
+        if filename:
+            citation_map[filename] = c_data
+            citation_map[filename.replace(".txt", "")] = c_data
+            
+        link_text = c_data.get("link_text")
+        if link_text:
+            citation_map[link_text] = c_data
+
+    for reg in citation_registries:
+        data = reg.to_dict()
+        for cid, c in data.get("citations", {}).items():
+            add_to_map(c)
+
+    # 2. Scan merged_hypothesis.md for ID -> Filename mapping
+    if merged_hypothesis_path and merged_hypothesis_path.exists():
+        print(f"Scanning {merged_hypothesis_path} for ID mappings...")
+        mh_content = merged_hypothesis_path.read_text(encoding="utf-8")
+        matches = re.findall(r'source_doc_id:\s*"([^"]+)"\s*\n\s*source_filename:\s*"([^"]+)"', mh_content)
+        
+        id_to_filename = {doc_id: filename for doc_id, filename in matches}
+        
+        for doc_id, filename in id_to_filename.items():
+            if doc_id not in citation_map:
+                 # Try to find info for filename
+                 key_candidates = [filename, filename.replace(".txt", "")]
+                 found_info = None
+                 for k in key_candidates:
+                     if k in citation_map:
+                         found_info = citation_map[k]
+                         break
+                 
+                 if found_info:
+                     citation_map[doc_id] = found_info.copy()
+                     citation_map[doc_id]["cite_id"] = doc_id # Override ID for lookup
+                 else:
+                     # Create a dummy info if not in registry (fallback)
+                     citation_map[doc_id] = {
+                         "cite_id": doc_id,
+                         "file": filename,
+                         "cite_type": "kokkai" if "X" in filename else "shingikai", # heuristic
+                         "link_text": f"{filename} (ID: {doc_id})"
+                     }
+                     add_to_map(citation_map[doc_id])
+
+    # Cache for API calls within this execution
+    meta_cache = {}
+
+    def get_meta(issue_id):
+        if issue_id in meta_cache:
+            return meta_cache[issue_id]
+        try:
+            print(f"Fetching meta for {issue_id}...")
+            meta = fetch_meeting_meta(issue_id)
+            meta_cache[issue_id] = meta
+            return meta
+        except Exception as e:
+            print(f"Error fetching meta for {issue_id}: {e}")
+            return None
+
+    used_citations = {} # id -> info
+    used_pubcoms = set()
+
+    def replace_citation(match):
+        full_text = match.group(0)
+        content_inner = match.group(1).strip()
+        
+        # Direct match or Map lookup
+        info = citation_map.get(content_inner)
+        
+        # Fuzzy match strategies
+        if not info:
+             clean_inner = content_inner.replace(".txt", "")
+             if clean_inner in citation_map:
+                 info = citation_map[clean_inner]
+             else:
+                 # Try matching by checking if content_inner is part of filename
+                 # Only if content_inner is long enough to be unique
+                 for k, v in citation_map.items():
+                     if len(k) > 10 and (k in content_inner or content_inner in k):
+                         info = v
+                         break
+        
+        # If still no info but looks like Kokkai file
+        if not info and re.match(r'\d{4}-\d{2}-\d{2}_\d+X', content_inner):
+            filename = content_inner if content_inner.endswith(".txt") else content_inner + ".txt"
+            info = {
+                "cite_id": content_inner,
+                "file": filename,
+                "cite_type": "kokkai",
+                "url": f"https://kokkai.ndl.go.jp/txt/{filename.split('_')[-1].replace('.txt','')}" 
+            }
+
+        if info:
+            # Use original ID as key for uniqueness in table
+            used_citations[info.get("cite_id", content_inner)] = info
+            
+            page_title = info.get("page_title", "")
+            link_text = info.get("link_text", "")
+            filename = info.get("file", "")
+            url = info.get("url")
+            
+            # Title Logic
+            generic_terms = ["議事概要", "答申", "参考資料", "説明", "委員名簿", "協議員名簿", "設置要綱"]
+            title = link_text or page_title or filename
+            
+            if link_text and page_title:
+                if any(term == link_text.strip() for term in generic_terms):
+                    title = f"{page_title} {link_text}"
+                elif len(link_text) < 10 and page_title not in link_text:
+                    title = f"{page_title} {link_text}"
+
+            # Enrich Kokkai Information
+            is_kokkai = "kokkai" in info.get("cite_type", "") or \
+                        "diet" in str(info.get("file", "")).lower() or \
+                        re.search(r'\d+X\d+', str(info.get("file", "")))
+            
+            if is_kokkai:
+                file_val = info.get("file", "")
+                issue_id = None
+                
+                match_id = re.search(r'_(\d+X\d+)', file_val)
+                if match_id:
+                    issue_id = match_id.group(1)
+                elif "X" in file_val:
+                     # fallback logic
+                     issue_id = file_val.replace(".txt", "")
+                
+                if issue_id:
+                     meta = get_meta(issue_id)
+                     if meta:
+                         date_str = meta.get('date', "")
+                         house = meta.get('house', "")
+                         meeting = meta.get('meeting_name', "")
+                         
+                         title = f"{house} {meeting} ({date_str})"
+                         if meta.get('page_url'):
+                             url = meta.get('page_url')
+            
+            # Save for appendix
+            info["display_title"] = title
+            info["display_url"] = url
+            
+            if url:
+                return f"[{title}]({url})"
+            else:
+                return f"[{title}]"
+        
+        return full_text
+
+    # Replace [出典: ...]
+    new_content = re.sub(r'\[出典:\s*([^\]]+)\]', replace_citation, report_text)
+    
+    # Replace bare filenames [YYYY-MM-DD_...X...]
+    def replace_bare_citation(match):
+        content_inner = match.group(1).strip()
+        class MockMatch:
+            def group(self, i):
+                return f"[出典: {content_inner}]" if i == 0 else content_inner
+        return replace_citation(MockMatch())
+
+    new_content = re.sub(r'\[(\d{4}-\d{2}-\d{2}_\d+X[^\]]+)\]', replace_bare_citation, new_content)
+
+    # Collect Pubcoms
+    def replace_pubcom(match):
+        pid = match.group(1).strip()
+        used_pubcoms.add(pid)
+        return match.group(0)
+    
+    new_content = re.sub(r'\[パブコメ:\s*([^\]]+)\]', replace_pubcom, new_content)
+    
+    # Generate Appendix
+    appendix = "\n\n---\n\n# 出典一覧\n\n"
+    
+    if used_citations:
+        appendix += "## 審議会・国会資料\n"
+        appendix += "| ID | 資料名 / 会議名 | リンク |\n"
+        appendix += "|----|-----------------|--------|\n"
+        
+        sorted_citations = sorted(used_citations.values(), key=lambda x: str(x.get("cite_id", "")))
+        
+        for info in sorted_citations:
+            cid = info.get("cite_id")
+            title = info.get("display_title") or info.get("link_text") or info.get("file")
+            url = info.get("display_url") or info.get("url")
+            
+            url_str = f"[Link]({url})" if url else "-"
+            # Ensure title is string
+            if not title: title = "(No Title)"
+            appendix += f"| {cid} | {title} | {url_str} |\n"
+            
+    if used_pubcoms:
+        appendix += "\n## 引用されたパブリックコメント\n"
+        appendix += "| コメントID |\n"
+        appendix += "|------------|\n"
+        for pid in sorted(used_pubcoms):
+             appendix += f"| {pid} |\n"
+
+    return new_content + appendix

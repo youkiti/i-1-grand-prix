@@ -76,6 +76,7 @@ topics:
 
 evidence_chunks:
   - id: "chunk_001"
+    source_doc_id: "{{ sourceType }}_001"  # ソースタイプ_連番（shingikai_001, kokkai_001 等）
     source_filename: "ファイル名.pdf"  # ソースファイル名
     source_url: "https://..."  # URL（あれば）
     source_date: "YYYY-MM-DD"  # 日付（わかれば）
@@ -89,7 +90,7 @@ evidence_chunks:
 ## 出力時の注意
 
 1. **IDの振り直し**: 統合後は `topic_XXX`, `chunk_XXX` を連番で振り直してください。
-2. **ソース情報の維持**: evidence_chunks の source_filename, source_url, source_date を維持してください。
+2. **ソース情報の維持**: evidence_chunks の source_doc_id, source_filename, source_url, source_date を維持してください。
 3. **verbatim_quote は絶対に省略しない**: 全ての原文引用を維持してください。
 4. YAML として正しくパースできる形式で出力してください。
 

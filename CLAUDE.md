@@ -2,65 +2,156 @@
 
 ## このリポジトリの目的
 
-**事前仮説（審議会での議論）とくらべて、パブリックコメント等に新しいビュー（視点・論点）がないかを見出すこと**
+**事前仮説（審議会・国会での議論）とくらべて、パブリックコメント等に新しいビュー（視点・論点）がないかを見出すこと**
 
-### 推奨パイプライン
+### 推奨パイプライン（3段階構成）
 
 ```
-Stage 1: pre_hypothesis_iterative（審議会資料 → 事前仮説）
-                ↓
-Stage 2: pubcom_analysis（パブコメ × 事前仮説 → 比較レポート）
+┌─────────────────────────────────────────────────────────────────┐
+│ データ取得フェーズ                                                │
+├─────────────────────────────────────────────────────────────────┤
+│  審議会資料         →  scraping/scraper.py                       │
+│  国会審議           →  scripts/diet_search.py + diet_download.py │
+│  パブコメ/AI対話    →  CSV形式で準備                              │
+└─────────────────────────────────────────────────────────────────┘
+                              ↓
+┌─────────────────────────────────────────────────────────────────┐
+│ Stage 1A: pre_hypothesis_iterative（審議会資料 → 事前仮説YAML）   │
+│ Stage 1B: pre_hypothesis_iterative（国会審議 → 事前仮説YAML）     │
+│                              ↓                                   │
+│           テキスト連結（concat） → merged_hypothesis.md          │
+└─────────────────────────────────────────────────────────────────┘
+                              ↓
+┌─────────────────────────────────────────────────────────────────┐
+│ Stage 2: pubcom_analysis（パブコメ × 事前仮説 → 比較レポート）    │
+│   または分離実行:                                                 │
+│     pubcom_aggregate（パブコメ集約のみ）                          │
+│     pubcom_compare（比較分析のみ）                                │
+└─────────────────────────────────────────────────────────────────┘
 ```
 
-## 推奨：2段階実行
+## データ取得
 
-### Stage 1: 事前仮説生成
+### 審議会資料のスクレイピング
 
-審議会資料フォルダから構造化されたQ&A形式の事前仮説を生成。
+```bash
+python scraping/scraper.py <URL> \
+  --output_dir <ダウンロード先> \
+  --path-prefix <パス> \
+  [--filter <キーワード>] \
+  [--link-text-filter <リンクテキスト>]
+```
+
+- 2階層までクロール
+- 対象形式: txt, pptx, xlsx, doc, docx, pdf
+- `--path-prefix` は必須（例: `/shingi1/` または `none`）
+- 出力: ドキュメントファイル + `metadata_*.json`
+
+### 国会審議の取得
+
+```bash
+# 会議検索 + 議事録ダウンロード
+python scripts/diet_search.py \
+  --keyword "人工知能基本計画" \
+  --from 2015-01-01 \
+  --until 2025-12-10 \
+  --output-dir each_project/ai-plan-test/kokkai \
+  --output meetings.tsv \
+  --download
+
+# CSVに変換（pre_hypothesis_iterativeで使用するため）
+python scripts/convert_transcripts_to_csv.py \
+  --input-dir each_project/ai-plan-test/kokkai/meetings_* \
+  --output each_project/ai-plan-test/kokkai/diet_speeches.csv
+```
+
+出力ファイル:
+- `meetings_*.tsv`: 会議メタデータ
+- `meetings_*/`: 議事録テキスト
+- `diet_speeches.csv`: 分析用CSV（session_id, speech_id, speaker, speech列）
+
+## Stage 1: 事前仮説生成
+
+### Stage 1A: 審議会資料から事前仮説
 
 ```bash
 python -m src.interview_analysis.cli \
   --mode pre_hypothesis_iterative \
-  --source "path/to/committee/documents" \
-  --focus "船荷証券の電子化" \
+  --source-dir "each_project/ai-plan-test/shingikai" \
+  --focus "人工知能基本計画" \
+  --model "gemini:gemini-flash-lite-latest"
+```
+
+### Stage 1B: 国会審議から事前仮説
+
+```bash
+python -m src.interview_analysis.cli \
+  --mode pre_hypothesis_iterative \
+  --source-dir "each_project/ai-plan-test/kokkai" \
+  --focus "人工知能基本計画" \
   --model "gemini:gemini-flash-lite-latest"
 ```
 
 **処理フロー:**
-- **Part 1 (Map)**: 各ドキュメントから論点を並列抽出
-- **Part 2 (Tree Reduce)**: 階層的統合でQ&Aリスト生成
+- **Part 1 (Map)**: 各ドキュメントから論点を並列抽出（`pre_hypothesis_part1.md`）
+- **Part 2 (Tree Reduce)**: 階層的統合でYAML形式Q&Aリスト生成（`pre_hypothesis_part2_iterative.md`）
 
-#### 複数ソースからの事前仮説統合（Concat方式）
+### 事前仮説の統合（Concat方式）
 
-審議会資料と国会議事録など、複数のソースから事前仮説を生成した場合は、**単純なテキスト連結（concat）**で統合します。
+審議会と国会のレポートを**単純なテキスト連結**で統合:
 
-```bash
-# 例: Phase 1A (審議会) と Phase 1B (国会) を連結
-Get-Content report_1a.md, report_1b.md | Set-Content merged_hypothesis.md
+```powershell
+# PowerShell
+Get-Content doc/2025-12-15/run-A/outputs/report.md, doc/2025-12-15/run-B/outputs/report.md | Set-Content merged_hypothesis.md
 ```
 
-- `merge` モードは**インタビュー分析のバッチ統合用**であり、Pre-Hypothesis (YAML) の統合には使用しない
 - `pubcom_comparison` は複数の YAML ブロックを入力として理解可能
-- 将来的には `pre_hypothesis_merge` モードを追加予定
+- `merge` モードはインタビュー分析用であり、事前仮説統合には使用しない
 
-### Stage 2: パブコメ比較分析
+## Stage 2: パブコメ比較分析
 
-パブコメを事前仮説と比較し、仮説の検証・新インサイトを抽出。
+### 一括実行（pubcom_analysis）
 
 ```bash
 python -m src.interview_analysis.cli \
   --mode pubcom_analysis \
   --csv data/comments.csv \
-  --previous-report doc/YYYY-MM-DD/run-HHMMSS/outputs/report.md \
-  --focus "船荷証券の電子化" \
+  --previous-report doc/2025-12-15/merged_hypothesis.md \
+  --focus "人工知能基本計画" \
   --model "gemini:gemini-flash-lite-latest" \
   --comparison-model "gemini:gemini-2.0-flash"
 ```
 
 **処理フロー:**
-- **Map**: パブコメをバッチ分析（並列）
-- **Tree Reduce**: 分析結果を階層的統合
-- **Compare**: 事前仮説との比較レポート生成
+- **Map**: パブコメをバッチ分析（`pubcom_map.md`）
+- **Tree Reduce**: 分析結果を階層的統合（`pubcom_reduce.md`）
+- **Compare**: 事前仮説との比較レポート生成（`pubcom_comparison.md`）
+
+### 分離実行（大量データ向け）
+
+#### Step 2a: パブコメ集約のみ
+
+```bash
+python -m src.interview_analysis.cli \
+  --mode pubcom_aggregate \
+  --csv data/comments.csv \
+  --focus "人工知能基本計画" \
+  --model "gemini:gemini-flash-lite-latest" \
+  --max-map-batches 50  # APIクォータ管理
+```
+
+出力: `pubcom_report.md`（YAML形式、再利用可能）
+
+#### Step 2b: 比較分析のみ
+
+```bash
+python -m src.interview_analysis.cli \
+  --mode pubcom_compare \
+  --pubcom-report doc/2025-12-15/run-HHMMSS/outputs/pubcom_report.md \
+  --prior-hypothesis doc/2025-12-15/merged_hypothesis.md \
+  --focus "人工知能基本計画" \
+  --comparison-model "gemini:gemini-2.0-flash"
+```
 
 **推奨モデル構成:**
 - `--model "gemini:gemini-flash-lite-latest"`: Map/Reduce（高速・低コスト）
@@ -219,20 +310,7 @@ Remove-Item -Recurse -Force "doc\checkpoints\*"
 | P001 | 12345 |
 ```
 
-## スクレイピング機能
 
-審議会資料の取得に使用:
-
-```bash
-python scraping/scraper.py <URL> --output_dir <ダウンロード先> --path-prefix <パス> [--filter <キーワード>] [--link-text-filter <リンクテキスト>]
-```
-
-- 2階層までクロール
-- 対象形式: txt, pptx, xlsx, doc, docx, pdf
-- `--path-prefix` は必須（例: `/shingi1/` または `none`）
-- `--link-text-filter` はリンクテキストでフィルタリング（depth=0のみ適用）
-
----
 
 ## べからず集（スクレイピング・データ処理）
 

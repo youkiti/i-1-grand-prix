@@ -20,6 +20,7 @@ from .citation import (
     generate_citation_appendix,
     load_scraper_metadata as load_citation_metadata
 )
+from .token_tracker import TokenTracker
 
 
 @dataclass
@@ -35,10 +36,10 @@ class RunConfig:
     focus: str = ""  # 分析のフォーカス（主眼）  # 任意
 
 
-def _call_model(prompt: str, cfg: RunConfig) -> str:
+def _call_model(prompt: str, cfg: RunConfig, step_name: str = "unknown") -> str:
     """
     モデル名から自動判定してプロバイダーを選択し、生成を実行
-
+    
     プレフィックス:
       - gemini:model_name → Gemini
       - openrouter:model_name → OpenRouter
@@ -52,7 +53,16 @@ def _call_model(prompt: str, cfg: RunConfig) -> str:
         top_p=cfg.top_p,
         top_k=cfg.top_k,
     )
-    return provider.generate(prompt, model_config)
+    text, usage = provider.generate(prompt, model_config)
+    
+    TokenTracker.track(
+        pipeline=cfg.mode,
+        step=step_name,
+        model=cfg.model,
+        usage=usage
+    )
+    
+    return text
 
 
 # --- Token Estimation and Dynamic Batching ---
@@ -578,7 +588,7 @@ def run_hypothesis(prompt_path: Path, meta: Dict[str, Any], df_path: Path, cfg: 
     from .prompts import load_template
     prompt_template = load_template(prompt_path)
     prompt = load_and_render(prompt_path, ctx)
-    output = _call_model(prompt, cfg)
+    output = _call_model(prompt, cfg, step_name="hypothesis")
 
     metadata_header = _build_metadata_header(cfg, prompt_template, len(session_ids))
     report_with_metadata = metadata_header + output
@@ -593,7 +603,7 @@ def run_initial(prompt_path: Path, meta: Dict[str, Any], df_path: Path, cfg: Run
     from .prompts import load_template
     prompt_template = load_template(prompt_path)
     prompt = load_and_render(prompt_path, ctx)
-    output = _call_model(prompt, cfg)
+    output = _call_model(prompt, cfg, step_name="initial")
 
     metadata_header = _build_metadata_header(cfg, prompt_template, len(session_ids))
     report_with_metadata = metadata_header + output
@@ -612,7 +622,7 @@ def run_update(prompt_path: Path, meta: Dict[str, Any], df_path: Path, previous_
     from .prompts import load_template
     prompt_template = load_template(prompt_path)
     prompt = load_and_render(prompt_path, ctx)
-    output = _call_model(prompt, cfg)
+    output = _call_model(prompt, cfg, step_name="update")
 
     metadata_header = _build_metadata_header(cfg, prompt_template, len(session_ids))
     report_with_metadata = metadata_header + output
@@ -636,7 +646,7 @@ def run_merge(prompt_path: Path, meta: Dict[str, Any], batch_reports: List[str],
     from .prompts import load_template
     prompt_template = load_template(prompt_path)
     prompt = load_and_render(prompt_path, ctx)
-    output = _call_model(prompt, cfg)
+    output = _call_model(prompt, cfg, step_name="merge")
 
     metadata_header = _build_metadata_header(cfg, prompt_template, len(batch_reports))
     report_with_metadata = metadata_header + output
@@ -652,7 +662,7 @@ def run_initial_part1(prompt_path: Path, meta: Dict[str, Any], df_path: Path, cf
     from .prompts import load_template
     prompt_template = load_template(prompt_path)
     prompt = load_and_render(prompt_path, ctx)
-    output = _call_model(prompt, cfg)
+    output = _call_model(prompt, cfg, step_name="initial_part1")
 
     metadata_header = _build_metadata_header(cfg, prompt_template, len(session_ids))
     report_with_metadata = metadata_header + output
@@ -671,7 +681,7 @@ def run_initial_part2(prompt_path: Path, meta: Dict[str, Any], df_path: Path, pa
     from .prompts import load_template
     prompt_template = load_template(prompt_path)
     prompt = load_and_render(prompt_path, ctx)
-    output = _call_model(prompt, cfg)
+    output = _call_model(prompt, cfg, step_name="initial_part2")
 
     metadata_header = _build_metadata_header(cfg, prompt_template, len(session_ids))
     report_with_metadata = metadata_header + output
@@ -767,7 +777,7 @@ def run_initial_auto(prompt_dir: Path, meta: Dict[str, Any], df_path: Path, cfg:
 
     ctx1 = build_context(meta, sessions_data, session_ids, cfg.output_length_guidance)
     part1_prompt = load_and_render(part1_prompt_path, ctx1)
-    part1_output = _call_model(part1_prompt, cfg)
+    part1_output = _call_model(part1_prompt, cfg, step_name="initial_auto_part1")
 
     # Part1の本文のみを抽出（メタデータなし）
     part1_body = part1_output
@@ -781,7 +791,7 @@ def run_initial_auto(prompt_dir: Path, meta: Dict[str, Any], df_path: Path, cfg:
         "part1Report": part1_body,
     })
     part2_prompt = load_and_render(part2_prompt_path, ctx2)
-    part2_output = _call_model(part2_prompt, cfg)
+    part2_output = _call_model(part2_prompt, cfg, step_name="initial_auto_part2")
 
     # Part2の本文のみを抽出
     part2_body = part2_output
@@ -799,7 +809,7 @@ def run_initial_auto(prompt_dir: Path, meta: Dict[str, Any], df_path: Path, cfg:
     return {"prompt": combined_prompt, "report": combined_report}
 
 
-def run_pre_hypothesis_iterative(prompt_dir: Path, meta: Dict[str, Any], source_path: Path, cfg: RunConfig, use_checkpoint: bool = True) -> Dict[str, Any]:
+def run_pre_hypothesis_iterative(prompt_dir: Path, meta: Dict[str, Any], source_path: Path, cfg: RunConfig, use_checkpoint: bool = True, source_type: str = "shingikai") -> Dict[str, Any]:
     """
     pre_hypothesis_iterative:
     1. (Map) 各ドキュメントに対して Part1 (論点抽出) を実行
@@ -917,6 +927,7 @@ def run_pre_hypothesis_iterative(prompt_dir: Path, meta: Dict[str, Any], source_
             
             ctx1 = build_context(meta, "", [], cfg.output_length_guidance, reference_documents=f"=== File: {filename} ===\n\n{content}")
             ctx1["focus"] = cfg.focus
+            ctx1["sourceType"] = source_type
             part1_prompt = load_and_render(part1_prompt_path, ctx1)
             
             # リトライロジック: 最大3回試行、失敗したらスキップ
@@ -924,7 +935,7 @@ def run_pre_hypothesis_iterative(prompt_dir: Path, meta: Dict[str, Any], source_
             last_error = None
             for attempt in range(MAX_RETRIES):
                 try:
-                    output = _call_model(part1_prompt, cfg)
+                    output = _call_model(part1_prompt, cfg, step_name="pre_hypothesis_part1")
                     # 成功したらチェックポイント保存
                     if checkpoint:
                         with lock:
@@ -1010,11 +1021,12 @@ def run_pre_hypothesis_iterative(prompt_dir: Path, meta: Dict[str, Any], source_
         ctx2.update({
             "currentQA": item1,
             "newInfo": item2,
-            "focus": cfg.focus
+            "focus": cfg.focus,
+            "sourceType": source_type
         })
         
         prompt = load_and_render(part2_prompt_path, ctx2)
-        return _call_model(prompt, cfg)
+        return _call_model(prompt, cfg, step_name="pre_hypothesis_reduce")
     
     # ツリー型並列Reduceを実行
     import time
@@ -1024,7 +1036,7 @@ def run_pre_hypothesis_iterative(prompt_dir: Path, meta: Dict[str, Any], source_
     
     # 最終プロンプトを記録（代表としてラスト生成時のものを使用）
     ctx_final = build_context(meta, "", [], cfg.output_length_guidance)
-    ctx_final.update({"currentQA": "(accumulated)", "newInfo": "(merged)", "focus": cfg.focus})
+    ctx_final.update({"currentQA": "(accumulated)", "newInfo": "(merged)", "focus": cfg.focus, "sourceType": source_type})
     last_part2_prompt = load_and_render(part2_prompt_path, ctx_final)
 
     # --- Final Report Construction ---
@@ -1205,7 +1217,7 @@ def run_pubcom_analysis(prompt_dir: Path, meta: Dict[str, Any], csv_path: Path, 
             MAX_RETRIES = 3
             for attempt in range(MAX_RETRIES):
                 try:
-                    output = _call_model(prompt, cfg)
+                    output = _call_model(prompt, cfg, step_name="pubcom_map")
                     break  # 成功
                 except Exception as e:
                     if "429" in str(e) or "RESOURCE_EXHAUSTED" in str(e):
@@ -1285,7 +1297,7 @@ def run_pubcom_analysis(prompt_dir: Path, meta: Dict[str, Any], csv_path: Path, 
         })
         
         prompt = load_and_render(reduce_prompt_path, ctx2)
-        return _call_model(prompt, cfg)
+        return _call_model(prompt, cfg, step_name="pubcom_reduce")
     
     # 動的マージサイズ計算（トークン上限の80%を目標）
     dynamic_merge_size = calculate_dynamic_merge_size(
@@ -1329,7 +1341,7 @@ def run_pubcom_analysis(prompt_dir: Path, meta: Dict[str, Any], csv_path: Path, 
         output_length_guidance=cfg.output_length_guidance,
         focus=cfg.focus
     )
-    final_insight = _call_model(compare_prompt, compare_cfg)
+    final_insight = _call_model(compare_prompt, compare_cfg, step_name="pubcom_compare")
 
     # 処理メタデータを生成
     process_metadata = _build_process_metadata(
@@ -1493,7 +1505,7 @@ def run_pubcom_aggregate(prompt_dir: Path, meta: Dict[str, Any], csv_path: Path,
             ctx1["focus"] = cfg.focus
             prompt = load_and_render(map_prompt_path, ctx1)
             
-            output = _call_model(prompt, cfg)
+            output = _call_model(prompt, cfg, step_name="pubcom_aggregate_map")
             
             batch_id_str = str(batch_ids)
             
@@ -1562,7 +1574,7 @@ def run_pubcom_aggregate(prompt_dir: Path, meta: Dict[str, Any], csv_path: Path,
         })
         
         prompt = load_and_render(reduce_prompt_path, ctx)
-        return _call_model(prompt, cfg)
+        return _call_model(prompt, cfg, step_name="pubcom_aggregate_reduce")
     
     # 動的マージサイズ計算（トークン上限の80%を目標）
     dynamic_merge_size = calculate_dynamic_merge_size(
@@ -1636,7 +1648,7 @@ def run_pubcom_compare(prompt_dir: Path, meta: Dict[str, Any], pubcom_report: st
         output_length_guidance=cfg.output_length_guidance,
         focus=cfg.focus
     )
-    final_insight = _call_model(compare_prompt, compare_cfg)
+    final_insight = _call_model(compare_prompt, compare_cfg, step_name="pubcom_compare")
 
     return {
         "prompt": compare_prompt,

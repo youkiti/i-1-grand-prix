@@ -52,6 +52,7 @@ topics:
 
 evidence_chunks:
   - id: "chunk_001"
+    source_doc_id: "{{ sourceType }}_001"  # ソースタイプ_連番（shingikai_001, kokkai_001 等）
     source_filename: "ファイル名.pdf"  # ソースファイル名
     source_url: "https://..."  # URL（あれば）
     source_date: "YYYY-MM-DD"  # 日付（わかれば）

@@ -70,7 +70,8 @@
 > 「入力YAMLのverbatim_quoteをそのまま転記」 [出典: source_doc_id] または [パブコメ: コメントID]
 ```
 
-- 審議会資料からの情報: `[出典: source_doc_id]` （入力YAMLの evidence_chunks.source_doc_id を参照）
+- 審議会資料からの情報: `[出典: shingikai_001]` （入力YAMLの evidence_chunks.source_doc_id を参照）
+- 国会答弁からの情報: `[出典: kokkai_001]` （入力YAMLの evidence_chunks.source_doc_id を参照）
 - パブリックコメントからの情報: `[パブコメ: コメントID]` （入力YAMLの comment_id を参照）
 - 同一論点が両方に関連する場合は、両方の原文引用と出典を併記してください。
 

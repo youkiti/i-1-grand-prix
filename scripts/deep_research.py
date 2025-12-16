@@ -30,6 +30,11 @@ import time
 from datetime import datetime
 from pathlib import Path
 
+# Add project root to sys.path to import src
+sys.path.append(str(Path(__file__).resolve().parent.parent))
+
+from src.interview_analysis.token_tracker import TokenTracker, TokenUsage
+
 try:
     from google import genai
 except ImportError:
@@ -57,6 +62,30 @@ def create_client() -> genai.Client:
         sys.exit(1)
     
     return genai.Client(api_key=api_key)
+
+
+def _log_interaction_usage(interaction, mode: str):
+    """インタラクションのトークン使用量を記録する"""
+    try:
+        # Check if usage metadata is available (structure depends on SDK version)
+        # Assuming it might be in interaction.usage_metadata or similar
+        # For now, we try to access it safely.
+        usage_metadata = getattr(interaction, "usage_metadata", None)
+        if usage_metadata:
+            usage = TokenUsage(
+                input_tokens=getattr(usage_metadata, "prompt_token_count", 0) or 0,
+                output_tokens=getattr(usage_metadata, "candidates_token_count", 0) or 0,
+                total_tokens=getattr(usage_metadata, "total_token_count", 0) or 0
+            )
+            TokenTracker.track(
+                pipeline="deep_research",
+                step=mode,
+                model=AGENT_NAME,
+                usage=usage
+            )
+            print(f"[TokenUsage] Total: {usage.total_tokens} (In: {usage.input_tokens}, Out: {usage.output_tokens})", flush=True)
+    except Exception as e:
+        print(f"[Warning] Failed to log token usage: {e}", flush=True)
 
 
 def run_research_polling(client: genai.Client, prompt: str) -> tuple[str, dict]:
@@ -98,6 +127,7 @@ def run_research_polling(client: genai.Client, prompt: str) -> tuple[str, dict]:
         
         if interaction.status == "completed":
             print(f"\n✓ リサーチ完了 ({elapsed:.1f} 秒)")
+            _log_interaction_usage(interaction, "polling")
             metadata = {
                 "interaction_id": interaction_id,
                 "agent": AGENT_NAME,
@@ -135,7 +165,7 @@ def run_research_streaming(client: genai.Client, prompt: str) -> tuple[str, dict
     """
     print(f"リサーチ開始 (ストリーミングモード)...")
     print(f"  プロンプト: {prompt[:100]}{'...' if len(prompt) > 100 else ''}")
-    print(f"  エージェント: {AGENT_NAME}")
+    print(f"  エージェント: {AGENT_NAME}", flush=True)
     print()
     print("=" * 60)
     
@@ -185,6 +215,14 @@ def run_research_streaming(client: genai.Client, prompt: str) -> tuple[str, dict
             # 再接続ロジック
             result_text.append(_reconnect_and_resume(client, interaction_id, last_event_id))
     
+    # ストリーミング完了後、最終的なUsageを取得するために一度Getする
+    if interaction_id:
+        try:
+             completed_interaction = client.interactions.get(interaction_id)
+             _log_interaction_usage(completed_interaction, "streaming")
+        except Exception as e:
+             print(f"[Warning] Failed to fetch final interaction stats: {e}")
+
     elapsed = time.time() - start_time
     metadata = {
         "interaction_id": interaction_id,
@@ -220,7 +258,7 @@ def _reconnect_and_resume(client: genai.Client, interaction_id: str, last_event_
                         text = chunk.delta.text
                         print(text, end="", flush=True)
                         result_text.append(text)
-                
+                        
                 elif chunk.event_type in ['interaction.complete', 'error']:
                     break
             
@@ -284,10 +322,10 @@ def main():
         description="Gemini Deep Research エージェントを使用してリサーチを実行する。",
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
-使用例:
-  python scripts/deep_research.py "EVバッテリーの競争環境を調査"
-  python scripts/deep_research.py "量子コンピュータの最新動向" --stream
-  python scripts/deep_research.py "AI規制の国際比較" --output reports/ai_regulation.md
+    使用例:
+      python scripts/deep_research.py "EVバッテリーの競争環境を調査"
+      python scripts/deep_research.py "量子コンピュータの最新動向" --stream
+      python scripts/deep_research.py "AI規制の国際比較" --output reports/ai_regulation.md
         """
     )
     parser.add_argument(
@@ -321,6 +359,18 @@ def main():
     
     args = parser.parse_args()
     
+    # 出力パス決定 (TokenTracker 初期化のため先行)
+    if args.output:
+        output_path = Path(args.output)
+    else:
+        output_filename = generate_output_filename(args.query)
+        output_path = Path(args.output_dir) / output_filename
+
+    # TokenTracker 初期化 (出力ファイルと同じディレクトリに token_usage.jsonl を作成)
+    if not args.no_save:
+       token_log_path = output_path.parent / "token_usage.jsonl"
+       TokenTracker.initialize(token_log_path)
+    
     # クライアント作成
     client = create_client()
     
@@ -341,17 +391,11 @@ def main():
         print(result)
     
     if not args.no_save:
-        if args.output:
-            output_path = args.output
-        else:
-            output_filename = generate_output_filename(args.query)
-            output_path = os.path.join(args.output_dir, output_filename)
-        
         # メタデータに追加情報を付与
         metadata["query"] = args.query
         metadata["format_instruction"] = args.format_instruction
         metadata["generated_at"] = datetime.now().isoformat()
-        metadata["output_file"] = output_path
+        metadata["output_file"] = str(output_path)
         
         save_report(result, output_path, metadata)
 

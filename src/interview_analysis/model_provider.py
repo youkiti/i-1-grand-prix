@@ -1,15 +1,12 @@
-"""
-モデルプロバイダーの抽象化レイヤー
-
-Gemini と OpenRouter (Grok) を統一インターフェースで扱う。
-"""
 from abc import ABC, abstractmethod
 from dataclasses import dataclass
-from typing import Optional
+from typing import Optional, Tuple
 import os
 
 from google import genai
 from openai import OpenAI
+
+from .token_tracker import TokenUsage
 
 
 @dataclass
@@ -26,7 +23,7 @@ class ModelProvider(ABC):
     """モデルプロバイダーの基底クラス"""
 
     @abstractmethod
-    def generate(self, prompt: str, config: ModelConfig) -> str:
+    def generate(self, prompt: str, config: ModelConfig) -> Tuple[str, TokenUsage]:
         """プロンプトに対する応答を生成"""
         pass
 
@@ -37,7 +34,7 @@ class GeminiProvider(ModelProvider):
     def __init__(self, api_key: str):
         self.client = genai.Client(api_key=api_key)
 
-    def generate(self, prompt: str, config: ModelConfig) -> str:
+    def generate(self, prompt: str, config: ModelConfig) -> Tuple[str, TokenUsage]:
         response = self.client.models.generate_content(
             model=config.model,
             contents=prompt,
@@ -48,7 +45,21 @@ class GeminiProvider(ModelProvider):
                 "top_k": config.top_k,
             },
         )
-        return response.text
+        
+        usage = TokenUsage(
+            input_tokens=0,
+            output_tokens=0,
+            total_tokens=0
+        )
+        
+        if response.usage_metadata:
+            usage = TokenUsage(
+                input_tokens=response.usage_metadata.prompt_token_count or 0,
+                output_tokens=response.usage_metadata.candidates_token_count or 0,
+                total_tokens=response.usage_metadata.total_token_count or 0
+            )
+
+        return response.text, usage
 
 
 class OpenRouterProvider(ModelProvider):
@@ -60,7 +71,7 @@ class OpenRouterProvider(ModelProvider):
             api_key=api_key,
         )
 
-    def generate(self, prompt: str, config: ModelConfig) -> str:
+    def generate(self, prompt: str, config: ModelConfig) -> Tuple[str, TokenUsage]:
         try:
             completion = self.client.chat.completions.create(
                 model=config.model,
@@ -73,12 +84,20 @@ class OpenRouterProvider(ModelProvider):
             )
             if not completion or not completion.choices:
                 print(f"[Error] Invalid completion response: {completion}", flush=True)
-                return ""
+                return "", TokenUsage(0, 0, 0)
             
-            return completion.choices[0].message.content or ""
+            usage = TokenUsage(0, 0, 0)
+            if completion.usage:
+                usage = TokenUsage(
+                    input_tokens=completion.usage.prompt_tokens,
+                    output_tokens=completion.usage.completion_tokens,
+                    total_tokens=completion.usage.total_tokens
+                )
+            
+            return (completion.choices[0].message.content or ""), usage
         except Exception as e:
             print(f"[Error] OpenRouter API call failed: {e}", flush=True)
-            return ""
+            return "", TokenUsage(0, 0, 0)
 
 
 def create_provider(model_name: str, api_key: Optional[str] = None) -> ModelProvider:

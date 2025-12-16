@@ -18,3 +18,5 @@ __pycache__/
 **metadata*.json
 
 deep research/funani/shingikai
+
+.cache/

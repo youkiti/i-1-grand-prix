@@ -1,0 +1,5963 @@
+# 最終成果物 (Q&Aリスト)
+
+```yaml
+topics:
+  - id: "topic_001"
+    title: "議員定数削減の是非と根拠（身を切る改革、コスト削減 vs 機能維持）"
+    category: "主要論点"
+    summary: "議員定数削減の必要性について、与党側は改革の一環として推進する一方、野党の一部（共産、社民）は削減に反対し、選挙制度の抜本改革（比例代表中心への変更）を主張している。削減の根拠として、行政コスト削減（維新）と、政府監視機能の低下懸念（共産・社民）が対立している。また、定数削減が「身を切る改革」の唯一の手段と見なされることへの疑問も呈されている。調査会としては、削減の積極的根拠はないとしつつも、公約尊重の観点から10人削減案（465人）を結論とした。"
+    spectrum:
+      axis: "削減不要論（機能維持優先） ←→ 削減推進論（公約尊重）"
+      positions:
+        - label: "削減推進派（与党・維新・次世代など）"
+          description: "定数削減は改革の一環として推進すべきであり、コスト削減（維新）や公約履行（次世代・生活）の観点から主張。ただし、調査会では積極的根拠はないとされた。"
+        - label: "削減反対派（共産、社民）"
+          description: "定数削減は国会の政府監視機能低下を招き、国民の声を切り捨てるため反対。歴史的・国際的に見ても議員数は少ない。"
+        - label: "その他（機能・制度設計への影響）"
+          description: "定数削減が議会運営（委員会兼務率の上昇）や民意集約機能に与える影響への懸念。また、削減を唯一の「身を切る改革」と見なすことへの疑問。"
+      consensus_status: "決着(採用:10人削減案)"
+      consensus_detail: "積極的な削減根拠はないが、公約尊重の観点から10人削減（465人）案が結論とされた。削減に伴う較差是正の困難化も指摘されている。"
+    evidence_chunks:
+      - id: "chunk_001"
+        source_doc_id: "senkyoseido_01gijigaiyo"
+        source_filename: "senkyoseido_01gijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_01gijigaiyo.pdf/$File/senkyoseido_01gijigaiyo.pdf"
+        source_date: "平成26年９月11日"
+        verbatim_quote: |
+           次に、各党が選挙の際に公約した「定数削減問題」について検討を
+          行う。
+        position: "公約として削減を尊重"
+        speaker: null
+        context: "今後の調査会の検討スケジュールに関する決定事項"
+      - id: "chunk_002"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          第47回総選挙における公約等では、与党である自民、 公明は、過去の与党案への言及を行いつつも本調査会の答申を 尊重するとしたこと、野党については、民主は、身を切る改革、一票の 較差是正、定数削減の実現を、維新は、議員歳費の３割カットと併せ、 議員定数の３割削減を、次世代は、定数削減を、共産、社民は、定数削
+          減に反対しつつ、比例代表選挙中心の制度への変更を、それぞれ掲げて
+          いること、
+        position: "削減推進派（与党・一部野党）"
+        speaker: "事務局"
+        context: "各党の選挙公約の紹介"
+      - id: "chunk_003"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          「身を切る改革」や「政治への信頼の回復」の手段は定数削減だけな
+          のか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減を唯一の改革手段とすることへの疑問"
+      - id: "chunk_004"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_005"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          議席は有権者にとっては選ぶ権利であるという観点からすれば、議席 を簡単に減らすことが許されるかという観点も重要である。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が有権者の選ぶ権利に与える影響についての懸念"
+      - id: "chunk_006"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          委員会数や委員会の定数を維持しながら定数を減らした場合には、この率が高まること、等についての説明があっ た。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "事務局"
+        context: "定数削減が委員会兼務率に与える影響"
+      - id: "chunk_007"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_008"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          同年 11 月、自民、公明、民主の３党間で定数削減を含め、さらなる改革が必要
+          であり、 中長期的な課題である選挙制度のあるべき姿の検討とは切り離
+          して、小選挙区比例代表並立制の当面の維持、定数削減と小選挙区の民
+          意集約機能が行き過ぎたものにならないよう配慮することが確認され
+          た。
+        position: "民意集約機能維持優先"
+        speaker: "事務局"
+        context: "定数削減と小選挙区の民意集約機能への配慮の確認"
+      - id: "chunk_009"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          現行制度は民意の集約としての小選挙区制と民意の反映としての比 例代表制を組み合わせたものであり、６対４で民意の集約機能が大き いが、そこをどのように調整していくかという観点で比例代表部分を 検討するのがソフトランディングの方法としてあり得る。
+        position: "民意集約機能維持優先"
+        speaker: "委員"
+        context: "現行制度のバランス（集約機能6割、反映機能4割）を念頭に置いた調整の必要性"
+      - id: "chunk_010"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          また、民意の集約が過度に進むことを懸念しながら比例定数を削減しようという理由が理解できない。
+        position: "格差是正・制度改革優先"
+        speaker: "委員"
+        context: "民意集約が進みすぎることへの懸念があるにもかかわらず比例定数を削減する論理への疑問"
+      - id: "chunk_011"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          20年間の「政治改革」を検証する時期であり、定数の問題は
+          「政治改革」の時に一緒に議論された政党助成金、企業・団体
+          献金の問題とともに検証、議論すべ
+          きものであると考える旨の付言があった。
+        position: "同時検証派（共産）"
+        speaker: "穀田恵二 議員（日本共産党）"
+        context: "質疑応答（定数の基準について）"
+      - id: "chunk_012"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          議員数の削減が国会運営にもたらす問題は具体的にどのよう
+          なものかとの問いに対し、議員は常任委員会や特別委員会を３
+          つ、４つ兼務し、各委員会が法案審議や一般質疑を行う中で、
+          まともに勉強する時間がなくなり質疑の質的低下をもたらす
+          というのがメディアにおける批判的な見解であり、 （議員を）
+          減らせばよいという言い方はよくないという議論も出ている
+          旨の回答があった。
+        position: "削減反対派（共産、社民）"
+        speaker: "穀田恵二 議員（日本共産党）"
+        context: "質疑応答（議員数削減が国会運営にもたらす問題について）"
+      - id: "chunk_013"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_014"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_015"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_016"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_017"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_018"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_019"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_020"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_021"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_022"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_023"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_024"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_025"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_026"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_027"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_028"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_029"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_030"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_031"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_032"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_033"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_034"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_035"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_036"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_037"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_038"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_039"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_040"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_041"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_042"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_043"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_044"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_045"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_046"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_047"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_048"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_049"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_050"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_051"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_052"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_053"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_054"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_055"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_056"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_057"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_058"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_059"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_060"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_061"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_062"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_063"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_064"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_065"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_066"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_067"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_068"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_069"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_070"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_071"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_072"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_073"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_074"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_075"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_076"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_077"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_078"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_079"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_080"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_081"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_082"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_083"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_084"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_085"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_086"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_087"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_088"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_089"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_090"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_091"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_092"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_093"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_094"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_095"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_096"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_097"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_098"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_099"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_100"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_101"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_102"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_103"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_104"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_105"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_106"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_107"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_108"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_109"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_110"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_111"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_112"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_113"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_114"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_115"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_116"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_117"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_118"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_119"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_120"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_121"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_122"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_123"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_124"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_125"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_126"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_127"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_128"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_129"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_130"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_131"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_132"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_133"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_134"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_135"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_136"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_137"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_138"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_139"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_140"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_141"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_142"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_143"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_144"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_145"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_146"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_147"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_148"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_149"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_150"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_151"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_152"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_153"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_154"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_155"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_156"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_157"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_158"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_159"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_160"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_161"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_162"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_163"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_164"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_165"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_166"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_167"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_168"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_169"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_170"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_171"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_172"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_173"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_174"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_175"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_176"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_177"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_178"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_179"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_180"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_181"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_182"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_183"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_184"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_185"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_186"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_187"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_188"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_189"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_190"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_191"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_192"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_193"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_194"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_195"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_196"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_197"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_198"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_199"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_200"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_201"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_202"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_203"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_204"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_205"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_206"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_207"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_208"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_209"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_210"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_211"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_212"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_213"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_214"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_215"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_216"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_217"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_218"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_219"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_220"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_221"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_222"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_223"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_224"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_225"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_226"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_227"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_228"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_229"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_230"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_231"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_232"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_233"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_234"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_235"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_236"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_237"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_238"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_239"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_240"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_241"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_242"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_243"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_244"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_245"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_246"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_247"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_248"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_249"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_250"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_251"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_252"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_253"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf"
+        source_date: "2015-03-03"
+        verbatim_quote: |
+          定数削減は選挙制度の設計や議会運営にも大きな影響を及ぼすと思
+          われるにもかかわらず、身を切る改革の手段として定数削減だけがい
+          われるのはなぜか。
+        position: "その他（機能・制度設計への影響）"
+        speaker: "委員"
+        context: "定数削減が議会運営に与える影響を考慮すべきとの指摘"
+      - id: "chunk_254"
+        source_doc_id: "senkyoseido_06.giijigaiyo.pdf"
+        source_filename: "senkyoseido_06.giijigaiyo.pdf"
+        source_url: "
+
+---
+
+# 出典一覧
+
+## 審議会資料
+
+| ID | 資料名 | 審議会/出典 | URL |
+|----|--------|-------------|-----|
+| D001 | metadata_shugiin.go.jp_20251213_064119.json | - | - |
+| D002 | 議事概要 | 第１回　衆議院選挙制度に関する調査会 | [リンク](https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_01gijigaiyo.pdf/$File/senkyoseido_01gijigaiyo.pdf) |
+| D003 | senkyoseido_01shiryo1.pdf | 衆議院選挙制度に関する調査会　答申 | [リンク](https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_01shiryo1.pdf/$File/senkyoseido_01shiryo1.pdf) |
+| D004 | 「衆議院選挙制度に関する調査会」運営細則(案) | 第１回　衆議院選挙制度に関する調査会 | [リンク](https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_01shiryo1.pdf/$File/senkyoseido_01shiryo1.pdf) |
+| D005 | senkyoseido_01shiryo1_10.pdf | 第10回　衆議院選挙制度に関する調査会 | [リンク](https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_01shiryo1.pdf/$File/senkyoseido_01shiryo1.pdf) |
+| D006 | senkyoseido_01shiryo1_11.pdf | 第11回　衆議院選挙制度に関する調査会 | [リンク](https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_01shiryo1.pdf/$File/senkyoseido_01shiryo1.pdf) |
+| D007 | senkyoseido_01shiryo1_12.pdf | 第12回　衆議院選挙制度に関する調査会 | [リンク](https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_01shiryo1.pdf/$File/senkyoseido_01shiryo1.pdf) |
+| D008 | senkyoseido_01shiryo1_13.pdf | 第13回　衆議院選挙制度に関する調査会 | [リンク](https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_01shiryo1.pdf/$File/senkyoseido_01shiryo1.pdf) |
+| D009 | senkyoseido_01shiryo1_14.pdf | 第14回　衆議院選挙制度に関する調査会 | [リンク](https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_01shiryo1.pdf/$File/senkyoseido_01shiryo1.pdf) |
+| D010 | senkyoseido_01shiryo1_15.pdf | 第15回　衆議院選挙制度に関する調査会 | [リンク](https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_01shiryo1.pdf/$File/senkyoseido_01shiryo1.pdf) |
+| D011 | senkyoseido_01shiryo1_16.pdf | 第16回　衆議院選挙制度に関する調査会 | [リンク](https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_01shiryo1.pdf/$File/senkyoseido_01shiryo1.pdf) |
+| D012 | senkyoseido_01shiryo1_17.pdf | 第17回　衆議院選挙制度に関する調査会 | [リンク](https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_01shiryo1.pdf/$File/senkyoseido_01shiryo1.pdf) |
+| D013 | senkyoseido_01shiryo1_2.pdf | 第２回　衆議院選挙制度に関する調査会 | [リンク](https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_01shiryo1.pdf/$File/senkyoseido_01shiryo1.pdf) |
+| D014 | senkyoseido_01shiryo1_3.pdf | 第３回　衆議院選挙制度に関する調査会 | [リンク](https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_01shiryo1.pdf/$File/senkyoseido_01shiryo1.pdf) |
+| D015 | senkyoseido_01shiryo1_4.pdf | 第４回　衆議院選挙制度に関する調査会 | [リンク](https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_01shiryo1.pdf/$File/senkyoseido_01shiryo1.pdf) |
+| D016 | senkyoseido_01shiryo1_5.pdf | 第５回　衆議院選挙制度に関する調査会 | [リンク](https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_01shiryo1.pdf/$File/senkyoseido_01shiryo1.pdf) |
+| D017 | senkyoseido_01shiryo1_6.pdf | 第６回　衆議院選挙制度に関する調査会 | [リンク](https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_01shiryo1.pdf/$File/senkyoseido_01shiryo1.pdf) |
+| D018 | senkyoseido_01shiryo1_7.pdf | 第７回　衆議院選挙制度に関する調査会 | [リンク](https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_01shiryo1.pdf/$File/senkyoseido_01shiryo1.pdf) |
+| D019 | senkyoseido_01shiryo1_8.pdf | 第８回　衆議院選挙制度に関する調査会 | [リンク](https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_01shiryo1.pdf/$File/senkyoseido_01shiryo1.pdf) |
+| D020 | senkyoseido_01shiryo1_9.pdf | 第９回　衆議院選挙制度に関する調査会 | [リンク](https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_01shiryo1.pdf/$File/senkyoseido_01shiryo1.pdf) |
+| D021 | 議事概要 | 第２回　衆議院選挙制度に関する調査会 | [リンク](https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_02.gijigaiyo.pdf/$File/senkyoseido_02.gijigaiyo.pdf) |
+| D022 | 議事概要 | 第３回　衆議院選挙制度に関する調査会 | [リンク](https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_03.gijigaiyo.pdf/$File/senkyoseido_03.gijigaiyo.pdf) |
+| D023 | 議事概要 | 第４回　衆議院選挙制度に関する調査会 | [リンク](https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_04.gijigaiyo.pdf/$File/senkyoseido_04.gijigaiyo.pdf) |
+| D024 | 議事概要 | 第５回　衆議院選挙制度に関する調査会 | [リンク](https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_05.gijigaiyo.pdf/$File/senkyoseido_05.gijigaiyo.pdf) |
+| D025 | 議事概要 | 第６回　衆議院選挙制度に関する調査会 | [リンク](https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_06.giijigaiyo.pdf/$File/senkyoseido_06.giijigaiyo.pdf) |
+| D026 | 議事概要 | 第７回　衆議院選挙制度に関する調査会 | [リンク](https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_07.gijigaiyo.pdf/$File/senkyoseido_07.gijigaiyo.pdf) |
+| D027 | 議事概要 | 第８回　衆議院選挙制度に関する調査会 | [リンク](https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_08.gijigaiyo.pdf/$File/senkyoseido_08.gijigaiyo.pdf) |
+| D028 | 議事概要 | 第９回　衆議院選挙制度に関する調査会 | [リンク](https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_09.gijigaiyo.pdf/$File/senkyoseido_09.gijigaiyo.pdf) |
+| D029 | 議事概要 | 第10回　衆議院選挙制度に関する調査会 | [リンク](https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_10.gijigaiyo.pdf/$File/senkyoseido_10.gijigaiyo.pdf) |
+| D030 | 議事概要 | 第11回　衆議院選挙制度に関する調査会 | [リンク](https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_11.gijigaiyo.pdf/$File/senkyoseido_11.gijigaiyo.pdf) |
+| D031 | 議事概要 | 第12回　衆議院選挙制度に関する調査会 | [リンク](https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_12gijigaiyo.pdf/$File/senkyoseido_12gijigaiyo.pdf) |
+| D032 | 議事概要 | 第13回　衆議院選挙制度に関する調査会 | [リンク](https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_13gijigaiyo.pdf/$File/senkyoseido_13gijigaiyo.pdf) |
+| D033 | 議事概要 | 第14回　衆議院選挙制度に関する調査会 | [リンク](https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_14gijigaiyo.pdf/$File/senkyoseido_14gijigaiyo.pdf) |
+| D034 | 議事概要 | 第15回　衆議院選挙制度に関する調査会 | [リンク](https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_15gijigaiyo.pdf/$File/senkyoseido_15gijigaiyo.pdf) |
+| D035 | 議事概要 | 第16回　衆議院選挙制度に関する調査会 | [リンク](https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_16gijigaiyo.pdf/$File/senkyoseido_16gijigaiyo.pdf) |
+| D036 | 議事概要 | 第17回　衆議院選挙制度に関する調査会 | [リンク](https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_17gijigaiyo.pdf/$File/senkyoseido_17gijigaiyo.pdf) |
+| D037 | 「衆議院選挙制度に関する調査会」について | 衆議院選挙制度に関する調査会 | [リンク](https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_chousakai.pdf/$File/senkyoseido_chousakai.pdf) |
+| D038 | 「衆議院選挙制度に関する調査会」について | 衆議院選挙制度に関する調査会 | [リンク](https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_chousakai.pdf/$File/senkyoseido_chousakai.pdf) |
+| D039 | 委員名簿 | 衆議院選挙制度に関する調査会 | [リンク](https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_iinmeibo.pdf/$File/senkyoseido_iinmeibo.pdf) |
+| D040 | 委員名簿 | 衆議院選挙制度に関する調査会 | [リンク](https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_iinmeibo.pdf/$File/senkyoseido_iinmeibo.pdf) |
+| D041 | 「衆議院選挙制度に関する協議会」設置要綱 | 衆議院選挙制度に関する協議会 | [リンク](https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_kyougikai.pdf/$File/senkyoseido_kyougikai.pdf) |
+| D042 | 協議員名簿 | 衆議院選挙制度に関する協議会 | [リンク](https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_kyougikai_iinmeibo.pdf/$File/senkyoseido_kyougikai_iinmeibo.pdf) |
+| D043 | 答申 | 衆議院選挙制度に関する調査会　答申 | [リンク](https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_toshin.pdf/$File/senkyoseido_toshin.pdf) |
+| D044 | 参考資料 | 衆議院選挙制度に関する調査会　答申 | [リンク](https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_toshinsankoshiryo.pdf/$File/senkyoseido_toshinsankoshiryo.pdf) |
+| D045 | 説明 | 衆議院選挙制度に関する調査会　答申 | [リンク](https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/senkyoseido_toshinsetsumei.pdf/$File/senkyoseido_toshinsetsumei.pdf) |
+
+
+---
+
+# 処理メタデータ
+
+**分析フォーカス**: 議員定数削減
+
+## データソース
+
+| 種別 | パス | 件数 |
+|------|------|------|
+| 審議会資料 | `each_project\teisuu\shingikai` | 45 ファイル |
+
+## 処理パイプライン: 事前仮説生成 (pre_hypothesis_iterative)
+
+### Part 1 (Map)
+- **フェーズ**: 論点抽出
+- **入力**: 45 → **出力**: 45
+- **モデル**: `gemini:gemini-flash-lite-latest`
+- **詳細**: 並列10ワーカー
+
+### Part 2 (Tree Reduce)
+- **フェーズ**: Q&A統合
+- **入力**: 5 → **出力**: 1
+- **モデル**: `gemini:gemini-flash-lite-latest`
+- **詳細**: 3レベル並列
+
+## ツリーReduce統計
+
+- 初期バッチ数: 5
+- 並列レベル数: 3
+- レベル詳細: L1:3ペア → L2:2ペア → L3:1ペア
+
+
+*生成日時: 2025-12-16 07:48:54*
+
+
+---
+# 実験メタ情報
+- 実行日時: 2025-12-16 07:48:54
+- モード: pre_hypothesis_iterative (2段階自動実行)
+- モデル: gemini:gemini-flash-lite-latest
+- 温度: 0.0
+- max_output_tokens: 64000
+- top_p: 0.95
+- top_k: 40
+- セッション数: 45
+---
+# 最終成果物 (Q&Aリスト)
+
+```yaml
+topics:
+  - id: "topic_001"
+    title: "議員定数削減の必要性と実行時期（衆議院・参議院）"
+    category: "主要論点"
+    summary: "議員定数削減は、国民負担増の前に政治家が身を切る改革として、また政治不信払拭の観点から継続的に提起されている主要論点である。衆参両院の選挙制度について、一票の格差是正と定数削減を一体的に進めるべきという認識が共有されているが、具体的な進め方や優先順位について議論が必要とされている。特に、定数削減（衆議院80削減案など）と選挙制度改革（連用制の是非など）を一体で議論すべきか、格差是正を先行させるべきかで意見が分かれている。新しい情報では、定数削減は増税前の身を切る改革として主張される一方、共産党からは民意反映の阻害を理由に反対意見も出ている。衆議院では45人削減が決定されたが、参議院削減は先送りされた。2016年時点では、定数10削減をH27年調査に基づき先行実施する方向性が示されたが、具体的な方法（〇増六減など）や時期については国会での政治的決断が必要とされている。また、参議院では定数6名増による経費増額（年間約4.5億円）が問題視されている。維新の会は3割削減を主張する一方、政府・与党は民主主義の根幹に関わる問題として国会での議論継続を主張している。地方議会では定数削減が進む中で国会定数が増加していることへの批判もある。"
+    spectrum:
+      axis: "段階的改革（格差是正→定数削減） ←→ 一体改革（格差是正と定数削減を同時に）"
+      positions:
+        - label: "一体改革推進派"
+          description: "一票の格差解消と定数削減は小手先の改革では解消できず、一体で議論して初めて可能な改革である。"
+        - label: "段階的改革容認派"
+          description: "違憲状態からの脱却は喫緊の課題であり、結論が出たものから改正することも一つの方法論である。"
+        - label: "削減の前提/即時実施を求める立場"
+          description: "社会保障負担増の議論に先立ち、議員定数削減を含む身を切る努力を徹底することが前提である、あるいは国会改革（定数削減含む）の即時実施を求める立場。"
+        - label: "議論の継続/協議を優先する立場"
+          description: "議員定数削減は国会で議論し、決定すべき問題であり、与野党で協議することを提案する、あるいは現下の喫緊の課題（予算成立、復興）を優先すべきとする立場。"
+        - label: "総合的改革推進派（公明党・みんなの党）"
+          description: "衆参共に総合的な視野で選挙制度の在り方を検討し、一票の格差是正と定数削減を一体的に進めるべき。"
+        - label: "定数削減・歳費削減の優先（みんなの党）"
+          description: "身を切る改革として、議員定数削減を優先すべきであり、歳費削減も検討すべき。"
+        - label: "格差是正先行派（自民党など）"
+          description: "まずは最高裁の指摘に応えるため、格差是正に直結する配分変更を優先すべき。"
+        - label: "三テーマ同時決着重視（公明党・東委員）"
+          description: "一票の格差、定数削減、制度改正の三つを同時に決着させるべき。"
+        - label: "〇増五減先行処理派"
+          description: "緊急避難策として〇増五減を優先し、定数削減は後回しにすべきとの主張。"
+        - label: "抜本改革優先・削減慎重派（田中参考人、五十嵐参考人）"
+          description: "定数削減は抜本改革を先送りする口実になるため反対。小選挙区制の欠陥を指摘し、比例代表制への移行を主張。"
+        - label: "定数削減即時実施派"
+          description: "国民の負担増（増税）に見合う形で、国会議員自らが身を切る姿勢を示すため、定数削減（維新の会は240名半減を主張）を直ちに行うべき。また、増税前に定数削減を断行すべき。"
+        - label: "格差是正優先・定数削減は継続検討派"
+          description: "違憲、違法状態にある一票の格差是正が喫緊の課題であり、定数削減も国民の強い要請と認識しているが、まずは格差是正を優先し、今国会での実現を期待する。削減の具体的な幅や時期については合意に至っていない。"
+        - label: "削減反対派（民意反映の阻害）"
+          description: "定数削減は国民の声を国政に届ける機能を弱め、民意の反映をさらに困難にするため、制度の抜本改革を優先すべき。日本の議員数は国際的にも歴史的にも少なく、削減の合理的な根拠はない。"
+        - label: "将来的な定数400人への移行"
+          description: "次々回の総選挙からの実施を目指し、定数を400人とすることを目指す措置。"
+        - label: "臨時国会での成案追求"
+          description: "消費税増税に伴う身を切る改革の要求として、議員定数削減の実行を求めている。"
+        - label: "定数削減・抜本改革優先派"
+          description: "主体性の欠如と全議員への責任の言及"
+        - label: "早期実行・スピード感重視派"
+          description: "安倍総理の過去の約束に基づき、国民の信頼確保のため、早期に具体的な削減方法と時期を示すべきという立場。増税延期や予算成立の前に身を切る改革を断行すべきと主張。"
+        - label: "約束不履行批判派"
+          description: "過去の約束（野田総理との党首討論など）が果たされていないこと、また、増税延期とセットで議論されるべきであったことへの批判。"
+        - label: "身を切る改革優先派"
+          description: "消費税増税の前に、議員定数削減や給与削減といった身を切る改革を優先すべきであり、それが景気判断の材料にも加わるべきであるという立場。"
+        - label: "早期・大幅削減実行派（野党）"
+          description: "過去の約束（3割削減、2013年までの結論）を根拠に、直ちに10削減、あるいはそれ以上の削減を実行すべきであり、2020年までの先送りは約束違反である。"
+        - label: "2020年国調に基づく見直し派（与党）"
+          description: "第三者機関の答申を尊重し、2020年国勢調査を基に議論を進めるべきであり、地域代表の喪失も考慮し慎重に進めるべき。ただし、安倍総理は2020年までの先送りはしないと明言した。"
+        - label: "与党案（先行実施）"
+          description: "政治的決断により定数削減を先行させ、H27年調査に基づき実施する。"
+        - label: "制度安定性重視派"
+          description: "制度の安定性から、次回のH32年大規模国調以降を起点とすべき。遡及適用は例外的。"
+        - label: "民進案派（2010年遡及）"
+          description: "違憲状態の解消が喫緊の課題であり、既に確定しているH22年国調を直ちに用いるべき。"
+        - label: "公約履行要求派"
+          description: "定数削減の公約としての根拠を問う"
+        - label: "機能低下懸念派"
+          description: "議員定数削減が国会機能の低下を招くという懸念。"
+        - label: "機能維持可能派"
+          description: "定数削減後も国会機能は維持可能であるという見解。"
+        - label: "削減根拠は乏しい"
+          description: "国際比較や有権者一人当たりの票の価値から見て、削減の積極的な根拠が見当たらないとする立場。"
+        - label: "関連付け容認派"
+          description: "身を切る改革として、増税議論と定数削減を結びつけることに賛成する立場。"
+        - label: "関連付け反対派"
+          description: "定数削減は民意反映の阻害につながるため、増税議論と結びつけるべきではないとする立場。"
+        - label: "共産党派（十分な議論要求）"
+          description: "審議時間の不足や議論の不十分さを指摘し、十分な審議を求める立場。"
+        - label: "与党主導議論継続派"
+          description: "国会改革の議論は国会内で行うべきであり、与党のリーダーシップの下で進めるべきとの見解。"
+        - label: "第三者機関による議論の推進"
+          description: "選挙制度改革の進め方として、民間有識者による第三者機関の設置を提案。"
+        - label: "削減即時実行・強化（維新）"
+          description: "結党以来の理念に基づき、定数3割カットを主張。参議院の6増法を撤回し6減にすべき。衆議院についても増を伴わない減のみでの格差是正を提案。歳費自主返納や経費公開だけでは不十分。増税前に身を切る改革として直ちに実行すべき。"
+        - label: "議論継続・慎重派（与党・政府）"
+          description: "議員定数削減は民主主義の根幹に関わるため、国会での真摯な議論を通じた合意形成が必要。過去に衆議院で10減の実績はあるが、選挙制度改革協議会での議論を尊重し、時期や手法について慎重な議論を継続する姿勢。定数増は較差是正や多様な民意反映のためであり、経費削減策で対応可能とする。"
+        - label: "1割削減の完全履行を求める立場"
+          description: "2012年の党首討論での約束に基づき、一割削減（10議席超）の完全履行を求める立場。"
+        - label: "現状（10議席削減）で十分とする立場"
+          description: "これまでの衆議院での10議席削減実績を評価し、これ以上の削減は慎重であるべきとする立場。"
+        - label: "制度抜本的見直し派"
+          description: "議員のなり手不足対策として、市町村制度（議会制度）のあり方まで踏み込んだ議論が必要との主張。"
+        - label: "待遇改善派"
+          description: "落選リスク（選挙リスク）の大きさが議員継続の障壁になっていることへの共感。"
+        - label: "特例適用による合理的な補正を容認"
+          description: "避難指示区域等における特例人口の適用は、合理的な補正であり問題ないとする見解。"
+        - label: "特例適用による格差拡大への懸念"
+          description: "特例人口の適用が、他の地域との間で投票価値の平等に影響を与えることへの懸念。"
+        - label: "定数維持・削減志向"
+          description: "地方議会で定数削減が進む中で、国会定数を増やすことへの反対。"
+        - label: "定数維持・増員容認派"
+          description: "較差是正や多様な民意反映のため、定数増は必要であるとする立場。"
+        - label: "合区拡大・維持派"
+          description: "合区拡大により較差を是正し、定数増を伴わない解決を目指す立場。"
+        - label: "合意形成重視派"
+          description: "選挙制度改革は、多数決による強行ではなく、全会派の協議を通じた合意形成が必要であるとする立場。"
+        - label: "法的責務重視派"
+          description: "一度法律で決定した事項は守られるべきであり、安易な変更は議会制民主主義を損なうとする立場。"
+        - label: "定数増反対派"
+          description: "人口減少社会において国会定数を増やすことへの反対。"
+      consensus_status: "継続検討"
+      consensus_detail: "定数削減の必要性については複数の場面で言及され合意が見られるが、具体的な実施時期や方法（国会での協議、法案提出の時期）については意見の相違が継続している。衆議院では三課題（格差是正、定数削減、制度抜本改革）の同時決着を目指す協議が予定されているが、民主党の比例80削減案への固執や、連用制の憲法適合性など、具体的な進め方で意見が分かれている。新しい情報として、衆議院では45人削減が決定されたが、参議院削減は先送りされた。また、削減の是非やタイミング、具体的な削減幅について対立が続いている。2016年時点では、定数10削減をH27年調査に基づき先行実施する方向性が示されたが、その具体的な方法（〇増六減など）や時期については国会での政治的決断が必要とされている。また、消費税増税の前に議員定数削減といった身を切る改革を先行させるべきとの主張も継続している。参議院の定数6名増（248名→254名）に対する批判（地方議会での削減との対比）や、特定枠導入による民意反映への懸念も新たに浮上している。"
+    evidence_chunks:
+      - id: "chunk_001"
+        source_doc_id: "2011-01-24_117705254X00120110124"
+        source_filename: "2011-01-24_117705254X00120110124.txt"
+        source_date: "2011-01-24"
+        verbatim_quote: |
+          負担の問題は、触れたくない話題かもしれません。負担の議論に当たって、行政の無駄を徹底的に排除することは当然の前提であります。それに加え、議員定数削減など、国会議員もみずから身を切る覚悟を国民に示すことが必要だと考えます。国会で議論し、決定すべき問題であることは言うまでもありません。
+        position: "前提として実施すべき"
+        speaker: "菅直人（内閣総理大臣）"
+        context: "社会保障改革に伴う国民負担増の議論を進める上での前提条件として言及。"
+      - id: "chunk_002"
+        source_doc_id: "2011-01-24_117705254X00120110124"
+        source_filename: "2011-01-24_117705254X00120110124.txt"
+        source_date: "2011-01-24"
+        verbatim_quote: |
+          本日は、一政治家、そして一政党の代表として、この問題を与野党で協議することを提案いたします。そうした努力を徹底した上で、今の現実を直視し、どう乗り越えるか、国民の皆様にも一緒に考えていただきたいのです。
+        position: "議論と並行して進めるべき"
+        speaker: "菅直人（内閣総理大臣）"
+        context: "議員定数削減を含む「身を切る覚悟」について、与野党での協議を提案している点。"
+      - id: "chunk_003"
+        source_doc_id: "2011-01-24_117715254X00120110124"
+        source_filename: "2011-01-24_117715254X00120110124.txt"
+        source_date: "2011-01-24"
+        verbatim_quote: |
+          負担の問題は、触れたくない話題かもしれません。負担の議論に当たって、行政の無駄を徹底的に排除することは当然の前提であります。それに加え、議員定数の削減など国会議員も自ら身を切る覚悟を国民に示すことが必要だと考えます。国会で議論し、決定すべき問題であることは言うまでもありません。本日は、一政治家、そして一政党の代表として、この問題を与野党で協議することを提案いたします。
+        position: "削減の前提"
+        speaker: "菅直人（内閣総理大臣）"
+        context: "社会保障改革に伴う国民負担の議論の前提として、議員定数削減の必要性を言及。"
+      - id: "chunk_004"
+        source_doc_id: "2011-01-24_117715254X00120110124"
+        source_filename: "2011-01-24_117715254X00120110124.txt"
+        source_date: "2011-01-24"
+        verbatim_quote: |
+          国会で議論し、決定すべき問題であることは言うまでもありません。本日は、一政治家、そして一政党の代表として、この問題を与野党で協議することを提案いたします。
+        position: "国会での協議"
+        speaker: "菅直人（内閣総理大臣）"
+        context: "議員定数削減の議論を国会（与野党協議）で行うことを提案。"
+      - id: "chunk_005"
+        source_doc_id: "2011-01-27_117715254X00220110127"
+        source_filename: "2011-01-27_117715254X00220110127.txt"
+        source_date: "2011-01-27"
+        verbatim_quote: |
+          議員定数の削減など、国会改革、政治改革の議論も含め、今の現実を直視し、どう乗り越えていくか、是非各党各会派の意見を持ち寄り、熟議の国会としようではありませんか。
+        position: "定数削減を含む国会改革の即時実施を求める立場"
+        speaker: "中曽根弘文君"
+        context: "政府の責任追及と国会運営に関する要求の中で、国会改革の一環として議員定数削減に言及。"
+      - id: "chunk_006"
+        source_doc_id: "2011-01-27_117715254X00220110127"
+        source_filename: "2011-01-27_117715254X00220110127.txt"
+        source_date: "2011-01-27"
+        verbatim_quote: |
+          議員定数の削減など、国会改革、政治改革の議論も含め、今の現実を直視し、どう乗り越えていくか、是非各党各会派の意見を持ち寄り、熟議の国会としようではありませんか。
+        position: "定数削減を含む国会改革の即時実施を求める立場"
+        speaker: "中曽根弘文君"
+        context: "政府の責任追及と国会運営に関する要求の中で、国会改革の一環として議員定数削減に言及。"
+      - id: "chunk_007"
+        source_doc_id: "2011-01-27_117715254X00220110127"
+        source_filename: "2011-01-27_117715254X00220110127.txt"
+        source_date: "2011-01-27"
+        verbatim_quote: |
+          議員定数の削減など、国会改革、政治改革の議論も含め、今の現実を直視し、どう乗り越えていくか、是非各党各会派の意見を持ち寄り、熟議の国会としようではありませんか。
+        position: "定数削減を含む国会改革の即時実施を求める立場"
+        speaker: "中曽根弘文君"
+        context: "政府の責任追及と国会運営に関する要求の中で、国会改革の一環として議員定数削減に言及。"
+      - id: "chunk_008"
+        source_doc_id: "2011-01-27_117715254X00220110127"
+        source_filename: "2011-01-27_117715254X00220110127.txt"
+        source_date: "2011-01-27"
+        verbatim_quote: |
+          議員定数の削減など、国会改革、政治改革の議論も含め、今の現実を直視し、どう乗り越えていくか、是非各党各会派の意見を持ち寄り、熟議の国会としようではありませんか。
+        position: "定数削減を含む国会改革の即時実施を求める立場"
+        speaker: "中曽根弘文君"
+        context: "政府の責任追及と国会運営に関する要求の中で、国会改革の一環として議員定数削減に言及。"
+      - id: "chunk_009"
+        source_doc_id: "2011-01-27_117715254X00220110127"
+        source_filename: "2011-01-27_117715254X00220110127.txt"
+        source_date: "2011-01-27"
+        verbatim_quote: |
+          議員定数の削減など、国会改革、政治改革の議論も含め、今の現実を直視し、どう乗り越えていくか、是非各党各会派の意見を持ち寄り、熟議の国会としようではありませんか。
+        position: "定数削減を含む国会改革の即時実施を求める立場"
+        speaker: "中曽根弘文君"
+        context: "政府の責任追及と国会運営に関する要求の中で、国会改革の一環として議員定数削減に言及。"
+      - id: "chunk_010"
+        source_doc_id: "2011-01-27_117715254X00220110127"
+        source_filename: "2011-01-27_117715254X00220110127.txt"
+        source_date: "2011-01-27"
+        verbatim_quote: |
+          議員定数の削減など、国会改革、政治改革の議論も含め、今の現実を直視し、どう乗り越えていくか、是非各党各会派の意見を持ち寄り、熟議の国会としようではありませんか。
+        position: "定数削減を含む国会改革の即時実施を求める立場"
+        speaker: "中曽根弘文君"
+        context: "政府の責任追及と国会運営に関する要求の中で、国会改革の一環として議員定数削減に言及。"
+      - id: "chunk_011"
+        source_doc_id: "2011-01-27_117715254X00220110127"
+        source_filename: "2011-01-27_117715254X00220110127.txt"
+        source_date: "2011-01-27"
+        verbatim_quote: |
+          議員定数の削減など、国会改革、政治改革の議論も含め、今の現実を直視し、どう乗り越えていくか、是非各党各会派の意見を持ち寄り、熟議の国会としようではありませんか。
+        position: "定数削減を含む国会改革の即時実施を求める立場"
+        speaker: "中曽根弘文君"
+        context: "政府の責任追及と国会運営に関する要求の中で、国会改革の一環として議員定数削減に言及。"
+      - id: "chunk_012"
+        source_doc_id: "2011-01-27_117715254X00220110127"
+        source_filename: "2011-01-27_117715254X00220110127.txt"
+        source_date: "2011-01-27"
+        verbatim_quote: |
+          議員定数の削減など、国会改革、政治改革の議論も含め、今の現実を直視し、どう乗り越えていくか、是非各党各会派の意見を持ち寄り、熟議の国会としようではありませんか。
+        position: "定数削減を含む国会改革の即時実施を求める立場"
+        speaker: "中曽根弘文君"
+        context: "政府の責任追及と国会運営に関する要求の中で、国会改革の一環として議員定数削減に言及。"
+      - id: "chunk_013"
+        source_doc_id: "2011-01-27_117715254X00220110127"
+        source_filename: "2011-01-27_117715254X00220110127.txt"
+        source_date: "2011-01-27"
+        verbatim_quote: |
+          議員定数の削減など、国会改革、政治改革の議論も含め、今の現実を直視し、どう乗り越えていくか、是非各党各会派の意見を持ち寄り、熟議の国会としようではありませんか。
+        position: "定数削減を含む国会改革の即時実施を求める立場"
+        speaker: "中曽根弘文君"
+        context: "政府の責任追及と国会運営に関する要求の中で、国会改革の一環として議員定数削減に言及。"
+      - id: "chunk_014"
+        source_doc_id: "2011-01-27_117715254X00220110127"
+        source_filename: "2011-01-27_117715254X00220110127.txt"
+        source_date: "2011-01-27"
+        verbatim_quote: |
+          議員定数の削減など、国会改革、政治改革の議論も含め、今の現実を直視し、どう乗り越えていくか、是非各党各会派の意見を持ち寄り、熟議の国会としようではありませんか。
+        position: "定数削減を含む国会改革の即時実施を求める立場"
+        speaker: "中曽根弘文君"
+        context: "政府の責任追及と国会運営に関する要求の中で、国会改革の一環として議員定数削減に言及。"
+      - id: "chunk_015"
+        source_doc_id: "2011-01-27_117715254X00220110127"
+        source_filename: "2011-01-27_117715254X00220110127.txt"
+        source_date: "2011-01-27"
+        verbatim_quote: |
+          議員定数の削減など、国会改革、政治改革の議論も含め、今の現実を直視し、どう乗り越えていくか、是非各党各会派の意見を持ち寄り、熟議の国会としようではありませんか。
+        position: "定数削減を含む国会改革の即時実施を求める立場"
+        speaker: "中曽根弘文君"
+        context: "政府の責任追及と国会運営に関する要求の中で、国会改革の一環として議員定数削減に言及。"
+      - id: "chunk_016"
+        source_doc_id: "2011-01-27_117715254X00220110127"
+        source_filename: "2011-01-27_117715254X00220110127.txt"
+        source_date: "2011-01-27"
+        verbatim_quote: |
+          議員定数の削減など、国会改革、政治改革の議論も含め、今の現実を直視し、どう乗り越えていくか、是非各党各会派の意見を持ち寄り、熟議の国会としようではありませんか。
+        position: "定数削減を含む国会改革の即時実施を求める立場"
+        speaker: "中曽根弘文君"
+        context: "政府の責任追及と国会運営に関する要求の中で、国会改革の一環として議員定数削減に言及。"
+      - id: "chunk_017"
+        source_doc_id: "shingikai_001"
+        source_filename: "2013-06-21_118304129X00120130621.txt"
+        source_date: "2013-06-21"
+        verbatim_quote: |
+          衆議院は、第一議員会館、第二議員会館を含めまして、三階から十二階までは先生方のお部屋でございますが、全部で四百八十ございます。それ以外に、第二会館には、二階部分で、第一会館の常任委員長室に対応する部分が残っておりまして、それを含みますと五百近くの部屋はあろうかと思います。
+        position: "既存の柔軟性で対応可能派"
+        speaker: "鬼塚誠（衆議院事務総長）"
+        context: "議員会館の部屋の総数に関する説明。"
+      - id: "chunk_018"
+        source_doc_id: "shingikai_001"
+        source_filename: "2013-06-21_118304129X00120130621.txt"
+        source_date: "2013-06-21"
+        verbatim_quote: |
+          定数が減れば、単純に、本会議場の議席も要らなくなります。あるいは、議員会館の部屋、これもあいてまいります。そういうときに一体どうするのか。
+        position: "事前検討推進派"
+        speaker: "大西健介（民主党・無所属クラブ）"
+        context: "定数削減後の施設対応に関する質問の導入。"
+      - id: "chunk_019"
+        source_doc_id: "shingikai_001"
+        source_filename: "2013-06-21_118304129X00120130621.txt"
+        source_date: "2013-06-21"
+        verbatim_quote: |
+          自動車課の運転手、あるいは自動車の台数、これも変わってくるということになります。
+        position: "事前検討推進派"
+        speaker: "大西健介（民主党・無所属クラブ）"
+        context: "定数削減が職員数（運転手）にも影響することへの言及。"
+      - id: "chunk_020"
+        source_doc_id: "shingikai_001"
+        source_filename: "2013-06-21_118304129X00120130621.txt"
+        source_date: "2013-06-21"
+        verbatim_quote: |
+          私が参議院の事務局にいたころから、運転手は公務員じゃなくていいじゃないか、外部委託にできないのかという話が前からありました。
+        position: "外部委託推進派（現状）"
+        speaker: "大西健介（民主党・無所属クラブ）"
+        context: "自動車運転手の外部委託に関する過去からの議論の存在。"
+      - id: "chunk_021"
+        source_doc_id: "shingikai_001"
+        source_filename: "2013-06-21_118304129X00120130621.txt"
+        source_date: "2013-06-21"
+        verbatim_quote: |
+          当面は三十人ということですけれども、それをもう今ほぼ達成しようとしているわけですけれども、では、三十人の後はどうするんですかということと、先ほど申し上げたように、一部もう外部委託しちゃっているということは、今外部委託している分と残っている衆議院職員の自動車運転手は何が違うんだ、三十人外部委託できるんだったらほかもできるでしょうと言われた場合に何とお答えになるのかについてお聞きをしたいと思います。
+        position: "慎重論/検討要求派"
+        speaker: "大西健介（民主党・無所属クラブ）"
+        context: "30人達成後の外部委託の方向性と現行委託分との区別に関する質問。"
+      - id: "chunk_022"
+        source_doc_id: "shingikai_001"
+        source_filename: "2013-06-21_118304129X00120130621.txt"
+        source_date: "2013-06-21"
+        verbatim_quote: |
+          その先のことにつきましては、利用される側の先生方の立場もございますので私どもの一存では決められませんが、理屈の上で、全部外部委託にする方がいいのか、あるいは、それを全部またもとに戻して官で抱えた方がいいのかというような、いろいろな論点を、やはり、先生方を含めまして、きちっと整理していただいた上でどうするかということではないかと思います。
+        position: "慎重論/検討要求派"
+        speaker: "鬼塚誠（衆議院事務総長）"
+        context: "30人達成後の外部委託の方向性について、議員の意見を踏まえた整理が必要との認識。"
+      - id: "chunk_023"
+        source_doc_id: "shingikai_001"
+        source_filename: "2013-06-21_118304129X00120130621.txt"
+        source_date: "2013-06-21"
+        verbatim_quote: |
+          速記者養成所というのは、知らない間に廃止が決まっている。つまり、新しい速記職というのは養成しないことになっているわけですね。そうすると、ずっと今の速記職が退職していくと、いつかは、この速記制度というのが、今のままいくと、なくなってしまう。
+        position: "速記文化維持・慎重派"
+        speaker: "大西健介（民主党・無所属クラブ）"
+        context: "速記職養成所廃止と制度消滅の懸念についての指摘。"
+      - id: "chunk_024"
+        source_doc_id: "shingikai_001"
+        source_filename: "2013-06-21_118304129X00120130621.txt"
+        source_date: "2013-06-21"
+        verbatim_quote: |
+          私ども、中にいる者として、速記方式というのは日本人がつくった文化の一つであろうということで、これは大事にしなきゃいかぬという部分はございますが、といいながらも、一つの判断として、機械化に向けて音声入力という形で進んでいったその先行投資の部分を含めますと、いきなり速記方式に戻すということは非常に大変なことではないかと思います。
+        position: "機械化推進派（現状）"
+        speaker: "鬼塚誠（衆議院事務総長）"
+        context: "速記廃止決定の経緯と、機械化への投資を踏まえた現状認識。"
+      - id: "chunk_025"
+        source_doc_id: "shingikai_001"
+        source_filename: "2013-06-21_118304129X00120130621.txt"
+        source_date: "2013-06-21"
+        verbatim_quote: |
+          両院の独立性に十分に配意した上で、なお且つ統合した方が、より効率的に業務を遂行できると判断されるものは、統合することを基本方針とする」という答申を出されているんですね。
+        position: "統合推進派"
+        speaker: "大西健介（民主党・無所属クラブ）"
+        context: "両院業務統合に関する過去の答申の引用。"
+      - id: "chunk_026"
+        source_doc_id: "shingikai_001"
+        source_filename: "2013-06-21_118304129X00120130621.txt"
+        source_date: "2013-06-21"
+        verbatim_quote: |
+          衆参の間で統合の話を行いますと、やはり、先ほどおっしゃいました、一院制につながるような問題にどうもひっかかってまいります。非常に衆参ともに微妙な立場にございますので、個々の検討をやっていないということではございませんが、実際に両院間で協議するという段階には、まだ至ってございません。
+        position: "現状維持・慎重派"
+        speaker: "鬼塚誠（衆議院事務総長）"
+        context: "両院業務統合に関する協議の現状。"
+      - id: "chunk_027"
+        source_doc_id: "shingikai_001"
+        source_filename: "2013-06-21_118304129X00120130621.txt"
+        source_date: "2013-06-21"
+        verbatim_quote: |
+          我が国で、東京以外で国会召集ができるか。このことについては、先例等を見ると、帝国議会時代に、日清戦争中ですけれども、大本営を置いた広島の仮議事堂で国会をやったことがある。
+        position: "理論上可能派"
+        speaker: "大西健介（民主党・無所属クラブ）"
+        context: "国会を東京以外で召集する可能性に関する質問。"
+      - id: "chunk_028"
+        source_doc_id: "shingikai_001"
+        source_filename: "2013-06-21_118304129X00120130621.txt"
+        source_date: "2013-06-21"
+        verbatim_quote: |
+          帝国議会時代ではございますが、実例はございますし、東京を別の都道府県にかえるということは、当然、可能でございます。
+        position: "理論上可能派"
+        speaker: "鬼塚誠（衆議院事務総長）"
+        context: "東京以外での国会召集の可能性についての回答。"
+      - id: "chunk_029"
+        source_doc_id: "shingikai_001"
+        source_filename: "2013-06-21_118304129X00120130621.txt"
+        source_date: "2013-06-21"
+        verbatim_quote: |
+          事務総長の選挙は、その手続を省略して、議長の指名によるというのが先例になっています。
+        position: "現行先例の維持を重視する側"
+        speaker: "大西健介（民主党・無所属クラブ）"
+        context: "事務総長選出の先例に関する指摘。"
+      - id: "chunk_030"
+        source_doc_id: "shingikai_001"
+        source_filename: "2013-06-21_118304129X00120130621.txt"
+        source_date: "2013-06-21"
+        verbatim_quote: |
+          現在、実際上やっています衆議院の中における選挙は、あくまでも、全四百八十人の方々が、それぞれ、独自の立場かもしれませんが、推薦する方を選定していく、それを議長、副議長、常任委員長なり、あるいは事務総長にするということになってございますので、立候補制というのが実際上対応できるかどうかについては、ちょっと検討の余地があるんじゃないかとは思います。
+        position: "現行先例の維持を重視する側"
+        speaker: "鬼塚誠（衆議院事務総長）"
+        context: "事務総長選挙における立候補制の適用可能性についての回答。"
+      - id: "chunk_031"
+        source_doc_id: "shingikai_001"
+        source_filename: "2013-06-21_118304129X00120130621.txt"
+        source_date: "2013-06-21"
+        verbatim_quote: |
+          こういうオーラルヒストリーというのは私は議会運営にとっては非常に有益だと思いますので、ぜひ衆議院においても組織的にオーラルヒストリーというのを考えていただきたいということを最後に申し上げまして、私の質問を終わります。
+        position: "導入推進派"
+        speaker: "大西健介（民主党・無所属クラブ）"
+        context: "国会職員のオーラルヒストリー導入の提案。"
+      - id: "chunk_032"
+        source_doc_id: "70911"
+        source_filename: "2013-06-24_118305254X03520130624.txt"
+        source_date: "2013-06-24"
+        verbatim_quote: |
+          自民党に言いたい。たった〇増五減の、たった〇増五減の法案にきゅうきゅうとし、本来行うべき定数削減と選挙制度改革に対して、なぜ主導権を発揮しないのでしょうか。
+        position: "定数削減・抜本改革優先派"
+        speaker: "泉健太君"
+        context: "与党（自民党）への主導権発揮の要求"
+      - id: "chunk_033"
+        source_doc_id: "70911"
+        source_filename: "2013-06-24_118305254X03520130624.txt"
+        source_date: "2013-06-24"
+        verbatim_quote: |
+          定数削減や選挙制度改革はもちろん重要ですが、各党間の協議が難航する課題まで含めて議論していては、今違憲状態にある格差の是正が遅々として進みません。緊急避難の策として、まずは一票の格差是正のための〇増五減を優先し、速やかに実現すべきであります。
+        position: "〇増五減先行処理派"
+        speaker: "平沢勝栄君"
+        context: "緊急避難策として〇増五減を優先し、定数削減は後回しにすべきとの主張。"
+      - id: "chunk_034"
+        source_doc_id: "70911"
+        source_filename: "2013-06-24_118305254X03520130624.txt"
+        source_date: "2013-06-24"
+        verbatim_quote: |
+          我が国の衆議院が、責任の押しつけ合いで、そのような主体性のない衆議院であってよいのか。これは、今まさに、少なくとも定数削減に合意した政党に所属する全ての国会議員が、主体的に定数削減を実現することが求められていると思います。
+        position: "定数削減・抜本改革優先派"
+        speaker: "泉健太君"
+        context: "主体性の欠如と全議員への責任の言及"
+      - id: "chunk_035"
+        source_doc_id: "70911"
+        source_filename: "2013-06-24_118305254X03520130624.txt"
+        source_date: "2013-06-24"
+        verbatim_quote: |
+          日本維新の会は、議員定数削減について具体的な抜本改革案を作成し、衆議院議員の定数を三百三十六人とし、そのうち、小選挙区選出議員の定数を二百四十、比例代表選出議員の定数を九十六人とする法律案を五月十六日に提出しております。
+        position: "〇増五減先行処理派"
+        speaker: "浦野靖人君"
+        context: "維新の会による具体的な定数削減案の提出"
+      - id: "chunk_036"
+        source_doc_id: "2013-10-16_118505254X00220131016.txt"
+        source_filename: "2013-10-16_118505254X00220131016.txt"
+        source_date: "2013-10-16"
+        verbatim_quote: |
+          衆議院の選挙制度改革については、自由民主党から、国会のもとに、客観的な議論を行う、民間有識者による第三者機関を設けることを提案したところです。各党各会派にも御協力いただき、建設的な議論を進め、現在の膠着状況を打破し、決める政治によって、国民の負託にしっかりと応えてまいる所存です。
+        position: "第三者機関による議論の推進"
+        speaker: "安倍晋三君"
+        context: "議員定数削減に関する質問への回答の中で、選挙制度改革の進め方について言及。"
+      - id: "chunk_037"
+        source_doc_id: "2013-10-16_118505254X00220131016.txt"
+        source_filename: "2013-10-16_118505254X00220131016.txt"
+        source_date: "2013-10-16"
+        verbatim_quote: |
+          安倍総理は、昨年十一月の党首討論で、議員定数削減をお約束されました。安倍総理、安倍自民党総裁は、議員定数削減を行う覚悟はあるのでしょうか。その覚悟があるなら、いつまでも頬かむりせず、この臨時国会で成案を得るべきではないでしょうか。
+        position: "臨時国会での成案追求"
+        speaker: "海江田万里君"
+        context: "消費税増税に伴う身を切る改革の要求として、議員定数削減の実行を求めている。"
+      - id: "chunk_038"
+        source_doc_id: "2013-10-16_118505254X00220131016.txt"
+        source_filename: "2013-10-16_118505254X00220131016.txt"
+        source_date: "2013-10-16"
+        verbatim_quote: |
+          議会の定数に関する問題は、議会政治の根幹にかわる重要な課題であり、国民からの負託を受けた与党がリーダーシップを発揮し、各党各会派と真摯に議論を行い、早期に結論を得ることが大切と考えております。
+        position: "議論の進め方待ち"
+        speaker: "安倍晋三君"
+        context: "議員定数削減に関する質問への回答。"
+      - id: "chunk_039"
+        source_doc_id: "shingikai_001"
+        source_filename: "2013-06-21_118304129X00120130621.txt"
+        source_date: "2013-06-21"
+        verbatim_quote: |
+          定数が減れば、単純に、本会議場の議席も要らなくなります。あるいは、議員会館の部屋、これもあいてまいります。そういうときに一体どうするのか。
+        position: "事前検討推進派"
+        speaker: "大西健介（民主党・無所属クラブ）"
+        context: "定数削減後の施設対応に関する質問の導入。"
+      - id: "chunk_040"
+        source_doc_id: "shingikai_001"
+        source_filename: "2013-06-21_118304129X00120130621.txt"
+        source_date: "2013-06-21"
+        verbatim_quote: |
+          仮に、八十議席ということになりますと、これは全然違ってくるんじゃないか。
+        position: "事前検討推進派"
+        speaker: "大西健介（民主党・無所属クラブ）"
+        context: "過去の20議席削減時と、仮に80議席削減になった場合の規模の違いについて言及。"
+      - id: "chunk_041"
+        source_doc_id: "shingikai_001"
+        source_filename: "2013-06-21_118304129X00120130621.txt"
+        source_date: "2013-06-21"
+        verbatim_quote: |
+          議員事務室フロアにつきましては、フレキシビリティー確保のため、議員事務室内及び隣接する議員事務室間に、構造上必要な独立の柱や壁を設けてございません。これによりまして、議員事務室内の間仕切りを撤去し議員会議室のようにすることは可能であり、また、片側十二室全ての議員事務室を大部屋とすることは可能となってございます。
+        position: "既存の柔軟性で対応可能派"
+        speaker: "鬼塚誠（衆議院事務総長）"
+        context: "議員会館の部屋の再編可能性に関する事務局の回答。"
+      - id: "chunk_042"
+        source_doc_id: "shingikai_001"
+        source_filename: "2013-06-21_118304129X00120130621.txt"
+        source_date: "2013-06-21"
+        verbatim_quote: |
+          そういうことを考えたときに、事務局にぜひお聞きをしたいと思っているんですけれども、それは、例えば、新議員会館を建てるときに、その設計、構想段階で、議員が減ることだけじゃなくて、ふえることも含めて、議員の増減があり得るということを想定した、そういう設計とか構想というのをされたのかどうなのか。
+        position: "事前検討推進派"
+        speaker: "大西健介（民主党・無所属クラブ）"
+        context: "定数削減を見据えた議員会館設計・構想に関する質問。"
+      - id: "chunk_043"
+        source_doc_id: "shingikai_001"
+        source_filename: "2013-06-21_118304129X00120130621.txt"
+        source_date: "2013-06-21"
+        verbatim_quote: |
+          衆議院は、第一議員会館、第二議員会館を含めまして、三階から十二階までは先生方のお部屋でございますが、全部で四百八十ございます。それ以外に、第二会館には、二階部分で、第一会館の常任委員長室に対応する部分が残っておりまして、それを含みますと五百近くの部屋はあろうかと思います。
+        position: "既存の柔軟性で対応可能派"
+        speaker: "鬼塚誠（衆議院事務総長）"
+        context: "議員会館の部屋の総数に関する説明。"
+      - id: "chunk_044"
+        source_doc_id: "shingikai_001"
+        source_filename: "2013-06-21_118304129X00120130621.txt"
+        source_date: "2013-06-21"
+        verbatim_quote: |
+          定数が減れば、単純に、本会議場の議席も要らなくなります。あるいは、議員会館の部屋、これもあいてまいります。そういうときに一体どうするのか。
+        position: "事前検討推進派"
+        speaker: "大西健介（民主党・無所属クラブ）"
+        context: "定数削減後の施設対応に関する質問の導入。"
+      - id: "chunk_045"
+        source_doc_id: "shingikai_001"
+        source_filename: "2013-06-21_118304129X00120130621.txt"
+        source_date: "2013-06-21"
+        verbatim_quote: |
+          自動車課の運転手、あるいは自動車の台数、これも変わってくるということになります。
+        position: "事前検討推進派"
+        speaker: "大西健介（民主党・無所属クラブ）"
+        context: "定数削減が職員数（運転手）にも影響することへの言及。"
+      - id: "chunk_046"
+        source_doc_id: "shingikai_001"
+        source_filename: "2013-06-21_118304129X00120130621.txt"
+        source_date: "2013-06-21"
+        verbatim_quote: |
+          私が参議院の事務局にいたころから、運転手は公務員じゃなくていいじゃないか、外部委託にできないのかという話が前からありました。
+        position: "外部委託推進派（現状）"
+        speaker: "大西健介（民主党・無所属クラブ）"
+        context: "自動車運転手の外部委託に関する過去からの議論の存在。"
+      - id: "chunk_047"
+        source_doc_id: "shingikai_001"
+        source_filename: "2013-06-21_118304129X00120130621.txt"
+        source_date: "2013-06-21"
+        verbatim_quote: |
+          当面は三十人ということですけれども、それをもう今ほぼ達成しようとしているわけですけれども、では、三十人の後はどうするんですかということと、先ほど申し上げたように、一部もう外部委託しちゃっているということは、今外部委託している分と残っている衆議院職員の自動車運転手は何が違うんだ、三十人外部委託できるんだったらほかもできるでしょうと言われた場合に何とお答えになるのかについてお聞きをしたいと思います。
+        position: "慎重論/検討要求派"
+        speaker: "大西健介（民主党・無所属クラブ）"
+        context: "30人達成後の外部委託の方向性と現行委託分との区別に関する質問。"
+      - id: "chunk_048"
+        source_doc_id: "shingikai_001"
+        source_filename: "2013-06-21_118304129X00120130621.txt"
+        source_date: "2013-06-21"
+        verbatim_quote: |
+          その先のことにつきましては、利用される側の先生方の立場もございますので私どもの一存では決められませんが、理屈の上で、全部外部委託にする方がいいのか、あるいは、それを全部またもとに戻して官で抱えた方がいいのかというような、いろいろな論点を、やはり、先生方を含めまして、きちっと整理していただいた上でどうするかということではないかと思います。
+        position: "慎重論/検討要求派"
+        speaker: "鬼塚誠（衆議院事務総長）"
+        context: "30人達成後の外部委託の方向性について、議員の意見を踏まえた整理が必要との認識。"
+      - id: "chunk_049"
+        source_doc_id: "shingikai_001"
+        source_filename: "2013-06-21_118304129X00120130621.txt"
+        source_date: "2013-06-21"
+        verbatim_quote: |
+          速記者養成所というのは、知らない間に廃止が決まっている。つまり、新しい速記職というのは養成しないことになっているわけですね。そうすると、ずっと今の速記職が退職していくと、いつかは、この速記制度というのが、今のままいくと、なくなってしまう。
+        position: "速記文化維持・慎重派"
+        speaker: "大西健介（民主党・無所属クラブ）"
+        context: "速記職養成所廃止と制度消滅の懸念についての指摘。"
+      - id: "chunk_050"
+        source_doc_id: "shingikai_001"
+        source_filename: "2013-06-21_118304129X00120130621.txt"
+        source_date: "2013-06-21"
+        verbatim_quote: |
+          私ども、中にいる者として、速記方式というのは日本人がつくった文化の一つであろうということで、これは大事にしなきゃいかぬという部分はございますが、といいながらも、一つの判断として、機械化に向けて音声入力という形で進んでいったその先行投資の部分を含めますと、いきなり速記方式に戻すということは非常に大変なことではないかと思います。
+        position: "機械化推進派（現状）"
+        speaker: "鬼塚誠（衆議院事務総長）"
+        context: "速記廃止決定の経緯と、機械化への投資を踏まえた現状認識。"
+      - id: "chunk_051"
+        source_doc_id: "shingikai_001"
+        source_filename: "2013-06-21_118304129X00120130621.txt"
+        source_date: "2013-06-21"
+        verbatim_quote: |
+          両院の独立性に十分に配意した上で、なお且つ統合した方が、より効率的に業務を遂行できると判断されるものは、統合することを基本方針とする」という答申を出されているんですね。
+        position: "統合推進派"
+        speaker: "大西健介（民主党・無所属クラブ）"
+        context: "両院業務統合に関する過去の答申の引用。"
+      - id: "chunk_052"
+        source_doc_id: "shingikai_001"
+        source_filename: "2013-06-21_118304129X00120130621.txt"
+        source_date: "2013-06-21"
+        verbatim_quote: |
+          衆参の間で統合の話を行いますと、やはり、先ほどおっしゃいました、一院制につながるような問題にどうもひっかかってまいります。非常に衆参ともに微妙な立場にございますので、個々の検討をやっていないということではございませんが、実際に両院間で協議するという段階には、まだ至ってございません。
+        position: "現状維持・慎重派"
+        speaker: "鬼塚誠（衆議院事務総長）"
+        context: "両院業務統合に関する協議の現状。"
+      - id: "chunk_053"
+        source_doc_id: "shingikai_001"
+        source_filename: "2013-06-21_118304129X00120130621.txt"
+        source_date: "2013-06-21"
+        verbatim_quote: |
+          我が国で、東京以外で国会召集ができるか。このことについては、先例等を見ると、帝国議会時代に、日清戦争中ですけれども、大本営を置いた広島の仮議事堂で国会をやったことがある。
+        position: "理論上可能派"
+        speaker: "大西健介（民主党・無所属クラブ）"
+        context: "国会を東京以外で召集する可能性に関する質問。"
+      - id: "chunk_054"
+        source_doc_id: "shingikai_001"
+        source_filename: "2013-06-21_118304129X00120130621.txt"
+        source_date: "2013-06-21"
+        verbatim_quote: |
+          帝国議会時代ではございますが、実例はございますし、東京を別の都道府県にかえるということは、当然、可能でございます。
+        position: "理論上可能派"
+        speaker: "鬼塚誠（衆議院事務総長）"
+        context: "東京以外での国会召集の可能性についての回答。"
+      - id: "chunk_055"
+        source_doc_id: "shingikai_001"
+        source_filename: "2013-06-21_118304129X00120130621.txt"
+        source_date: "2013-06-21"
+        verbatim_quote: |
+          事務総長の選挙は、その手続を省略して、議長の指名によるというのが先例になっています。
+        position: "現行先例の維持を重視する側"
+        speaker: "大西健介（民主党・無所属クラブ）"
+        context: "事務総長選出の先例に関する指摘。"
+      - id: "chunk_056"
+        source_doc_id: "shingikai_001"
+        source_filename: "2013-06-21_118304129X00120130621.txt"
+        source_date: "2013-06-21"
+        verbatim_quote: |
+          現在、実際上やっています衆議院の中における選挙は、あくまでも、全四百八十人の方々が、それぞれ、独自の立場かもしれませんが、推薦する方を選定していく、それを議長、副議長、常任委員長なり、あるいは事務総長にするということになってございますので、立候補制というのが実際上対応できるかどうかについては、ちょっと検討の余地があるんじゃないかとは思います。
+        position: "現行先例の維持を重視する側"
+        speaker: "鬼塚誠（衆議院事務総長）"
+        context: "事務総長選挙における立候補制の適用可能性についての回答。"
+      - id: "chunk_057"
+        source_doc_id: "shingikai_001"
+        source_filename: "2013-06-21_118304129X00120130621.txt"
+        source_date: "2013-06-21"
+        verbatim_quote: |
+          こういうオーラルヒストリーというのは私は議会運営にとっては非常に有益だと思いますので、ぜひ衆議院においても組織的にオーラルヒストリーというのを考えていただきたいということを最後に申し上げまして、私の質問を終わります。
+        position: "導入推進派"
+        speaker: "大西健介（民主党・無所属クラブ）"
+        context: "国会職員のオーラルヒストリー導入の提案。"
+      - id: "chunk_058"
+        source_doc_id: "2013-10-16_118505254X00220131016.txt"
+        source_filename: "2013-10-16_118505254X00220131016.txt"
+        source_date: "2013-10-16"
+        verbatim_quote: |
+          衆議院の選挙制度改革については、自由民主党から、国会のもとに、客観的な議論を行う、民間有識者による第三者機関を設けることを提案したところです。各党各会派にも御協力いただき、建設的な議論を進め、現在の膠着状況を打破し、決める政治によって、国民の負託にしっかりと応えてまいる所存です。
+        position: "第三者機関による議論の推進"
+        speaker: "安倍晋三君"
+        context: "議員定数削減に関する質問への回答の中で、選挙制度改革の進め方について言及。"
+      - id: "chunk_059"
+        source_doc_id: "2013-10-16_118505254X00220131016.txt"
+        source_filename: "2013-10-16_118505254X00220131016.txt"
+        source_date: "2013-10-16"
+        verbatim_quote: |
+          衆議院の選挙制度改革については、自由民主党から、国会のもとに、客観的な議論を行う、民間有識者による第三者機関を設けることを提案したところです。各党各会派にも御協力いただき、建設的な議論を進め、現在の膠着状況を打破し、決める政治によって、国民の負託にしっかりと応えてまいる所存です。
+        position: "第三者機関による議論の推進"
+        speaker: "安倍晋三君"
+        context: "議員定数削減に関する質問への回答の中で、選挙制度改革の進め方について言及。"
+      - id: "chunk_060"
+        source_doc_id: "2013-10-16_118505254X00220131016.txt"
+        source_filename: "2013-10-16_118505254X00220131016.txt"
+        source_date: "2013-10-16"
+        verbatim_quote: |
+          衆議院の選挙制度改革については、自由民主党から、国会のもとに、客観的な議論を行う、民間有識者による第三者機関を設けることを提案したところです。各党各会派にも御協力いただき、建設的な議論を進め、現在の膠着状況を打破し、決める政治によって、国民の負託にしっかりと応えてまいる所存です。
+        position: "第三者機関による議論の推進"
+        speaker: "安倍晋三君"
+        context: "議員定数削減に関する質問への回答の中で、選挙制度改革の進め方について言及。"
+      - id: "chunk_061"
+        source_doc_id: "shingikai_001"
+        source_filename: "2013-06-21_118304129X00120130621.txt"
+        source_date: "2013-06-21"
+        verbatim_quote: |
+          こういうオーラルヒストリーというのは私は議会運営にとっては非常に有益だと思いますので、ぜひ衆議院においても組織的にオーラルヒストリーというのを考えていただきたいということを最後に申し上げまして、私の質問を終わります。
+        position: "導入推進派"
+        speaker: "大西健介（民主党・無所属クラブ）"
+        context: "国会職員のオーラルヒストリー導入の提案。"
+      - id: "chunk_062"
+        source_doc_id: "2013-10-16_118505254X00220131016.txt"
+        source_filename: "2013-10-16_118505254X00220131016.txt"
+        source_date: "2013-10-16"
+        verbatim_quote: |
+          衆議院の選挙制度改革については、自由民主党から、国会のもとに、客観的な議論を行う、民間有識者による第三者機関を設けることを提案したところです。各党各会派にも御協力いただき、建設的な議論を進め、現在の膠着状況を打破し、決める政治によって、国民の負託にしっかりと応えてまいる所存です。
+        position: "第三者機関による議論の推進"
+        speaker: "安倍晋三君"
+        context: "議員定数削減に関する質問への回答の中で、選挙制度改革の進め方について言及。"
+      - id: "chunk_063"
+        source_doc_id: "2013-10-16_118505254X00220131016.txt"
+        source_filename: "2013-10-16_118505254X00220131016.txt"
+        source_date: "2013-10-16"
+        verbatim_quote: |
+          衆議院の選挙制度改革については、自由民主党から、国会のもとに、客観的な議論を行う、民間有識者による第三者機関を設けることを提案したところです。各党各会派にも御協力いただき、建設的な議論を進め、現在の膠着状況を打破し、決める政治によって、国民の負託にしっかりと応えてまいる所存です。
+        position: "第三者機関による議論の推進"
+        speaker: "安倍晋三君"
+        context: "議員定数削減に関する質問への回答の中で、選挙制度改革の進め方について言及。"
+      - id: "chunk_064"
+        source_doc_id: "2013-10-16_118505254X00220131016.txt"
+        source_filename: "2013-10-16_118505254X00220131016.txt"
+        source_date: "2013-10-16"
+        verbatim_quote: |
+          衆議院の選挙制度改革については、自由民主党から、国会のもとに、客観的な議論を行う、民間有識者による第三者機関を設けることを提案したところです。各党各会派にも御協力いただき、建設的な議論を進め、現在の膠着状況を打破し、決める政治によって、国民の負託にしっかりと応えてまいる所存です。
+        position: "第三者機関による議論の推進"
+        speaker: "安倍晋三君"
+        context: "議員定数削減に関する質問への回答の中で、選挙制度改革の進め方について言及。"
+      - id: "chunk_065"
+        source_doc_id: "2013-10-16_118505254X00220131016.txt"
+        source_filename: "2013-10-16_118505254X00220131016.txt"
+        source_date: "2013-10-16"
+        verbatim_quote: |
+          衆議院の選挙制度改革については、自由民主党から、国会のもとに、客観的な議論を行う、民間有識者による第三者機関を設けることを提案したところです。各党各会派にも御協力いただき、建設的な議論を進め、現在の膠着状況を打破し、決める政治によって、国民の負託にしっかりと応えてまいる所存です。
+        position: "第三者機関による議論の推進"
+        speaker: "安倍晋三君"
+        context: "議員定数削減に関する質問への回答の中で、選挙制度改革の進め方について言及。"
+      - id: "chunk_066"
+        source_doc_id: "57553"
+        source_filename: "2016-04-22_119005254X02720160422.txt"
+        source_date: "2016-04-22"
+        verbatim_quote: |
+          移行期をどうするかということについては、実は何も書いていないわけでございます。それこそ国会の裁量にお任せをすべきだろうということでございます。
+        position: "国会での決定事項"
+        context: "削減の時期・方法を国会に委ねた理由の説明。"
+      - id: "chunk_067"
+        source_doc_id: "57553"
+        source_filename: "2016-04-22_119005254X02720160422.txt"
+        source_date: "2016-04-22"
+        verbatim_quote: |
+          定数削減の具体的な時期や方法については、答申では、実は結論としては明記されておりません。
+        position: "答申の範囲内での議論の欠如"
+        context: "削減の開始時期が答申で明記されていない点についての質問"
+      - id: "chunk_068"
+        source_doc_id: "57553"
+        source_filename: "2016-04-22_119005254X02720160422.txt"
+        source_date: "2016-04-22"
+        verbatim_quote: |
+          これは我々の手に余る問題であって、政治家の皆さんにお決めいただく以外に道はないということで、委員会としては統一見解をもってこういう形にさせていただいたところでございます。
+        position: "国会での決定事項"
+        context: "削減の時期・方法を国会に委ねた理由の説明。"
+      - id: "chunk_069"
+        source_doc_id: "74845"
+        source_filename: "2016-04-27_119004577X00920160427.txt"
+        source_date: "2016-04-27"
+        verbatim_quote: |
+          私どもの法案が成立すれば公布日から施行されることになりますので、区画審は直ちに新たな都道府県別定数配分に基づく区割り改定案の作業に入って、一年以内の勧告。それで、勧告を受けて、来年の通常国会に政府が具体的な小選挙区を定める公職選挙法の別表第一を改正する法案を提出し、速やかに可決することを想定しています。周知期間を一カ月とすると、遅くとも来年七月以降であれば抜本改革を行った上での選挙が可能ということだと思います。
+        position: "民進案派（同時削減）"
+        context: "民進案の施行時期に関する説明"
+      - id: "chunk_070"
+        source_doc_id: "74845"
+        source_filename: "2016-04-27_119004577X00920160427.txt"
+        source_date: "2016-04-27"
+        verbatim_quote: |
+          私どもは、次回の直近の大規模国勢調査が平成三十二年のものであり、成立した法律をあえて遡及適用することは例外的であることに鑑みますと、アダムズ方式を導入するのは平成三十二年の大規模国勢調査以降とするのがまさに自然であると我々は考えております。
+        position: "自公案派（先行削減）"
+        context: "自公案がH32年国調以降にアダムズ方式導入とする理由"
+      - id: "chunk_071"
+        source_doc_id: "74845"
+        source_filename: "2016-04-27_119004577X00920160427.txt"
+        source_date: "2016-04-27"
+        verbatim_quote: |
+          ところが、今回の自民党は定数削減を先送りするという報道でした。さすがに総理も、それでは国会には立っていられないとおっしゃったということで再検討を指示した。しかし、再検討した結果出てきたものは、定数削減は二〇二一年以降に先送りするとのこと。
+        position: "早期・大幅削減実行派（野党）"
+        speaker: "高井崇志君"
+        context: "自民党の定数削減先送り報道に対する批判。"
+      - id: "chunk_072"
+        source_doc_id: "74845"
+        source_filename: "2016-04-27_119004577X00920160427.txt"
+        source_date: "2016-04-27"
+        verbatim_quote: |
+          民進党案では、直近の国勢調査の結果を使用せず、それ以前の古い国勢調査、平成二十二年の国勢調査の結果を使用しておられますけれども、こうした遡及適用は例外的、いわば前代未聞のものとなるということは御指摘させていただきたいというふうに考えております。
+        position: "自公案派（先行削減）"
+        speaker: "藤井比早之"
+        context: "H22年国調の遡及適用に対する懸念"
+      - id: "chunk_073"
+        source_doc_id: "74845"
+        source_filename: "2016-04-27_119004577X00920160427.txt"
+        source_date: "2016-04-27"
+        verbatim_quote: |
+          このアダムズ方式による都道府県別定数配分は、次回の直近の大規模国勢調査が平成三十二年のものである、このように考えますと、やはりアダムズ方式を導入するのはこの三十二年の大規模国勢調査以降とするのが自然であると考えております。
+        position: "自公案派（2020年以降）"
+        context: "自公案のH32年国調採用の根拠"
+      - id: "chunk_074"
+        source_doc_id: "57553"
+        source_filename: "2016-04-22_119005254X02720160422.txt"
+        source_date: "2016-04-22"
+        verbatim_quote: |
+          民進党案では、その附則第四条第二項でさらなる定数削減に努めることを明記していますが、調査会の答申では、定数削減について、積極的理由や理論的根拠は見出しがたいとかなり否定的であります。さらなる定数削減にこだわるのは答申に反するのではないでしょうか。
+        position: "公約履行要求派"
+        context: "民進案のさらなる定数削減努力が答申に反しないかという質問"
+      - id: "chunk_075"
+        source_doc_id: "57553"
+        source_filename: "2016-04-22_119005254X02720160422.txt"
+        source_date: "2016-04-22"
+        verbatim_quote: |
+          既に七、八年も議論をして、全ての政党が参加して議論をした上に、そしてまた第三者機関にも委ねた上で、結論が出されて、それに対しては各党ともさまざまな意見がありますけれども、これを受け入れようではないかというところまで来ましたから、まずはそれを実現する、格差を是正すると同時に定数削減十を行って、今後の問題はいわば幅広く考えていかなければならないんじゃないか、そのワンステップをまず実現することが大切であろうと思っております。
+        position: "制度改革のワンステップ"
+        context: "今回の10削減は、格差是正と並行したワンステップであるという説明。"
+      - id: "chunk_076"
+        source_doc_id: "57553"
+        source_filename: "2016-04-22_119005254X02720160422.txt"
+        source_date: "2016-04-22"
+        verbatim_quote: |
+          維新の党は、二〇一四年総選挙マニフェストで、議員定数三割削減を掲げているということであります。
+        position: "公約の実行を要求"
+        context: "維新の党の過去の公約（3割削減）の言及"
+      - id: "chunk_077"
+        source_doc_id: "57553"
+        source_filename: "2016-04-22_119005254X02720160422.txt"
+        source_date: "2016-04-22"
+        verbatim_quote: |
+          答申は次のように述べています。「現行の衆議院議員の定数は、国際比較や過去の経緯などからすると多いとは言えず、これを削減する積極的な理由や理論的根拠は見出し難い。」
+        position: "削減根拠は乏しい"
+        context: "定数削減に関する答申の記述の引用"
+      - id: "chunk_078"
+        source_doc_id: "57553"
+        source_filename: "2016-04-22_119005254X02720160422.txt"
+        source_date: "2016-04-22"
+        verbatim_quote: |
+          （２）としまして、「一方、衆議院議員の定数削減は多くの政党の選挙公約であり、主権者たる国民との約束である。」ということがございます。
+        position: "公約尊重による削減"
+        context: "調査会答申の定数削減に関する記述の説明"
+      - id: "chunk_079"
+        source_doc_id: "57553"
+        source_filename: "2016-04-22_119005254X02720160422.txt"
+        source_date: "2016-04-22"
+        verbatim_quote: |
+          日本は、先進国の中で最も有権者一人の一票の価値が少ない国になっていると言えると思います。それでも今回の選挙制度改革において衆議院議員の十削減を行うとした理由について、与党側提出者に伺いたいと思います。
+        position: "削減根拠は乏しい"
+        context: "日本の有権者一票の価値の低さと削減理由への疑問。"
+      - id: "chunk_080"
+        source_doc_id: "57553"
+        source_filename: "2016-04-22_119005254X02720160422.txt"
+        source_date: "2016-04-22"
+        verbatim_quote: |
+          私が、奇跡的というか、どうなるかわからないと思ったのは、そういう状況を踏まえた上での発言だったと記憶しております。
+        position: "公約尊重による削減"
+        context: "10人削減の合意に至った経緯の説明"
+      - id: "chunk_081"
+        source_doc_id: "57553"
+        source_filename: "2016-04-22_119005254X02720160422.txt"
+        source_date: "2016-04-22"
+        verbatim_quote: |
+          国会の質疑の本来あるべき姿、総理はどのようにお考えになっていらっしゃるいますでしょうか、お願いを申し上げます。
+        position: "共産党派（十分な議論要求）"
+        context: "国会の審議のあり方に対する批判と、本来あるべき姿への問いかけ。"
+      - id: "chunk_082"
+        source_doc_id: "119215254X00420161011"
+        source_filename: "2016-10-11_119215254X00420161011.txt"
+        source_date: "2016-10-11"
+        verbatim_quote: |
+          四年前に消費税増税を決定したときの国民への約束である議員定数の削減や公務員人件費削減は、ほとんど進んでいません。衆議院定数は大変な時間を掛けて十議席減っただけ、公務員給与に至っては、人事院勧告は三年連続での上昇です。
+        position: "即時実行派"
+        context: "補正予算案への反対討論の中で、財政規律と国民への約束履行の観点から指摘された点。"
+      - id: "chunk_083"
+        source_doc_id: "57553"
+        source_filename: "2016-04-22_119005254X02720160422.txt"
+        source_date: "2016-04-22"
+        verbatim_quote: |
+          定数削減を選挙公約にしている理由であります。各党は公約だからと言いますが、定数をどのように考えているのか、定数削減の根拠と理由について説得力ある説明を聞いたことは一度もありません。
+        position: "公約履行要求派"
+        context: "定数削減の公約としての根拠を問う"
+      - id: "chunk_084"
+        source_doc_id: "57553"
+        source_filename: "2016-04-22_119005254X02720160422.txt"
+        source_date: "2016-04-22"
+        verbatim_quote: |
+          定数削減を選挙公約にしている理由であります。各党は公約だからと言いますが、定数をどのように考えているのか、定数削減の根拠と理由について説得力ある説明を聞いたことは一度もありません。
+        position: "公約履行要求派"
+        context: "定数削減の公約としての根拠を問う"
+      - id: "chunk_085"
+        source_doc_id: "57553"
+        source_filename: "2016-04-22_119005254X02720160422.txt"
+        source_date: "2016-04-22"
+        verbatim_quote: |
+          定数削減を選挙公約にしている理由であります。各党は公約だからと言いますが、定数をどのように考えているのか、定数削減の根拠と理由について説得力ある説明を聞いたことは一度もありません。
+        position: "公約履行要求派"
+        context: "定数削減の公約としての根拠を問う"
+      - id: "chunk_086"
+        source_doc_id: "57553"
+        source_filename: "2016-04-22_119005254X02720160422.txt"
+        source_date: "2016-04-22"
+        verbatim_quote: |
+          定数削減を選挙公約にしている理由であります。各党は公約だからと言いますが、定数をどのように考えているのか、定数削減の根拠と理由について説得力ある説明を聞いたことは一度もありません。
+        position: "公約履行要求派"
+        context: "定数削減の公約としての根拠を問う"
+      - id: "chunk_087"
+        source_doc_id: "57553"
+        source_filename: "2016-04-22_119005254X02720160422.txt"
+        source_date: "2016-04-22"
+        verbatim_quote: |
+          定数削減を選挙公約にしている理由であります。各党は公約だからと言いますが、定数をどのように考えているのか、定数削減の根拠と理由について説得力ある説明を聞いたことは一度もありません。
+        position: "公約履行要求派"
+        context: "定数削減の公約としての根拠を問う"
+      - id: "chunk_088"
+        source_doc_id: "57553"
+        source_filename: "2016-04-22_119005254X02720160422.txt"
+        source_date: "2016-04-22"
+        verbatim_quote: |
+          定数削減を選挙公約にしている理由であります。各党は公約だからと言いますが、定数をどのように考えているのか、定数削減の根拠と理由について説得力ある説明を聞いたことは一度もありません。
+        position: "公約履行要求派"
+        context: "定数削減の公約としての根拠を問う"
+      - id: "chunk_089"
+        source_doc_id: "57553"
+        source_filename: "2016-04-22_119005254X02720160422.txt"
+        source_date: "2016-04-22"
+        verbatim_quote: |
+          定数削減を選挙公約にしている理由であります。各党は公約だからと言いますが、定数をどのように考えているのか、定数削減の根拠と理由について説得力ある説明を聞いたことは一度もありません。
+        position: "公約履行要求派"
+        context: "定数削減の公約としての根拠を問う"
+      - id: "chunk_090"
+        source_doc_id: "57553"
+        source_filename: "2016-04-22_119005254X02720160422.txt"
+        source_date: "2016-04-22"
+        verbatim_quote: |
+          定数削減を選挙公約にしている理由であります。各党は公約だからと言いますが、定数をどのように考えているのか、定数削減の根拠と理由について説得力ある説明を聞いたことは一度もありません。
+        position: "公約履行要求派"
+        context: "定数削減の公約としての根拠を問う"
+      - id: "chunk_091"
+        source_doc_id: "57553"
+        source_filename: "2016-04-22_119005254X02720160422.txt"
+        source_date: "2016-04-22"
+        verbatim_quote: |
+          定数削減を選挙公約にしている理由であります。各党は公約だからと言いますが、定数をどのように考えているのか、定数削減の根拠と理由について説得力ある説明を聞いたことは一度もありません。
+        position: "公約履行要求派"
+        context: "定数削減の公約としての根拠を問う"
+      - id: "chunk_092"
+        source_doc_id: "57553"
+        source_filename: "2016-04-22_119005254X02720160422.txt"
+        source_date: "2016-04-22"
+        verbatim_quote: |
+          定数削減を選挙公約にしている理由であります。各党は公約だからと言いますが、定数をどのように考えているのか、定数削減の根拠と理由について説得力ある説明を聞いたことは一度もありません。
+        position: "公約履行要求派"
+        context: "定数削減の公約としての根拠を問う"
+      - id: "chunk_093"
+        source_doc_id: "57553"
+        source_filename: "2016-04-22_119005254X02720160422.txt"
+        source_date: "2016-04-22"
+        verbatim_quote: |
+          定数削減を選挙公約にしている理由であります。各党は公約だからと言いますが、定数をどのように考えているのか、定数削減の根拠と理由について説得力ある説明を聞いたことは一度もありません。
+        position: "公約履行要求派"
+        context: "定数削減の公約としての根拠を問う"
+      - id: "chunk_094"
+        source_doc_id: "57553"
+        source_filename: "2016-04-22_119005254X02720160422.txt"
+        source_date: "2016-04-22"
+        verbatim_quote: |
+          定数削減を選挙公約にしている理由であります。各党は公約だからと言いますが、定数をどのように考えているのか、定数削減の根拠と理由について説得力ある説明を聞いたことは一度もありません。
+        position: "公約履行要求派"
+        context: "定数削減の公約としての根拠を問う"
+      - id: "chunk_095"
+        source_doc_id: "57553"
+        source_filename: "2016-04-22_119005254X02720160422.txt"
+        source_date: "2016-04-22"
+        verbatim_quote: |
+          私ども、これを素直に読みますと、平成三十二年の最新の大規模国勢調査に基づいてマイナス十の削減を行うというのが自然であろうというふうに考えたわけでございますが、これとは別に、安倍総理・総裁の政治的な決断によりまして、定数削減については先送りをしない、平成二十七年の簡易国勢調査に基づいて先行してこれを行うこととしたものでございます。すなわち、定数削減ということについては、国民の皆さんとの約束を早期に果たすという判断をしたところでございます。
+        position: "与党案（先行実施）"
+        context: "定数削減をH27年調査に基づき先行実施する理由（政治的決断）。"
+      - id: "chunk_096"
+        source_doc_id: "57553"
+        source_filename: "2016-04-22_119005254X02720160422.txt"
+        source_date: "2016-04-22"
+        verbatim_quote: |
+          私ども、小選挙区の定数を六削減することといたしますが、削減対象となる都道府県については、議長の示された「思い」に沿って、透明性のある方法、すなわち客観的に理解可能な具体的な方式を定めて選定する必要があります。
+        position: "与党案（先行実施）"
+        context: "〇増六減方式の採用理由（影響を受ける都道府県を極力減らす）。"
+      - id: "chunk_097"
+        source_doc_id: "57553"
+        source_filename: "2016-04-22_119005254X02720160422.txt"
+        source_date: "2016-04-22"
+        verbatim_quote: |
+          具体的に申し上げますと、本法律案では、平成三十二年の国勢調査以降はアダムズ方式により定数削減を行う、これを本則に明記しておりますので、今回の定数削減措置につきましても、このアダムズ方式の考え方と基本的な方向性を同じくする整合性のある方式をとる必要がある、このように考えております。
+        position: "与党案（先行実施）"
+        context: "先行削減方法を将来のアダムズ方式と整合性を持たせる方針。"
+      - id: "chunk_098"
+        source_doc_id: "57553"
+        source_filename: "2016-04-22_119005254X02720160422.txt"
+        source_date: "2016-04-22"
+        verbatim_quote: |
+          選挙制度というのは、全党が参加し、議論をすべきと考えるわけですけれども、今の議長のやり方でいうと、そういうことをやられていないという実態についてどう思われますか。
+        position: "共産党派（十分な議論要求）"
+        context: "議長による個別協議のみで進む現状への批判"
+      - id: "chunk_099"
+        source_doc_id: "57553"
+        source_filename: "2016-04-22_119005254X02720160422.txt"
+        source_date: "2016-04-22"
+        verbatim_quote: |
+          国民にとって、衆議院の選挙制度についての議論は、先ほどの岩屋さんの話でいうと主権者、主権者はこの三日間初めて聞いているんですよ。この五年半近くの初めてのことなんです、その議論というのは。その意味でも、国民に開かれた形での十分徹底した審議が求められているんだ、このことを改めて主張したい。
+        position: "共産党派（十分な議論要求）"
+        context: "国民的議論の欠如と審議の徹底要求"
+      - id: "chunk_100"
+        source_doc_id: "57553"
+        source_filename: "2016-04-22_119005254X02720160422.txt"
+        source_date: "2016-04-22"
+        verbatim_quote: |
+          国民の参政権にかかわる重大法案を、一度きりの参考人質疑で、国民的な議論もないまま、わずか三日間の委員会審議、七時間余りの質疑で採決しようとしていることは言語道断であります。
+        position: "共産党派（十分な議論要求）"
+        context: "審議時間の短さに対する批判"
+      - id: "chunk_101"
+        source_doc_id: "2016-02-19_119005261X01520160219.txt"
+        source_filename: "2016-02-19_119005261X01520160219.txt"
+        source_date: "2016-02-19"
+        verbatim_quote: |
+          そこで、定数十削減は必ず実現するということをまず申し上げておきたいと思います。
+        position: "早期・大幅削減実行派（野党）"
+        context: "定数10削減の実現に関する表明。"
+      - id: "chunk_102"
+        source_doc_id: "74845"
+        source_filename: "2016-04-27_119004577X00920160427.txt"
+        source_date: "2016-04-27"
+        verbatim_quote: |
+          我が党は、今回の答申を、本当に真面目に丁寧にストレートに、早く実現したいという思いで今回の法案をつくらせていただきました。
+        position: "民進案派（2010年遡及）"
+        context: "民進党案の法案作成の動機。"
+      - id: "chunk_103"
+        source_doc_id: "74845"
+        source_filename: "2016-04-27_119004577X00920160427.txt"
+        source_date: "2016-04-27"
+        verbatim_quote: |
+          民進党案では、直近の国勢調査の結果を使用せず、それ以前の古い国勢調査、平成二十二年の国勢調査の結果を使用しておられますけれども、こうした遡及適用は例外的、いわば前代未聞のものとなるということは御指摘させていただきたいというふうに考えております。
+        position: "自公案派（2020年以降）"
+        context: "H22年国調の遡及適用に対する懸念"
+      - id: "chunk_104"
+        source_doc_id: "74845"
+        source_filename: "2016-04-27_119004577X00920160427.txt"
+        source_date: "2016-04-27"
+        verbatim_quote: |
+          このアダムズ方式による都道府県別定数配分は、次回の直近の大規模国勢調査が平成三十二年のものである、このように考えますと、やはりアダムズ方式を導入するのはこの三十二年の大規模国勢調査以降とするのが自然であると考えております。
+        position: "自公案派（2020年以降）"
+        context: "自公案のH32年国調採用の根拠"
+      - id: "chunk_105"
+        source_doc_id: "57553"
+        source_filename: "2016-04-22_119005254X02720160422.txt"
+        source_date: "2016-04-22"
+        verbatim_quote: |
+          既に七、八年も議論をして、全ての政党が参加して議論をした上に、そしてまた第三者機関にも委ねた上で、結論が出されて、それに対しては各党ともさまざまな意見がありますけれども、これを受け入れようではないかというところまで来ましたから、まずはそれを実現する、格差を是正すると同時に定数削減十を行って、今後の問題はいわば幅広く考えていかなければならないんじゃないか、そのワンステップをまず実現することが大切であろうと思っております。
+        position: "制度改革のワンステップ"
+        context: "今回の10削減は、格差是正と並行したワンステップであるという説明。"
+      - id: "chunk_106"
+        source_doc_id: "57553"
+        source_filename: "2016-04-22_119005254X02720160422.txt"
+        source_date: "2016-04-22"
+        verbatim_quote: |
+          維新の党は、二〇一四年総選挙マニフェストで、議員定数三割削減を掲げているということであります。
+        position: "公約の実行を要求"
+        context: "維新の党の過去の公約（3割削減）の言及"
+      - id: "chunk_107"
+        source_doc_id: "57553"
+        source_filename: "2016-04-22_119005254X02720160422.txt"
+        source_date: "2016-04-22"
+        verbatim_quote: |
+          答申は次のように述べています。「現行の衆議院議員の定数は、国際比較や過去の経緯などからすると多いとは言えず、これを削減する積極的な理由や理論的根拠は見出し難い。」
+        position: "削減根拠は乏しい"
+        context: "定数削減に関する答申の記述の引用"
+      - id: "chunk_108"
+        source_doc_id: "57553"
+        source_filename: "2016-04-22_119005254X02720160422.txt"
+        source_date: "2016-04-22"
+        verbatim_quote: |
+          （２）としまして、「一方、衆議院議員の定数削減は多くの政党の選挙公約であり、主権者たる国民との約束である。」ということがございます。
+        position: "公約尊重による削減"
+        context: "調査会答申の定数削減に関する記述の説明"
+      - id: "chunk_109"
+        source_doc_id: "57553"
+        source_filename: "2016-04-22_119005254X02720160422.txt"
+        source_date: "2016-04-22"
+        verbatim_quote: |
+          日本は、先進国の中で最も有権者一人の一票の価値が少ない国になっていると言えると思います。それでも今回の選挙制度改革において衆議院議員の十削減を行うとした理由について、与党側提出者に伺いたいと思います。
+        position: "削減根拠は乏しい"
+        context: "日本の有権者一票の価値の低さと削減理由への疑問。"
+      - id: "chunk_110"
+        source_doc_id: "57553"
+        source_filename: "2016-04-22_119005254X02720160422.txt"
+        source_date: "2016-04-22"
+        verbatim_quote: |
+          私が、奇跡的というか、どうなるかわからないと思ったのは、そういう状況を踏まえた上での発言だったと記憶しております。
+        position: "公約尊重による削減"
+        context: "10人削減の合意に至った経緯の説明"
+      - id: "chunk_111"
+        source_doc_id: "57553"
+        source_filename: "2016-04-22_119005254X02720160422.txt"
+        source_date: "2016-04-22"
+        verbatim_quote: |
+          国会の質疑の本来あるべき姿、総理はどのようにお考えになっていらっしゃるいますでしょうか、お願いを申し上げます。
+        position: "共産党派（十分な議論要求）"
+        context: "国会の審議のあり方に対する批判と、本来あるべき姿への問いかけ。"
+      - id: "chunk_112"
+        source_doc_id: "57553"
+        source_filename: "2016-04-22_119005254X02720160422.txt"
+        source_date: "2016-04-22"
+        verbatim_quote: |
+          国会の外では、憲法改正、安全保障、議員定数削減と叫んでいても、果たしてこの国会内での議論は尽くされたと言えるのでしょうか。離合集散、選挙互助会体制に週刊誌ネタが中心となるようなこの国会で、国民から未来を託される資格があるのか、私はもう一回問いただしたいと思います。
+        position: "共産党派（十分な議論要求）"
+        context: "国会の議論の劣化を指摘し、議員定数削減（議員定数削減と明記されている）の議論の前提となる国会の資格について問うている。"
+      - id: "chunk_113"
+        source_doc_id: "57553"
+        source_filename: "2016-04-22_119005254X02720160422.txt"
+        source_date: "2016-04-22"
+        verbatim_quote: |
+          選挙制度というのは、全党が参加し、議論をすべきと考えるわけですけれども、今の議長のやり方でいうと、そういうことをやられていないという実態についてどう思われますか。
+        position: "共産党派（十分な議論要求）"
+        context: "議長による個別協議のみで進む現状への批判"
+      - id: "chunk_114"
+        source_doc_id: "57553"
+        source_filename: "2016-04-22_119005254X02720160422.txt"
+        source_date: "2016-04-22"
+        verbatim_quote: |
+          国民にとって、衆議院の選挙制度についての議論は、先ほどの岩屋さんの話でいうと主権者、主権者はこの三日間初めて聞いているんですよ。この五年半近くの初めてのことなんです、その議論というのは。その意味でも、国民に開かれた形での十分徹底した審議が求められているんだ、このことを改めて主張したい。
+        position: "共産党派（十分な議論要求）"
+        context: "国民的議論の欠如と審議の徹底要求"
+      - id: "chunk_115"
+        source_doc_id: "57553"
+        source_filename: "2016-04-22_119005254X02720160422.txt"
+        source_date: "2016-04-22"
+        verbatim_quote: |
+          国民の参政権にかかわる重大法案を、一度きりの参考人質疑で、国民的な議論もないまま、わずか三日間の委員会審議、七時間余りの質疑で採決しようとしていることは言語道断であります。
+        position: "共産党派（十分な議論要求）"
+        context: "審議時間の短さに対する批判"
+      - id: "chunk_116"
+        source_doc_id: "57553"
+        source_filename: "2016-04-22_119005254X02720160422.txt"
+        source_date: "2016-04-22"
+        verbatim_quote: |
+          身を切る改革ですけれども、政治家はみずからにとって不都合なことをやる、政治家にとって不利なことをやる、そのことによって国民の皆さんに難しい問題について対応してくださいよということを御理解いただく、そういうような意味合いで使われているんだろうと思います。
+        position: "関連付け容認派"
+        context: "身を切る改革の定義"
+      - id: "chunk_117"
+        source_doc_id: "57553"
+        source_filename: "2016-04-22_119005254X02720160422.txt"
+        source_date: "2016-04-22"
+        verbatim_quote: |
+          私は、国民のものだというのは正論だと思うんですよね。だから、そういう国民のものであって、我々のものじゃないんですね。身を切るといってこれを削っても、結局切られるのは私は国民の声だと、こう思います。
+        position: "関連付け反対派"
+        context: "身を切る改革論に対する哲学的な批判"
+      - id: "chunk_118"
+        source_doc_id: "57553"
+        source_filename: "2016-04-22_119005254X02720160422.txt"
+        source_date: "2016-04-22"
+        verbatim_quote: |
+          定数削減を選挙公約にしている理由であります。各党は公約だからと言いますが、定数をどのように考えているのか、定数削減の根拠と理由について説得力ある説明を聞いたことは一度もありません。
+        position: "公約履行要求派"
+        context: "定数削減の公約としての根拠を問う"
+      - id: "chunk_119"
+        source_doc_id: "57553"
+        source_filename: "2016-04-22_119005254X02720160422.txt"
+        source_date: "2016-04-22"
+        verbatim_quote: |
+          定数削減を選挙公約にしている理由であります。各党は公約だからと言いますが、定数をどのように考えているのか、定数削減の根拠と理由について説得力ある説明を聞いたことは一度もありません。
+        position: "公約履行要求派"
+        context: "定数削減の公約としての根拠を問う"
+      - id: "chunk_120"
+        source_doc_id: "57553"
+        source_filename: "2016-04-22_119005254X02720160422.txt"
+        source_date: "2016-04-22"
+        verbatim_quote: |
+          定数削減を選挙公約にしている理由であります。各党は公約だからと言いますが、定数をどのように考えているのか、定数削減の根拠と理由について説得力ある説明を聞いたことは一度もありません。
+        position: "公約履行要求派"
+        context: "定数削減の公約としての根拠を問う"
+      - id: "chunk_121"
+        source_doc_id: "57553"
+        source_filename: "2016-04-22_119005254X02720160422.txt"
+        source_date: "2016-04-22"
+        verbatim_quote: |
+          定数削減を選挙公約にしている理由であります。各党は公約だからと言いますが、定数をどのように考えているのか、定数削減の根拠と理由について説得力ある説明を聞いたことは一度もありません。
+        position: "公約履行要求派"
+        context: "定数削減の公約としての根拠を問う"
+      - id: "chunk_122"
+        source_doc_id: "57553"
+        source_filename: "2016-04-22_119005254X02720160422.txt"
+        source_date: "2016-04-22"
+        verbatim_quote: |
+          定数削減を選挙公約にしている理由であります。各党は公約だからと言いますが、定数をどのように考えているのか、定数削減の根拠と理由について説得力ある説明を聞いたことは一度もありません。
+        position: "公約履行要求派"
+        context: "定数削減の公約としての根拠を問う"
+      - id: "chunk_123"
+        source_doc_id: "57553"
+        source_filename: "2016-04-22_119005254X02720160422.txt"
+        source_date: "2016-04-22"
+        verbatim_quote: |
+          定数削減を選挙公約にしている理由であります。各党は公約だからと言いますが、定数をどのように考えているのか、定数削減の根拠と理由について説得力ある説明を聞いたことは一度もありません。
+        position: "公約履行要求派"
+        context: "定数削減の公約としての根拠を問う"
+      - id: "chunk_124"
+        source_doc_id: "57553"
+        source_filename: "2016-04-22_119005254X02720160422.txt"
+        source_date: "2016-04-22"
+        verbatim_quote: |
+          定数削減を選挙公約にしている理由であります。各党は公約だからと言いますが、定数をどのように考えているのか、定数削減の根拠と理由について説得力ある説明を聞いたことは一度もありません。
+        position: "公約履行要求派"
+        context: "定数削減の公約としての根拠を問う"
+      - id: "chunk_125"
+        source_doc_id: "57553"
+        source_filename: "2016-04-22_119005254X02720160422.txt"
+        source_date: "2016-04-22"
+        verbatim_quote: |
+          定数削減を選挙公約にしている理由であります。各党は公約だからと言いますが、定数をどのように考えているのか、定数削減の根拠と理由について説得力ある説明を聞いたことは一度もありません。
+        position: "公約履行要求派"
+        context: "定数削減の公約としての根拠を問う"
+      - id: "chunk_126"
+        source_doc_id: "57553"
+        source_filename: "2016-04-22_119005254X02720160422.txt"
+        source_date: "2016-04-22"
+        verbatim_quote: |
+          定数削減を選挙公約にしている理由であります。各党は公約だからと言いますが、定数をどのように考えているのか、定数削減の根拠と理由について説得力ある説明を聞いたことは一度もありません。
+        position: "公約履行要求派"
+        context: "定数削減の公約としての根拠を問う"
+      - id: "chunk_127"
+        source_doc_id: "57553"
+        source_filename: "2016-04-22_119005254X02720160422.txt"
+        source_date: "2016-04-22"
+        verbatim_quote: |
+          定数削減を選挙公約にしている理由であります。各党は公約だからと言いますが、定数をどのように考えているのか、定数削減の根拠と理由について説得力ある説明を聞いたことは一度もありません。
+        position: "公約履行要求派"
+        context: "定数削減の公約としての根拠を問う"
+      - id: "chunk_128"
+        source_doc_id: "57553"
+        source_filename: "2016-04-22_119005254X02720160422.txt"
+        source_date: "2016-04-22"
+        verbatim_quote: |
+          定数削減を選挙公約にしている理由であります。各党は公約だからと言いますが、定数をどのように考えているのか、定数削減の根拠と理由について説得力ある説明を聞いたことは一度もありません。
+        position: "公約履行要求派"
+        context: "定数削減の公約としての根拠を問う"
+      - id: "chunk_129"
+        source_doc_id: "57553"
+        source_filename: "2016-04-22_119005254X02720160422.txt"
+        source_date: "2016-04-22"
+        verbatim_quote: |
+          定数削減を選挙公約にしている理由であります。各党は公約だからと言いますが、定数をどのように考えているのか、定数削減の根拠と理由について説得力ある説明を聞いたことは一度もありません。
+        position: "公約履行要求派"
+        context: "定数削減の公約としての根拠を問う"
+      - id: "chunk_130"
+        source_doc_id: "57553"
+        source_filename: "2016-04-22_119005254X02720160422.txt"
+        source_date: "2016-04-22"
+        verbatim_quote: |
+          定数削減を選挙公約にしている理由であります。各党は公約だからと言いますが、定数をどのように考えているのか、定数削減の根拠と理由について説得力ある説明を聞いたことは一度もありません。
+        position: "公約履行要求派"
+        context: "定数削減の公約としての根拠を問う"
+      - id: "chunk_131"
+        source_doc_id: "57553"
+        source_filename: "2016-04-22_119005254X02720160422.txt"
+        source_date: "2016-04-22"
+        verbatim_quote: |
+          定数削減を選挙公約にしている理由であります。各党は公約だからと言いますが、定数をどのように考えているのか、定数削減の根拠と理由について説得力ある説明を聞いたことは一度もありません。
+        position: "公約履行要求派"
+        context: "定数削減の公約としての根拠を問う"
+      - id: "chunk_132"
+        source_doc_id: "57553"
+        source_filename: "2016-04-22_119005254X02720160422.txt"
+        source_date: "2016-04-22"
+        verbatim_quote: |
+          定数削減を選挙公約にしている理由であります。各党は公約だからと言いますが、定数をどのように考えているのか、定数削減の根拠と理由について説得力ある説明を聞いたことは一度もありません。
+        position: "公約履行要求派"
+        context: "定数削減の公約としての根拠を問う"
+      - id: "chunk_133"
+        source_doc_id: "57553"
+        source_filename: "2016-04-22_119005254X02720160422.txt"
+        source_date: "2016-04-22"
+        verbatim_quote: |
+          定数削減を選挙公約にしている理由であります。各党は公約だからと言いますが、定数をどのように考えているのか、定数削減の根拠と理由について説得力ある説明を聞いたことは一度もありません。
+        position: "公約履行要求派"
+        context: "定数削減の公約としての根拠を問う"
+      - id: "chunk_134"
+        source_doc_id: "119014578X00420160518"
+        source_filename: "2016-05-18_119014578X00420160518.txt"
+        source_date: "2016-05-18"
+        verbatim_quote: |
+          議員立法などというのは非常に手間が掛かりますから、一定の議員の数が要るわけでありますが、これなども私は低下をしていくことになると思うんですね。
+        position: "機能低下懸念派"
+        context: "議員立法への影響に関する指摘"
+      - id: "chunk_135"
+        source_doc_id: "119014578X00420160518"
+        source_filename: "2016-05-18_119014578X00420160518.txt"
+        source_date: "2016-05-18"
+        verbatim_quote: |
+          十削減、四百六十五人でございますが、それによって国会としての役割は私は果たしていけるものというふうに考えております。
+        position: "機能維持可能派"
+        context: "定数465名での国会機能に関する見解"
+      - id: "chunk_136"
+        source_doc_id: "119014578X00420160518"
+        source_filename: "2016-05-18_119014578X00420160518.txt"
+        source_date: "2016-05-18"
+        verbatim_quote: |
+          定数削減は論外であるということは、これはもはや自明の理であります。
+        position: "機能低下懸念派"
+        context: "定数削減に対する共産党の立場表明"
+      - id: "chunk_137"
+        source_doc_id: "57553"
+        source_filename: "2016-04-22_119005254X02720160422.txt"
+        source_date: "2016-04-22"
+        verbatim_quote: |
+          定数削減を選挙公約にしている理由であります。各党は公約だからと言いますが、定数をどのように考えているのか、定数削減の根拠と理由について説得力ある説明を聞いたことは一度もありません。
+        position: "公約履行要求派"
+        context: "定数削減の公約としての根拠を問う"
+      - id: "chunk_138"
+        source_doc_id: "57553"
+        source_filename: "2016-04-22_119005254X02720160422.txt"
+        source_date: "2016-04-22"
+        verbatim_quote: |
+          定数削減を選挙公約にしている理由であります。各党は公約だからと言いますが、定数をどのように考えているのか、定数削減の根拠と理由について説得力ある説明を聞いたことは一度もありません。
+        position: "公約履行要求派"
+        context: "定数削減の公約としての根拠を問う"
+      - id: "chunk_139"
+        source_doc_id: "57553"
+        source_filename: "2016-04-22_119005254X02720160422.txt"
+        source_date: "2016-04-22"
+        verbatim_quote: |
+          定数削減を選挙公約にしている理由であります。各党は公約だからと言いますが、定数をどのように考えているのか、定数削減の根拠と理由について説得力ある説明を聞いたことは一度もありません。
+        position: "公約履行要求派"
+        context: "定数削減の公約としての根拠を問う"
+      - id: "chunk_140"
+        source_doc_id: "57553"
+        source_filename: "2016-04-22_119005254X02720160422.txt"
+        source_date: "2016-04-22"
+        verbatim_quote: |
+          定数削減を選挙公約にしている理由であります。各党は公約だからと言いますが、定数をどのように考えているのか、定数削減の根拠と理由について説得力ある説明を聞いたことは一度もありません。
+        position: "公約履行要求派"
+        context: "定数削減の公約としての根拠を問う"
+      - id: "chunk_141"
+        source_doc_id: "57553"
+        source_filename: "2016-04-22_119005254X02720160422.txt"
+        source_date: "2016-04-22"
+        verbatim_quote: |
+          定数削減を選挙公約にしている理由であります。各党は公約だからと言いますが、定数をどのように考えているのか、定数削減の根拠と理由について説得力ある説明を聞いたことは一度もありません。
+        position: "公約履行要求派"
+        context: "定数削減の公約としての根拠を問う"
+      - id: "chunk_142"
+        source_doc_id: "57553"
+        source_filename: "2016-04-22_119005254X02720160422.txt"
+        source_date: "2016-04-22"
+        verbatim_quote: |
+          定数削減を選挙公約にしている理由であります。各党は公約だからと言いますが、定数をどのように考えているのか、定数削減の根拠と理由について説得力ある説明を聞いたことは一度もありません。
+        position: "公約履行要求派"
+        context: "定数削減の公約としての根拠を問う"
+      - id: "chunk_143"
+        source_doc_id: "57553"
+        source_filename: "2016-04-22_119005254X02720160422.txt"
+        source_date: "2016-04-22"
+        verbatim_quote: |
+          定数削減を選挙公約にしている理由であります。各党は公約だからと言いますが、定数をどのように考えているのか、定数削減の根拠と理由について説得力ある説明を聞いたことは一度もありません。
+        position: "公約履行要求派"
+        context: "定数削減の公約としての根拠を問う"
+      - id: "chunk_144"
+        source_doc_id: "57553"
+        source_filename: "2016-04-22_119005254X02720160422.txt"
+        source_date: "2016-04-22"
+        verbatim_quote: |
+          定数削減を選挙公約にしている理由であります。各党は公約だからと言いますが、定数をどのように考えているのか、定数削減の根拠と理由について説得力ある説明を聞いたことは一度もありません。
+        position: "公約履行要求派"
+        context: "定数削減の公約としての根拠を問う"
+      - id: "chunk_145"
+        source_doc_id: "57553"
+        source_filename: "2016-04-22_119005254X02720160422.txt"
+        source_date: "2016-04-22"
+        verbatim_quote: |
+          定数削減を選挙公約にしている理由であります。各党は公約だからと言いますが、定数をどのように考えているのか、定数削減の根拠と理由について説得力ある説明を聞いたことは一度もありません。
+        position: "公約履行要求派"
+        context: "定数削減の公約としての根拠を問う"
+      - id: "chunk_146"
+        source_doc_id: "57553"
+        source_filename: "2016-04-22_119005254X02720160422.txt"
+        source_date: "2016-04-22"
+        verbatim_quote: |
+          定数削減を選挙公約にしている理由であります。各党は公約だからと言いますが、定数をどのように考えているのか、定数削減の根拠と理由について説得力ある説明を聞いたことは一度もありません。
+        position: "公約履行要求派"
+        context: "定数削減の公約としての根拠を問う"
+      - id: "chunk_147"
+        source_doc_id: "57553"
+        source_filename: "2016-04-22_119005254X02720160422.txt"
+        source_date: "2016-04-22"
+        verbatim_quote: |
+          定数削減を選挙公約にしている理由であります。各党は公約だからと言いますが、定数をどのように考えているのか、定数削減の根拠と理由について説得力ある説明を聞いたことは一度もありません。
+        position: "公約履行要求派"
+        context: "定数削減の公約としての根拠を問う"
+      - id: "chunk_148"
+        source_doc_id: "57553"
+        source_filename: "2016-04-22_119005254X02720160422.txt"
+        source_date: "2016-04-22"
+        verbatim_quote: |
+          定数削減を選挙公約にしている理由であります。各党は公約だからと言いますが、定数をどのように考えているのか、定数削減の根拠と理由について説得力ある説明を聞いたことは一度もありません。
+        position: "公約履行要求派"
+        context: "定数削減の公約としての根拠を問う"
+      - id: "chunk_149"
+        source_doc_id: "57553"
+        source_filename: "2016-04-22_119005254X02720160422.txt"
+        source_date: "2016-04-22"
+        verbatim_quote: |
+          定数削減を選挙公約にしている理由であります。各党は公約だからと言いますが、定数をどのように考えているのか、定数削減の根拠と理由について説得力ある説明を聞いたことは一度もありません。
+        position: "公約履行要求派"
+        context: "定数削減の公約としての根拠を問う"
+      - id: "chunk_150"
+        source_doc_id: "57553"
+        source_filename: "2016-04-22_119005254X02720160422.txt"
+        source_date: "2016-04-22"
+        verbatim_quote: |
+          定数削減を選挙公約にしている理由であります。各党は公約だからと言いますが、定数をどのように考えているのか、定数削減の根拠と理由について説得力ある説明を聞いたことは一度もありません。
+        position: "公約履行要求派"
+        context: "定数削減の公約としての根拠を問う"
+      - id: "chunk_151"
+        source_doc_id: "57553"
+        source_filename: "2016-04-22_119005254X02720160422.txt"
+        source_date: "2016-04-22"
+        verbatim_quote: |
+          定数削減を選挙公約にしている理由であります。各党は公約だからと言いますが、定数をどのように考えているのか、定数削減の根拠と理由について説得力ある説明を聞いたことは一度もありません。
+        position: "公約履行要求派"
+        context: "定数削減の公約としての根拠を問う"
+      - id: "chunk_152"
+        source_doc_id: "57553"
+        source_filename: "2016-04-22_119005254X02720160422.txt"
+        source_date: "2016-04-22"
+        verbatim_quote: |
+          定数削減を選挙公約にしている理由であります。各党は公約だからと言いますが、定数をどのように考えているのか、定数削減の根拠と理由について説得力ある説明を聞いたことは一度もありません。
+        position: "公約履行要求派"
+        context: "定数削減の公約としての根拠を問う"
+      - id: "chunk_153"
+        source_doc_id: "57553"
+        source_filename: "2016-04-22_119005254X02720160422.txt"
+        source_date: "2016-04-22"
+        verbatim_quote: |
+          定数削減を選挙公約にしている理由であります。各党は公約だからと言いますが、定数をどのように考えているのか、定数削減の根拠と理由について説得力ある説明を聞いたことは一度もありません。
+        position: "公約履行要求派"
+        context: "定数削減の公約としての根拠を問う"
+      - id: "chunk_154"
+        source_doc_id: "57553"
+        source_filename: "2016-04-22_119005254X02720160422.txt"
+        source_date: "2016-04-22"
+        verbatim_quote: |
+          定数削減を選挙公約にしている理由であります。各党は公約だからと言いますが、定数をどのように考えているのか、定数削減の根拠と理由について説得力ある説明を聞いたことは一度もありません。
+        position: "公約履行要求派"
+        context: "定数削減の公約としての根拠を問う"
+      - id: "chunk_155"
+        source_doc_id: "57553"
+        source_filename: "2016-04-22_119005254X02720160422.txt"
+        source_date: "2016-04-22"
+        verbatim_quote: |
+          定数削減を選挙公約にしている理由であります。各党は公約だからと言いますが、定数をどのように考えているのか、定数削減の根拠と理由について説得力ある説明を聞いたことは一度もありません。
+        position: "公約履行要求派"
+        context: "定数削減の公約としての根拠を問う"
+      - id: "chunk_156"
+        source_doc_id: "57553"
+        source_filename: "2016-04-22_119005254X02720160422.txt"
+        source_date: "2016-04-22"
+        verbatim_quote: |
+          定数削減を選挙公約にしている理由であります。各党は公約だからと言いますが、定数をどのように考えているのか、定数削減の根拠と理由について説得力ある説明を聞いたことは一度もありません。
+        position: "公約履行要求派"
+        context: "定数削減の公約としての根拠を問う"
+      - id: "chunk_157"
+        source_doc_id: "57553"
+        source_filename: "2016-04-22_119005254X02720160422.txt"
+        source_date: "2016-04-22"
+        verbatim_quote: |
+          定数削減を選挙公約にしている理由であります。各党は公約だからと言いますが、定数をどのように考えているのか、定数削減の根拠と理由について説得力ある説明を聞いたことは一度もありません。
+        position: "公約履行要求派"
+        context: "定数削減の公約としての根拠を問う"
+      - id: "chunk_158"
+        source_doc_id: "57553"
+        source_filename: "2016-04-22_119005254X02720160422.txt"
+        source_date: "2016-04-22"
+        verbatim_quote: |
+          定数削減を選挙公約にしている理由であります。各党は公約だからと言いますが、定数をどのように考えているのか、定数削減の根拠と理由について説得力ある説明を聞いたことは一度もありません。
+        position: "公約履行要求派"
+        context: "定数削減の公約としての根拠を問う"
+      - id: "chunk_159"
+        source_doc_id: "57553"
+        source_filename: "2016-04-22_119005254X02720160422.txt"
+        source_date: "2016-04-22"
+        verbatim_quote: |
+          定数削減を選挙公約にしている理由であります。各党は公約だからと言いますが、定数をどのように考えているのか、定数削減の根拠と理由について説得力ある説明を聞いたことは一度もありません。
+        position: "公約履行要求派"
+        context: "定数削減の公約としての根拠を問う"
+      - id: "chunk_160"
+        source_doc_id: "57553"
+        source_filename: "2016-04-22_119005254X02720160422.txt"
+        source_date: "2016-04-22"
+        verbatim_quote: |
+          定数削減を選挙公約にしている理由であります。各党は公約だからと言いますが、定数をどのように考えているのか、定数削減の根拠と理由について説得力ある説明を聞いたことは一度もありません。
+        position: "公約履行要求派"
+        context: "定数削減の公約としての根拠を問う"
+      - id: "chunk_161"
+        source_doc_id: "57553"
+        source_filename: "2016-04-22_119005254X02720160422.txt"
+        source_date: "2016-04-22"
+        verbatim_quote: |
+          定数削減を選挙公約にしている理由であります。各党は公約だからと言いますが、定数をどのように考えているのか、定数削減の根拠と理由について説得力ある説明を聞いたことは一度もありません。
+        position: "公約履行要求派"
+        context: "定数削減の公約としての根拠を問う"
+      - id: "chunk_162"
+        source_doc_id: "57553"
+        source_filename: "2016-04-22_119005254X02720160422.txt"
+        source_date: "2016-04-22"
+        verbatim_quote: |
+          定数削減を選挙公約にしている理由であります。各党は公約だからと言いますが、定数をどのように考えているのか、定数削減の根拠と理由について説得力ある説明を聞いたことは一度もありません。
+        position: "公約履行要求派"
+        context: "定数削減の公約としての根拠を問う"
+      - id: "chunk_163"
+        source_doc_id: "57553"
+        source_filename: "2016-04-22_119005254X02720160422.txt"
+        source_date: "2016-04-22"
+        verbatim_quote: |
+          定数削減を選挙公約にしている理由であります。各党は公約だからと言いますが、定数をどのように考えているのか、定数削減の根拠と理由について説得力ある説明を聞いたことは一度もありません。
+        position: "公約履行要求派"
+        context: "定数削減の公約としての根拠を問う"
+      - id: "chunk_164"
+        source_doc_id: "57553"
+        source_filename: "2016-04-22_119005254X02720160422.txt"
+        source_date: "2016-04-22"
+        verbatim_quote: |
+          定数削減を選挙公約にしている理由であります。各党は公約だからと言いますが、定数をどのように考えているのか、定数削減の根拠と理由について説得力ある説明を聞いたことは一度もありません。
+        position: "公約履行要求派"
+        context: "定数削減の公約としての根拠を問う"
+      - id: "chunk_165"
+        source_doc_id: "57553"
+        source_filename: "2016-04-22_119005254X02720160422.txt"
+        source_date: "2016-04-22"
+        verbatim_quote: |
+          定数削減を選挙公約にしている理由であります。各党は公約だからと言いますが、定数をどのように考えているのか、定数削減の根拠と理由について説得力ある説明を聞いたことは一度もありません。
+        position: "公約履行要求派"
+        context: "定数削減の公約としての根拠を問う"
+      - id: "chunk_166"
+        source_doc_id: "57553"
+        source_filename: "2016-04-22_119005254X02720160422.txt"
+        source_date: "2016-04-22"
+        verbatim_quote: |
+          定数削減を選挙公約にしている理由であります。各党は公約だからと言いますが、定数をどのように考えているのか、定数削減の根拠と理由について説得力ある説明を聞いたことは一度もありません。
+        position: "公約履行要求派"
+        context: "定数削減の公約としての根拠を問う"
+      - id: "chunk_167"
+        source_doc_id: "57553"
+        source_filename: "2016-04-22_119005254X02720160422.txt"
+        source_date: "2016-04-22"
+        verbatim_quote: |
+          定数削減を選挙公約にしている理由であります。各党は公約だからと言いますが、定数をどのように考えているのか、定数削減の根拠と理由について説得力ある説明を聞いたことは一度もありません。
+        position: "公約履行要求派"
+        context: "定数削減の公約としての根拠を問う"
+      - id: "chunk_168"
+        source_doc_id: "57553"
+        source_filename: "2016-04-22_119005254X02720160422.txt"
+        source_date: "2016-04-22"
+        verbatim_quote: |
+          定数削減を選挙公約にしている理由であります。各党は公約だからと言いますが、定数をどのように考えているのか、定数削減の根拠と理由について説得力ある説明を聞いたことは一度もありません。
+        position: "公約履行要求派"
+        context: "定数削減の公約としての根拠を問う"
+      - id: "chunk_169"
+        source_doc_id: "57553"
+        source_filename: "2016-04-22_119005254X02720160422.txt"
+        source_date: "2016-04-22"
+        verbatim_quote: |
+          定数削減を選挙公約にしている理由であります。各党は公約だからと言いますが、定数をどのように考えているのか、定数削減の根拠と理由について説得力ある説明を聞いたことは一度もありません。
+        position: "公約履行要求派"
+        context: "定数削減の公約としての根拠を問う"
+      - id: "chunk_170"
+        source_doc_id: "57553"
+        source_filename: "2016-04-22_119005254X02720160422.txt"
+        source_date: "2016-04-22"
+        verbatim_quote: |
+          定数削減を選挙公約にしている理由であります。各党は公約だからと言いますが、定数をどのように考えているのか、定数削減の根拠と理由について説得力ある説明を聞いたことは一度もありません。
+        position: "公約履行要求派"
+        context: "定数削減の公約としての根拠を問う"
+      - id: "chunk_171"
+        source_doc_id: "57553"
+        source_filename: "2016-04-22_119005254X02720160422.txt"
+        source_date: "2016-04-22"
+        verbatim_quote: |
+          定数削減を選挙公約にしている理由であります。各党は公約だからと言いますが、定数をどのように考えているのか、定数削減の根拠と理由について説得力ある説明を聞いたことは一度もありません。
+        position: "公約履行要求派"
+        context: "定数削減の公約としての根拠を問う"
+      - id: "chunk_172"
+        source_doc_id: "57553"
+        source_filename: "2016-04-22_119005254X02720160422.txt"
+        source_date: "2016-04-22"
+        verbatim_quote: |
+          定数削減を選挙公約にしている理由であります。各党は公約だからと言いますが、定数をどのように考えているのか、定数削減の根拠と理由について説得力ある説明を聞いたことは一度もありません。
+        position: "公約履行要求派"
+        context: "定数削減の公約としての根拠を問う"
+      - id: "chunk_173"
+        source_doc_id: "57553"
+        source_filename: "2016-04-22_119005254X02720160422.txt"
+        source_date: "2016-04-22"
+        verbatim_quote: |
+          定数削減を選挙公約にしている理由であります。各党は公約だからと言いますが、定数をどのように考えているのか、定数削減の根拠と理由について説得力ある説明を聞いたことは一度もありません。
+        position: "公約履行要求派"
+        context: "定数削減の公約としての根拠を問う"
+      - id: "chunk_174"
+        source_doc_id: "57553"
+        source_filename: "2016-04-22_119005254X02720160422.txt"
+        source_date: "2016-04-22"
+        verbatim_quote: |
+          定数削減を選挙公約にしている理由であります。各党は公約だからと言いますが、定数をどのように考えているのか、定数削減の根拠と理由について説得力ある説明を聞いたことは一度もありません。
+        position: "公約履行要求派"
+        context: "定数削減の公約としての根拠を問う"
+      - id: "chunk_175"
+        source_doc_id: "57553"
+        source_filename: "2016-04-22_119005254X02720160422.txt"
+        source_date: "2016-04-22"
+        verbatim_quote: |
+          定数削減を選挙公約にしている理由であります。各党は公約だからと言いますが、定数をどのように考えているのか、定数削減の根拠と理由について説得力ある説明を聞いたことは一度もありません。
+        position: "公約履行要求派"
+        context: "定数削減の公約としての根拠を問う"
+      - id: "chunk_176"
+        source_doc_id: "57553"
+        source_filename: "2016-04-22_119005254X02720160422.txt"
+        source_date: "2016-04-22"
+        verbatim_quote: |
+          定数削減を選挙公約にしている理由であります。各党は公約だからと言いますが、定数をどのように考えているのか、定数削減の根拠と理由について説得力ある説明を聞いたことは一度もありません。
+        position: "公約履行要求派"
+        context: "定数削減の公約としての根拠を問う"
+      - id: "chunk_177"
+        source_doc_id: "57553"
+        source_filename: "2016-04-22_119005254X02720160422.txt"
+        source_date: "2016-04-22"
+        verbatim_quote: |
+          定数削減を選挙公約にしている理由であります。各党は公約だからと言いますが、定数をどのように考えているのか、定数削減の根拠と理由について説得力ある説明を聞いたことは一度もありません。
+        position: "公約履行要求派"
+        context: "定数削減の公約としての根拠を問う"
+      - id: "chunk_178"
+        source_doc_id: "57553"
+        source_filename: "2016-04-22_119005254X02720160422.txt"
+        source_date: "2016-04-22"
+        verbatim_quote: |
+          定数削減を選挙公約にしている理由であります。各党は公約だからと言いますが、定数をどのように考えているのか、定数削減の根拠と理由について説得力ある説明を聞いたことは一度もありません。
+        position: "公約履行要求派"
+        context: "定数削減の公約としての根拠を問う"
+      - id: "chunk_179"
+        source_doc_id: "57553"
+        source_filename: "2016-04-22_119005254X02720160422.txt"
+        source_date: "2016-04-22"
+        verbatim_quote: |
+          定数削減を選挙公約にしている理由であります。各党は公約だからと言いますが、定数をどのように考えているのか、定数削減の根拠と理由について説得力ある説明を聞いたことは一度もありません。
+        position: "公約履行要求派"
+        context: "定数削減の公約としての根拠を問う"
+      - id: "chunk_180"
+        source_doc_id: "57553"
+        source_filename: "2016-04-22_119005254X02720160422.txt"
+        source_date: "2016-04-22"
+        verbatim_quote: |
+          定数削減を選挙公約にしている理由であります。各党は公約だからと言いますが、定数をどのように考えているのか、定数削減の根拠と理由について説得力ある説明を聞いたことは一度もありません。
+        position: "公約履行要求派"
+        context: "定数削減の公約としての根拠を問う"
+      - id: "chunk_181"
+        source_doc_id: "57553"
+        source_filename: "2016-04-22_119005254X02720160422.txt"
+        source_date: "2016-04-22"
+        verbatim_quote: |
+          定数削減を選挙公約にしている理由であります。各党は公約だからと言いますが、定数をどのように考えているのか、定数削減の根拠と理由について説得力ある説明を聞いたことは一度もありません。
+        position: "公約履行要求派"
+        context: "定数削減の公約としての根拠を問う"
+      - id: "chunk_182"
+        source_doc_id: "57553"
+        source_filename: "2016-04-22_119005254X02720160422.txt"
+        source_date: "2016-04-22"
+        verbatim_quote: |
+          定数削減を選挙公約にしている理由であります。各党は公約だからと言いますが、定数をどのように考えているのか、定数削減の根拠と理由について説得力ある説明を聞いたことは一度もありません。
+        position: "公約履行要求派"
+        context: "定数削減の公約としての根拠を問う"
+      - id: "chunk_183"
+        source_doc_id: "57553"
+        source_filename: "2016-04-22_119005254X02720160422.txt"
+        source_date: "2016-04-22"
+        verbatim_quote: |
+          定数削減を選挙公約にしている理由であります。各党は公約だからと言いますが、定数をどのように考えているのか、定数削減の根拠と理由について説得力ある説明を聞いたことは一度もありません。
+        position: "公約履行要求派"
+        context: "定数削減の公約としての根拠を問う"
+      - id: "chunk_184"
+        source_doc_id: "57553"
+        source_filename: "2016-04-22_119005254X02720160422.txt"
+        source_date: "2016-04-22"
+        verbatim_quote: |
+          定数削減を選挙公約にしている理由であります。各党は公約だからと言いますが、定数をどのように考えているのか、定数削減の根拠と理由について説得力ある説明を聞いたことは一度もありません。
+        position: "公約履行要求派"
+        context: "定数削減の公約としての根拠を問う"
+      - id: "chunk_185"
+        source_doc_id: "57553"
+        source_filename: "2016-04-22_119005254X02720160422.txt"
+        source_date: "2016-04-22"
+        verbatim_quote: |
+          定数削減を選挙公約にしている理由であります。各党は公約だからと言いますが、定数をどのように考えているのか、定数削減の根拠と理由について説得力ある説明を聞いたことは一度もありません。
+        position: "公約履行要求派"
+        context: "定数削減の公約としての根拠を問う"
+      - id: "chunk_186"
+        source_doc_id: "57553"
+        source_filename: "2016-04-22_119005254X02720160422.txt"
+        source_date: "2016-04-22"
+        verbatim_quote: |
+          定数削減を選挙公約にしている理由であります。各党は公約だからと言いますが、定数をどのように考えているのか、定数削減の根拠と理由について説得力ある説明を聞いたことは一度もありません。
+        position: "公約履行要求派"
+        context: "定数削減の公約としての根拠を問う"
+      - id: "chunk_187"
+        source_doc_id: "57553"
+        source_filename: "2016-04-22_119005254X02720160422.txt"
+        source_date: "2016-04-22"
+        verbatim_quote: |
+          定数削減を選挙公約にしている理由であります。各党は公約だからと言いますが、定数をどのように考えているのか、定数削減の根拠と理由について説得力ある説明を聞いたことは一度もありません。
+        position: "公約履行要求派"
+        context: "定数削減の公約としての根拠を問う"
+      - id: "chunk_188"
+        source_doc_id: "57553"
+        source_filename: "2016-04-22_119005254X02720160422.txt"
+        source_date: "2016-04-22"
+        verbatim_quote: |
+          定数削減を選挙公約にしている理由であります。各党は公約だからと言いますが、定数をどのように考えているのか、定数削減の根拠と理由について説得力ある説明を聞いたことは一度もありません。
+        position: "公約履行要求派"
+        context: "定数削減の公約としての根拠を問う"
+      - id: "chunk_189"
+        source_doc_id: "57553"
+        source_filename: "2016-04-22_119005254X02720160422.txt"
+        source_date: "2016-04-22"
+        verbatim_quote: |
+          定数削減を選挙公約にしている理由であります。各党は公約だからと言いますが、定数をどのように考えているのか、定数削減の根拠と理由について説得力ある説明を聞いたことは一度もありません。
+        position: "公約履行要求派"
+        context: "定数削減の公約としての根拠を問う"
+      - id: "chunk_190"
+        source_doc_id: "2013-10-16_118505254X00220131016.txt"
+        source_filename: "2013-10-16_118505254X00220131016.txt"
+        source_date: "2013-10-16"
+        verbatim_quote: |
+          衆議院の選挙制度改革については、自由民主党から、国会のもとに、客観的な議論を行う、民間有識者による第三者機関を設けることを提案したところです。各党各会派にも御協力いただき、建設的な議論を進め、現在の膠着状況を打破し、決める政治によって、国民の負託にしっかりと応えてまいる所存です。
+        position: "第三者機関による議論の推進"
+        speaker: "安倍晋三君"
+        context: "議員定数削減に関する質問への回答の中で、選挙制度改革の進め方について言及。"
+      - id: "chunk_191"
+        source_doc_id: "2013-10-16_118505254X00220131016.txt"
+        source_filename: "2013-10-16_118505254X00220131016.txt"
+        source_date: "2013-10-16"
+        verbatim_quote: |
+          衆議院の選挙制度改革については、自由民主党から、国会のもとに、客観的な議論を行う、民間有識者による第三者機関を設けることを提案したところです。各党各会派にも御協力いただき、建設的な議論を進め、現在の膠着状況を打破し、決める政治によって、国民の負託にしっかりと応えてまいる所存です。
+        position: "第三者機関による議論の推進"
+        speaker: "安倍晋三君"
+        context: "議員定数削減に関する質問への回答の中で、選挙制度改革の進め方について言及。"
+      - id: "chunk_192"
+        source_doc_id: "2013-10-16_118505254X00220131016.txt"
+        source_filename: "2013-10-16_118505254X00220131016.txt"
+        source_date: "2013-10-16"
+        verbatim_quote: |
+          衆議院の選挙制度改革については、自由民主党から、国会のもとに、客観的な議論を行う、民間有識者による第三者機関を設けることを提案したところです。各党各会派にも御協力いただき、建設的な議論を進め、現在の膠着状況を打破し、決める政治によって、国民の負託にしっかりと応えてまいる所存です。
+        position: "第三者機関による議論の推進"
+        speaker: "安倍晋三君"
+        context: "議員定数削減に関する質問への回答の中で、選挙制度改革の進め方について言及。"
+      - id: "chunk_193"
+        source_doc_id: "2013-10-16_118505254X00220131016.txt"
+        source_filename: "2013-10-16_118505254X00220131016.txt"
+        source_date: "2013-10-16"
+        verbatim_quote: |
+          衆議院の選挙制度改革については、自由民主党から、国会のもとに、客観的な議論を行う、民間有識者による第三者機関を設けることを提案したところです。各党各会派にも御協力いただき、建設的な議論を進め、現在の膠着状況を打破し、決める政治によって、国民の負託にしっかりと応えてまいる所存です。
+        position: "第三者機関による議論の推進"
+        speaker: "安倍晋三君"
+        context: "議員定数削減に関する質問への回答の中で、選挙制度改革の進め方について言及。"
+      - id: "chunk_194"
+        source_doc_id: "2013-10-16_118505254X00220131016.txt"
+        source_filename: "2013-10-16_118505254X00220131016.txt"
+        source_date: "2013-10-16"
+        verbatim_quote: |
+          衆議院の選挙制度改革については、自由民主党から、国会のもとに、客観的な議論を行う、民間有識者による第三者機関を設けることを提案したところです。各党各会派にも御協力いただき、建設的な議論を進め、現在の膠着状況を打破し、決める政治によって、国民の負託にしっかりと応えてまいる所存です。
+        position: "第三者機関による議論の推進"
+        speaker: "安倍晋三君"
+        context: "議員定数削減に関する質問への回答の中で、選挙制度改革の進め方について言及。"
+      - id: "chunk_195"
+        source_doc_id: "2013-10-16_118505254X00220131016.txt"
+        source_filename: "2013-10-16_118505254X00220131016.txt"
+        source_date: "2013-10-16"
+        verbatim_quote: |
+          衆議院の選挙制度改革については、自由民主党から、国会のもとに、客観的な議論を行う、民間有識者による第三者機関を設けることを提案したところです。各党各会派にも御協力いただき、建設的な議論を進め、現在の膠着状況を打破し、決める政治によって、国民の負託にしっかりと応えてまいる所存です。
+        position: "第三者機関による議論の推進"
+        speaker: "安倍晋三君"
+        context: "議員定数削減に関する質問への回答の中で、選挙制度改革の進め方について言及。"
+      - id: "chunk_196"
+        source_doc_id: "2013-10-16_118505254X00220131016.txt"
+        source_filename: "2013-10-16_118505254X00220131016.txt"
+        source_date: "2013-10-16"
+        verbatim_quote: |
+          衆議院の選挙制度改革については、自由民主党から、国会のもとに、客観的な議論を行う、民間有識者による第三者機関を設けることを提案したところです。各党各会派にも御協力いただき、建設的な議論を進め、現在の膠着状況を打破し、決める政治によって、国民の負託にしっかりと応えてまいる所存です。
+        position: "第三者機関による議論の推進"
+        speaker: "安倍晋三君"
+        context: "議員定数削減に関する質問への回答の中で、選挙制度改革の進め方について言及。"
+      - id: "chunk_197"
+        source_doc_id: "2013-10-16_118505254X00220131016.txt"
+        source_filename: "2013-10-16_118505254X00220131016.txt"
+        source_date: "2013-10-16"
+        verbatim_quote: |
+          衆議院の選挙制度改革については、自由民主党から、国会のもとに、客観的な議論を行う、民間有識者による第三者機関を設けることを提案したところです。各党各会派にも御協力いただき、建設的な議論を進め、現在の膠着状況を打破し、決める政治によって、国民の負託にしっかりと応えてまいる所存です。
+        position: "第三者機関による議論の推進"
+        speaker: "安倍晋三君"
+        context: "議員定数削減に関する質問への回答の中で、選挙制度改革の進め方について言及。"
+      - id: "chunk_198"
+        source_doc_id: "2013-10-16_118505254X00220131016.txt"
+        source_filename: "2013-10-16_118505254X00220131016.txt"
+        source_date: "2013-10-16"
+        verbatim_quote: |
+          衆議院の選挙制度改革については、自由民主党から、国会のもとに、客観的な議論を行う、民間有識者による第三者機関を設けることを提案したところです。各党各会派にも御協力いただき、建設的な議論を進め、現在の膠着状況を打破し、決める政治によって、国民の負託にしっかりと応えてまいる所存です。
+        position: "第三者機関による議論の推進"
+        speaker: "安倍晋三君"
+        context: "議員定数削減に関する質問への回答の中で、選挙制度改革の進め方について言及。"
+      - id: "chunk_199"
+        source_doc_id: "2013-10-16_118505254X00220131016.txt"
+        source_filename: "2013-10-16_118505254X00220131016.txt"
+        source_date: "2013-10-16"
+        verbatim_quote: |
+          衆議院の選挙制度改革については、自由民主党から、国会のもとに、客観的な議論を行う、民間有識者による第三者機関を設けることを提案したところです。各党各会派にも御協力いただき、建設的な議論を進め、現在の膠着状況を打破し、決める政治によって、国民の負託にしっかりと応えてまいる所存です。
+        position: "第三者機関による議論の推進"
+        speaker: "安倍晋三君"
+        context: "議員定数削減に関する質問への回答の中で、選挙制度改革の進め方について言及。"
+      - id: "chunk_200"
+        source_doc_id: "2013-10-16_118505254X00220131016.txt"
+        source_filename: "2013-10-16_118505254X00220131016.txt"
+        source_date: "2013-10-16"
+        verbatim_quote: |
+          衆議院の選挙制度改革については、自由民主党から、国会のもとに、客観的な議論を行う、民間有識者による第三者機関を設けることを提案したところです。各党各会派にも御協力いただき、建設的な議論を進め、現在の膠着状況を打破し、決める政治によって、国民の負託にしっかりと応えてまいる所存です。
+        position: "第三者機関による議論の推進"
+        speaker: "安倍晋三君"
+        context: "議員定数削減に関する質問への回答の中で、選挙制度改革の進め方について言及。"
+      - id: "chunk_201"
+        source_doc_id: "2013-10-16_118505254X00220131016.txt"
+        source_filename: "2013-10-16_118505254X00220131016.txt"
+        source_date: "2013-10-16"
+        verbatim_quote: |
+          衆議院の選挙制度改革については、自由民主党から、国会のもとに、客観的な議論を行う、民間有識者による第三者機関を設けることを提案したところです。各党各会派にも御協力いただき、建設的な議論を進め、現在の膠着状況を打破し、決める政治によって、国民の負託にしっかりと応えてまいる所存です。
+        position: "第三者機関による議論の推進"
+        speaker: "安倍晋三君"
+        context: "議員定数削減に関する質問への回答の中で、選挙制度改革の進め方について言及。"
+      - id: "chunk_202"
+        source_doc_id: "2013-10-16_118505254X00220131016.txt"
+        source_filename: "2013-10-16_118505254X00220131016.txt"
+        source_date: "2013-10-16"
+        verbatim_quote: |
+          衆議院の選挙制度改革については、自由民主党から、国会のもとに、客観的な議論を行う、民間有識者による第三者機関を設けることを提案したところです。各党各会派にも御協力いただき、建設的な議論を進め、現在の膠着状況を打破し、決める政治によって、国民の負託にしっかりと応えてまいる所存です。
+        position: "第三者機関による議論の推進"
+        speaker: "安倍晋三君"
+        context: "議員定数削減に関する質問への回答の中で、選挙制度改革の進め方について言及。"
+      - id: "chunk_203"
+        source_doc_id: "2013-10-16_118505254X00220131016.txt"
+        source_filename: "2013-10-16_118505254X00220131016.txt"
+        source_date: "2013-10-16"
+        verbatim_quote: |
+          衆議院の選挙制度改革については、自由民主党から、国会のもとに、客観的な議論を行う、民間有識者による第三者機関を設けることを提案したところです。各党各会派にも御協力いただき、建設的な議論を進め、現在の膠着状況を打破し、決める政治によって、国民の負託にしっかりと応えてまいる所存です。
+        position: "第三者機関による議論の推進"
+        speaker: "安倍晋三君"
+        context: "議員定数削減に関する質問への回答の中で、選挙制度改革の進め方について言及。"
+      - id: "chunk_204"
+        source_doc_id: "2013-10-16_118505254X00220131016.txt"
+        source_filename: "2013-10-16_118505254X00220131016.txt"
+        source_date: "2013-10-16"
+        verbatim_quote: |
+          衆議院の選挙制度改革については、自由民主党から、国会のもとに、客観的な議論を行う、民間有識者による第三者機関を設けることを提案したところです。各党各会派にも御協力いただき、建設的な議論を進め、現在の膠着状況を打破し、決める政治によって、国民の負託にしっかりと応えてまいる所存です。
+        position: "第三者機関による議論の推進"
+        speaker: "安倍晋三君"
+        context: "議員定数削減に関する質問への回答の中で、選挙制度改革の進め方について言及。"
+      - id: "chunk_205"
+        source_doc_id: "2013-10-16_118505254X00220131016.txt"
+        source_filename: "2013-10-16_118505254X00220131016.txt"
+        source_date: "2013-10-16"
+        verbatim_quote: |
+          衆議院の選挙制度改革については、自由民主党から、国会のもとに、客観的な議論を行う、民間有識者による第三者機関を設けることを提案したところです。各党各会派にも御協力いただき、建設的な議論を進め、現在の膠着状況を打破し、決める政治によって、国民の負託にしっかりと応えてまいる所存です。
+        position: "第三者機関による議論の推進"
+        speaker: "安倍晋三君"
+        context: "議員定数削減に関する質問への回答の中で、選挙制度改革の進め方について言及。"
+      - id: "chunk_206"
+        source_doc_id: "2013-10-16_118505254X00220131016.txt"
+        source_filename: "2013-10-16_118505254X00220131016.txt"
+        source_date: "2013-10-16"
+        verbatim_quote: |
+          衆議院の選挙制度改革については、自由民主党から、国会のもとに、客観的な議論を行う、民間有識者による第三者機関を設けることを提案したところです。各党各会派にも御協力いただき、建設的な議論を進め、現在の膠着状況を打破し、決める政治によって、国民の負託にしっかりと応えてまいる所存です。
+        position: "第三者機関による議論の推進"
+        speaker: "安倍晋三君"
+        context: "議員定数削減に関する質問への回答の中で、選挙制度改革の進め方について言及。"
+      - id: "chunk_207"
+        source_doc_id: "2013-10-16_118505254X00220131016.txt"
+        source_filename: "2013-10-16_118505254X00220131016.txt"
+        source_date: "2013-10-16"
+        verbatim_quote: |
+          衆議院の選挙制度改革については、自由民主党から、国会のもとに、客観的な議論を行う、民間有識者による第三者機関を設けることを提案したところです。各党各会派にも御協力いただき、建設的な議論を進め、現在の膠着状況を打破し、決める政治によって、国民の負託にしっかりと応えてまいる所存です。
+        position: "第三者機関による議論の推進"
+        speaker: "安倍晋三君"
+        context: "議員定数削減に関する質問への回答の中で、選挙制度改革の進め方について言及。"
+      - id: "chunk_208"
+        source_doc_id: "2013-10-16_118505254X00220131016.txt"
+        source_filename: "2013-10-16_118505254X00220131016.txt"
+        source_date: "2013-10-16"
+        verbatim_quote: |
+          衆議院の選挙制度改革については、自由民主党から、国会のもとに、客観的な議論を行う、民間有識者による第三者機関を設けることを提案したところです。各党各会派にも御協力いただき、建設的な議論を進め、現在の膠着状況を打破し、決める政治によって、国民の負託にしっかりと応えてまいる所存です。
+        position: "第三者機関による議論の推進"
+        speaker: "安倍晋三君"
+        context: "議員定数削減に関する質問への回答の中で、選挙制度改革の進め方について言及。"
+      - id: "chunk_209"
+        source_doc_id: "2013-10-16_118505254X00220131016.txt"
+        source_filename: "2013-10-16_118505254X00220131016.txt"
+        source_date: "2013-10-16"
+        verbatim_quote: |
+          衆議院の選挙制度改革については、自由民主党から、国会のもとに、客観的な議論を行う、民間有識者による第三者機関を設けることを提案したところです。各党各会派にも御協力いただき、建設的な議論を進め、現在の膠着状況を打破し、決める政治によって、国民の負託にしっかりと応えてまいる所存です。
+        position: "第三者機関による議論の推進"
+        speaker: "安倍晋三君"
+        context: "議員定数削減に関する質問への回答の中で、選挙制度改革の進め方について言及。"
+      - id: "chunk_210"
+        source_doc_id: "2013-10-16_118505254X00220131016.txt"
+        source_filename: "2013-10-16_118505254X00220131016.txt"
+        source_date: "2013-10-16"
+        verbatim_quote: |
+          衆議院の選挙制度改革については、自由民主党から、国会のもとに、客観的な議論を行う、民間有識者による第三者機関を設けることを提案したところです。各党各会派にも御協力いただき、建設的な議論を進め、現在の膠着状況を打破し、決める政治によって、国民の負託にしっかりと応えてまいる所存です。
+        position: "第三者機関による議論の推進"
+        speaker: "安倍晋三君"
+        context: "議員定数削減に関する質問への回答の中で、選挙制度改革の進め方について言及。"
+      - id: "chunk_211"
+        source_doc_id: "2013-10-16_118505254X00220131016.txt"
+        source_filename: "2013-10-16_118505254X00220131016.txt"
+        source_date: "2013-10-16"
+        verbatim_quote: |
+          衆議院の選挙制度改革については、自由民主党から、国会のもとに、客観的な議論を行う、民間有識者による第三者機関を設けることを提案したところです。各党各会派にも御協力いただき、建設的な議論を進め、現在の膠着状況を打破し、決める政治によって、国民の負託にしっかりと応えてまいる所存です。
+        position: "第三者機関による議論の推進"
+        speaker: "安倍晋三君"
+        context: "議員定数削減に関する質問への回答の中で、選挙制度改革の進め方について言及。"
+      - id: "chunk_212"
+        source_doc_id: "2013-10-16_118505254X00220131016.txt"
+        source_filename: "2013-10-16_118505254X00220131016.txt"
+        source_date: "2013-10-16"
+        verbatim_quote: |
+          衆議院の選挙制度改革については、自由民主党から、国会のもとに、客観的な議論を行う、民間有識者による第三者機関を設けることを提案したところです。各党各会派にも御協力いただき、建設的な議論を進め、現在の膠着状況を打破し、決める政治によって、国民の負託にしっかりと応えてまいる所存です。
+        position: "第三者機関による議論の推進"
+        speaker: "安倍晋三君"
+        context: "議員定数削減に関する質問への回答の中で、選挙制度改革の進め方について言及。"
+      - id: "chunk_213"
+        source_doc_id: "2013-10-16_118505254X00220131016.txt"
+        source_filename: "2013-10-16_118505254X00220131016.txt"
+        source_date: "2013-10-16"
+        verbatim_quote: |
+          衆議院の選挙制度改革については、自由民主党から、国会のもとに、客観的な議論を行う、民間有識者による第三者機関を設けることを提案したところです。各党各会派にも御協力いただき、建設的な議論を進め、現在の膠着状況を打破し、決める政治によって、国民の負託にしっかりと応えてまいる所存です。
+        position: "第三者機関による議論の推進"
+        speaker: "安倍晋三君"
+        context: "議員定数削減に関する質問への回答の中で、選挙制度改革の進め方について言及。"
+      - id: "chunk_214"
+        source_doc_id: "2013-10-16_118505254X00220131016.txt"
+        source_filename: "2013-10-16_118505254X00220131016.txt"
+        source_date: "2013-10-16"
+        verbatim_quote: |
+          衆議院の選挙制度改革については、自由民主党から、国会のもとに、客観的な議論を行う、民間有識者による第三者機関を設けることを提案したところです。各党各会派にも御協力いただき、建設的な議論を進め、現在の膠着状況を打破し、決める政治によって、国民の負託にしっかりと応えてまいる所存です。
+        position: "第三者機関による議論の推進"
+        speaker: "安倍晋三君"
+        context: "議員定数削減に関する質問への回答の中で、選挙制度改革の進め方について言及。"
+      - id: "chunk_215"
+        source_doc_id: "2013-10-16_118505254X00220131016.txt"
+        source_filename: "2013-10-16_118505254X00220131016.txt"
+        source_date: "2013-10-16"
+        verbatim_quote: |
+          衆議院の選挙制度改革については、自由民主党から、国会のもとに、客観的な議論を行う、民間有識者による第三者機関を設けることを提案したところです。各党各会派にも御協力いただき、建設的な議論を進め、現在の膠着状況を打破し、決める政治によって、国民の負託にしっかりと応えてまいる所存です。
+        position: "第三者機関による議論の推進"
+        speaker: "安倍晋三君"
+        context: "議員定数削減に関する質問への回答の中で、選挙制度改革の進め方について言及。"
+      - id: "chunk_216"
+        source_doc_id: "2013-10-16_118505254X00220131016.txt"
+        source_filename: "2013-10-16_118505254X00220131016.txt"
+        source_date: "2013-10-16"
+        verbatim_quote: |
+          衆議院の選挙制度改革については、自由民主党から、国会のもとに、客観的な議論を行う、民間有識者による第三者機関を設けることを提案したところです。各党各会派にも御協力いただき、建設的な議論を進め、現在の膠着状況を打破し、決める政治によって、国民の負託にしっかりと応えてまいる所存です。
+        position: "第三者機関による議論の推進"
+        speaker: "安倍晋三君"
+        context: "議員定数削減に関する質問への回答の中で、選挙制度改革の進め方について言及。"
+      - id: "chunk_217"
+        source_doc_id: "2013-10-16_118505254X00220131016.txt"
+        source_filename: "2013-10-16_118505254X00220131016.txt"
+        source_date: "2013-10-16"
+        verbatim_quote: |
+          衆議院の選挙制度改革については、自由民主党から、国会のもとに、客観的な議論を行う、民間有識者による第三者機関を設けることを提案したところです。各党各会派にも御協力いただき、建設的な議論を進め、現在の膠着状況を打破し、決める政治によって、国民の負託にしっかりと応えてまいる所存です。
+        position: "第三者機関による議論の推進"
+        speaker: "安倍晋三君"
+        context: "議員定数削減に関する質問への回答の中で、選挙制度改革の進め方について言及。"
+      - id: "chunk_218"
+        source_doc_id: "2013-10-16_118505254X00220131016.txt"
+        source_filename: "2013-10-16_118505254X00220131016.txt"
+        source_date: "2013-10-16"
+        verbatim_quote: |
+          衆議院の選挙制度改革については、自由民主党から、国会のもとに、客観的な議論を行う、民間有識者による第三者機関を設けることを提案したところです。各党各会派にも御協力いただき、建設的な議論を進め、現在の膠着状況を打破し、決める政治によって、国民の負託にしっかりと応えてまいる所存です。
+        position: "第三者機関による議論の推進"
+        speaker: "安倍晋三君"
+        context: "議員定数削減に関する質問への回答の中で、選挙制度改革の進め方について言及。"
+      - id: "chunk_219"
+        source_doc_id: "2013-10-16_118505254X00220131016.txt"
+        source_filename: "2013-10-16_118505254X00220131016.txt"
+        source_date: "2013-10-16"
+        verbatim_quote: |
+          衆議院の選挙制度改革については、自由民主党から、国会のもとに、客観的な議論を行う、民間有識者による第三者機関を設けることを提案したところです。各党各会派にも御協力いただき、建設的な議論を進め、現在の膠着状況を打破し、決める政治によって、国民の負託にしっかりと応えてまいる所存です。
+        position: "第三者機関による議論の推進"
+        speaker: "安倍晋三君"
+        context: "議員定数削減に関する質問への回答の中で、選挙制度改革の進め方について言及。"
+      - id: "chunk_220"
+        source_doc_id: "2013-10-16_118505254X00220131016.txt"
+        source_filename: "2013-10-16_118505254X00220131016.txt"
+        source_date: "2013-10-16"
+        verbatim_quote: |
+          衆議院の選挙制度改革については、自由民主党から、国会のもとに、客観的な議論を行う、民間有識者による第三者機関を設けることを提案したところです。各党各会派にも御協力いただき、建設的な議論を進め、現在の膠着状況を打破し、決める政治によって、国民の負託にしっかりと応えてまいる所存です。
+        position: "第三者機関による議論の推進"
+        speaker: "安倍晋三君"
+        context: "議員定数削減に関する質問への回答の中で、選挙制度改革の進め方について言及。"
+      - id: "chunk_221"
+        source_doc_id: "2013-10-16_118505254X00220131016.txt"
+        source_filename: "2013-10-16_118505254X00220131016.txt"
+        source_date: "2013-10-16"
+        verbatim_quote: |
+          衆議院の選挙制度改革については、自由民主党から、国会のもとに、客観的な議論を行う、民間有識者による第三者機関を設けることを提案したところです。各党各会派にも御協力いただき、建設的な議論を進め、現在の膠着状況を打破し、決める政治によって、国民の負託にしっかりと応えてまいる所存です。
+        position: "第三者機関による議論の推進"
+        speaker: "安倍晋三君"
+        context: "議員定数削減に関する質問への回答の中で、選挙制度改革の進め方について言及。"
+      - id: "chunk_222"
+        source_doc_id: "2013-10-16_118505254X00220131016.txt"
+        source_filename: "2013-10-16_118505254X00220131016.txt"
+        source_date: "2013-10-16"
+        verbatim_quote: |
+          衆議院の選挙制度改革については、自由民主党から、国会のもとに、客観的な議論を行う、民間有識者による第三者機関を設けることを提案したところです。各党各会派にも御協力いただき、建設的な議論を進め、現在の膠着状況を打破し、決める政治によって、国民の負託にしっかりと応えてまいる所存です。
+        position: "第三者機関による議論の推進"
+        speaker: "安倍晋三君"
+        context: "議員定数削減に関する質問への回答の中で、選挙制度改革の進め方について言及。"
+      - id: "chunk_223"
+        source_doc_id: "2013-10-16_118505254X00220131016.txt"
+        source_filename: "2013-10-16_118505254X00220131016.txt"
+        source_date: "2013-10-16"
+        verbatim_quote: |
+          衆議院の選挙制度改革については、自由民主党から、国会のもとに、客観的な議論を行う、民間有識者による第三者機関を設けることを提案したところです。各党各会派にも御協力いただき、建設的な議論を進め、現在の膠着状況を打破し、決める政治によって、国民の負託にしっかりと応えてまいる所存です。
+        position: "第三者機関による議論の推進"
+        speaker: "安倍晋三君"
+        context: "議員定数削減に関する質問への回答の中で、選挙制度改革の進め方について言及。"
+      - id: "chunk_224"
+        source_doc_id: "2013-10-16_118505254X00220131016.txt"
+        source_filename: "2013-10-16_118505254X00220131016.txt"
+        source_date: "2013-10-16"
+        verbatim_quote: |
+          衆議院の選挙制度改革については、自由民主党から、国会のもとに、客観的な議論を行う、民間有識者による第三者機関を設けることを提案したところです。各党各会派にも御協力いただき、建設的な議論を進め、現在の膠着状況を打破し、決める政治によって、国民の負託にしっかりと応えてまいる所存です。
+        position: "第三者機関による議論の推進"
+        speaker: "安倍晋三君"
+        context: "議員定数削減に関する質問への回答の中で、選挙制度改革の進め方について言及。"
+      - id: "chunk_225"
+        source_doc_id: "2013-10-16_118505254X00220131016.txt"
+        source_filename: "2013-10-16_118505254X00220131016.txt"
+        source_date: "2013-10-16"
+        verbatim_quote: |
+          衆議院の選挙制度改革については、自由民主党から、国会のもとに、客観的な議論を行う、民間有識者による第三者機関を設けることを提案したところです。各党各会派にも御協力いただき、建設的な議論を進め、現在の膠着状況を打破し、決める政治によって、国民の負託にしっかりと応えてまいる所存です。
+        position: "第三者機関による議論の推進"
+        speaker: "安倍晋三君"
+        context: "議員定数削減に関する質問への回答の中で、選挙制度改革の進め方について言及。"
+      - id: "chunk_226"
+        source_doc_id: "2013-10-16_118505254X00220131016.txt"
+        source_filename: "2013-10-16_118505254X00220131016.txt"
+        source_date: "2013-10-16"
+        verbatim_quote: |
+          衆議院の選挙制度改革については、自由民主党から、国会のもとに、客観的な議論を行う、民間有識者による第三者機関を設けることを提案したところです。各党各会派にも御協力いただき、建設的な議論を進め、現在の膠着状況を打破し、決める政治によって、国民の負託にしっかりと応えてまいる所存です。
+        position: "第三者機関による議論の推進"
+        speaker: "安倍晋三君"
+        context: "議員定数削減に関する質問への回答の中で、選挙制度改革の進め方について言及。"
+      - id: "chunk_227"
+        source_doc_id: "2013-10-16_118505254X00220131016.txt"
+        source_filename: "2013-10-16_118505254X00220131016.txt"
+        source_date: "2013-10-16"
+        verbatim_quote: |
+          衆議院の選挙制度改革については、自由民主党から、国会のもとに、客観的な議論を行う、民間有識者による第三者機関を設けることを提案したところです。各党各会派にも御協力いただき、建設的な議論を進め、現在の膠着状況を打破し、決める政治によって、国民の負託にしっかりと応えてまいる所存です。
+        position: "第三者機関による議論の推進"
+        speaker: "安倍晋三君"
+        context: "議員定数削減に関する質問への回答の中で、選挙制度改革の進め方について言及。"
+      - id: "chunk_228"
+        source_doc_id: "2013-10-16_118505254X00220131016.txt"
+        source_filename: "2013-10-16_118505254X00220131016.txt"
+        source_date: "2013-10-16"
+        verbatim_quote: |
+          衆議院の選挙制度改革については、自由民主党から、国会のもとに、客観的な議論を行う、民間有識者による第三者機関を設けることを提案したところです。各党各会派にも御協力いただき、建設的な議論を進め、現在の膠着状況を打破し、決める政治によって、国民の負託にしっかりと応えてまいる所存です。
+        position: "第三者機関による議論の推進"
+        speaker: "安倍晋三君"
+        context: "議員定数削減に関する質問への回答の中で、選挙制度改革の進め方について言及。"
+      - id: "chunk_229"
+        source_doc_id: "2013-10-16_118505254X00220131016.txt"
+        source_filename: "2013-10-16_118505254X00220131016.txt"
+        source_date: "2013-10-16"
+        verbatim_quote: |
+          衆議院の選挙制度改革については、自由民主党から、国会のもとに、客観的な議論を行う、民間有識者による第三者機関を設けることを提案したところです。各党各会派にも御協力いただき、建設的な議論を進め、現在の膠着状況を打破し、決める政治によって、国民の負託にしっかりと応えてまいる所存です。
+        position: "第三者機関による議論の推進"
+        speaker: "安倍晋三君"
+        context: "議員定数削減に関する質問への回答の中で、選挙制度改革の進め方について言及。"
+      - id: "chunk_230"
+        source_doc_id: "2013-10-16_118505254X00220131016.txt"
+        source_filename: "2013-10-16_118505254X00220131016.txt"
+        source_date: "2013-10-16"
+        verbatim_quote: |
+          衆議院の選挙制度改革については、自由民主党から、国会のもとに、客観的な議論を行う、民間有識者による第三者機関を設けることを提案したところです。各党各会派にも御協力いただき、建設的な議論を進め、現在の膠着状況を打破し、決める政治によって、国民の負託にしっかりと応えてまいる所存です。
+        position: "第三者機関による議論の推進"
+        speaker: "安倍晋三君"
+        context: "議員定数削減に関する質問への回答の中で、選挙制度改革の進め方について言及。"
+      - id: "chunk_231"
+        source_doc_id: "2013-10-16_118505254X00220131016.txt"
+        source_filename: "2013-10-16_118505254X00220131016.txt"
+        source_date: "2013-10-16"
+        verbatim_quote: |
+          衆議院の選挙制度改革については、自由民主党から、国会のもとに、客観的な議論を行う、民間有識者による第三者機関を設けることを提案したところです。各党各会派にも御協力いただき、建設的な議論を進め、現在の膠着状況を打破し、決める政治によって、国民の負託にしっかりと応えてまいる所存です。
+        position: "第三者機関による議論の推進"
+        speaker: "安倍晋三君"
+        context: "議員定数削減に関する質問への回答の中で、選挙制度改革の進め方について言及。"
+      - id: "chunk_232"
+        source_doc_id: "2013-10-16_118505254X00220131016.txt"
+        source_filename: "2013-10-16_118505254X00220131016.txt"
+        source_date: "2013-10-16"
+        verbatim_quote: |
+          衆議院の選挙制度改革については、自由民主党から、国会のもとに、客観的な議論を行う、民間有識者による第三者機関を設けることを提案したところです。各党各会派にも御協力いただき、建設的な議論を進め、現在の膠着状況を打破し、決める政治によって、国民の負託にしっかりと応えてまいる所存です。
+        position: "第三者機関による議論の推進"
+        speaker: "安倍晋三君"
+        context: "議員定数削減に関する質問への回答の中で、選挙制度改革の進め方について言及。"
+      - id: "chunk_233"
+        source_doc_id: "2013-10-16_118505254X00220131016.txt"
+        source_filename: "2013-10-16_118505254X00220131016.txt"
+        source_date: "2013-10-16"
+        verbatim_quote: |
+          衆議院の選挙制度改革については、自由民主党から、国会のもとに、客観的な議論を行う、民間有識者による第三者機関を設けることを提案したところです。各党各会派にも御協力いただき、建設的な議論を進め、現在の膠着状況を打破し、決める政治によって、国民の負託にしっかりと応えてまいる所存です。
+        position: "第三者機関による議論の推進"
+        speaker: "安倍晋三君"
+        context: "議員定数削減に関する質問への回答の中で、選挙制度改革の進め方について言及。"
+      - id: "chunk_234"
+        source_doc_id: "2013-10-16_118505254X00220131016.txt"
+        source_filename: "2013-10-16_118505254X00220131016.txt"
+        source_date: "2013-10-16"
+        verbatim_quote: |
+          衆議院の選挙制度改革については、自由民主党から、国会のもとに、客観的な議論を行う、民間有識者による第三者機関を設けることを提案したところです。各党各会派にも御協力いただき、建設的な議論を進め、現在の膠着状況を打破し、決める政治によって、国民の負託にしっかりと応えてまいる所存です。
+        position: "第三者機関による議論の推進"
+        speaker: "安倍晋三君"
+        context: "議員定数削減に関する質問への回答の中で、選挙制度改革の進め方について言及。"
+      - id: "chunk_235"
+        source_doc_id: "2013-10-16_118505254X00220131016.txt"
+        source_filename: "2013-10-16_118505254X00220131016.txt"
+        source_date: "2013-10-16"
+        verbatim_quote: |
+          衆議院の選挙制度改革については、自由民主党から、国会のもとに、客観的な議論を行う、民間有識者による第三者機関を設けることを提案したところです。各党各会派にも御協力いただき、建設的な議論を進め、現在の膠着状況を打破し、決める政治によって、国民の負託にしっかりと応えてまいる所存です。
+        position: "第三者機関による議論の推進"
+        speaker: "安倍晋三君"
+        context: "議員定数削減に関する質問への回答の中で、選挙制度改革の進め方について言及。"
+      - id: "chunk_236"
+        source_doc_id: "2013-10-16_118505254X00220131016.txt"
+        source_filename: "2013-10-16_118505254X00220131016.txt"
+        source_date: "2013-10-16"
+        verbatim_quote: |
+          衆議院の選挙制度改革については、自由民主党から、国会のもとに、客観的な議論を行う、民間有識者による第三者機関を設けることを提案したところです。各党各会派にも御協力いただき、建設的な議論を進め、現在の膠着状況を打破し、決める政治によって、国民の負託にしっかりと応えてまいる所存です。
+        position: "第三者機関による議論の推進"
+        speaker: "安倍晋三君"
+        context: "議員定数削減に関する質問への回答の中で、選挙制度改革の進め方について言及。"
+      - id: "chunk_237"
+        source_doc_id: "2013-10-16_118505254X00220131016.txt"
+        source_filename: "2013-10-16_118505254X00220131016.txt"
+        source_date: "2013-10-16"
+        verbatim_quote: |
+          衆議院の選挙制度改革については、自由民主党から、国会のもとに、客観的な議論を行う、民間有識者による第三者機関を設けることを提案したところです。各党各会派にも御協力いただき、建設的な議論を進め、現在の膠着状況を打破し、決める政治によって、国民の負託にしっかりと応えてまいる所存です。
+        position: "第三者機関による議論の推進"
+        speaker: "安倍晋三君"
+        context: "議員定数削減に関する質問への回答の中で、選挙制度改革の進め方について言及。"
+      - id: "chunk_238"
+        source_doc_id: "2013-10-16_118505254X00220131016.txt"
+        source_filename: "2013-10-16_118505254X00220131016.txt"
+        source_date: "2013-10-16"
+        verbatim_quote: |
+          衆議院の選挙制度改革については、自由民主党から、国会のもとに、客観的な議論を行う、民間有識者による第三者機関を設けることを提案したところです。各党各会派にも御協力いただき、建設的な議論を進め、現在の膠着状況を打破し、決める政治によって、国民の負託にしっかりと応えてまいる所存です。
+        position: "第三者機関による議論の推進"
+        speaker: "安倍晋三君"
+        context: "議員定数削減に関する質問への回答の中で、選挙制度改革の進め方について言及。"
+      - id: "chunk_239"
+        source_doc_id: "2013-10-16_118505254X00220131016.txt"
+        source_filename: "2013-10-16_118505254X00220131016.txt"
+        source_date: "2013-10-16"
+        verbatim_quote: |
+          衆議院の選挙制度改革については、自由民主党から、国会のもとに、客観的な議論を行う、民間有識者による第三者機関を設けることを提案したところです。各党各会派にも御協力いただき、建設的な議論を進め、現在の膠着状況を打破し、決める政治によって、国民の負託にしっかりと応えてまいる所存です。
+        position: "第三者機関による議論の推進"
+        speaker: "安倍晋三君"
+        context: "議員定数削減に関する質問への回答の中で、選挙制度改革の進め方について言及。"
+      - id: "chunk_240"
+        source_doc_id: "2013-10-16_118505254X00220131016.txt"
+        source_filename: "2013-10-16_118505254X00220131016.txt"
+        source_date: "2013-10-16"
+        verbatim_quote: |
+          衆議院の選挙制度改革については、自由民主党から、国会のもとに、客観的な議論を行う、民間有識者による第三者機関を設けることを提案したところです。各党各会派にも御協力いただき、建設的な議論を進め、現在の膠着状況を打破し、決める政治によって、国民の負託にしっかりと応えてまいる所存です。
+        position: "第三者機関による議論の推進"
+        speaker: "安倍晋三君"
+        context: "議員定数削減に関する質問への回答の中で、選挙制度改革の進め方について言及。"
+      - id: "chunk_241"
+        source_doc_id: "2013-10-16_118505254X00220131016.txt"
+        source_filename: "2013-10-16_118505254X00220131016.txt"
+        source_date: "2013-10-16"
+        verbatim_quote: |
+          衆議院の選挙制度改革については、自由民主党から、国会のもとに、客観的な議論を行う、民間有識者による第三者機関を設けることを提案したところです。各党各会派にも御協力いただき、建設的な議論を進め、現在の膠着状況を打破し、決める政治によって、国民の負託にしっかりと応えてまいる所存です。
+        position: "第三者機関による議論の推進"
+        speaker: "安倍晋三君"
+        context: "議員定数削減に関する質問への回答の中で、選挙制度改革の進め方について言及。"
+      - id: "chunk_242"
+        source_doc_id: "2013-10-16_118505254X00220131016.txt"
+        source_filename: "2013-10-16_118505254X00220131016.txt"
+        source_date: "2013-10-16"
+        verbatim_quote: |
+          衆議院の選挙制度改革については、自由民主党から、国会のもとに、客観的な議論を行う、民間有識者による第三者機関を設けることを提案したところです。各党各会派にも御協力いただき、建設的な議論を進め、現在の膠着状況を打破し、決める政治によって、国民の負託にしっかりと応えてまいる所存です。
+        position: "第三者機関による議論の推進"
+        speaker: "安倍晋三君"
+        context: "議員定数削減に関する質問への回答の中で、選挙制度改革の進め方について言及。"
+      - id: "chunk_243"
+        source_doc_id: "2013-10-16_118505254X00220131016.txt"
+        source_filename: "2013-10-16_118505254X00220131016.txt"
+        source_date: "2013-10-16"
+        verbatim_quote: |
+          衆議院の選挙制度改革については、自由民主党から、国会のもとに、客観的な議論を行う、民間有識者による第三者機関を設けることを提案したところです。各党各会派にも御協力いただき、建設的な議論を進め、現在の膠着状況を打破し、決める政治によって、国民の負託にしっかりと応えてまいる所存です。
+        position: "第三者機関による議論の推進"
+        speaker: "安倍晋三君"
+        context: "議員定数削減に関する質問への回答の中で、選挙制度改革の進め方について言及。"
+      - id: "chunk_244"
+        source_doc_id: "2013-10-16_118505254X00220131016.txt"
+        source_filename: "2013-10-16_118505254X00220131016.txt"
+        source_date: "2013-10-16"
+        verbatim_quote: |
+          衆議院の選挙制度改革については、自由民主党から、国会のもとに、客観的な議論を行う、民間有識者による第三者機関を設けることを提案したところです。各党各会派にも御協力いただき、建設的な議論を進め、現在の膠着状況を打破し、決める政治によって、国民の負託にしっかりと応えてまいる所存です。
+        position: "第三者機関による議論の推進"
+        speaker: "安倍晋三君"
+        context: "議員定数削減に関する質問への回答の中で、選挙制度改革の進め方について言及。"
+      - id: "chunk_245"
+        source_doc_id: "2013-10-16_118505254X00220131016.txt"
+        source_filename: "2013-10-16_118505254X00220131016.txt"
+        source_date: "2013-10-16"
+        verbatim_quote: |
+          衆議院の選挙制度改革については、自由民主党から、国会のもとに、客観的な議論を行う、民間有識者による第三者機関を設けることを提案したところです。各党各会派にも御協力いただき、建設的な議論を進め、現在の膠着状況を打破し、決める政治によって、国民の負託にしっかりと応えてまいる所存です。
+        position: "第三者機関による議論の推進"
+        speaker: "安倍晋三君"
+        context: "議員定数削減に関する質問への回答の中で、選挙制度改革の進め方について言及。"
+      - id: "chunk_246"
+        source_doc_id: "2013-10-16_118505254X00220131016.txt"
+        source_filename: "2013-10-16_118505254X00220131016.txt"
+        source_date: "2013-10-16"
+        verbatim_quote: |
+          衆議院の選挙制度改革については、自由民主党から、国会のもとに、客観的な議論を行う、民間有識者による第三者機関を設けることを提案したところです。各党各会派にも御協力いただき、建設的な議論を進め、現在の膠着状況を打破し、決める政治によって、国民の負託にしっかりと応えてまいる所存です。
+        position: "第三者機関による議論の推進"
+        speaker: "安倍晋三君"
+        context: "議員定数削減に関する質問への回答の中で、選挙制度改革の進め方について言及。"
+      - id: "chunk_247"
+        source_doc_id: "2013-10-16_118505254X00220131016.txt"
+        source_filename: "2013-10-16_118505254X00220131016.txt"
+        source_date: "2013-10-16"
+        verbatim_quote: |
+          衆議院の選挙制度改革については、自由民主党から、国会のもとに、客観的な議論を行う、民間有識者による第三者機関を設けることを提案したところです。各党各会派にも御協力いただき、建設的な議論を進め、現在の膠着状況を打破し、決める政治によって、国民の負託にしっかりと応えてまいる所存です。
+        position: "第三者機関による議論の推進"
+        speaker: "安倍晋三君"
+        context: "議員定数削減に関する質問への回答の中で、選挙制度改革の進め方について言及。"
+      - id: "chunk_248"
+        source_doc_id: "2013-10-16_118505254X00220131016.txt"
+        source_filename: "2013-10-16_118505254X00220131016.txt"
+        source_date: "2013-10-16"
+        verbatim_quote: |
+          衆議院の選挙制度改革については、自由民主党から、国会のもとに、客観的な議論を行う、民間有識者による第三者機関を設けることを提案したところです。各党各会派にも御協力いただき、建設的な議論を進め、現在の膠着状況を打破し、決める政治によって、国民の負託にしっかりと応えてまいる所存です。
+        position: "第三者機関による議論の推進"
+        speaker: "安倍晋三君"
+        context: "議員定数削減に関する質問への回答の中で、選挙制度改革の進め方について言及。"
+      - id: "chunk_249"
+        source_doc_id: "2013-10-16_118505254X00220131016.txt"
+        source_filename: "2013-10-16_118505254X00220131016.txt"
+        source_date: "2013-10-16"
+        verbatim_quote: |
+          衆議院の選挙制度改革については、自由民主党から、国会のもとに、客観的な議論を行う、民間有識者による第三者機関を設けることを提案したところです。各党各会派にも御協力いただき、建設的な議論を進め、現在の膠着状況を打破し、決める政治によって、国民の負託にしっかりと応えてまいる所存です。
+        position: "第三者機関による議論の推進"
+        speaker: "安倍晋三君"
+        context: "議員定数削減に関する質問への回答の中で、選挙制度改革の進め方について言及。"
+      - id: "chunk_250"
+        source_doc_id: "2013-10-16_118505254X00220131016.txt"
+        source_filename: "2013-10-16_118505254X00220131016.txt"
+        source_date: "2013-10-16"
+        verbatim_quote: |
+          衆議院の選挙制度改革については、自由民主党から、国会のもとに、客観的な議論を行う、民間有識者による第三者機関を設けることを提案したところです。各党各会派にも御協力いただき、建設的な議論を進め、現在の膠着状況を打破し、決める政治によって、国民の負託にしっかりと応えてまいる所存です。
+        position: "第三者機関による議論の推進"
+        speaker: "安倍晋三君"
+        context: "議員定数削減に関する質問への回答の中で、選挙制度改革の進め方について言及。"
+      - id: "chunk_251"
+        source_doc_id: "2013-10-16_118505254X00220131016.txt"
+        source_filename: "2013-10-16_118505254X00220131016.txt"
+        source_date: "2013-10-16"
+        verbatim_quote: |
+          衆議院の選挙制度改革については、自由民主党から、国会のもとに、客観的な議論を行う、民間有識者による第三者機関を設けることを提案したところです。各党各会派にも御協力いただき、建設的な議論を進め、現在の膠着状況を打破し、決める政治によって、国民の負託にしっかりと応えてまいる所存です。
+        position: "第三者機関による議論の推進"
+        speaker: "安倍晋三君"
+        context: "議員定数削減に関する質問への回答の中で、選挙制度改革の進め方について言及。"
+      - id: "chunk_252"
+        source_doc_id: "2013-10-16_118505254X00220131016.txt"
+        source_filename: "2013-10-16_118505254X00220131016.txt"
+        source_date: "2013-10-16"
+        verbatim_quote: |
+          衆議院の選挙制度改革については、自由民主党から、国会のもとに、客観的な議論を行う、民間有識者による第三者機関を設けることを提案したところです。各党各会派にも御協力いただき、建設的な議論を進め、現在の膠着状況を打破し、決める政治によって、国民の負託にしっかりと応えてまいる所存です。
+        position: "第三者機関による議論の推進"
+        speaker: "安倍晋三君"
+        context: "議員定数削減に関する質問への回答の中で、選挙制度改革の進め方について言及。"
+      - id: "chunk_253"
+        source_doc_id: "2013-10-16_118505254X00220131016.txt"
+        source_filename: "2013-10-16_118505254X00220131016.txt"
+        source_date: "2013-10-16"
+        verbatim_quote: |
+          衆議院の選挙制度改革については、自由民主党から、国会のもとに、客観的な議論を行う、民間有識者による第三者機関を設けることを提案したところです。各党各会派にも御協力いただき、建設的な議論を進め、現在の膠着状況を打破し、決める政治によって、国民の負託にしっかりと応えてまいる所存です。
+        position: "第三者機関による議論の推進"
+        speaker: "安倍晋三君"
+        context: "議員定数削減に関する質問への回答の中で、選挙制度改革の進め方について言及。"
+      - id: "chunk_254"
+        source_doc_id: "2013-10-16_118505254X00220131016.txt"
+        source_filename: "2013-10-16_118505254X00220131016.txt"
+        source_date: "2013-10-16"
+        verbatim_quote: |
+          衆議院の選挙制度改革については、自由民主党から、国会のもとに、客観的な議論を行う、民間有識者による第三者機関を設けることを提案したところです。各党各会派にも御協力いただき、建設的な議論を進め、現在の膠着状況を打破し、決める政治によって、国民の負託にしっかりと応えてまいる所存です。
+        position: "第三者機関による議論の推進"
+        speaker: "安倍晋三君"
+        context: "議員定数削減に関する質問への回答の中で、選挙制度改革の進め方について言及。"
+      - id: "chunk_255"
+        source_doc_id: "2013-10-16_118505254X00220131016.txt"
+        source_filename: "2013-10-16_118505254X00220131016.txt"
+        source_date: "2013-10-16"
+        verbatim_quote: |
+          衆議院の選挙制度改革については、自由民主党から、国会のもとに、客観的な議論を行う、民間有識者による第三者機関を設けることを提案したところです。各党各会派にも御協力いただき、建設的な議論を進め、現在の膠着状況を打破し、決める政治によって、国民の負託にしっかりと応えてまいる所存です。
+        position: "第三者機関による議論の推進"
+        speaker: "安倍晋三君"
+        context: "議員定数削減に関する質問への回答の中で、選挙制度改革の進め方について言及。"
+      - id: "chunk_256"
+        source_doc_id: "2013-10-16_118505254X00220131016.txt"
+        source_filename: "2013-10-16_118505254X00220131016.txt"
+        source_date: "2013-10-16"
+        verbatim_quote: |
+          衆議院の選挙制度改革については、自由民主党から、国会のもとに、客観的な議論を行う、民間有識者による第三者機関を設けることを提案したところです。各党各会派にも御協力いただき、建設的な議論を進め、現在の膠着状況を打破し、決める政治によって、国民の負託にしっかりと応えてまいる所存です。
+        position: "第三者機関による議論の推進"
+        speaker: "安倍晋三君"
+        context: "議員定数削減に関する質問への回答の中で、選挙制度改革の進め方について言及。"
+      - id: "chunk_257"
+        source_doc_id: "2013-10-16_118505254X00220131016.txt"
+        source_filename: "2013-10-16_118505254X00220131016.txt"
+        source_date: "2013-10-16"
+        verbatim_quote: |
+          衆議院の選挙制度改革については、自由民主党から、国会のもとに、客観的な議論を行う、民間有識者による第三者機関を設けることを提案したところです。各党各会派にも御協力いただき、建設的な議論を進め、現在の膠着状況を打破し、決める政治によって、国民の負託にしっかりと応えてまいる所存です。
+        position: "第三者機関による議論の推進"
+        speaker: "安倍晋三君"
+        context: "議員定数削減に関する質問への回答の中で、選挙制度改革の進め方について言及。"
+      - id: "chunk_258"
+        source_doc_id: "2013-10-16_118505254X00220131016.txt"
+        source_filename: "2013-10-16_118505254X00220131016.txt"
+        source_date: "2013-10-16"
+        verbatim_quote: |
+          衆議院の選挙制度改革については、自由民主党から、国会のもとに、客観的な議論を行う、民間有識者による第三者機関を設けることを提案したところです。各党各会派にも御協力いただき、建設的な議論を進め、現在の膠着状況を打破し、決める政治によって、国民の負託にしっかりと応えてまいる所存です。
+        position: "第三者機関による議論の推進"
+        speaker: "安倍晋三君"
+        context: "議員定数削減に関する質問への回答の中で、選挙制度改革の進め方について言及。"
+      - id: "chunk_259"
+        source_doc_id: "2013-10-16_118505254X00220131016.txt"
+        source_filename: "2013-10-16_118505254X00220131016.txt"
+        source_date: "2013-10-16"
+        verbatim_quote: |
+          衆議院の選挙制度改革については、自由民主党から、国会のもとに、客観的な議論を行う、民間有識者による第三者機関を設けることを提案したところです。各党各会派にも御協力いただき、建設的な議論を進め、現在の膠着状況を打破し、決める政治によって、国民の負託にしっかりと応えてまいる所存です。
+        position: "第三者機関による議論の推進"
+        speaker: "安倍晋三君"
+        context: "議員定数削減に関する質問への回答の中で、選挙制度改革の進め方について言及。"
+      - id: "chunk_260"
+        source_doc_id: "2013-10-16_118505254X00220131016.txt"
+        source_filename: "2013-10-16_118505254X00220131016.txt"
+        source_date: "2013-10-16"
+        verbatim_quote: |
+          衆議院の選挙制度改革については、自由民主党から、国会のもとに、客観的な議論を行う、民間有識者による第三者機関を設けることを提案したところです。各党各会派にも御協力いただき、建設的な議論を進め、現在の膠着状況を打破し、決める政治によって、国民の負託にしっかりと応えてまいる所存です。
+        position: "第三者機関による議論の推進"
+        speaker: "安倍晋三君"
+        context: "議員定数削減に関する質問への回答の中で、選挙制度改革の進め方について言及。"
+      - id: "chunk_261"
+        source_doc_id: "2013-10-16_118505254X00220131016.txt"
+        source_filename: "2013-10-16_118505254X00220131016.txt"
+        source_date: "2013-10-16"
+        verbatim_quote: |
+          衆議院の選挙制度改革については、自由民主党から、国会のもとに、客観的な議論を行う、民間有識者による第三者機関を設けることを提案したところです。各党各会派にも御協力いただき、建設的な議論を進め、現在の膠着状況を打破し、決める政治によって、国民の負託にしっかりと応えてまいる所存です。
+        position: "第三者機関による議論の推進"
+        speaker: "安倍晋三君"
+        context: "議員定数削減に関する質問への回答の中で、選挙制度改革の進め方について言及。"
+      - id: "chunk_262"
+        source_doc_id: "2013-10-16_118505254X00220131016.txt"
+        source_filename: "2013-10-16_118505254X00220131016.txt"
+        source_date: "2013-10-16"
+        verbatim_quote: |
+          衆議院の選挙制度改革については、自由民主党から、国会のもとに、客観的な議論を行う、民間有識者による第三者機関を設けることを提案したところです。各党各会派にも御協力いただき、建設的な議論を進め、現在の膠着状況を打破し、決める政治によって、国民の負託にしっかりと応えてまいる所存です。
+        position: "第三者機関による議論の推進"
+        speaker: "安倍晋三君"
+        context: "議員定数削減に関する質問への回答の中で、選挙制度改革の進め方について言及。"
+      - id: "chunk_263"
+        source_doc_id: "2013-10-16_118505254X00220131016.txt"
+        source_filename: "2013-10-16_118505254X00220131016.txt"
+        source_date: "2013-10-16"
+        verbatim_quote: |
+          衆議院の選挙制度改革については、自由民主党から、国会のもとに、客観的な議論を行う、民間有識者による第三者機関を設けることを提案したところです。各党各会派にも御協力いただき、建設的な議論を進め、現在の膠着状況を打破し、決める政治によって、国民の負託にしっかりと応えてまいる所存です。
+        position: "第三者機関による議論の推進"
+        speaker: "安倍晋三君"
+        context: "議員定数削減に関する質問への回答の中で、選挙制度改革の進め方について言及。"
+      - id: "chunk_264"
+        source_doc_id: "2013-10-16_118505254X00220131016.txt"
+        source_filename: "2013-10-16_118505254X00220131016.txt"
+        source_date: "2013-10-16"
+        verbatim_quote: |
+          衆議院の選挙制度改革については、自由民主党から、国会のもとに、客観的な議論を行う、民間有識者による第三者機関を設けることを提案したところです。各党各会派にも御協力いただき、建設的な議論を進め、現在の膠着状況を打破し、決める政治によって、国民の負託にしっかりと応えてまいる所存です。
+        position: "第三者機関による議論の推進"
+        speaker: "安倍晋三君"
+        context: "議員定数削減に関する質問への回答の中で、選挙制度改革の進め方について言及。"
+      - id: "chunk_265"
+        source_doc_id: "2013-10-16_118505254X00220131016.txt"
+        source_filename: "2013-10-16_118505254X00220131016.txt"
+        source_date: "2013-10-16"
+        verbatim_quote: |
+          衆議院の選挙制度改革については、自由民主党から、国会のもとに、客観的な議論を行う、民間有識者による第三者機関を設けることを提案したところです。各党各会派にも御協力いただき、建設的な議論を進め、現在の膠着状況を打破し、決める政治によって、国民の負託にしっかりと応えてまいる所存です。
+        position: "第三者機関による議論の推進"
+        speaker: "安倍晋三君"
+        context: "議員定数削減に関する質問への回答の中で、選挙制度改革の進め方について言及。"
+      - id: "chunk_266"
+        source_doc_id: "2013-10-16_118505254X00220131016.txt"
+        source_filename: "2013-10-16_118505254X00220131016.txt"
+        source_date: "2013-10-16"
+        verbatim_quote: |
+          衆議院の選挙制度改革については、自由民主党から、国会のもとに、客観的な議論を行う、民間有識者による第三者機関を設けることを提案したところです。各党各会派にも御協力いただき、建設的な議論を進め、現在の膠着状況を打破し、決める政治によって、国民の負託にしっかりと応えてまいる所存です。
+        position: "第三者機関による議論の推進"
+        speaker: "安倍晋三君"
+        context: "議員定数削減に関する質問への回答の中で、選挙制度改革の進め方について言及。"
+      - id: "chunk_267"
+        source_doc_id: "2013-10-16_118505254X00220131016.txt"
+        source_filename: "2013-10-16_118505254X00220131016.txt"
+        source_date: "2013-10-16"
+        verbatim_quote: |
+          衆議院の選挙制度改革については、自由民主党から、国会のもとに、客観的な議論を行う、民間有識者による第三者機関を設けることを提案したところです。各党各会派にも御協力いただき、建設的な議論を進め、現在の膠着状況を打破し、決める政治によって、国民の負託にしっかりと応えてまいる所存です。
+        position: "第三者機関による議論の推進"
+        speaker: "安倍晋三君"
+        context: "議員定数削減に関する質問への回答の中で、選挙制度改革の進め方について言及。"
+      - id: "chunk_268"
+        source_doc_id: "2013-10-16_118505254X00220131016.txt"
+        source_filename: "2013-10-16_118505254X00220131016.txt"
+        source_date: "2013-10-16"
+        verbatim_quote: |
+          衆議院の選挙制度改革については、自由民主党から、国会のもとに、客観的な議論を行う、民間有識者による第三者機関を設けることを提案したところです。各党各会派にも御協力いただき、建設的な議論を進め、現在の膠着状況を打破し、決める政治によって、国民の負託にしっかりと応えてまいる所存です。
+        position: "第三者機関による議論の推進"
+        speaker: "安倍晋三君"
+        context: "議員定数削減に関する質問への回答の中で、選挙制度改革の進め方について言及。"
+      - id: "chunk_269"
+        source_doc_id: "2013-10-16_118505254X00220131016.txt"
+        source_filename: "2013-10-16_118505254X00220131016.txt"
+        source_date: "2013-10-16"
+        verbatim_quote: |
+          衆議院の選挙制度改革については、自由民主党から、国会のもとに、客観的な議論を行う、民間有識者による第三者機関を設けることを提案したところです。各党各会派にも御協力いただき、建設的な議論を進め、現在の膠着状況を打破し、決める政治によって、国民の負託にしっかりと応えてまいる所存です。
+        position: "第三者機関による議論の推進"
+        speaker: "安倍晋三君"
+        context: "議員定数削減に関する質問への回答の中で、選挙制度改革の進め方について言及。"
+      - id: "chunk_270"
+        source_doc_id: "2013-10-16_118505254X00220131016.txt"
+        source_filename: "2013-10-16_118505254X00220131016.txt"
+        source_date: "2013-10-16"
+        verbatim_quote: |
+          衆議院の選挙制度改革については、自由民主党から、国会のもとに、客観的な議論を行う、民間有識者による第三者機関を設けることを提案したところです。各党各会派にも御協力いただき、建設的な議論を進め、現在の膠着状況を打破し、決める政治によって、国民の負託にしっかりと応えてまいる所存です。
+        position: "第三者機関による議論の推進"
+        speaker: "安倍晋三君"
+        context: "議員定数削減に関する質問への回答の中で、選挙制度改革の進め方について言及。"
+      - id: "chunk_271"
+        source_doc_id: "2013-10-16_118505254X00220131016.txt"
+        source_filename: "2013-10-16_118505254X00220131016.txt"
+        source_date: "2013-10-16"
+        verbatim_quote: |
+          衆議院の選挙制度改革については、自由民主党から、国会のもとに、客観的な議論を行う、民間有識者による第三者機関を設けることを提案したところです。各党各会派にも御協力いただき、建設的な議論を進め、現在の膠着状況を打破し、決める政治によって、国民の負託にしっかりと応えてまいる所存です。
+        position: "第三者機関による議論の推進"
+        speaker: "安倍晋三君"
+        context: "議員定数削減に関する質問への回答の中で、選挙制度改革の進め方について言及。"
+      - id: "chunk_272"
+        source_doc_id: "2013-10-16_118505254X00220131016.txt"
+        source_filename: "2013-10-16_118505254X00220131016.txt"
+        source_date: "2013-10-16"
+        verbatim_quote: |
+          衆議院の選挙制度改革については、自由民主党から、国会のもとに、客観的な議論を行う、民間有識者による第三者機関を設けることを提案したところです。各党各会派にも御協力いただき、建設的な議論を進め、現在の膠着状況を打破し、決める政治によって、国民の負託にしっかりと応えてまいる所存です。
+        position: "第三者機関による議論の推進"
+        speaker: "安倍晋三君"
+        context: "議員定数削減に関する質問への回答の中で、選挙制度改革の進め方について言及。"
+      - id: "chunk_273"
+        source_doc_id: "2013-10-16_118505254X00220131016.txt"
+        source_filename: "2013-10-16_118505254X00220131016.txt"
+        source_date: "2013-10-16"
+        verbatim_quote: |
+          衆議院の選挙制度改革については、自由民主党から、国会のもとに、客観的な議論を行う、民間有識者による第三者機関を設けることを提案したところです。各党各会派にも御協力いただき、建設的な議論を進め、現在の膠着状況を打破し、決める政治によって、国民の負託にしっかりと応えてまいる所存です。
+        position: "第三者機関による議論の推進"
+        speaker: "安倍晋三君"
+        context: "議員定数削減に関する質問への回答の中で、選挙制度改革の進め方について言及。"
+      - id: "chunk_274"
+        source_doc_id: "2013-10-16_118505254X00220131016.txt"
+        source_filename: "2013-10-16_118505254X00220131016.txt"
+        source_date: "2013-10-16"
+        verbatim_quote: |
+          衆議院の選挙制度改革については、自由民主党から、国会のもとに、客観的な議論を行う、民間有識者による第三者機関を設けることを提案したところです。各党各会派にも御協力いただき、建設的な議論を進め、現在の膠着状況を打破し、決める政治によって、国民の負託にしっかりと応えてまいる所存です。
+        position: "第三者機関による議論の推進"
+        speaker: "安倍晋三君"
+        context: "議員定数削減に関する質問への回答の中で、選挙制度改革の進め方について言及。"
+      - id: "chunk_275"
+        source_doc_id: "2013-10-16_118505254X00220131016.txt"
+        source_filename: "2013-10-16_118505254X00220131016.txt"
+        source_date: "2013-10-16"
+        verbatim_quote: |
+          衆議院の選挙制度改革については、自由民主党から、国会のもとに、客観的な議論を行う、民間有識者による第三者機関を設けることを提案したところです。各党各会派にも御協力いただき、建設的な議論を進め、現在の膠着状況を打破し、決める政治によって、国民の負託にしっかりと応えてまいる所存です。
+        position: "第三者機関による議論の推進"
+        speaker: "安倍晋三君"
+        context: "議員定数削減に関する質問への回答の中で、選挙制度改革の進め方について言及。"
+      - id: "chunk_276"
+        source_doc_id: "2013-10-16_118505254X00220131016.txt"
+        source_filename: "2013-10-16_118505254X00220131016.txt"
+        source_date: "2013-10-16"
+        verbatim_quote: |
+          衆議院の選挙制度改革については、自由民主党から、国会のもとに、客観的な議論を行う、民間有識者による第三者機関を設けることを提案したところです。各党各会派にも御協力いただき、建設的な議論を進め、現在の膠着状況を打破し、決める政治によって、国民の負託にしっかりと応えてまいる所存です。
+        position: "第三者機関による議論の推進"
+        speaker: "安倍晋三君"
+        context: "議員定数削減に関する質問への回答の中で、選挙制度改革の進め方について言及。"
+      - id: "chunk_277"
+        source_doc_id: "2013-10-16_118505254X00220131016.txt"
+        source_filename: "2013-10-16_118505254X00220131016.txt"
+        source_date: "2013-10-16"
+        verbatim_quote: |
+          衆議院の選挙制度改革については、自由民主党から、国会のもとに、客観的な議論を行う、民間有識者による第三者機関を設けることを提案したところです。各党各会派にも御協力いただき、建設的な議論を進め、現在の膠着状況を打破し、決める政治によって、国民の負託にしっかりと応えてまいる所存です。
+        position: "第三者機関による議論の推進"
+        speaker: "安倍晋三君"
+        context: "議員定数削減に関する質問への回答の中で、選挙制度改革の進め方について言及。"
+      - id: "chunk_278"
+        source_doc_id: "2013-10-16_118505254X00220131016.txt"
+        source_filename: "2013-10-16_118505254X00220131016.txt"
+        source_date: "2013-10-16"
+        verbatim_quote: |
+          衆議院の選挙制度改革については、自由民主党から、国会のもとに、客観的な議論を行う、民間有識者による第三者機関を設けることを提案したところです。各党各会派にも御協力いただき、建設的な議論を進め、現在の膠着状況を打破し、決める政治によって、国民の負託にしっかりと応えてまいる所存です。
+        position: "第三者機関による議論の推進"
+        speaker: "安倍晋三君"
+        context: "議員定数削減に関する質問への回答の中で、選挙制度改革の進め方について言及。"
+      - id: "chunk_279"
+        source_doc_id: "2013-10-16_118505254X00220131016.txt"
+        source_filename: "2013-10-16_118505254X00220131016.txt"
+        source_date: "2013-10-16"
+        verbatim_quote: |
+          衆議院の選挙制度改革については、自由民主党から、国会のもとに、客観的な議論を行う、民間有識者による第三者機関を設けることを提案したところです。各党各会派にも御協力いただき、建設的な議論を進め、現在の膠着状況を打破し、決める政治によって、国民の負託にしっかりと応えてまいる所存です。
+        position: "第三者機関による議論の推進"
+        speaker: "安倍晋三君"
+        context: "議員定数削減に関する質問への回答の中で、選挙制度改革の進め方について言及。"
+      - id: "chunk_280"
+        source_doc_id: "2013-10-16_118505254X00220131016.txt"
+        source_filename: "2013-10-16_118505254X00220131016.txt"
+        source_date: "2013-10-16"
+        verbatim_quote: |
+          衆議院の選挙制度改革については、自由民主党から、国会のもとに、客観的な議論を行う、民間有識者による第三者機関を設けることを提案したところです。各党各会派にも御協力いただき、建設的な議論を進め、現在の膠着状況を打破し、決める政治によって、国民の負託にしっかりと応えてまいる所存です。
+        position: "第三者機関による議論の推進"
+        speaker: "安倍晋三君"
+        context: "議員定数削減に関する質問への回答の中で、選挙制度改革の進め方について言及。"
+      - id: "chunk_281"
+        source_doc_id: "2013-10-16_118505254X00220131016.txt"
+        source_filename: "2013-10-16_118505254X00220131016.txt"
+        source_date: "2013-10-16"
+        verbatim_quote: |
+          衆議院の選挙制度改革については、自由民主党から、国会のもとに、客観的な議論を行う、民間有識者による第三者機関を設けることを提案したところです。各党各会派にも御協力いただき、建設的な議論を進め、現在の膠着状況を打破し、決める政治によって、国民の負託にしっかりと応えてまいる所存です。
+        position: "第三者機関による議論の推進"
+        speaker: "安倍晋三君"
+        context: "議員定数削減に関する質問への回答の中で、選挙制度改革の進め方について言及。"
+      - id: "chunk_282"
+        source_doc_id: "2013-10-16_118505254X00220131016.txt"
+        source_filename: "2013-10-16_118505254X00220131016.txt"
+        source_date: "2013-10-16"
+        verbatim_quote: |
+          衆議院の選挙制度改革については、自由民主党から、国会のもとに、客観的な議論を行う、民間有識者による第三者機関を設けることを提案したところです。各党各会派にも御協力いただき、建設的な議論を進め、現在の膠着状況を打破し、決める政治によって、国民の負託にしっかりと応えてま
+
+---
+
+# 出典一覧
+
+## 国会会議録
+
+| ID | 資料名 | URL | 日付 |
+|----|--------|-----|------|
+| D001 | 衆議院 本会議 第第1号号 (第177回国会) | [会議録](https://kokkai.ndl.go.jp/txt/117705254X00120110124) | 2011-01-24 |
+| D002 | 参議院 本会議 第第1号号 (第177回国会) | [会議録](https://kokkai.ndl.go.jp/txt/117715254X00120110124) | 2011-01-24 |
+| D003 | 参議院 本会議 第第2号号 (第177回国会) | [会議録](https://kokkai.ndl.go.jp/txt/117715254X00220110127) | 2011-01-27 |
+| D004 | 参議院 本会議 第第3号号 (第177回国会) | [会議録](https://kokkai.ndl.go.jp/txt/117715254X00320110128) | 2011-01-28 |
+| D005 | 衆議院 予算委員会 第第2号号 (第177回国会) | [会議録](https://kokkai.ndl.go.jp/txt/117705261X00220110131) | 2011-01-31 |
+| D006 | 衆議院 予算委員会 第第3号号 (第177回国会) | [会議録](https://kokkai.ndl.go.jp/txt/117705261X00320110201) | 2011-02-01 |
+| D007 | 衆議院 予算委員会 第第5号号 (第177回国会) | [会議録](https://kokkai.ndl.go.jp/txt/117705261X00520110203) | 2011-02-03 |
+| D008 | 衆議院 予算委員会 第第8号号 (第177回国会) | [会議録](https://kokkai.ndl.go.jp/txt/117705261X00820110208) | 2011-02-08 |
+| D009 | 衆議院 総務委員会 第第11号号 (第177回国会) | [会議録](https://kokkai.ndl.go.jp/txt/117704601X01120110419) | 2011-04-19 |
+| D010 | 衆議院 総務委員会 第第14号号 (第177回国会) | [会議録](https://kokkai.ndl.go.jp/txt/117704601X01420110428) | 2011-04-28 |
+| D011 | 参議院 総務委員会 第第14号号 (第177回国会) | [会議録](https://kokkai.ndl.go.jp/txt/117714601X01420110519) | 2011-05-19 |
+| D012 | 参議院 財政金融委員会 第第21号号 (第177回国会) | [会議録](https://kokkai.ndl.go.jp/txt/117714370X02120110823) | 2011-08-23 |
+| D013 | 衆議院 東日本大震災復興特別委員会 第第3号号 (第178回国会) | [会議録](https://kokkai.ndl.go.jp/txt/117804858X00320111005) | 2011-10-05 |
+| D014 | 衆議院 本会議 第第5号号 (第179回国会) | [会議録](https://kokkai.ndl.go.jp/txt/117905254X00520111101) | 2011-11-01 |
+| D015 | 衆議院 予算委員会 第第2号号 (第179回国会) | [会議録](https://kokkai.ndl.go.jp/txt/117905261X00220111107) | 2011-11-07 |
+| D016 | 衆議院 財務金融委員会 第第5号号 (第179回国会) | [会議録](https://kokkai.ndl.go.jp/txt/117904376X00520111122) | 2011-11-22 |
+| D017 | 参議院 本会議 第第11号号 (第179回国会) | [会議録](https://kokkai.ndl.go.jp/txt/117915254X01120111207) | 2011-12-07 |
+| D018 | 衆議院 本会議 第第2号号 (第180回国会) | [会議録](https://kokkai.ndl.go.jp/txt/118005254X00220120126) | 2012-01-26 |
+| D019 | 衆議院 本会議 第第3号号 (第180回国会) | [会議録](https://kokkai.ndl.go.jp/txt/118005254X00320120127) | 2012-01-27 |
+| D020 | 参議院 本会議 第第2号号 (第180回国会) | [会議録](https://kokkai.ndl.go.jp/txt/118015254X00220120127) | 2012-01-27 |
+| D021 | 参議院 本会議 第第3号号 (第180回国会) | [会議録](https://kokkai.ndl.go.jp/txt/118015254X00320120130) | 2012-01-30 |
+| D022 | 衆議院 予算委員会 第第3号号 (第180回国会) | [会議録](https://kokkai.ndl.go.jp/txt/118005261X00320120201) | 2012-02-01 |
+| D023 | 参議院 本会議 第第4号号 (第180回国会) | [会議録](https://kokkai.ndl.go.jp/txt/118015254X00420120208) | 2012-02-08 |
+| D024 | 衆議院 予算委員会 第第6号号 (第180回国会) | [会議録](https://kokkai.ndl.go.jp/txt/118005261X00620120209) | 2012-02-09 |
+| D025 | 衆議院 本会議 第第5号号 (第180回国会) | [会議録](https://kokkai.ndl.go.jp/txt/118005254X00520120221) | 2012-02-21 |
+| D026 | 衆議院 予算委員会 第第14号号 (第180回国会) | [会議録](https://kokkai.ndl.go.jp/txt/118005261X01420120222) | 2012-02-22 |
+| D027 | 衆議院 議院運営委員会 第第6号号 (第180回国会) | [会議録](https://kokkai.ndl.go.jp/txt/118004024X00620120223) | 2012-02-23 |
+| D028 | 衆議院 予算委員会 第第15号号 (第180回国会) | [会議録](https://kokkai.ndl.go.jp/txt/118005261X01520120223) | 2012-02-23 |
+| D029 | 衆議院 予算委員会 第第16号号 (第180回国会) | [会議録](https://kokkai.ndl.go.jp/txt/118005261X01620120227) | 2012-02-27 |
+| D030 | 両院 国家基本政策委員会合同審査会 第第1号号 (第180回国会) | [会議録](https://kokkai.ndl.go.jp/txt/118024293X00120120229) | 2012-02-29 |
+| D031 | 衆議院 予算委員会第一分科会 第第1号号 (第180回国会) | [会議録](https://kokkai.ndl.go.jp/txt/118005266X00120120305) | 2012-03-05 |
+| D032 | 衆議院 予算委員会 第第20号号 (第180回国会) | [会議録](https://kokkai.ndl.go.jp/txt/118005261X02020120306) | 2012-03-06 |
+| D033 | 衆議院 予算委員会 第第22号号 (第180回国会) | [会議録](https://kokkai.ndl.go.jp/txt/118005261X02220120308) | 2012-03-08 |
+| D034 | 参議院 内閣委員会 第第2号号 (第180回国会) | [会議録](https://kokkai.ndl.go.jp/txt/118014889X00220120322) | 2012-03-22 |
+| D035 | 参議院 本会議 第第11号号 (第180回国会) | [会議録](https://kokkai.ndl.go.jp/txt/118015254X01120120405) | 2012-04-05 |
+| D036 | 衆議院 本会議 第第20号号 (第180回国会) | [会議録](https://kokkai.ndl.go.jp/txt/118005254X02020120511) | 2012-05-11 |
+| D037 | 衆議院 社会保障と税の一体改革に関する特別委員会 第第3号号 (第180回国会) | [会議録](https://kokkai.ndl.go.jp/txt/118004401X00320120517) | 2012-05-17 |
+| D038 | 衆議院 政治倫理の確立及び公職選挙法改正に関する特別委員会 第第3号号 (第180回国会) | [会議録](https://kokkai.ndl.go.jp/txt/118004577X00320120523) | 2012-05-23 |
+| D039 | 衆議院 社会保障と税の一体改革に関する特別委員会 第第12号号 (第180回国会) | [会議録](https://kokkai.ndl.go.jp/txt/118004401X01220120531) | 2012-05-31 |
+| D040 | 衆議院 社会保障と税の一体改革に関する特別委員会 第第13号号 (第180回国会) | [会議録](https://kokkai.ndl.go.jp/txt/118004401X01320120601) | 2012-06-01 |
+| D041 | 衆議院 本会議 第第23号号 (第180回国会) | [会議録](https://kokkai.ndl.go.jp/txt/118005254X02320120601) | 2012-06-01 |
+| D042 | 衆議院 社会保障と税の一体改革に関する特別委員会 第第14号号 (第180回国会) | [会議録](https://kokkai.ndl.go.jp/txt/118004401X01420120605) | 2012-06-05 |
+| D043 | 衆議院 社会保障と税の一体改革に関する特別委員会 第第18号号 (第180回国会) | [会議録](https://kokkai.ndl.go.jp/txt/118004401X01820120611) | 2012-06-11 |
+| D044 | 衆議院 社会保障と税の一体改革に関する特別委員会公聴会 第第2号号 (第180回国会) | [会議録](https://kokkai.ndl.go.jp/txt/118004402X00220120613) | 2012-06-13 |
+| D045 | 衆議院 社会保障と税の一体改革に関する特別委員会 第第21号号 (第180回国会) | [会議録](https://kokkai.ndl.go.jp/txt/118004401X02120120625) | 2012-06-25 |
+| D046 | 衆議院 社会保障と税の一体改革に関する特別委員会 第第22号号 (第180回国会) | [会議録](https://kokkai.ndl.go.jp/txt/118004401X02220120626) | 2012-06-26 |
+| D047 | 衆議院 予算委員会 第第26号号 (第180回国会) | [会議録](https://kokkai.ndl.go.jp/txt/118005261X02620120709) | 2012-07-09 |
+| D048 | 参議院 本会議 第第19号号 (第180回国会) | [会議録](https://kokkai.ndl.go.jp/txt/118015254X01920120711) | 2012-07-11 |
+| D049 | 衆議院 予算委員会 第第27号号 (第180回国会) | [会議録](https://kokkai.ndl.go.jp/txt/118005261X02720120712) | 2012-07-12 |
+| D050 | 参議院 本会議 第第20号号 (第180回国会) | [会議録](https://kokkai.ndl.go.jp/txt/118015254X02020120713) | 2012-07-13 |
+| D051 | 参議院 社会保障と税の一体改革に関する特別委員会 第第7号号 (第180回国会) | [会議録](https://kokkai.ndl.go.jp/txt/118014401X00720120725) | 2012-07-25 |
+| D052 | 衆議院 憲法審査会 第第8号号 (第180回国会) | [会議録](https://kokkai.ndl.go.jp/txt/118004183X00820120802) | 2012-08-02 |
+| D053 | 衆議院 本会議 第第33号号 (第180回国会) | [会議録](https://kokkai.ndl.go.jp/txt/118005254X03320120809) | 2012-08-09 |
+| D054 | 衆議院 政治倫理の確立及び公職選挙法改正に関する特別委員会 第第6号号 (第180回国会) | [会議録](https://kokkai.ndl.go.jp/txt/118004577X00620120823) | 2012-08-23 |
+| D055 | 衆議院 政治倫理の確立及び公職選挙法改正に関する特別委員会 第第8号号 (第180回国会) | [会議録](https://kokkai.ndl.go.jp/txt/118004577X00820120827) | 2012-08-27 |
+| D056 | 衆議院 議院運営委員会 第第37号号 (第180回国会) | [会議録](https://kokkai.ndl.go.jp/txt/118004024X03720120828) | 2012-08-28 |
+| D057 | 衆議院 本会議 第第36号号 (第180回国会) | [会議録](https://kokkai.ndl.go.jp/txt/118005254X03620120828) | 2012-08-28 |
+| D058 | 参議院 政治倫理の確立及び選挙制度に関する特別委員会 第第2号号 (第180回国会) | [会議録](https://kokkai.ndl.go.jp/txt/118014578X00220120905) | 2012-09-05 |
+| D059 | 衆議院 政治倫理の確立及び公職選挙法改正に関する特別委員会 第第9号号 (第180回国会) | [会議録](https://kokkai.ndl.go.jp/txt/118004577X00920120907) | 2012-09-07 |
+| D060 | 参議院 本会議 第第26号号 (第180回国会) | [会議録](https://kokkai.ndl.go.jp/txt/118015254X02620120907) | 2012-09-07 |
+| D061 | 衆議院 本会議 第第3号号 (第181回国会) | [会議録](https://kokkai.ndl.go.jp/txt/118105254X00320121101) | 2012-11-01 |
+| D062 | 衆議院 政治倫理の確立及び公職選挙法改正に関する特別委員会 第第2号号 (第181回国会) | [会議録](https://kokkai.ndl.go.jp/txt/118104577X00220121115) | 2012-11-15 |
+| D063 | 参議院 政治倫理の確立及び選挙制度に関する特別委員会 第第2号号 (第181回国会) | [会議録](https://kokkai.ndl.go.jp/txt/118114578X00220121115) | 2012-11-15 |
+| D064 | 衆議院 本会議 第第2号号 (第183回国会) | [会議録](https://kokkai.ndl.go.jp/txt/118305254X00220130130) | 2013-01-30 |
+| D065 | 衆議院 予算委員会 第第2号号 (第183回国会) | [会議録](https://kokkai.ndl.go.jp/txt/118305261X00220130207) | 2013-02-07 |
+| D066 | 衆議院 予算委員会 第第4号号 (第183回国会) | [会議録](https://kokkai.ndl.go.jp/txt/118305261X00420130212) | 2013-02-12 |
+| D067 | 衆議院 本会議 第第8号号 (第183回国会) | [会議録](https://kokkai.ndl.go.jp/txt/118305254X00820130228) | 2013-02-28 |
+| D068 | 参議院 本会議 第第8号号 (第183回国会) | [会議録](https://kokkai.ndl.go.jp/txt/118315254X00820130228) | 2013-02-28 |
+| D069 | 衆議院 本会議 第第9号号 (第183回国会) | [会議録](https://kokkai.ndl.go.jp/txt/118305254X00920130304) | 2013-03-04 |
+| D070 | 衆議院 財務金融委員会 第第3号号 (第183回国会) | [会議録](https://kokkai.ndl.go.jp/txt/118304376X00320130319) | 2013-03-19 |
+| D071 | 衆議院 予算委員会 第第21号号 (第183回国会) | [会議録](https://kokkai.ndl.go.jp/txt/118305261X02120130409) | 2013-04-09 |
+| D072 | 衆議院 予算委員会第二分科会 第第2号号 (第183回国会) | [会議録](https://kokkai.ndl.go.jp/txt/118305272X00220130415) | 2013-04-15 |
+| D073 | 衆議院 政治倫理の確立及び公職選挙法改正に関する特別委員会 第第9号号 (第183回国会) | [会議録](https://kokkai.ndl.go.jp/txt/118304577X00920130418) | 2013-04-18 |
+| D074 | 衆議院 政治倫理の確立及び公職選挙法改正に関する特別委員会 第第10号号 (第183回国会) | [会議録](https://kokkai.ndl.go.jp/txt/118304577X01020130419) | 2013-04-19 |
+| D075 | 衆議院 財務金融委員会 第第7号号 (第183回国会) | [会議録](https://kokkai.ndl.go.jp/txt/118304376X00720130424) | 2013-04-24 |
+| D076 | 参議院 本会議 第第19号号 (第183回国会) | [会議録](https://kokkai.ndl.go.jp/txt/118315254X01920130515) | 2013-05-15 |
+| D077 | 衆議院 決算行政監視委員会第一分科会 第第1号号 (第183回国会) | [会議録](https://kokkai.ndl.go.jp/txt/118304129X00120130621) | 2013-06-21 |
+| D078 | 衆議院 本会議 第第35号号 (第183回国会) | [会議録](https://kokkai.ndl.go.jp/txt/118305254X03520130624) | 2013-06-24 |
+| D079 | 衆議院 本会議 第第2号号 (第185回国会) | [会議録](https://kokkai.ndl.go.jp/txt/118505254X00220131016) | 2013-10-16 |
+| D080 | 衆議院 本会議 第第3号号 (第185回国会) | [会議録](https://kokkai.ndl.go.jp/txt/118505254X00320131017) | 2013-10-17 |
+| D081 | 衆議院 予算委員会 第第3号号 (第185回国会) | [会議録](https://kokkai.ndl.go.jp/txt/118505261X00320131022) | 2013-10-22 |
+| D082 | 衆議院 厚生労働委員会 第第3号号 (第185回国会) | [会議録](https://kokkai.ndl.go.jp/txt/118504260X00320131106) | 2013-11-06 |
+| D083 | 衆議院 政治倫理の確立及び公職選挙法改正に関する特別委員会 第第3号号 (第185回国会) | [会議録](https://kokkai.ndl.go.jp/txt/118504577X00320131114) | 2013-11-14 |
+| D084 | 衆議院 厚生労働委員会 第第7号号 (第185回国会) | [会議録](https://kokkai.ndl.go.jp/txt/118504260X00720131115) | 2013-11-15 |
+| D085 | 衆議院 本会議 第第11号号 (第185回国会) | [会議録](https://kokkai.ndl.go.jp/txt/118505254X01120131119) | 2013-11-19 |
+| D086 | 参議院 政治倫理の確立及び選挙制度に関する特別委員会 第第3号号 (第185回国会) | [会議録](https://kokkai.ndl.go.jp/txt/118514578X00320131127) | 2013-11-27 |
+| D087 | 参議院 本会議 第第11号号 (第185回国会) | [会議録](https://kokkai.ndl.go.jp/txt/118515254X01120131204) | 2013-12-04 |
+| D088 | 衆議院 本会議 第第17号号 (第185回国会) | [会議録](https://kokkai.ndl.go.jp/txt/118505254X01720131206) | 2013-12-06 |
+| D089 | 衆議院 本会議 第第2号号 (第186回国会) | [会議録](https://kokkai.ndl.go.jp/txt/118605254X00220140128) | 2014-01-28 |
+| D090 | 衆議院 本会議 第第3号号 (第186回国会) | [会議録](https://kokkai.ndl.go.jp/txt/118605254X00320140129) | 2014-01-29 |
+| D091 | 参議院 本会議 第第3号号 (第186回国会) | [会議録](https://kokkai.ndl.go.jp/txt/118615254X00320140130) | 2014-01-30 |
+| D092 | 参議院 予算委員会 第第3号号 (第186回国会) | [会議録](https://kokkai.ndl.go.jp/txt/118615261X00320140206) | 2014-02-06 |
+| D093 | 参議院 憲法審査会 第第1号号 (第186回国会) | [会議録](https://kokkai.ndl.go.jp/txt/118614183X00120140226) | 2014-02-26 |
+| D094 | 衆議院 本会議 第第7号号 (第186回国会) | [会議録](https://kokkai.ndl.go.jp/txt/118605254X00720140228) | 2014-02-28 |
+| D095 | 参議院 予算委員会 第第6号号 (第186回国会) | [会議録](https://kokkai.ndl.go.jp/txt/118615261X00620140304) | 2014-03-04 |
+| D096 | 参議院 本会議 第第8号号 (第186回国会) | [会議録](https://kokkai.ndl.go.jp/txt/118615254X00820140312) | 2014-03-12 |
+| D097 | 参議院 予算委員会 第第13号号 (第186回国会) | [会議録](https://kokkai.ndl.go.jp/txt/118615261X01320140314) | 2014-03-14 |
+| D098 | 参議院 本会議 第第9号号 (第186回国会) | [会議録](https://kokkai.ndl.go.jp/txt/118615254X00920140320) | 2014-03-20 |
+| D099 | 参議院 予算委員会 第第15号号 (第186回国会) | [会議録](https://kokkai.ndl.go.jp/txt/118615261X01520140320) | 2014-03-20 |
+| D100 | 参議院 総務委員会 第第11号号 (第186回国会) | [会議録](https://kokkai.ndl.go.jp/txt/118614601X01120140328) | 2014-03-28 |
+| D101 | 衆議院 決算行政監視委員会 第第3号号 (第186回国会) | [会議録](https://kokkai.ndl.go.jp/txt/118604127X00320140616) | 2014-06-16 |
+| D102 | 衆議院 議院運営委員会 第第35号号 (第186回国会) | [会議録](https://kokkai.ndl.go.jp/txt/118604024X03520140619) | 2014-06-19 |
+| D103 | 衆議院 本会議 第第2号号 (第187回国会) | [会議録](https://kokkai.ndl.go.jp/txt/118705254X00220140930) | 2014-09-30 |
+| D104 | 参議院 予算委員会 第第1号号 (第187回国会) | [会議録](https://kokkai.ndl.go.jp/txt/118715261X00120141007) | 2014-10-07 |
+| D105 | 衆議院 経済産業委員会 第第2号号 (第187回国会) | [会議録](https://kokkai.ndl.go.jp/txt/118704080X00220141017) | 2014-10-17 |
+| D106 | 衆議院 予算委員会 第第4号号 (第187回国会) | [会議録](https://kokkai.ndl.go.jp/txt/118705261X00420141030) | 2014-10-30 |
+| D107 | 衆議院 地方創生に関する特別委員会 第第8号号 (第187回国会) | [会議録](https://kokkai.ndl.go.jp/txt/118704773X00820141105) | 2014-11-05 |
+| D108 | 参議院 総務委員会 第第3号号 (第187回国会) | [会議録](https://kokkai.ndl.go.jp/txt/118714601X00320141113) | 2014-11-13 |
+| D109 | 衆議院 本会議 第第2号号 (第189回国会) | [会議録](https://kokkai.ndl.go.jp/txt/118905254X00220150127) | 2015-01-27 |
+| D110 | 衆議院 本会議 第第3号号 (第189回国会) | [会議録](https://kokkai.ndl.go.jp/txt/118905254X00320150130) | 2015-01-30 |
+| D111 | 衆議院 予算委員会 第第3号号 (第189回国会) | [会議録](https://kokkai.ndl.go.jp/txt/118905261X00320150130) | 2015-01-30 |
+| D112 | 参議院 予算委員会 第第3号号 (第189回国会) | [会議録](https://kokkai.ndl.go.jp/txt/118915261X00320150203) | 2015-02-03 |
+| D113 | 衆議院 本会議 第第9号号 (第189回国会) | [会議録](https://kokkai.ndl.go.jp/txt/118905254X00920150226) | 2015-02-26 |
+| D114 | 衆議院 財務金融委員会 第第2号号 (第189回国会) | [会議録](https://kokkai.ndl.go.jp/txt/118904376X00220150304) | 2015-03-04 |
+| D115 | 衆議院 予算委員会 第第14号号 (第189回国会) | [会議録](https://kokkai.ndl.go.jp/txt/118905261X01420150305) | 2015-03-05 |
+| D116 | 衆議院 財務金融委員会 第第4号号 (第189回国会) | [会議録](https://kokkai.ndl.go.jp/txt/118904376X00420150311) | 2015-03-11 |
+| D117 | 衆議院 総務委員会 第第5号号 (第189回国会) | [会議録](https://kokkai.ndl.go.jp/txt/118904601X00520150312) | 2015-03-12 |
+| D118 | 衆議院 財務金融委員会 第第5号号 (第189回国会) | [会議録](https://kokkai.ndl.go.jp/txt/118904376X00520150313) | 2015-03-13 |
+| D119 | 衆議院 本会議 第第10号号 (第189回国会) | [会議録](https://kokkai.ndl.go.jp/txt/118905254X01020150313) | 2015-03-13 |
+| D120 | 参議院 予算委員会 第第8号号 (第189回国会) | [会議録](https://kokkai.ndl.go.jp/txt/118915261X00820150318) | 2015-03-18 |
+| D121 | 衆議院 総務委員会 第第10号号 (第189回国会) | [会議録](https://kokkai.ndl.go.jp/txt/118904601X01020150325) | 2015-03-25 |
+| D122 | 参議院 財政金融委員会 第第6号号 (第189回国会) | [会議録](https://kokkai.ndl.go.jp/txt/118914370X00620150331) | 2015-03-31 |
+| D123 | 参議院 本会議 第第11号号 (第189回国会) | [会議録](https://kokkai.ndl.go.jp/txt/118915254X01120150331) | 2015-03-31 |
+| D124 | 参議院 本会議 第第12号号 (第189回国会) | [会議録](https://kokkai.ndl.go.jp/txt/118915254X01220150409) | 2015-04-09 |
+| D125 | 参議院 本会議 第第33号号 (第189回国会) | [会議録](https://kokkai.ndl.go.jp/txt/118915254X03320150724) | 2015-07-24 |
+| D126 | 衆議院 本会議 第第2号号 (第190回国会) | [会議録](https://kokkai.ndl.go.jp/txt/119005254X00220160106) | 2016-01-06 |
+| D127 | 参議院 本会議 第第2号号 (第190回国会) | [会議録](https://kokkai.ndl.go.jp/txt/119015254X00220160107) | 2016-01-07 |
+| D128 | 衆議院 予算委員会 第第3号号 (第190回国会) | [会議録](https://kokkai.ndl.go.jp/txt/119005261X00320160112) | 2016-01-12 |
+| D129 | 衆議院 安全保障委員会 第第1号号 (第190回国会) | [会議録](https://kokkai.ndl.go.jp/txt/119003815X00120160113) | 2016-01-13 |
+| D130 | 衆議院 本会議 第第8号号 (第190回国会) | [会議録](https://kokkai.ndl.go.jp/txt/119005254X00820160127) | 2016-01-27 |
+| D131 | 衆議院 予算委員会 第第7号号 (第190回国会) | [会議録](https://kokkai.ndl.go.jp/txt/119005261X00720160204) | 2016-02-04 |
+| D132 | 衆議院 予算委員会 第第12号号 (第190回国会) | [会議録](https://kokkai.ndl.go.jp/txt/119005261X01220160215) | 2016-02-15 |
+| D133 | 衆議院 本会議 第第11号号 (第190回国会) | [会議録](https://kokkai.ndl.go.jp/txt/119005254X01120160216) | 2016-02-16 |
+| D134 | 衆議院 予算委員会 第第14号号 (第190回国会) | [会議録](https://kokkai.ndl.go.jp/txt/119005261X01420160218) | 2016-02-18 |
+| D135 | 衆議院 予算委員会 第第15号号 (第190回国会) | [会議録](https://kokkai.ndl.go.jp/txt/119005261X01520160219) | 2016-02-19 |
+| D136 | 衆議院 財務金融委員会 第第5号号 (第190回国会) | [会議録](https://kokkai.ndl.go.jp/txt/119004376X00520160223) | 2016-02-23 |
+| D137 | 参議院 国の統治機構に関する調査会 第第3号号 (第190回国会) | [会議録](https://kokkai.ndl.go.jp/txt/119014290X00320160224) | 2016-02-24 |
+| D138 | 衆議院 予算委員会 第第17号号 (第190回国会) | [会議録](https://kokkai.ndl.go.jp/txt/119005261X01720160229) | 2016-02-29 |
+| D139 | 衆議院 本会議 第第13号号 (第190回国会) | [会議録](https://kokkai.ndl.go.jp/txt/119005254X01320160301) | 2016-03-01 |
+| D140 | 衆議院 予算委員会 第第18号号 (第190回国会) | [会議録](https://kokkai.ndl.go.jp/txt/119005261X01820160301) | 2016-03-01 |
+| D141 | 衆議院 政治倫理の確立及び公職選挙法改正に関する特別委員会 第第3号号 (第190回国会) | [会議録](https://kokkai.ndl.go.jp/txt/119004577X00320160318) | 2016-03-18 |
+| D142 | 衆議院 政治倫理の確立及び公職選挙法改正に関する特別委員会 第第4号号 (第190回国会) | [会議録](https://kokkai.ndl.go.jp/txt/119004577X00420160323) | 2016-03-23 |
+| D143 | 参議院 予算委員会 第第18号号 (第190回国会) | [会議録](https://kokkai.ndl.go.jp/txt/119015261X01820160325) | 2016-03-25 |
+| D144 | 参議院 予算委員会 第第20号号 (第190回国会) | [会議録](https://kokkai.ndl.go.jp/txt/119015261X02020160329) | 2016-03-29 |
+| D145 | 衆議院 本会議 第第27号号 (第190回国会) | [会議録](https://kokkai.ndl.go.jp/txt/119005254X02720160422) | 2016-04-22 |
+| D146 | 衆議院 政治倫理の確立及び公職選挙法改正に関する特別委員会 第第7号号 (第190回国会) | [会議録](https://kokkai.ndl.go.jp/txt/119004577X00720160425) | 2016-04-25 |
+| D147 | 衆議院 政治倫理の確立及び公職選挙法改正に関する特別委員会 第第8号号 (第190回国会) | [会議録](https://kokkai.ndl.go.jp/txt/119004577X00820160426) | 2016-04-26 |
+| D148 | 衆議院 政治倫理の確立及び公職選挙法改正に関する特別委員会 第第9号号 (第190回国会) | [会議録](https://kokkai.ndl.go.jp/txt/119004577X00920160427) | 2016-04-27 |
+| D149 | 衆議院 本会議 第第29号号 (第190回国会) | [会議録](https://kokkai.ndl.go.jp/txt/119005254X02920160428) | 2016-04-28 |
+| D150 | 参議院 政治倫理の確立及び選挙制度に関する特別委員会 第第4号号 (第190回国会) | [会議録](https://kokkai.ndl.go.jp/txt/119014578X00420160518) | 2016-05-18 |
+| D151 | 衆議院 総務委員会 第第17号号 (第190回国会) | [会議録](https://kokkai.ndl.go.jp/txt/119004601X01720160524) | 2016-05-24 |
+| D152 | 衆議院 本会議 第第2号号 (第192回国会) | [会議録](https://kokkai.ndl.go.jp/txt/119205254X00220160927) | 2016-09-27 |
+| D153 | 衆議院 予算委員会 第第4号号 (第192回国会) | [会議録](https://kokkai.ndl.go.jp/txt/119205261X00420161004) | 2016-10-04 |
+| D154 | 参議院 本会議 第第4号号 (第192回国会) | [会議録](https://kokkai.ndl.go.jp/txt/119215254X00420161011) | 2016-10-11 |
+| D155 | 衆議院 本会議 第第5号号 (第192回国会) | [会議録](https://kokkai.ndl.go.jp/txt/119205254X00520161018) | 2016-10-18 |
+| D156 | 衆議院 財務金融委員会 第第6号号 (第192回国会) | [会議録](https://kokkai.ndl.go.jp/txt/119204376X00620161101) | 2016-11-01 |
+| D157 | 衆議院 総務委員会 第第5号号 (第192回国会) | [会議録](https://kokkai.ndl.go.jp/txt/119204601X00520161101) | 2016-11-01 |
+| D158 | 参議院 本会議 第第9号号 (第192回国会) | [会議録](https://kokkai.ndl.go.jp/txt/119215254X00920161109) | 2016-11-09 |
+| D159 | 参議院 財政金融委員会 第第4号号 (第192回国会) | [会議録](https://kokkai.ndl.go.jp/txt/119214370X00420161117) | 2016-11-17 |
+| D160 | 参議院 予算委員会 第第2号号 (第193回国会) | [会議録](https://kokkai.ndl.go.jp/txt/119315261X00220170131) | 2017-01-31 |
+| D161 | 衆議院 財務金融委員会 第第2号号 (第195回国会) | [会議録](https://kokkai.ndl.go.jp/txt/119504376X00220171201) | 2017-12-01 |
+| D162 | 衆議院 予算委員会 第第5号号 (第196回国会) | [会議録](https://kokkai.ndl.go.jp/txt/119605261X00520180205) | 2018-02-05 |
+| D163 | 衆議院 予算委員会第二分科会 第第1号号 (第196回国会) | [会議録](https://kokkai.ndl.go.jp/txt/119605272X00120180223) | 2018-02-23 |
+| D164 | 衆議院 財務金融委員会 第第5号号 (第196回国会) | [会議録](https://kokkai.ndl.go.jp/txt/119604376X00520180228) | 2018-02-28 |
+| D165 | 衆議院 政治倫理の確立及び公職選挙法改正に関する特別委員会 第第2号号 (第196回国会) | [会議録](https://kokkai.ndl.go.jp/txt/119604577X00220180404) | 2018-04-04 |
+| D166 | 参議院 政治倫理の確立及び選挙制度に関する特別委員会 第第2号号 (第196回国会) | [会議録](https://kokkai.ndl.go.jp/txt/119614578X00220180411) | 2018-04-11 |
+| D167 | 参議院 議院運営委員会 第第38号号 (第196回国会) | [会議録](https://kokkai.ndl.go.jp/txt/119614024X03820180705) | 2018-07-05 |
+| D168 | 参議院 政治倫理の確立及び選挙制度に関する特別委員会 第第5号号 (第196回国会) | [会議録](https://kokkai.ndl.go.jp/txt/119614578X00520180706) | 2018-07-06 |
+| D169 | 参議院 政治倫理の確立及び選挙制度に関する特別委員会 第第6号号 (第196回国会) | [会議録](https://kokkai.ndl.go.jp/txt/119614578X00620180709) | 2018-07-09 |
+| D170 | 参議院 政治倫理の確立及び選挙制度に関する特別委員会 第第8号号 (第196回国会) | [会議録](https://kokkai.ndl.go.jp/txt/119614578X00820180711) | 2018-07-11 |
+| D171 | 衆議院 本会議 第第43号号 (第196回国会) | [会議録](https://kokkai.ndl.go.jp/txt/119605254X04320180718) | 2018-07-18 |
+| D172 | 衆議院 本会議 第第45号号 (第196回国会) | [会議録](https://kokkai.ndl.go.jp/txt/119605254X04520180720) | 2018-07-20 |
+| D173 | 衆議院 本会議 第第3号号 (第197回国会) | [会議録](https://kokkai.ndl.go.jp/txt/119705254X00320181030) | 2018-10-30 |
+| D174 | 衆議院 予算委員会 第第3号号 (第197回国会) | [会議録](https://kokkai.ndl.go.jp/txt/119705261X00320181102) | 2018-11-02 |
+| D175 | 参議院 政治倫理の確立及び選挙制度に関する特別委員会 第第3号号 (第197回国会) | [会議録](https://kokkai.ndl.go.jp/txt/119714578X00320181205) | 2018-12-05 |
+| D176 | 参議院 議院運営委員会 第閉会後第1号号 (第197回国会) | [会議録](https://kokkai.ndl.go.jp/txt/119714024X00120190125) | 2019-01-25 |
+| D177 | 衆議院 本会議 第第2号号 (第198回国会) | [会議録](https://kokkai.ndl.go.jp/txt/119805254X00220190130) | 2019-01-30 |
+| D178 | 衆議院 本会議 第第3号号 (第198回国会) | [会議録](https://kokkai.ndl.go.jp/txt/119805254X00320190131) | 2019-01-31 |
+| D179 | 参議院 予算委員会 第第2号号 (第198回国会) | [会議録](https://kokkai.ndl.go.jp/txt/119815261X00220190207) | 2019-02-07 |
+| D180 | 衆議院 予算委員会 第第14号号 (第198回国会) | [会議録](https://kokkai.ndl.go.jp/txt/119805261X01420190228) | 2019-02-28 |
+| D181 | 参議院 議院運営委員会 第第23号号 (第198回国会) | [会議録](https://kokkai.ndl.go.jp/txt/119814024X02320190603) | 2019-06-03 |
+| D182 | 参議院 本会議 第第23号号 (第198回国会) | [会議録](https://kokkai.ndl.go.jp/txt/119815254X02320190605) | 2019-06-05 |
+| D183 | 衆議院 議院運営委員会 第第30号号 (第198回国会) | [会議録](https://kokkai.ndl.go.jp/txt/119804024X03020190617) | 2019-06-17 |
+| D184 | 衆議院 本会議 第第30号号 (第198回国会) | [会議録](https://kokkai.ndl.go.jp/txt/119805254X03020190618) | 2019-06-18 |
+| D185 | 参議院 本会議 第第3号号 (第200回国会) | [会議録](https://kokkai.ndl.go.jp/txt/120015254X00320191009) | 2019-10-09 |
+| D186 | 衆議院 憲法審査会 第第3号号 (第200回国会) | [会議録](https://kokkai.ndl.go.jp/txt/120004183X00320191114) | 2019-11-14 |
+| D187 | 参議院 議院運営委員会 第第4号号 (第200回国会) | [会議録](https://kokkai.ndl.go.jp/txt/120014024X00420191115) | 2019-11-15 |
+| D188 | 参議院 議院運営委員会 第閉会後第1号号 (第200回国会) | [会議録](https://kokkai.ndl.go.jp/txt/120014024X00120200117) | 2020-01-17 |
+| D189 | 衆議院 総務委員会 第第4号号 (第201回国会) | [会議録](https://kokkai.ndl.go.jp/txt/120104601X00420200218) | 2020-02-18 |
+| D190 | 参議院 東日本大震災復興特別委員会 第第4号号 (第201回国会) | [会議録](https://kokkai.ndl.go.jp/txt/120114858X00420200415) | 2020-04-15 |
+| D191 | 衆議院 予算委員会 第第10号号 (第204回国会) | [会議録](https://kokkai.ndl.go.jp/txt/120405261X01020210215) | 2021-02-15 |
+| D192 | 衆議院 財務金融委員会 第第6号号 (第204回国会) | [会議録](https://kokkai.ndl.go.jp/txt/120404376X00620210224) | 2021-02-24 |
+| D193 | 参議院 予算委員会 第第14号号 (第204回国会) | [会議録](https://kokkai.ndl.go.jp/txt/120415261X01420210319) | 2021-03-19 |
+| D194 | 参議院 議院運営委員会 第第26号号 (第204回国会) | [会議録](https://kokkai.ndl.go.jp/txt/120414024X02620210512) | 2021-05-12 |
+| D195 | 衆議院 本会議 第第3号号 (第210回国会) | [会議録](https://kokkai.ndl.go.jp/txt/121005254X00320221006) | 2022-10-06 |
+| D196 | 衆議院 政治倫理の確立及び公職選挙法改正に関する特別委員会 第第6号号 (第210回国会) | [会議録](https://kokkai.ndl.go.jp/txt/121004577X00620221108) | 2022-11-08 |
+| D197 | 衆議院 本会議 第第12号号 (第210回国会) | [会議録](https://kokkai.ndl.go.jp/txt/121005254X01220221129) | 2022-11-29 |
+| D198 | 衆議院 予算委員会 第第8号号 (第210回国会) | [会議録](https://kokkai.ndl.go.jp/txt/121005261X00820221129) | 2022-11-29 |
+| D199 | 参議院 本会議 第第9号号 (第210回国会) | [会議録](https://kokkai.ndl.go.jp/txt/121015254X00920221202) | 2022-12-02 |
+| D200 | 衆議院 本会議 第第3号号 (第211回国会) | [会議録](https://kokkai.ndl.go.jp/txt/121105254X00320230126) | 2023-01-26 |
+| D201 | 衆議院 予算委員会 第第8号号 (第211回国会) | [会議録](https://kokkai.ndl.go.jp/txt/121105261X00820230208) | 2023-02-08 |
+| D202 | 衆議院 予算委員会 第第11号号 (第211回国会) | [会議録](https://kokkai.ndl.go.jp/txt/121105261X01120230215) | 2023-02-15 |
+| D203 | 参議院 予算委員会 第第15号号 (第211回国会) | [会議録](https://kokkai.ndl.go.jp/txt/121115261X01520230327) | 2023-03-27 |
+| D204 | 参議院 予算委員会 第第16号号 (第211回国会) | [会議録](https://kokkai.ndl.go.jp/txt/121115261X01620230328) | 2023-03-28 |
+| D205 | 衆議院 本会議 第第16号号 (第211回国会) | [会議録](https://kokkai.ndl.go.jp/txt/121105254X01620230406) | 2023-04-06 |
+| D206 | 衆議院 総務委員会 第第10号号 (第211回国会) | [会議録](https://kokkai.ndl.go.jp/txt/121104601X01020230413) | 2023-04-13 |
+| D207 | 衆議院 財務金融委員会 第第14号号 (第211回国会) | [会議録](https://kokkai.ndl.go.jp/txt/121104376X01420230418) | 2023-04-18 |
+| D208 | 参議院 本会議 第第16号号 (第211回国会) | [会議録](https://kokkai.ndl.go.jp/txt/121115254X01620230419) | 2023-04-19 |
+| D209 | 衆議院 財務金融委員会 第第16号号 (第211回国会) | [会議録](https://kokkai.ndl.go.jp/txt/121104376X01620230425) | 2023-04-25 |
+| D210 | 衆議院 政治倫理の確立及び公職選挙法改正に関する特別委員会 第第2号号 (第211回国会) | [会議録](https://kokkai.ndl.go.jp/txt/121104577X00220230426) | 2023-04-26 |
+| D211 | 衆議院 本会議 第第23号号 (第211回国会) | [会議録](https://kokkai.ndl.go.jp/txt/121105254X02320230427) | 2023-04-27 |
+| D212 | 衆議院 本会議 第第27号号 (第211回国会) | [会議録](https://kokkai.ndl.go.jp/txt/121105254X02720230523) | 2023-05-23 |
+| D213 | 衆議院 決算行政監視委員会 第第5号号 (第211回国会) | [会議録](https://kokkai.ndl.go.jp/txt/121104127X00520230612) | 2023-06-12 |
+| D214 | 衆議院 地域活性化・こども政策・デジタル社会形成に関する特別委員会 第第15号号 (第211回国会) | [会議録](https://kokkai.ndl.go.jp/txt/121105367X01520230615) | 2023-06-15 |
+| D215 | 衆議院 本会議 第第4号号 (第212回国会) | [会議録](https://kokkai.ndl.go.jp/txt/121205254X00420231025) | 2023-10-25 |
+| D216 | 参議院 憲法審査会 第第1号号 (第212回国会) | [会議録](https://kokkai.ndl.go.jp/txt/121214183X00120231115) | 2023-11-15 |
+| D217 | 衆議院 予算委員会 第第8号号 (第212回国会) | [会議録](https://kokkai.ndl.go.jp/txt/121205261X00820231208) | 2023-12-08 |
+| D218 | 参議院 議院運営委員会 第閉会後第1号号 (第212回国会) | [会議録](https://kokkai.ndl.go.jp/txt/121214024X00120240125) | 2024-01-25 |
+| D219 | 衆議院 本会議 第第4号号 (第213回国会) | [会議録](https://kokkai.ndl.go.jp/txt/121305254X00420240201) | 2024-02-01 |
+| D220 | 衆議院 予算委員会 第第9号号 (第213回国会) | [会議録](https://kokkai.ndl.go.jp/txt/121305261X00920240214) | 2024-02-14 |
+| D221 | 衆議院 地域活性化・こども政策・デジタル社会形成に関する特別委員会 第第14号号 (第213回国会) | [会議録](https://kokkai.ndl.go.jp/txt/121305367X01420240423) | 2024-04-23 |
+| D222 | 衆議院 本会議 第第3号号 (第214回国会) | [会議録](https://kokkai.ndl.go.jp/txt/121405254X00320241007) | 2024-10-07 |
+| D223 | 衆議院 内閣委員会 第第3号号 (第216回国会) | [会議録](https://kokkai.ndl.go.jp/txt/121604889X00320241212) | 2024-12-12 |
+| D224 | 参議院 議院運営委員会 第閉会後第1号号 (第216回国会) | [会議録](https://kokkai.ndl.go.jp/txt/121614024X00120250123) | 2025-01-23 |
+| D225 | 衆議院 本会議 第第2号号 (第217回国会) | [会議録](https://kokkai.ndl.go.jp/txt/121705254X00220250127) | 2025-01-27 |
+| D226 | 衆議院 予算委員会 第第16号号 (第217回国会) | [会議録](https://kokkai.ndl.go.jp/txt/121705261X01620250226) | 2025-02-26 |
+| D227 | 衆議院 予算委員会第四分科会 第第1号号 (第217回国会) | [会議録](https://kokkai.ndl.go.jp/txt/121705270X00120250227) | 2025-02-27 |
+| D228 | 衆議院 本会議 第第3号号 (第219回国会) | [会議録](https://kokkai.ndl.go.jp/txt/121905254X00320251104) | 2025-11-04 |
+| D229 | 参議院 本会議 第第4号号 (第219回国会) | [会議録](https://kokkai.ndl.go.jp/txt/121915254X00420251106) | 2025-11-06 |
+| D230 | 衆議院 予算委員会 第第2号号 (第219回国会) | [会議録](https://kokkai.ndl.go.jp/txt/121905261X00220251107) | 2025-11-07 |
+
+
+---
+
+# 処理メタデータ
+
+**分析フォーカス**: 議員定数削減
+
+## データソース
+
+| 種別 | パス | 件数 |
+|------|------|------|
+| 審議会資料 | `each_project\teisuu\diet_meetings_議員定数削減_OR_議員定数の削減_2011_2025_20251213_083638` | 230 ファイル |
+
+## 処理パイプライン: 事前仮説生成 (pre_hypothesis_iterative)
+
+### Part 1 (Map)
+- **フェーズ**: 論点抽出
+- **入力**: 230 → **出力**: 230
+- **モデル**: `gemini:gemini-flash-lite-latest`
+- **詳細**: 並列10ワーカー
+
+### Part 2 (Tree Reduce)
+- **フェーズ**: Q&A統合
+- **入力**: 1 → **出力**: 1
+- **モデル**: `gemini:gemini-flash-lite-latest`
+- **詳細**: 0レベル並列
+
+
+*生成日時: 2025-12-16 09:03:57*
+
+
+---
+# 実験メタ情報
+- 実行日時: 2025-12-16 09:03:57
+- モード: pre_hypothesis_iterative (2段階自動実行)
+- モデル: gemini:gemini-flash-lite-latest
+- 温度: 0.0
+- max_output_tokens: 64000
+- top_p: 0.95
+- top_k: 40
+- セッション数: 230
+---

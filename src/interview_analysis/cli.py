@@ -18,7 +18,7 @@ from .pipeline import (
     run_merge,
     run_update,
 )
-from .citation import CitationRegistry, expand_citations_to_links
+from .citation import CitationRegistry, expand_citations_to_links, finalize_report_citations
 
 
 def load_meta(path: Path) -> Dict[str, Any]:
@@ -67,6 +67,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--max-map-batches", type=int, default=None, help="pubcom_analysis Map フェーズで1回の実行で処理する最大バッチ数（API クォータ管理用）")
     parser.add_argument("--pubcom-report", type=Path, default=None, help="pubcom_compare用: 集約済みパブコメレポートのパス")
     parser.add_argument("--prior-hypothesis", type=Path, default=None, help="pubcom_compare用: 事前仮説レポートのパス（--previous-reportと同義）")
+    parser.add_argument("--merged-hypothesis", type=Path, default=None, help="引用ID解決用の統合仮説ファイル（オプション）")
 
     return parser.parse_args()
 
@@ -87,6 +88,32 @@ def main() -> None:
 
     meta = load_meta(args.meta)
     prompt_dir: Path = args.prompt_dir
+
+    # 実行IDとディレクトリを先に作成（TokenTrackerのため）
+    run_dir = create_run_dir(args.log_dir)
+    print(f"Run directory created: {run_dir}")
+
+    # TokenTracker 初期化
+    from .token_tracker import TokenTracker
+    TokenTracker.initialize(run_dir / "token_usage.jsonl")
+
+    # Config保存（実行前に行う）
+    save_json(
+        run_dir / "config.json",
+        {
+            "mode": cfg.mode,
+            "model": cfg.model,
+            "temperature": cfg.temperature,
+            "max_output_tokens": cfg.max_output_tokens,
+            "output_length_guidance": cfg.output_length_guidance,
+            "csv": str(args.csv) if args.csv else None,
+            "source_dir": str(args.source_dir) if args.source_dir else None,
+            "meta": str(args.meta),
+            "previous_report": str(args.previous_report) if args.previous_report else None,
+            "part1_report": str(args.part1_report) if args.part1_report else None,
+            "batch_reports": [str(p) for p in args.batch_reports] if args.batch_reports else [],
+        },
+    )
 
     if cfg.mode == "hypothesis":
         if not args.csv:
@@ -159,26 +186,7 @@ def main() -> None:
     else:
         raise ValueError(f"Unknown mode: {cfg.mode}")
 
-    run_dir = create_run_dir(args.log_dir)
-
-    # 保存
-    save_json(
-        run_dir / "config.json",
-        {
-            "mode": cfg.mode,
-            "model": cfg.model,
-            "temperature": cfg.temperature,
-            "max_output_tokens": cfg.max_output_tokens,
-            "output_length_guidance": cfg.output_length_guidance,
-            "csv": str(args.csv) if args.csv else None,
-            "source_dir": str(args.source_dir) if args.source_dir else None,
-            "meta": str(args.meta),
-            "previous_report": str(args.previous_report) if args.previous_report else None,
-            "part1_report": str(args.part1_report) if args.part1_report else None,
-            "batch_reports": [str(p) for p in args.batch_reports] if args.batch_reports else [],
-        },
-    )
-
+    # 結果保存
     save_text(run_dir / "prompts" / "used_prompt.txt", result["prompt"])
     save_text(run_dir / "outputs" / "report.md", result["report"])
     if "part1_log" in result:
@@ -194,8 +202,17 @@ def main() -> None:
         save_json(run_dir / "outputs" / "citation_registry.json", citation_registry.to_dict())
 
         # URLリンク展開版レポートを生成
-        report_with_links = expand_citations_to_links(result["report"], citation_registry)
-        save_text(run_dir / "outputs" / "report_with_links.md", report_with_links)
+        # finalize_report_citations を使用して、国会API連携や出典一覧生成を含む完全版を作成
+        report_with_references = finalize_report_citations(
+            result["report"], 
+            [citation_registry], # finalize_report_citations expects a list
+            merged_hypothesis_path=args.merged_hypothesis
+        )
+        save_text(run_dir / "outputs" / "report_with_references.md", report_with_references)
+        
+        # Legacy support (optional, or just use references as links)
+        # report_with_links = expand_citations_to_links(result["report"], citation_registry)
+        # save_text(run_dir / "outputs" / "report_with_links.md", report_with_links)
 
     print(f"[OK] Complete: {run_dir}")
 
