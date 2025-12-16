@@ -1,0 +1,725 @@
+{
+  "citations": {
+    "D001": {
+      "cite_id": "D001",
+      "cite_type": "document",
+      "file": "001373713.pdf",
+      "url": "https://www.moj.go.jp/content/001373713.pdf",
+      "page_title": "法務省：法制審議会商法（船荷証券等関係）部会第１回会議（令和４年４月２７日開催）",
+      "link_text": "船荷証券に関する規定等の見直しにおける検討事項の例"
+    },
+    "D002": {
+      "cite_id": "D002",
+      "cite_type": "document",
+      "file": "001375177.pdf",
+      "url": "https://www.moj.go.jp/content/001375177.pdf",
+      "page_title": "法務省：法制審議会商法（船荷証券等関係）部会第２回会議（令和４年６月１５日開催）",
+      "link_text": "参考資料２－２　イギリス法における電子船荷証券に係る論点とLaw Commissionの立場"
+    },
+    "D003": {
+      "cite_id": "D003",
+      "cite_type": "document",
+      "file": "001375189.pdf",
+      "url": "https://www.moj.go.jp/content/001375189.pdf",
+      "page_title": "法務省：法制審議会商法（船荷証券等関係）部会第２回会議（令和４年６月１５日開催）",
+      "link_text": "部会資料２　船荷証券に関する規定等の見直しに関する論点の検討（１）"
+    },
+    "D004": {
+      "cite_id": "D004",
+      "cite_type": "document",
+      "file": "001377877.pdf",
+      "url": "https://www.moj.go.jp/content/001377877.pdf",
+      "page_title": "法務省：法制審議会商法（船荷証券等関係）部会第３回会議（令和４年７月２７日開催）",
+      "link_text": "部会資料３　船荷証券に関する規定等の見直しに関する論点の検討（２）【PDF】"
+    },
+    "D005": {
+      "cite_id": "D005",
+      "cite_type": "document",
+      "file": "001379859.pdf",
+      "url": "https://www.moj.go.jp/content/001379859.pdf",
+      "page_title": "法務省：法制審議会商法（船荷証券等関係）部会第４回会議（令和４年８月３１日開催）",
+      "link_text": "部会資料４船荷証券に関する規定等の見直しに関する論点の検討（３）"
+    },
+    "D006": {
+      "cite_id": "D006",
+      "cite_type": "document",
+      "file": "001382224.pdf",
+      "url": "https://www.moj.go.jp/content/001382224.pdf",
+      "page_title": "法務省：法制審議会商法（船荷証券等関係）部会第５回会議（令和４年１０月１２日開催）",
+      "link_text": "部会資料５船荷証券に関する規定等の見直しに関する論点の検討（４）"
+    },
+    "D007": {
+      "cite_id": "D007",
+      "cite_type": "document",
+      "file": "001385305.pdf",
+      "url": "https://www.moj.go.jp/content/001385305.pdf",
+      "page_title": "法務省：法制審議会商法（船荷証券等関係）部会第６回会議（令和４年１１月３０日開催）",
+      "link_text": "部会資料６船荷証券に関する規定等の見直しに関する論点の検討（５）"
+    },
+    "D008": {
+      "cite_id": "D008",
+      "cite_type": "document",
+      "file": "001390064.pdf",
+      "url": "https://www.moj.go.jp/content/001390064.pdf",
+      "page_title": "法務省：法制審議会商法（船荷証券等関係）部会第７回会議（令和５年１月２５日開催）",
+      "link_text": "船荷証券に関する規定等の見直しに関する中間試案のたたき台"
+    },
+    "D009": {
+      "cite_id": "D009",
+      "cite_type": "document",
+      "file": "001393794.pdf",
+      "url": "https://www.moj.go.jp/content/001393794.pdf",
+      "page_title": "法務省：法制審議会商法（船荷証券等関係）部会第８回会議（令和５年３月８日開催）",
+      "link_text": "部会資料８　船荷証券に関する規定等の見直しに関する中間試案のたたき台(2)"
+    },
+    "D010": {
+      "cite_id": "D010",
+      "cite_type": "document",
+      "file": "001394826.pdf",
+      "url": "https://www.moj.go.jp/content/001394826.pdf",
+      "page_title": "法務省：「船荷証券に関する規定等の見直しに関する中間試案」（令和５年３月８日）の取りまとめ",
+      "link_text": "船荷証券に関する規定等の見直しに関する中間試案"
+    },
+    "D011": {
+      "cite_id": "D011",
+      "cite_type": "document",
+      "file": "001394827.pdf",
+      "url": "https://www.moj.go.jp/content/001394827.pdf",
+      "page_title": "法務省：「船荷証券に関する規定等の見直しに関する中間試案」（令和５年３月８日）の取りまとめ",
+      "link_text": "船荷証券に関する規定等の見直しに関する中間試案の補足説明"
+    },
+    "D012": {
+      "cite_id": "D012",
+      "cite_type": "document",
+      "file": "001394829.pdf",
+      "url": "https://www.moj.go.jp/content/001394829.pdf",
+      "page_title": "法務省：「船荷証券に関する規定等の見直しに関する中間試案」（令和５年３月８日）の取りまとめ",
+      "link_text": "【参考資料】MLETR対照表（「船荷証券に関する規定等の見直しに関する中間試案の補足説明」の参考資料）"
+    },
+    "D013": {
+      "cite_id": "D013",
+      "cite_type": "document",
+      "file": "001397730.pdf",
+      "url": "https://www.moj.go.jp/content/001397730.pdf",
+      "page_title": "法務省：法制審議会商法（船荷証券等関係）部会第１０回会議（令和５年５月３１日開催）",
+      "link_text": "部会資料１０　「船荷証券に関する規定等の見直しに関する中間試案」に対して寄せられた意見の概要等"
+    },
+    "D014": {
+      "cite_id": "D014",
+      "cite_type": "document",
+      "file": "001402989.pdf",
+      "url": "https://www.moj.go.jp/content/001402989.pdf",
+      "page_title": "法務省：法制審議会商法（船荷証券等関係）部会第１１回会議（令和５年８月３０日開催）",
+      "link_text": "部会資料１１　船荷証券に関する規定等の見直しに関する要綱案のとりまとめに向けた検討"
+    },
+    "D015": {
+      "cite_id": "D015",
+      "cite_type": "document",
+      "file": "001404064.pdf",
+      "url": "https://www.moj.go.jp/content/001404064.pdf",
+      "page_title": "法務省：法制審議会商法（船荷証券等関係）部会第１２回会議（令和５年１０月４日開催）",
+      "link_text": "部会資料１２　船荷証券に関する規定等の見直しに関する要綱案のとりまとめに向けた検討（２）"
+    },
+    "D016": {
+      "cite_id": "D016",
+      "cite_type": "document",
+      "file": "001408123.pdf",
+      "url": "https://www.moj.go.jp/content/001408123.pdf",
+      "page_title": "法務省：法制審議会－商法（船荷証券等関係）部会",
+      "link_text": "商法（船荷証券等関係）部会名簿"
+    },
+    "D017": {
+      "cite_id": "D017",
+      "cite_type": "document",
+      "file": "001411003.pdf",
+      "url": "https://www.moj.go.jp/content/001411003.pdf",
+      "page_title": "法務省：法制審議会商法（船荷証券等関係）部会第１３回会議（令和６年１月２４日開催）",
+      "link_text": "部会資料１３　船荷証券に関する規定等の見直しに関する要綱案のとりまとめに向けた検討（３）"
+    },
+    "D018": {
+      "cite_id": "D018",
+      "cite_type": "document",
+      "file": "001417519.pdf",
+      "url": "https://www.moj.go.jp/content/001417519.pdf",
+      "page_title": "法務省：法制審議会商法（船荷証券等関係）部会第１４回会議（令和６年４月１７日開催）",
+      "link_text": "部会資料１４　船荷証券に関する規定等の見直しに関する要綱案のとりまとめに向けた検討（４）"
+    },
+    "D019": {
+      "cite_id": "D019",
+      "cite_type": "document",
+      "file": "001422019.pdf",
+      "url": "https://www.moj.go.jp/content/001422019.pdf",
+      "page_title": "法務省：法制審議会商法（船荷証券等関係）部会第１５回会議（令和６年７月２４日開催）",
+      "link_text": "部会資料１５　商法（船荷証券等関係）等の改正に関する要綱案のたたき台"
+    },
+    "D020": {
+      "cite_id": "D020",
+      "cite_type": "document",
+      "file": "001423391.pdf",
+      "url": "https://www.moj.go.jp/content/001423391.pdf",
+      "page_title": "法務省：法制審議会商法（船荷証券等関係）部会第１６回会議（令和６年８月２１日開催）",
+      "link_text": "部会資料１６－１ 商法（船荷証券等関係）等の改正に関する要綱案"
+    },
+    "D021": {
+      "cite_id": "D021",
+      "cite_type": "document",
+      "file": "20210414digi01_minutes.pdf",
+      "url": "https://www.shojihomu.or.jp/public/library/790/20210414digi01_minutes.pdf",
+      "page_title": "公益社団法人 商事法務研究会  | 商事法の電子化に関する研究会（船荷証券）",
+      "link_text": "第1回議事録"
+    },
+    "D022": {
+      "cite_id": "D022",
+      "cite_type": "document",
+      "file": "20210414diji01_agenda.pdf",
+      "url": "https://www.shojihomu.or.jp/public/library/779/20210414diji01_agenda.pdf",
+      "page_title": "公益社団法人 商事法務研究会  | 商事法の電子化に関する研究会（船荷証券）",
+      "link_text": "第1回議事次第"
+    },
+    "D023": {
+      "cite_id": "D023",
+      "cite_type": "document",
+      "file": "20210414diji01_catalog.pdf",
+      "url": "https://www.shojihomu.or.jp/public/library/780/20210414diji01_catalog.pdf",
+      "page_title": "公益社団法人 商事法務研究会  | 商事法の電子化に関する研究会（船荷証券）",
+      "link_text": "第1回配付資料目録"
+    },
+    "D024": {
+      "cite_id": "D024",
+      "cite_type": "document",
+      "file": "20210414diji01_material.pdf",
+      "url": "https://www.shojihomu.or.jp/public/library/781/20210414diji01_material.pdf",
+      "page_title": "公益社団法人 商事法務研究会  | 商事法の電子化に関する研究会（船荷証券）",
+      "link_text": "資料1"
+    },
+    "D025": {
+      "cite_id": "D025",
+      "cite_type": "document",
+      "file": "20210414diji01_member.pdf",
+      "url": "https://www.shojihomu.or.jp/public/library/789/20210414diji01_member.pdf",
+      "page_title": "公益社団法人 商事法務研究会  | 商事法の電子化に関する研究会（船荷証券）",
+      "link_text": "第1回出席者名簿"
+    },
+    "D026": {
+      "cite_id": "D026",
+      "cite_type": "document",
+      "file": "20210414diji01_ss1.pdf",
+      "url": "https://www.shojihomu.or.jp/public/library/782/20210414diji01_ss1.pdf",
+      "page_title": "公益社団法人 商事法務研究会  | 商事法の電子化に関する研究会（船荷証券）",
+      "link_text": "別紙1"
+    },
+    "D027": {
+      "cite_id": "D027",
+      "cite_type": "document",
+      "file": "20210414diji01_ss2.pdf",
+      "url": "https://www.shojihomu.or.jp/public/library/783/20210414diji01_ss2.pdf",
+      "page_title": "公益社団法人 商事法務研究会  | 商事法の電子化に関する研究会（船荷証券）",
+      "link_text": "別紙2"
+    },
+    "D028": {
+      "cite_id": "D028",
+      "cite_type": "document",
+      "file": "20210414diji01_ss3.pdf",
+      "url": "https://www.shojihomu.or.jp/public/library/784/20210414diji01_ss3.pdf",
+      "page_title": "公益社団法人 商事法務研究会  | 商事法の電子化に関する研究会（船荷証券）",
+      "link_text": "別紙3"
+    },
+    "D029": {
+      "cite_id": "D029",
+      "cite_type": "document",
+      "file": "20210414diji01_ss4.pdf",
+      "url": "https://www.shojihomu.or.jp/public/library/785/20210414diji01_ss4.pdf",
+      "page_title": "公益社団法人 商事法務研究会  | 商事法の電子化に関する研究会（船荷証券）",
+      "link_text": "別紙4"
+    },
+    "D030": {
+      "cite_id": "D030",
+      "cite_type": "document",
+      "file": "20210414diji01_ss5.pdf",
+      "url": "https://www.shojihomu.or.jp/public/library/786/20210414diji01_ss5.pdf",
+      "page_title": "公益社団法人 商事法務研究会  | 商事法の電子化に関する研究会（船荷証券）",
+      "link_text": "別紙5"
+    },
+    "D031": {
+      "cite_id": "D031",
+      "cite_type": "document",
+      "file": "20210414diji01_ss6.pdf",
+      "url": "https://www.shojihomu.or.jp/public/library/787/20210414diji01_ss6.pdf",
+      "page_title": "公益社団法人 商事法務研究会  | 商事法の電子化に関する研究会（船荷証券）",
+      "link_text": "別紙6"
+    },
+    "D032": {
+      "cite_id": "D032",
+      "cite_type": "document",
+      "file": "20210414diji01_ss7.pdf",
+      "url": "https://www.shojihomu.or.jp/public/library/788/20210414diji01_ss7.pdf",
+      "page_title": "公益社団法人 商事法務研究会  | 商事法の電子化に関する研究会（船荷証券）",
+      "link_text": "別紙7"
+    },
+    "D033": {
+      "cite_id": "D033",
+      "cite_type": "document",
+      "file": "20210531diji02_agenda.pdf",
+      "url": "https://www.shojihomu.or.jp/public/library/791/20210531diji02_agenda.pdf",
+      "page_title": "公益社団法人 商事法務研究会  | 商事法の電子化に関する研究会（船荷証券）",
+      "link_text": "第2回議事次第"
+    },
+    "D034": {
+      "cite_id": "D034",
+      "cite_type": "document",
+      "file": "20210531diji02_catalog.pdf",
+      "url": "https://www.shojihomu.or.jp/public/library/792/20210531diji02_catalog.pdf",
+      "page_title": "公益社団法人 商事法務研究会  | 商事法の電子化に関する研究会（船荷証券）",
+      "link_text": "第2回配付資料目録"
+    },
+    "D035": {
+      "cite_id": "D035",
+      "cite_type": "document",
+      "file": "20210531diji02_material.pdf",
+      "url": "https://www.shojihomu.or.jp/public/library/793/20210531diji02_material.pdf",
+      "page_title": "公益社団法人 商事法務研究会  | 商事法の電子化に関する研究会（船荷証券）",
+      "link_text": "資料2"
+    },
+    "D036": {
+      "cite_id": "D036",
+      "cite_type": "document",
+      "file": "20210531diji02_member.pdf",
+      "url": "https://www.shojihomu.or.jp/public/library/798/20210531diji02_member.pdf",
+      "page_title": "公益社団法人 商事法務研究会  | 商事法の電子化に関する研究会（船荷証券）",
+      "link_text": "第2回出席者名簿"
+    },
+    "D037": {
+      "cite_id": "D037",
+      "cite_type": "document",
+      "file": "20210531diji02_minutes.pdf",
+      "url": "https://www.shojihomu.or.jp/public/library/799/20210531diji02_minutes.pdf",
+      "page_title": "公益社団法人 商事法務研究会  | 商事法の電子化に関する研究会（船荷証券）",
+      "link_text": "第2回議事録"
+    },
+    "D038": {
+      "cite_id": "D038",
+      "cite_type": "document",
+      "file": "20210531diji02_referance.pdf",
+      "url": "https://www.shojihomu.or.jp/public/library/797/20210531diji02_referance.pdf",
+      "page_title": "公益社団法人 商事法務研究会  | 商事法の電子化に関する研究会（船荷証券）",
+      "link_text": "参考資料1"
+    },
+    "D039": {
+      "cite_id": "D039",
+      "cite_type": "document",
+      "file": "20210531diji02_ss10.pdf",
+      "url": "https://www.shojihomu.or.jp/public/library/796/20210531diji02_ss10.pdf",
+      "page_title": "公益社団法人 商事法務研究会  | 商事法の電子化に関する研究会（船荷証券）",
+      "link_text": "別紙10"
+    },
+    "D040": {
+      "cite_id": "D040",
+      "cite_type": "document",
+      "file": "20210531diji02_ss8.pdf",
+      "url": "https://www.shojihomu.or.jp/public/library/794/20210531diji02_ss8.pdf",
+      "page_title": "公益社団法人 商事法務研究会  | 商事法の電子化に関する研究会（船荷証券）",
+      "link_text": "別紙8"
+    },
+    "D041": {
+      "cite_id": "D041",
+      "cite_type": "document",
+      "file": "20210531diji02_ss9.pdf",
+      "url": "https://www.shojihomu.or.jp/public/library/795/20210531diji02_ss9.pdf",
+      "page_title": "公益社団法人 商事法務研究会  | 商事法の電子化に関する研究会（船荷証券）",
+      "link_text": "別紙9"
+    },
+    "D042": {
+      "cite_id": "D042",
+      "cite_type": "document",
+      "file": "20210702diji03_agenda.pdf",
+      "url": "https://www.shojihomu.or.jp/public/library/800/20210702diji03_agenda.pdf",
+      "page_title": "公益社団法人 商事法務研究会  | 商事法の電子化に関する研究会（船荷証券）",
+      "link_text": "第3回議事次第"
+    },
+    "D043": {
+      "cite_id": "D043",
+      "cite_type": "document",
+      "file": "20210702diji03_catalog.pdf",
+      "url": "https://www.shojihomu.or.jp/public/library/801/20210702diji03_catalog.pdf",
+      "page_title": "公益社団法人 商事法務研究会  | 商事法の電子化に関する研究会（船荷証券）",
+      "link_text": "第3回配付資料目録"
+    },
+    "D044": {
+      "cite_id": "D044",
+      "cite_type": "document",
+      "file": "20210702diji03_material.pdf",
+      "url": "https://www.shojihomu.or.jp/public/library/802/20210702diji03_material.pdf",
+      "page_title": "公益社団法人 商事法務研究会  | 商事法の電子化に関する研究会（船荷証券）",
+      "link_text": "資料3"
+    },
+    "D045": {
+      "cite_id": "D045",
+      "cite_type": "document",
+      "file": "20210702diji03_member.pdf",
+      "url": "https://www.shojihomu.or.jp/public/library/806/20210702diji03_member.pdf",
+      "page_title": "公益社団法人 商事法務研究会  | 商事法の電子化に関する研究会（船荷証券）",
+      "link_text": "第3回出席者名簿"
+    },
+    "D046": {
+      "cite_id": "D046",
+      "cite_type": "document",
+      "file": "20210702diji03_mimutes.pdf",
+      "url": "https://www.shojihomu.or.jp/public/library/807/20210702diji03_mimutes.pdf",
+      "page_title": "公益社団法人 商事法務研究会  | 商事法の電子化に関する研究会（船荷証券）",
+      "link_text": "第3回議事録"
+    },
+    "D047": {
+      "cite_id": "D047",
+      "cite_type": "document",
+      "file": "20210702diji03_reference2.pdf",
+      "url": "https://www.shojihomu.or.jp/public/library/805/20210702diji03_reference2.pdf",
+      "page_title": "公益社団法人 商事法務研究会  | 商事法の電子化に関する研究会（船荷証券）",
+      "link_text": "参考資料3-2"
+    },
+    "D048": {
+      "cite_id": "D048",
+      "cite_type": "document",
+      "file": "20210702diji03_ss11.pdf",
+      "url": "https://www.shojihomu.or.jp/public/library/803/20210702diji03_ss11.pdf",
+      "page_title": "公益社団法人 商事法務研究会  | 商事法の電子化に関する研究会（船荷証券）",
+      "link_text": "別紙11"
+    },
+    "D049": {
+      "cite_id": "D049",
+      "cite_type": "document",
+      "file": "20210702diji03_ss12.pdf",
+      "url": "https://www.shojihomu.or.jp/public/library/804/20210702diji03_ss12.pdf",
+      "page_title": "公益社団法人 商事法務研究会  | 商事法の電子化に関する研究会（船荷証券）",
+      "link_text": "別紙12"
+    },
+    "D050": {
+      "cite_id": "D050",
+      "cite_type": "document",
+      "file": "20210819diji04_agenda.pdf",
+      "url": "https://www.shojihomu.or.jp/public/library/810/20210819diji04_agenda.pdf",
+      "page_title": "公益社団法人 商事法務研究会  | 商事法の電子化に関する研究会（船荷証券）",
+      "link_text": "第4回議事次第"
+    },
+    "D051": {
+      "cite_id": "D051",
+      "cite_type": "document",
+      "file": "20210819diji04_catalog.pdf",
+      "url": "https://www.shojihomu.or.jp/public/library/811/20210819diji04_catalog.pdf",
+      "page_title": "公益社団法人 商事法務研究会  | 商事法の電子化に関する研究会（船荷証券）",
+      "link_text": "第4回配付資料目録"
+    },
+    "D052": {
+      "cite_id": "D052",
+      "cite_type": "document",
+      "file": "20210819diji04_material.pdf",
+      "url": "https://www.shojihomu.or.jp/public/library/812/20210819diji04_material.pdf",
+      "page_title": "公益社団法人 商事法務研究会  | 商事法の電子化に関する研究会（船荷証券）",
+      "link_text": "資料4"
+    },
+    "D053": {
+      "cite_id": "D053",
+      "cite_type": "document",
+      "file": "20210819diji04_member.pdf",
+      "url": "https://www.shojihomu.or.jp/public/library/814/20210819diji04_member.pdf",
+      "page_title": "公益社団法人 商事法務研究会  | 商事法の電子化に関する研究会（船荷証券）",
+      "link_text": "第4回出席者名簿"
+    },
+    "D054": {
+      "cite_id": "D054",
+      "cite_type": "document",
+      "file": "20210819diji04_minutes.pdf",
+      "url": "https://www.shojihomu.or.jp/public/library/815/20210819diji04_minutes.pdf",
+      "page_title": "公益社団法人 商事法務研究会  | 商事法の電子化に関する研究会（船荷証券）",
+      "link_text": "第4回議事録"
+    },
+    "D055": {
+      "cite_id": "D055",
+      "cite_type": "document",
+      "file": "20210819diji04_ss13.pdf",
+      "url": "https://www.shojihomu.or.jp/public/library/813/20210819diji04_ss13.pdf",
+      "page_title": "公益社団法人 商事法務研究会  | 商事法の電子化に関する研究会（船荷証券）",
+      "link_text": "別紙13"
+    },
+    "D056": {
+      "cite_id": "D056",
+      "cite_type": "document",
+      "file": "20210921diji05_agenda.pdf",
+      "url": "https://www.shojihomu.or.jp/public/library/816/20210921diji05_agenda.pdf",
+      "page_title": "公益社団法人 商事法務研究会  | 商事法の電子化に関する研究会（船荷証券）",
+      "link_text": "第5回議事次第"
+    },
+    "D057": {
+      "cite_id": "D057",
+      "cite_type": "document",
+      "file": "20210921diji05_catalog.pdf",
+      "url": "https://www.shojihomu.or.jp/public/library/817/20210921diji05_catalog.pdf",
+      "page_title": "公益社団法人 商事法務研究会  | 商事法の電子化に関する研究会（船荷証券）",
+      "link_text": "第5回配付資料目録"
+    },
+    "D058": {
+      "cite_id": "D058",
+      "cite_type": "document",
+      "file": "20210921diji05_material.pdf",
+      "url": "https://www.shojihomu.or.jp/public/library/818/20210921diji05_material.pdf",
+      "page_title": "公益社団法人 商事法務研究会  | 商事法の電子化に関する研究会（船荷証券）",
+      "link_text": "資料5"
+    },
+    "D059": {
+      "cite_id": "D059",
+      "cite_type": "document",
+      "file": "20210921diji05_member.pdf",
+      "url": "https://www.shojihomu.or.jp/public/library/820/20210921diji05_member.pdf",
+      "page_title": "公益社団法人 商事法務研究会  | 商事法の電子化に関する研究会（船荷証券）",
+      "link_text": "第5回出席者名簿"
+    },
+    "D060": {
+      "cite_id": "D060",
+      "cite_type": "document",
+      "file": "20210921diji05_minutes.pdf",
+      "url": "https://www.shojihomu.or.jp/public/library/821/20210921diji05_minutes.pdf",
+      "page_title": "公益社団法人 商事法務研究会  | 商事法の電子化に関する研究会（船荷証券）",
+      "link_text": "第5回議事録"
+    },
+    "D061": {
+      "cite_id": "D061",
+      "cite_type": "document",
+      "file": "20210921diji05_ss15.pdf",
+      "url": "https://www.shojihomu.or.jp/public/library/819/20210921diji05_ss15.pdf",
+      "page_title": "公益社団法人 商事法務研究会  | 商事法の電子化に関する研究会（船荷証券）",
+      "link_text": "別紙15"
+    },
+    "D062": {
+      "cite_id": "D062",
+      "cite_type": "document",
+      "file": "20211027diji06_agenda.pdf",
+      "url": "https://www.shojihomu.or.jp/public/library/822/20211027diji06_agenda.pdf",
+      "page_title": "公益社団法人 商事法務研究会  | 商事法の電子化に関する研究会（船荷証券）",
+      "link_text": "第6回議事次第"
+    },
+    "D063": {
+      "cite_id": "D063",
+      "cite_type": "document",
+      "file": "20211027diji06_catalog.pdf",
+      "url": "https://www.shojihomu.or.jp/public/library/823/20211027diji06_catalog.pdf",
+      "page_title": "公益社団法人 商事法務研究会  | 商事法の電子化に関する研究会（船荷証券）",
+      "link_text": "第6回配付資料目録"
+    },
+    "D064": {
+      "cite_id": "D064",
+      "cite_type": "document",
+      "file": "20211027diji06_material.pdf",
+      "url": "https://www.shojihomu.or.jp/public/library/824/20211027diji06_material.pdf",
+      "page_title": "公益社団法人 商事法務研究会  | 商事法の電子化に関する研究会（船荷証券）",
+      "link_text": "資料6"
+    },
+    "D065": {
+      "cite_id": "D065",
+      "cite_type": "document",
+      "file": "20211027diji06_member.pdf",
+      "url": "https://www.shojihomu.or.jp/public/library/826/20211027diji06_member.pdf",
+      "page_title": "公益社団法人 商事法務研究会  | 商事法の電子化に関する研究会（船荷証券）",
+      "link_text": "第6回出席者名簿"
+    },
+    "D066": {
+      "cite_id": "D066",
+      "cite_type": "document",
+      "file": "20211027diji06_minutes.pdf",
+      "url": "https://www.shojihomu.or.jp/public/library/827/20211027diji06_minutes.pdf",
+      "page_title": "公益社団法人 商事法務研究会  | 商事法の電子化に関する研究会（船荷証券）",
+      "link_text": "第6回議事録"
+    },
+    "D067": {
+      "cite_id": "D067",
+      "cite_type": "document",
+      "file": "20211027diji06_ss16.pdf",
+      "url": "https://www.shojihomu.or.jp/public/library/825/20211027diji06_ss16.pdf",
+      "page_title": "公益社団法人 商事法務研究会  | 商事法の電子化に関する研究会（船荷証券）",
+      "link_text": "別紙16"
+    },
+    "D068": {
+      "cite_id": "D068",
+      "cite_type": "document",
+      "file": "20211130digi07_agenda.pdf",
+      "url": "https://www.shojihomu.or.jp/public/library/828/20211130digi07_agenda.pdf",
+      "page_title": "公益社団法人 商事法務研究会  | 商事法の電子化に関する研究会（船荷証券）",
+      "link_text": "第7回議事次第"
+    },
+    "D069": {
+      "cite_id": "D069",
+      "cite_type": "document",
+      "file": "20211130digi07_catalog.pdf",
+      "url": "https://www.shojihomu.or.jp/public/library/829/20211130digi07_catalog.pdf",
+      "page_title": "公益社団法人 商事法務研究会  | 商事法の電子化に関する研究会（船荷証券）",
+      "link_text": "第7回配付資料目録"
+    },
+    "D070": {
+      "cite_id": "D070",
+      "cite_type": "document",
+      "file": "20211130digi07_material.pdf",
+      "url": "https://www.shojihomu.or.jp/public/library/830/20211130digi07_material.pdf",
+      "page_title": "公益社団法人 商事法務研究会  | 商事法の電子化に関する研究会（船荷証券）",
+      "link_text": "資料7"
+    },
+    "D071": {
+      "cite_id": "D071",
+      "cite_type": "document",
+      "file": "20211130digi07_member.pdf",
+      "url": "https://www.shojihomu.or.jp/public/library/831/20211130digi07_member.pdf",
+      "page_title": "公益社団法人 商事法務研究会  | 商事法の電子化に関する研究会（船荷証券）",
+      "link_text": "第7回出席者名簿"
+    },
+    "D072": {
+      "cite_id": "D072",
+      "cite_type": "document",
+      "file": "20211130digi07_minutes.pdf",
+      "url": "https://www.shojihomu.or.jp/public/library/832/20211130digi07_minutes.pdf",
+      "page_title": "公益社団法人 商事法務研究会  | 商事法の電子化に関する研究会（船荷証券）",
+      "link_text": "第7回議事録"
+    },
+    "D073": {
+      "cite_id": "D073",
+      "cite_type": "document",
+      "file": "20220119digi08_agenda.pdf",
+      "url": "https://www.shojihomu.or.jp/public/library/833/20220119digi08_agenda.pdf",
+      "page_title": "公益社団法人 商事法務研究会  | 商事法の電子化に関する研究会（船荷証券）",
+      "link_text": "第8回議事次第"
+    },
+    "D074": {
+      "cite_id": "D074",
+      "cite_type": "document",
+      "file": "20220119digi08_catalog.pdf",
+      "url": "https://www.shojihomu.or.jp/public/library/834/20220119digi08_catalog.pdf",
+      "page_title": "公益社団法人 商事法務研究会  | 商事法の電子化に関する研究会（船荷証券）",
+      "link_text": "第8回配付資料目録"
+    },
+    "D075": {
+      "cite_id": "D075",
+      "cite_type": "document",
+      "file": "20220119digi08_material.pdf",
+      "url": "https://www.shojihomu.or.jp/public/library/835/20220119digi08_material.pdf",
+      "page_title": "公益社団法人 商事法務研究会  | 商事法の電子化に関する研究会（船荷証券）",
+      "link_text": "資料8"
+    },
+    "D076": {
+      "cite_id": "D076",
+      "cite_type": "document",
+      "file": "20220119digi08_member.pdf",
+      "url": "https://www.shojihomu.or.jp/public/library/837/20220119digi08_member.pdf",
+      "page_title": "公益社団法人 商事法務研究会  | 商事法の電子化に関する研究会（船荷証券）",
+      "link_text": "第8回出席者名簿"
+    },
+    "D077": {
+      "cite_id": "D077",
+      "cite_type": "document",
+      "file": "20220119digi08_minutes.pdf",
+      "url": "https://www.shojihomu.or.jp/public/library/838/20220119digi08_minutes.pdf",
+      "page_title": "公益社団法人 商事法務研究会  | 商事法の電子化に関する研究会（船荷証券）",
+      "link_text": "第8回議事録"
+    },
+    "D078": {
+      "cite_id": "D078",
+      "cite_type": "document",
+      "file": "20220119digi08_ss17.pdf",
+      "url": "https://www.shojihomu.or.jp/public/library/836/20220119digi08_ss17.pdf",
+      "page_title": "公益社団法人 商事法務研究会  | 商事法の電子化に関する研究会（船荷証券）",
+      "link_text": "別紙17"
+    },
+    "D079": {
+      "cite_id": "D079",
+      "cite_type": "document",
+      "file": "20220222digi09_agenda.pdf",
+      "url": "https://www.shojihomu.or.jp/public/library/839/20220222digi09_agenda.pdf",
+      "page_title": "公益社団法人 商事法務研究会  | 商事法の電子化に関する研究会（船荷証券）",
+      "link_text": "第9回議事次第"
+    },
+    "D080": {
+      "cite_id": "D080",
+      "cite_type": "document",
+      "file": "20220222digi09_catalog.pdf",
+      "url": "https://www.shojihomu.or.jp/public/library/840/20220222digi09_catalog.pdf",
+      "page_title": "公益社団法人 商事法務研究会  | 商事法の電子化に関する研究会（船荷証券）",
+      "link_text": "第9回配付資料目録"
+    },
+    "D081": {
+      "cite_id": "D081",
+      "cite_type": "document",
+      "file": "20220222digi09_member.pdf",
+      "url": "https://www.shojihomu.or.jp/public/library/841/20220222digi09_member.pdf",
+      "page_title": "公益社団法人 商事法務研究会  | 商事法の電子化に関する研究会（船荷証券）",
+      "link_text": "第9回出席者名簿"
+    },
+    "D082": {
+      "cite_id": "D082",
+      "cite_type": "document",
+      "file": "20220222digi09_minutes.pdf",
+      "url": "https://www.shojihomu.or.jp/public/library/842/20220222digi09_minutes.pdf",
+      "page_title": "公益社団法人 商事法務研究会  | 商事法の電子化に関する研究会（船荷証券）",
+      "link_text": "第9回議事録"
+    },
+    "D083": {
+      "cite_id": "D083",
+      "cite_type": "document",
+      "file": "20220323digi10_agenda.pdf",
+      "url": "https://www.shojihomu.or.jp/public/library/843/20220323digi10_agenda.pdf",
+      "page_title": "公益社団法人 商事法務研究会  | 商事法の電子化に関する研究会（船荷証券）",
+      "link_text": "第10回議事次第"
+    },
+    "D084": {
+      "cite_id": "D084",
+      "cite_type": "document",
+      "file": "20220323digi10_catalog.pdf",
+      "url": "https://www.shojihomu.or.jp/public/library/844/20220323digi10_catalog.pdf",
+      "page_title": "公益社団法人 商事法務研究会  | 商事法の電子化に関する研究会（船荷証券）",
+      "link_text": "第10回配付資料目録"
+    },
+    "D085": {
+      "cite_id": "D085",
+      "cite_type": "document",
+      "file": "20220323digi10_member.pdf",
+      "url": "https://www.shojihomu.or.jp/public/library/845/20220323digi10_member.pdf",
+      "page_title": "公益社団法人 商事法務研究会  | 商事法の電子化に関する研究会（船荷証券）",
+      "link_text": "第10回出席者名簿"
+    },
+    "D086": {
+      "cite_id": "D086",
+      "cite_type": "document",
+      "file": "20220323digi10_minutes.pdf",
+      "url": "https://www.shojihomu.or.jp/public/library/846/20220323digi10_minutes.pdf",
+      "page_title": "公益社団法人 商事法務研究会  | 商事法の電子化に関する研究会（船荷証券）",
+      "link_text": "第10回議事録"
+    },
+    "D087": {
+      "cite_id": "D087",
+      "cite_type": "document",
+      "file": "metadata_moj.go.jp_20251208_180730.json"
+    },
+    "D088": {
+      "cite_id": "D088",
+      "cite_type": "document",
+      "file": "metadata_shojihomu.or.jp_20251208_175118.json"
+    },
+    "D089": {
+      "cite_id": "D089",
+      "cite_type": "document",
+      "file": "README.md"
+    },
+    "D090": {
+      "cite_id": "D090",
+      "cite_type": "document",
+      "file": "report.pdf",
+      "url": "https://www.shojihomu.or.jp/public/library/847/report.pdf",
+      "page_title": "公益社団法人 商事法務研究会  | 商事法の電子化に関する研究会（船荷証券）",
+      "link_text": "商事法の電子化に関する研究会報告書－船荷証券の電子化について－"
+    },
+    "D091": {
+      "cite_id": "D091",
+      "cite_type": "document",
+      "file": "sv.pdf",
+      "url": "https://www.shojihomu.or.jp/public/library/848/sv.pdf",
+      "page_title": "公益社団法人 商事法務研究会  | 商事法の電子化に関する研究会（船荷証券）",
+      "link_text": "別添資料"
+    }
+  },
+  "_doc_counter": 91,
+  "_pubcom_counter": 0
+}

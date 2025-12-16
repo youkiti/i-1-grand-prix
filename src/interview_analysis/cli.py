@@ -166,8 +166,21 @@ def main() -> None:
         if not args.csv or not args.previous_report:
             raise SystemExit("--csv と --previous-report を指定してください")
         previous_report = read_text_file(args.previous_report)
+        # 前回のレポートと同階層にある citation_registry.json を探す
+        prev_report_path = Path(args.previous_report)
+        prev_registry_path = prev_report_path.parent / "citation_registry.json"
+        prior_citation_registry = None
+        if prev_registry_path.exists():
+            try:
+                from .citation import CitationRegistry
+                prev_registry_data = json.loads(prev_registry_path.read_text(encoding="utf-8"))
+                prior_citation_registry = CitationRegistry.from_dict(prev_registry_data)
+                print(f"Loaded prior citation registry from {prev_registry_path} ({len(prior_citation_registry.citations)} items)")
+            except Exception as e:
+                print(f"[WARNING] Failed to load prior citation registry from {prev_registry_path}: {e}")
+
         from .pipeline import run_pubcom_analysis
-        result = run_pubcom_analysis(prompt_dir, meta, args.csv, previous_report, cfg, comparison_model=args.comparison_model, max_map_batches=args.max_map_batches)
+        result = run_pubcom_analysis(prompt_dir, meta, args.csv, previous_report, cfg, comparison_model=args.comparison_model, max_map_batches=args.max_map_batches, prior_citation_registry=prior_citation_registry)
     elif cfg.mode == "pubcom_aggregate":
         if not args.csv:
             raise SystemExit("--csv を指定してください")

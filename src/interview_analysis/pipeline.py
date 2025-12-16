@@ -1385,7 +1385,7 @@ def run_pubcom_analysis(prompt_dir: Path, meta: Dict[str, Any], csv_path: Path, 
     # 事前仮説レポートからメタデータを抽出
     prior_metadata = _extract_prior_process_metadata(previous_report)
 
-    # 統合メタデータセクションを構築
+    # Combined Metadata
     combined_metadata = process_metadata
     if prior_metadata:
         combined_metadata = combined_metadata + "\n\n" + prior_metadata
@@ -1393,7 +1393,23 @@ def run_pubcom_analysis(prompt_dir: Path, meta: Dict[str, Any], csv_path: Path, 
     # Citation Registry: 出典一覧を生成
     citation_appendix = generate_citation_appendix(citation_registry)
 
-    final_report = final_insight + "\n\n---\n\n# 参考: パブリックコメント集約レポート\n\n" + pubcom_consolidated_report + "\n\n---\n\n" + citation_appendix + combined_metadata + "\n\n" + metadata_header
+    # --- Token Usage Statistics ---
+    from .token_tracker import TokenTracker
+    token_stats = TokenTracker.get_summary()
+    
+    token_stats_md = "\n\n# Token Usage Statistics\n\n| Process / Step | Input Tokens | Output Tokens | Total Tokens |\n| :--- | :--- | :--- | :--- |\n"
+    
+    # Sort for consistent order
+    total_all = 0
+    for key in sorted(token_stats.keys()):
+        stats = token_stats[key]
+        token_stats_md += f"| {key} | {stats['input_tokens']:,} | {stats['output_tokens']:,} | {stats['total_tokens']:,} |\n"
+        total_all += stats['total_tokens']
+    
+    token_stats_md += f"| **TOTAL** | | | **{total_all:,}** |\n"
+
+    # 最終的な構成: Insight -> (Appendix) Citation -> Combined Metadata (Token Stats含む)
+    final_report = final_insight + "\n\n---\n\n" + citation_appendix + "\n\n" + token_stats_md + "\n\n" + combined_metadata + "\n\n" + metadata_header
 
     # 完了後、チェックポイントをクリア
     if checkpoint:

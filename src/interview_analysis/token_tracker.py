@@ -62,3 +62,37 @@ class TokenTracker:
                 f.write(json.dumps(record, ensure_ascii=False) + "\n")
         except Exception as e:
             print(f"[Warning] Failed to log token usage: {e}", flush=True)
+
+    @classmethod
+    def get_summary(cls) -> Dict[str, Dict[str, int]]:
+        """
+        Aggregate token usage from the log file.
+        Returns a dict keyed by 'pipeline' or 'pipeline/step', with aggregated counts.
+        """
+        if cls._log_path is None or not cls._log_path.exists():
+            return {}
+
+        summary = {}
+        try:
+            with open(cls._log_path, "r", encoding="utf-8") as f:
+                for line in f:
+                    if not line.strip():
+                        continue
+                    data = json.loads(line)
+                    
+                    # Key can be just pipeline, or pipeline/step for detail
+                    # Let's aggregate by 'pipeline' + 'step' for maximum detail
+                    key = f"{data.get('pipeline', 'unknown')} / {data.get('step', 'unknown')}"
+                    
+                    if key not in summary:
+                        summary[key] = {"input_tokens": 0, "output_tokens": 0, "total_tokens": 0}
+                    
+                    summary[key]["input_tokens"] += data.get("input_tokens", 0)
+                    summary[key]["output_tokens"] += data.get("output_tokens", 0)
+                    summary[key]["total_tokens"] += data.get("total_tokens", 0)
+                    
+        except Exception as e:
+            print(f"[Warning] Failed to read token logs: {e}", flush=True)
+            return {}
+
+        return summary
