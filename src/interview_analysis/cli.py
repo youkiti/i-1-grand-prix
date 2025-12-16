@@ -188,7 +188,7 @@ def main() -> None:
 
     # 結果保存
     save_text(run_dir / "prompts" / "used_prompt.txt", result["prompt"])
-    save_text(run_dir / "outputs" / "report.md", result["report"])
+    save_text(run_dir / "outputs" / f"report_{cfg.mode}.md", result["report"])
     if "part1_log" in result:
         save_text(run_dir / "outputs" / "part1_log.md", result["part1_log"])
     
@@ -208,7 +208,7 @@ def main() -> None:
             [citation_registry], # finalize_report_citations expects a list
             merged_hypothesis_path=args.merged_hypothesis
         )
-        save_text(run_dir / "outputs" / "report_with_references.md", report_with_references)
+        save_text(run_dir / "outputs" / f"report_{cfg.mode}_with_references.md", report_with_references)
         
         # Legacy support (optional, or just use references as links)
         # report_with_links = expand_citations_to_links(result["report"], citation_registry)
