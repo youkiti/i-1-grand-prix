@@ -726,28 +726,7 @@ def finalize_report_citations(
 
     new_content = re.sub(r'\[(\d{4}-\d{2}-\d{2}_\d+X[^\]]+)\]', replace_bare_citation, new_content)
     
-    # 6. Generate Appendix
-    appendix = ""
-    
-    # Only if documents are used
-    if used_citations:
-        appendix += "\n\n---\n\n# 出典一覧\n\n"
-        appendix += "## 審議会・国会資料\n"
-        appendix += "| ID | 資料名 / 会議名 | リンク |\n"
-        appendix += "|----|-----------------|--------|\n"
-        
-        sorted_citations = sorted(used_citations.values(), key=lambda x: str(x.get("cite_id", "")))
-        
-        for info in sorted_citations:
-            cid = info.get("cite_id")
-            title = info.get("display_title") or info.get("link_text") or info.get("file")
-            url = info.get("display_url") or info.get("url")
-            
-            url_str = f"[Link]({url})" if url else "-"
-            # Ensure title is string
-            if not title: title = "(No Title)"
-            appendix += f"| {cid} | {title} | {url_str} |\n"
-            
-    # Skipping "引用されたパブリックコメント" section as requested (since linked in text)
+    # Note: Citation appendix generation removed.
+    # All citations (shingikai, kokkai, pubcom) are already linked inline in the report body.
 
-    return new_content + appendix
+    return new_content
