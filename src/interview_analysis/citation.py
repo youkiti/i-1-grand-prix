@@ -295,9 +295,13 @@ def expand_citations_to_links(text: str, registry: CitationRegistry) -> str:
     return text
 
 
-def generate_citation_appendix(registry: CitationRegistry) -> str:
+def generate_citation_appendix(registry: CitationRegistry, report_text: str = "") -> str:
     """
     引用一覧（Appendix）を生成
+    
+    Args:
+        registry: Citation Registry
+        report_text: レポート本文（フィルタリング用）。空の場合は全引用を出力。
     
     出力例:
     # 出典一覧
@@ -319,11 +323,68 @@ def generate_citation_appendix(registry: CitationRegistry) -> str:
     """
     from .diet_api import fetch_meeting_meta
 
+    # --- 実際に引用されているIDを抽出 ---
+    referenced_ids = set()
+    if report_text:
+        # [D001], [P001] 形式
+        referenced_ids.update(re.findall(r'\[([DP]\d{3})\]', report_text))
+        # [出典: D001], [出典: shingikai_001] 形式
+        cited_matches = re.findall(r'\[出典:\s*([^\]]+)\]', report_text)
+        for m in cited_matches:
+            # カンマ区切りで複数ある場合に対応
+            for part in m.split(','):
+                referenced_ids.add(part.strip())
+        # [パブコメ: UUID] 形式
+        pubcom_matches = re.findall(r'\[パブコメ:\s*([^\]]+)\]', report_text)
+        for m in pubcom_matches:
+            # カンマ区切りで複数IDがある場合
+            for part in m.split(','):
+                referenced_ids.add(part.strip())
+
     doc_citations = []
     pubcom_citations = []
     kokkai_citations = []
 
     for cite_id, citation in sorted(registry.citations.items()):
+        # report_text が指定されていて、このcitationが参照されていなければスキップ
+        if report_text:
+            is_referenced = False
+            # cite_id (D001, P001) で引用されている
+            if cite_id in referenced_ids:
+                is_referenced = True
+            # comment_id (UUID) で引用されている（パブコメの場合）
+            elif citation.comment_id and citation.comment_id in referenced_ids:
+                is_referenced = True
+            # file名で引用されている（審議会資料の場合）- 複数の形式でチェック
+            elif citation.file:
+                file_basename = Path(citation.file).stem  # 拡張子なし
+                file_with_ext = Path(citation.file).name  # 拡張子あり
+                
+                # 完全一致
+                if citation.file in referenced_ids:
+                    is_referenced = True
+                # ベースネーム（拡張子あり）での一致
+                elif file_with_ext in referenced_ids:
+                    is_referenced = True
+                # ベースネーム（拡張子なし）での一致
+                elif file_basename in referenced_ids:
+                    is_referenced = True
+                # 部分一致（referenced_idsの中にこのファイル名を含むものがあるか）
+                else:
+                    for ref_id in referenced_ids:
+                        if file_basename in ref_id or ref_id in file_basename:
+                            is_referenced = True
+                            break
+                        if file_with_ext in ref_id or ref_id in citation.file:
+                            is_referenced = True
+                            break
+            # link_text で引用されている場合
+            elif citation.link_text and citation.link_text in referenced_ids:
+                is_referenced = True
+            
+            if not is_referenced:
+                continue  # このcitationはスキップ
+
         if citation.cite_type == "document":
             # Kokkai detection heuristic
             is_kokkai = False
@@ -457,7 +518,8 @@ def parse_legacy_citation(text: str) -> List[Tuple[str, Optional[int]]]:
 def finalize_report_citations(
     report_text: str,
     citation_registries: List[CitationRegistry],
-    merged_hypothesis_path: Optional[Path] = None
+    merged_hypothesis_path: Optional[Path] = None,
+    merged_hypothesis_content: Optional[str] = None
 ) -> str:
     """
     レポートの引用を最終化する（一般化されたロジック）
@@ -494,14 +556,23 @@ def finalize_report_citations(
             add_to_map(c)
 
     # 2. Scan merged_hypothesis.md for ID -> Filename mapping
-    if merged_hypothesis_path and merged_hypothesis_path.exists():
+    mh_content = ""
+    if merged_hypothesis_content:
+        mh_content = merged_hypothesis_content
+    elif merged_hypothesis_path and merged_hypothesis_path.exists():
         print(f"Scanning {merged_hypothesis_path} for ID mappings...")
         mh_content = merged_hypothesis_path.read_text(encoding="utf-8")
-        matches = re.findall(r'source_doc_id:\s*"([^"]+)"\s*\n\s*source_filename:\s*"([^"]+)"', mh_content)
         
-        id_to_filename = {doc_id: filename for doc_id, filename in matches}
+    if mh_content:
+        # Regex to capture id, filename, and optionally url
+        matches = re.findall(r'source_doc_id:\s*"([^"]+)"\s*\n\s*source_filename:\s*"([^"]+)"(?:\s*\n\s*source_url:\s*"([^"]+)")?', mh_content)
         
-        for doc_id, filename in id_to_filename.items():
+        id_to_info = {doc_id: {"filename": filename, "url": url} for doc_id, filename, url in matches}
+        
+        for doc_id, info in id_to_info.items():
+            filename = info["filename"]
+            url = info["url"]
+            
             if doc_id not in citation_map:
                  # Try to find info for filename
                  key_candidates = [filename, filename.replace(".txt", "")]
@@ -513,15 +584,17 @@ def finalize_report_citations(
                  
                  if found_info:
                      citation_map[doc_id] = found_info.copy()
-                     citation_map[doc_id]["cite_id"] = doc_id # Override ID for lookup
+                     citation_map[doc_id]["cite_id"] = doc_id
                  else:
-                     # Create a dummy info if not in registry (fallback)
-                     citation_map[doc_id] = {
+                     fallback_info = {
                          "cite_id": doc_id,
                          "file": filename,
-                         "cite_type": "kokkai" if "X" in filename else "shingikai", # heuristic
+                         "cite_type": "kokkai" if "X" in filename else "shingikai",
                          "link_text": f"{filename} (ID: {doc_id})"
                      }
+                     if url:
+                         fallback_info["url"] = url
+                     citation_map[doc_id] = fallback_info
                      add_to_map(citation_map[doc_id])
 
     # Cache for API calls within this execution
@@ -629,10 +702,21 @@ def finalize_report_citations(
         
         return full_text
 
-    # Replace [出典: ...]
+    # 3. Linkify Pubcom UUIDs first (NEW)
+    def uuid_replacer(m):
+        uid = m.group(1)
+        used_pubcoms.add(uid)
+        return f"[{uid}](https://depth-interview-ai.vercel.app/report/{uid})"
+    
+    # Regex for UUID (8-4-4-4-12)
+    uuid_pattern = r'\b([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})\b'
+    # Apply to text
+    report_text = re.sub(uuid_pattern, uuid_replacer, report_text)
+
+    # 4. Replace [出典: ...] using expanded logic
     new_content = re.sub(r'\[出典:\s*([^\]]+)\]', replace_citation, report_text)
     
-    # Replace bare filenames [YYYY-MM-DD_...X...]
+    # 5. Replace bare filenames [YYYY-MM-DD_...X...]
     def replace_bare_citation(match):
         content_inner = match.group(1).strip()
         class MockMatch:
@@ -641,19 +725,13 @@ def finalize_report_citations(
         return replace_citation(MockMatch())
 
     new_content = re.sub(r'\[(\d{4}-\d{2}-\d{2}_\d+X[^\]]+)\]', replace_bare_citation, new_content)
-
-    # Collect Pubcoms
-    def replace_pubcom(match):
-        pid = match.group(1).strip()
-        used_pubcoms.add(pid)
-        return match.group(0)
     
-    new_content = re.sub(r'\[パブコメ:\s*([^\]]+)\]', replace_pubcom, new_content)
+    # 6. Generate Appendix
+    appendix = ""
     
-    # Generate Appendix
-    appendix = "\n\n---\n\n# 出典一覧\n\n"
-    
+    # Only if documents are used
     if used_citations:
+        appendix += "\n\n---\n\n# 出典一覧\n\n"
         appendix += "## 審議会・国会資料\n"
         appendix += "| ID | 資料名 / 会議名 | リンク |\n"
         appendix += "|----|-----------------|--------|\n"
@@ -670,11 +748,6 @@ def finalize_report_citations(
             if not title: title = "(No Title)"
             appendix += f"| {cid} | {title} | {url_str} |\n"
             
-    if used_pubcoms:
-        appendix += "\n## 引用されたパブリックコメント\n"
-        appendix += "| コメントID |\n"
-        appendix += "|------------|\n"
-        for pid in sorted(used_pubcoms):
-             appendix += f"| {pid} |\n"
+    # Skipping "引用されたパブリックコメント" section as requested (since linked in text)
 
     return new_content + appendix

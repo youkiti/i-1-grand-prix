@@ -1,0 +1,5 @@
+{"timestamp": "2025-12-17T09:28:15.254441", "pipeline": "pubcom_analysis", "step": "pubcom_map", "model": "gemini-flash-lite-latest", "input_tokens": 34662, "output_tokens": 6383, "total_tokens": 41045}
+{"timestamp": "2025-12-17T09:29:33.733411", "pipeline": "pubcom_analysis", "step": "pubcom_map", "model": "gemini-flash-lite-latest", "input_tokens": 76855, "output_tokens": 64000, "total_tokens": 140855}
+{"timestamp": "2025-12-17T09:31:12.407761", "pipeline": "pubcom_analysis", "step": "pubcom_reduce", "model": "gemini-flash-lite-latest", "input_tokens": 106115, "output_tokens": 64000, "total_tokens": 170115}
+{"timestamp": "2025-12-17T09:32:49.934950", "pipeline": "pubcom_analysis", "step": "pubcom_reduce", "model": "gemini-flash-lite-latest", "input_tokens": 91868, "output_tokens": 64000, "total_tokens": 155868}
+{"timestamp": "2025-12-17T09:33:02.081079", "pipeline": "pubcom_analysis", "step": "pubcom_compare", "model": "gemini-flash-lite-latest", "input_tokens": 137932, "output_tokens": 3737, "total_tokens": 141669}

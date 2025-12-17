@@ -179,8 +179,20 @@ def main() -> None:
             except Exception as e:
                 print(f"[WARNING] Failed to load prior citation registry from {prev_registry_path}: {e}")
 
+        # 前回のレポートと同階層にある token_usage.jsonl を探す
+        prev_token_log_path = prev_report_path.parent.parent / "token_usage.jsonl"
+        
+        prior_token_stats = None
+        if prev_token_log_path.exists():
+            try:
+                from .token_tracker import TokenTracker
+                prior_token_stats = TokenTracker.get_summary(prev_token_log_path)
+                print(f"Loaded prior token stats from {prev_token_log_path} ({len(prior_token_stats)} items)")
+            except Exception as e:
+                print(f"[WARNING] Failed to load prior token stats from {prev_token_log_path}: {e}")
+
         from .pipeline import run_pubcom_analysis
-        result = run_pubcom_analysis(prompt_dir, meta, args.csv, previous_report, cfg, comparison_model=args.comparison_model, max_map_batches=args.max_map_batches, prior_citation_registry=prior_citation_registry)
+        result = run_pubcom_analysis(prompt_dir, meta, args.csv, previous_report, cfg, comparison_model=args.comparison_model, max_map_batches=args.max_map_batches, prior_citation_registry=prior_citation_registry, prior_token_stats=prior_token_stats)
     elif cfg.mode == "pubcom_aggregate":
         if not args.csv:
             raise SystemExit("--csv を指定してください")

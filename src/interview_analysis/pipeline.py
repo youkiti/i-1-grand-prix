@@ -18,6 +18,7 @@ from .citation import (
     CitationRegistry,
     expand_citations_to_links,
     generate_citation_appendix,
+    finalize_report_citations,
     load_scraper_metadata as load_citation_metadata
 )
 from .token_tracker import TokenTracker
@@ -1075,8 +1076,8 @@ def run_pre_hypothesis_iterative(prompt_dir: Path, meta: Dict[str, Any], source_
         focus=cfg.focus
     )
 
-    # Citation Registry: 出典一覧を生成
-    citation_appendix = generate_citation_appendix(citation_registry)
+    # Citation Registry: 出典一覧を生成（実際に引用されている出典のみ）
+    citation_appendix = generate_citation_appendix(citation_registry, report_text=final_qa)
 
     # Final Report Construction - メタ情報は最後に配置（読者はコンテンツを先に見たい）
     final_report = "# 最終成果物 (Q&Aリスト)\n\n" + final_qa + "\n\n---\n\n" + citation_appendix + process_metadata + "\n\n" + metadata_header
@@ -1099,7 +1100,7 @@ def run_pre_hypothesis_iterative(prompt_dir: Path, meta: Dict[str, Any], source_
     }
 
 
-def run_pubcom_analysis(prompt_dir: Path, meta: Dict[str, Any], csv_path: Path, previous_report: str, cfg: RunConfig, use_checkpoint: bool = True, comparison_model: Optional[str] = None, prior_citation_registry: Optional[CitationRegistry] = None, max_map_batches: Optional[int] = None) -> Dict[str, Any]:
+def run_pubcom_analysis(prompt_dir: Path, meta: Dict[str, Any], csv_path: Path, previous_report: str, cfg: RunConfig, use_checkpoint: bool = True, comparison_model: Optional[str] = None, prior_citation_registry: Optional[CitationRegistry] = None, max_map_batches: Optional[int] = None, prior_token_stats: Optional[Dict] = None) -> Dict[str, Any]:
     """
     pubcom_analysis:
     1. (Map) パブコメCSVの各コメントに対して個別分析を実行 (pubcom_map.md)
@@ -1109,6 +1110,7 @@ def run_pubcom_analysis(prompt_dir: Path, meta: Dict[str, Any], csv_path: Path, 
     Args:
         comparison_model: Comparisonフェーズで使用するモデル（指定なしでcfg.modelを使用）
         prior_citation_registry: 事前仮説生成時のCitation Registry（URL情報の引き継ぎ用）
+        prior_token_stats: 事前仮説等、前段の処理でのトークン使用統計（レポート統合用）
 
     チェックポイント機能により、途中再開が可能。
     Citation Registry機能により、出典情報を追跡可能。
@@ -1390,26 +1392,56 @@ def run_pubcom_analysis(prompt_dir: Path, meta: Dict[str, Any], csv_path: Path, 
     if prior_metadata:
         combined_metadata = combined_metadata + "\n\n" + prior_metadata
 
-    # Citation Registry: 出典一覧を生成
-    citation_appendix = generate_citation_appendix(citation_registry)
+    # Citation Registry: 出典一覧を生成 & リンク置換（実際に引用されている出典のみ）
+    # previous_report (prior report or merged hypothesis) contains the source mapping
+    final_report_content = finalize_report_citations(
+        report_text=final_insight,
+        citation_registries=[citation_registry],
+        merged_hypothesis_content=previous_report
+    )
 
     # --- Token Usage Statistics ---
     from .token_tracker import TokenTracker
     token_stats = TokenTracker.get_summary()
     
-    token_stats_md = "\n\n# Token Usage Statistics\n\n| Process / Step | Input Tokens | Output Tokens | Total Tokens |\n| :--- | :--- | :--- | :--- |\n"
+
+            
+    # Merge prior token stats if provided
+    if prior_token_stats:
+        for key, stats in prior_token_stats.items():
+            if key not in token_stats:
+                token_stats[key] = stats
+            else:
+                # Assuming distinct keys like 'pre_hypothesis/...' vs 'pubcom_analysis/...'
+                # If keys collide, we sum them
+                token_stats[key]["input_tokens"] += stats.get("input_tokens", 0)
+                token_stats[key]["output_tokens"] += stats.get("output_tokens", 0)
+                token_stats[key]["total_tokens"] += stats.get("total_tokens", 0)
+                token_stats[key]["cost"] += stats.get("cost", 0.0)
+
+    token_stats_md = "\n\n# Token Usage Statistics\n\n| Process / Step | Model | Input Tokens | Output Tokens | Est. Cost (USD) |\n| :--- | :--- | ---: | ---: | ---: |\n"
     
     # Sort for consistent order
-    total_all = 0
+    total_input = 0
+    total_output = 0
+    total_cost = 0.0
+    
     for key in sorted(token_stats.keys()):
         stats = token_stats[key]
-        token_stats_md += f"| {key} | {stats['input_tokens']:,} | {stats['output_tokens']:,} | {stats['total_tokens']:,} |\n"
-        total_all += stats['total_tokens']
+        model_name = stats.get("model", "unknown")
+        cost = stats.get("cost", 0.0)
+        
+        token_stats_md += f"| {key} | {model_name} | {stats['input_tokens']:,} | {stats['output_tokens']:,} | ${cost:,.2f} |\n"
+        
+        total_input += stats.get('input_tokens', 0)
+        total_output += stats.get('output_tokens', 0)
+        total_cost += cost
     
-    token_stats_md += f"| **TOTAL** | | | **{total_all:,}** |\n"
+    token_stats_md += f"| **TOTAL** | | **{total_input:,}** | **{total_output:,}** | **${total_cost:,.2f}** |\n"
 
     # 最終的な構成: Insight -> (Appendix) Citation -> Combined Metadata (Token Stats含む)
-    final_report = final_insight + "\n\n---\n\n" + citation_appendix + "\n\n" + token_stats_md + "\n\n" + combined_metadata + "\n\n" + metadata_header
+    # finalize_report_citations returns text + appendix
+    final_report = final_report_content + "\n\n" + token_stats_md + "\n\n" + combined_metadata + "\n\n" + metadata_header
 
     # 完了後、チェックポイントをクリア
     if checkpoint:

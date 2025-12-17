@@ -64,35 +64,53 @@ class TokenTracker:
             print(f"[Warning] Failed to log token usage: {e}", flush=True)
 
     @classmethod
-    def get_summary(cls) -> Dict[str, Dict[str, int]]:
+    def get_summary(cls, log_path: Optional[Path] = None) -> Dict[str, Dict[str, any]]:
         """
         Aggregate token usage from the log file.
-        Returns a dict keyed by 'pipeline' or 'pipeline/step', with aggregated counts.
+        Returns a dict keyed by 'pipeline / step', with aggregated counts, model, and cost.
+        
+        Cost is calculated per-call (each log entry) to correctly apply tiered pricing.
         """
-        if cls._log_path is None or not cls._log_path.exists():
+        from .pricing import calculate_call_cost
+        
+        target_path = log_path or cls._log_path
+        if target_path is None or not target_path.exists():
             return {}
 
         summary = {}
         try:
-            with open(cls._log_path, "r", encoding="utf-8") as f:
+            with open(target_path, "r", encoding="utf-8") as f:
                 for line in f:
                     if not line.strip():
                         continue
                     data = json.loads(line)
                     
-                    # Key can be just pipeline, or pipeline/step for detail
-                    # Let's aggregate by 'pipeline' + 'step' for maximum detail
                     key = f"{data.get('pipeline', 'unknown')} / {data.get('step', 'unknown')}"
+                    model = data.get("model", "unknown")
+                    input_tokens = data.get("input_tokens", 0)
+                    output_tokens = data.get("output_tokens", 0)
+                    
+                    # Calculate cost for this single call
+                    call_cost = calculate_call_cost(model, input_tokens, output_tokens)
                     
                     if key not in summary:
-                        summary[key] = {"input_tokens": 0, "output_tokens": 0, "total_tokens": 0}
+                        summary[key] = {
+                            "input_tokens": 0,
+                            "output_tokens": 0,
+                            "total_tokens": 0,
+                            "cost": 0.0,
+                            "model": model,
+                        }
                     
-                    summary[key]["input_tokens"] += data.get("input_tokens", 0)
-                    summary[key]["output_tokens"] += data.get("output_tokens", 0)
-                    summary[key]["total_tokens"] += data.get("total_tokens", 0)
+                    summary[key]["input_tokens"] += input_tokens
+                    summary[key]["output_tokens"] += output_tokens
+                    summary[key]["total_tokens"] += input_tokens + output_tokens
+                    summary[key]["cost"] += call_cost
+                    # Keep last seen model for this step (usually same for all calls in a step)
+                    summary[key]["model"] = model
                     
         except Exception as e:
-            print(f"[Warning] Failed to read token logs: {e}", flush=True)
+            print(f"[Warning] Failed to read token logs from {target_path}: {e}", flush=True)
             return {}
 
         return summary
