@@ -4,93 +4,63 @@
 
 ## 概要
 
-> このプロジェクトは、審議会資料やパブリックコメントCSVデータを入力として受け取り、以下の2段階パイプラインで分析レポートを生成します：
+> このプロジェクトは、審議会資料・国会審議・パブリックコメントを入力として受け取り、以下の3段階パイプラインで分析レポートを生成します：
 
-### 推奨パイプライン（2段階）
+### 推奨パイプライン（3段階構成）
 
 ```mermaid
 graph TB
-    subgraph Stage1 ["Stage 1: 事前仮説生成 (pre_hypothesis_iterative)"]
-        S1A["📁 審議会資料フォルダ<br/>(102ファイル)"] --> S1Map
-
-        subgraph S1MapPhase ["Part 1: Map (並列論点抽出)"]
-            S1Map["並列処理<br/>(10ワーカー)"]
-            S1Map --> S1D1["論点A"]
-            S1Map --> S1D2["論点B"]
-            S1Map --> S1D3["..."]
-            S1Map --> S1DN["論点N"]
-        end
-
-        subgraph S1ReducePhase ["Part 2: Tree Reduce (階層統合)"]
-            S1D1 --> S1R1["L1: ペア統合"]
-            S1D2 --> S1R1
-            S1D3 --> S1R2["L1: ペア統合"]
-            S1DN --> S1R2
-            S1R1 --> S1R3["L2: 統合"]
-            S1R2 --> S1R3
-            S1R3 --> S1Final["最終統合"]
-        end
-
-        S1Final --> S1Out["📄 事前仮説レポート<br/>(Q&A形式)"]
+    subgraph DataAcquisition ["データ取得フェーズ"]
+        D1["📁 審議会資料<br/>(scraper.py)"] --> Stage1A
+        D2["🏛️ 国会審議<br/>(diet_search.py)"] --> Stage1B
+        D3["💬 パブコメ/AI対話<br/>(CSV形式)"] --> Stage2
     end
 
-    S1Out --> S2B
-
-    subgraph Stage2 ["Stage 2: パブコメ比較分析 (pubcom_analysis)"]
-        S2A["📊 パブコメCSV<br/>(869コメント)"] --> S2Map
-
-        subgraph S2MapPhase ["Map: バッチ分析"]
-            S2Map["バッチ分割<br/>(20件×44バッチ)"]
-            S2Map --> S2B1["分析1"]
-            S2Map --> S2B2["分析2"]
-            S2Map --> S2B3["..."]
-            S2Map --> S2BN["分析N"]
+    subgraph Stage1 ["Stage 1: 事前仮説生成"]
+        subgraph Stage1A ["1A: 審議会資料"]
+            S1A_Map["Part 1: Map<br/>(論点抽出)"] --> S1A_Reduce["Part 2: Tree Reduce<br/>(統合)"]
+            S1A_Reduce --> S1A_Out["📄 審議会レポート"]
         end
-
-        subgraph S2ReducePhase ["Tree Reduce: 統合"]
-            S2B1 --> S2R1["L1"]
-            S2B2 --> S2R1
-            S2B3 --> S2R2["L1"]
-            S2BN --> S2R2
-            S2R1 --> S2R3["L2"]
-            S2R2 --> S2R3
-            S2R3 --> S2Consolidated["統合レポート"]
+        
+        subgraph Stage1B ["1B: 国会審議"]
+            S1B_Map["Part 1: Map<br/>(論点抽出)"] --> S1B_Reduce["Part 2: Tree Reduce<br/>(統合)"]
+            S1B_Reduce --> S1B_Out["📄 国会レポート"]
         end
-
-        subgraph S2ComparePhase ["Compare: 比較分析"]
-            S2B["事前仮説"]
-            S2Consolidated --> S2Compare["比較分析<br/>(gemini-3-pro)"]
-            S2B --> S2Compare
-        end
-
-        S2Compare --> S2Out["📝 最終レポート<br/>・仮説検証<br/>・新インサイト<br/>・対応方針案"]
+        
+        S1A_Out --> Concat["テキスト連結"]
+        S1B_Out --> Concat
+        Concat --> MergedHypothesis["📄 merged_hypothesis.md"]
     end
 
+    subgraph Stage2 ["Stage 2: パブコメ比較分析"]
+        D3 --> S2Map["Map: バッチ分析<br/>(pubcom_map.md)"]
+        S2Map --> S2Reduce["Tree Reduce: 統合<br/>(pubcom_reduce.md)"]
+        S2Reduce --> S2Report["📄 pubcom_report.md"]
+        
+        MergedHypothesis --> S2Compare["Compare: 比較分析<br/>(pubcom_comparison.md)"]
+        S2Report --> S2Compare
+        S2Compare --> FinalReport["📝 最終レポート<br/>・仮説検証<br/>・新インサイト<br/>・対応方針案"]
+    end
+
+    style DataAcquisition fill:#f0f0f0
     style Stage1 fill:#e1f5ff
+    style Stage1A fill:#d4edda
+    style Stage1B fill:#d4edda
     style Stage2 fill:#fff4e1
-    style S1MapPhase fill:#d4edda
-    style S1ReducePhase fill:#cce5ff
-    style S2MapPhase fill:#d4edda
-    style S2ReducePhase fill:#cce5ff
-    style S2ComparePhase fill:#fff3cd
 ```
-
-| モード                       | 目的                                  | 入力                   | 出力             |
-| ---------------------------- | ------------------------------------- | ---------------------- | ---------------- |
-| `pre_hypothesis_iterative` | 審議会資料からQ&A形式の事前仮説を生成 | 審議会資料フォルダ     | 事前仮説レポート |
-| `pubcom_analysis`          | パブコメを事前仮説と比較分析          | パブコメCSV + 事前仮説 | 最終比較レポート |
 
 ### このツールの目的
 
-**事前仮説（審議会での議論）とくらべて、パブリックコメント等に新しいビュー（視点・論点）がないかを見出すこと**を主眼としています。
+**事前仮説（審議会・国会での議論）とくらべて、パブリックコメント等に新しいビュー（視点・論点）がないかを見出すこと**を主眼としています。
 
 ## 特徴
 
 - **Tree Reduce パイプライン**: 大量データを効率的に並列処理して統合
 - **バッチ並列処理**: Map/Reduce パターンで高速処理
 - **チェックポイント機能**: 中断からの再開が可能
-- **複数AIモデル対応**: Gemini Flash, Gemini Pro など用途に応じて切り替え
-- **詳細なメタデータ記録**: 処理過程を完全にトレース可能
+- **複数AIモデル対応**: Gemini Flash, Gemini Pro, OpenRouter経由のモデル
+- **Citation Registry**: 出典情報の追跡とURLリンク自動展開
+- **トークン使用量追跡**: APIコスト管理のための詳細なログ
 
 ## セットアップ
 
@@ -115,116 +85,171 @@ pip install -r requirements.txt
 GOOGLE_API_KEY=your_google_api_key_here
 ```
 
-## 使い方
+## データ取得
 
-### 1. 事前仮説生成 (`pre_hypothesis_iterative`)
+### 審議会資料のスクレイピング
 
-審議会資料から構造化された事前仮説レポートを生成します。
+```bash
+python scraping/scraper.py <URL> \
+  --output_dir <ダウンロード先> \
+  --path-prefix <パス> \
+  [--filter <キーワード>] \
+  [--link-text-filter <リンクテキスト>]
+```
+
+- 2階層までクロール
+- 対象形式: txt, pptx, xlsx, doc, docx, pdf
+- `--path-prefix` は必須（例: `/shingi1/` または `none`）
+- 出力: ドキュメントファイル + `metadata_*.json`
+
+### 国会審議の取得
+
+```bash
+# 会議検索 + 議事録ダウンロード
+python scripts/diet_search.py \
+  --keyword "人工知能基本計画" \
+  --from 2015-01-01 \
+  --until 2025-12-10 \
+  --output-dir each_project/ai-plan-test/kokkai \
+  --output meetings.tsv \
+  --download
+
+# CSVに変換（pre_hypothesis_iterativeで使用するため）
+python scripts/convert_transcripts_to_csv.py \
+  --input-dir each_project/ai-plan-test/kokkai/meetings_* \
+  --output each_project/ai-plan-test/kokkai/diet_speeches.csv
+```
+
+出力ファイル:
+- `meetings_*.tsv`: 会議メタデータ
+- `meetings_*/`: 議事録テキスト
+- `diet_speeches.csv`: 分析用CSV（session_id, speech_id, speaker, speech列）
+
+## Stage 1: 事前仮説生成
+
+### Stage 1A: 審議会資料から事前仮説
 
 ```bash
 python -m src.interview_analysis.cli \
   --mode pre_hypothesis_iterative \
-  --source-dir "path/to/committee/documents" \
-  --focus "船荷証券の電子化" \
-  --model gemini-flash-latest
+  --source-dir "each_project/ai-plan-test/shingikai" \
+  --focus "人工知能基本計画" \
+  --model "gemini:gemini-flash-lite-latest"
+```
+
+### Stage 1B: 国会審議から事前仮説
+
+```bash
+python -m src.interview_analysis.cli \
+  --mode pre_hypothesis_iterative \
+  --source-dir "each_project/ai-plan-test/kokkai" \
+  --focus "人工知能基本計画" \
+  --model "gemini:gemini-flash-lite-latest"
 ```
 
 **処理フロー:**
+- **Part 1 (Map)**: 各ドキュメントから論点を並列抽出（`pre_hypothesis_part1.md`）
+- **Part 2 (Tree Reduce)**: 階層的統合でYAML形式Q&Aリスト生成（`pre_hypothesis_part2_iterative.md`）
 
-1. **Part 1 (Map)**: 各ドキュメントから論点を抽出（並列処理）
-2. **Part 2 (Tree Reduce)**: 論点を階層的に統合してQ&Aリスト生成
+### 事前仮説の統合（Concat方式）
 
-**出力例:**
+審議会と国会のレポートを**単純なテキスト連結**で統合:
 
-```
-doc/2025-12-05/run-111834/outputs/report.md
-├─ 1. 主要な事前仮説・論点
-├─ 2. Q&A形式での論点整理
-├─ 3. 反対意見・懸念点
-├─ 4. 検討課題
-└─ 処理メタデータ
+```powershell
+# PowerShell
+Get-Content doc/2025-12-15/run-A/outputs/report.md, doc/2025-12-15/run-B/outputs/report.md | Set-Content merged_hypothesis.md
 ```
 
-### 2. パブコメ比較分析 (`pubcom_analysis`)
+- `pubcom_comparison` は複数の YAML ブロックを入力として理解可能
 
-パブリックコメントを事前仮説と比較し、仮説の検証・新インサイトを抽出します。
+## Stage 2: パブコメ比較分析
+
+### 一括実行（pubcom_analysis）
 
 ```bash
 python -m src.interview_analysis.cli \
   --mode pubcom_analysis \
   --csv data/comments.csv \
-  --previous-report doc/2025-12-05/run-111834/outputs/report.md \
-  --focus "船荷証券の電子化" \
-  --model gemini-flash-latest \
-  --comparison-model gemini-3-pro-preview
+  --previous-report doc/2025-12-15/merged_hypothesis.md \
+  --focus "人工知能基本計画" \
+  --model "gemini:gemini-flash-lite-latest" \
+  --comparison-model "gemini:gemini-2.0-flash"
 ```
 
 **処理フロー:**
+- **Map**: パブコメをバッチ分析（`pubcom_map.md`）
+- **Tree Reduce**: 分析結果を階層的統合（`pubcom_reduce.md`）
+- **Compare**: 事前仮説との比較レポート生成（`pubcom_comparison.md`）
 
-1. **Map**: 各コメントを分析してバッチ処理（並列）
-2. **Tree Reduce**: 分析結果を階層的に統合
-3. **Compare**: 事前仮説と比較して最終レポート生成
+### 分離実行（大量データ向け）
 
-**オプション:**
-
-- `--model`: Map/Reduce フェーズで使用するモデル（高速処理向け）
-- `--comparison-model`: Compareフェーズで使用するモデル（高品質向け）
-
-**出力例:**
-
-```
-doc/2025-12-05/run-113027/outputs/report.md
-├─ 1. パブリックコメントによる仮説の検証
-├─ 2. パブリックコメントによる反対・懸念の顕在化
-├─ 3. 新たなインサイト・論点
-├─ 4. 今後の対応方針案
-├─ 参考: パブリックコメント集約レポート
-└─ 処理メタデータ（両パイプライン統合）
-```
-
-### オプション一覧
-
-| オプション              | デフォルト                   | 説明                                                           |
-| ----------------------- | ---------------------------- | -------------------------------------------------------------- |
-| `--mode`              | -                            | 実行モード (`pre_hypothesis_iterative`, `pubcom_analysis`) |
-| `--source-dir`        | -                            | 審議会資料フォルダ（pre_hypothesis用）                         |
-| `--csv`               | -                            | パブコメCSVファイルパス                                        |
-| `--previous-report`   | -                            | 事前仮説レポートパス（pubcom_analysis用）                      |
-| `--focus`             | -                            | 分析の主眼となるテーマ                                         |
-| `--model`             | `gemini-flash-lite-latest` | 使用するモデル                                                 |
-| `--comparison-model`  | -                            | 比較フェーズ専用モデル                                         |
-| `--temperature`       | 0.3                          | 生成温度 (0.0-1.0)                                             |
-| `--max-output-tokens` | 64000                        | 最大出力トークン数                                             |
-| `--log-dir`           | `doc`                      | ログ出力先ディレクトリ                                         |
-
-## パイプライン詳細
-
-### Tree Reduce アルゴリズム
-
-大量データを効率的に統合するため、ペアワイズの階層的統合を行います：
-
-```
-Level 1: [A, B, C, D, E, F, G, H] → [AB, CD, EF, GH]  (4ペア並列)
-Level 2: [AB, CD, EF, GH]       → [ABCD, EFGH]       (2ペア並列)
-Level 3: [ABCD, EFGH]           → [ABCDEFGH]         (1ペア)
-         ↓
-       最終レポート
-```
-
-### チェックポイント機能
-
-処理が中断された場合、`doc/checkpoints/` に保存されたチェックポイントから再開できます：
+#### Step 2a: パブコメ集約のみ
 
 ```bash
-# 同じコマンドを再実行すると、チェックポイントから継続
-python -m src.interview_analysis.cli --mode pubcom_analysis ...
+python -m src.interview_analysis.cli \
+  --mode pubcom_aggregate \
+  --csv data/comments.csv \
+  --focus "人工知能基本計画" \
+  --model "gemini:gemini-flash-lite-latest" \
+  --max-map-batches 50  # APIクォータ管理
 ```
 
-チェックポイントをクリアして最初から実行する場合：
+出力: `pubcom_report.md`（YAML形式、再利用可能）
+
+#### Step 2b: 比較分析のみ
 
 ```bash
-Remove-Item -Recurse -Force "doc\checkpoints\*"
+python -m src.interview_analysis.cli \
+  --mode pubcom_compare \
+  --pubcom-report doc/2025-12-15/run-HHMMSS/outputs/pubcom_report.md \
+  --prior-hypothesis doc/2025-12-15/merged_hypothesis.md \
+  --focus "人工知能基本計画" \
+  --comparison-model "gemini:gemini-2.0-flash"
 ```
+
+**推奨モデル構成:**
+- `--model "gemini:gemini-flash-lite-latest"`: Map/Reduce（高速・低コスト）
+- `--comparison-model "gemini:gemini-2.0-flash"`: Compare（高品質）
+
+## モデルプロバイダー指定
+
+モデル名にプレフィックスを付けてプロバイダーを明示指定:
+
+| プレフィックス | プロバイダー | 例 |
+|---------------|------------|-----|
+| `gemini:` | Google Gemini API | `gemini:gemini-flash-lite-latest` |
+| `openrouter:` | OpenRouter API | `openrouter:x-ai/grok-4.1-fast:free` |
+| なし | Gemini（後方互換） | `gemini-flash-lite-latest` |
+
+## オプション一覧
+
+| オプション | デフォルト | 説明 |
+|-----------|-----------|------|
+| `--mode` | - | 実行モード |
+| `--source-dir` | - | 審議会/国会資料フォルダ（pre_hypothesis用） |
+| `--csv` | - | パブコメCSVファイルパス |
+| `--previous-report` | - | 事前仮説レポートパス（pubcom_analysis用） |
+| `--focus` | - | 分析の主眼となるテーマ |
+| `--model` | `gemini-flash-lite-latest` | Map/Reduceで使用するモデル |
+| `--comparison-model` | - | 比較フェーズ専用モデル |
+| `--temperature` | 0.0 | Map/Reduceフェーズの生成温度 |
+| `--comparison-temperature` | 1.0 | Comparisonフェーズの生成温度 |
+| `--max-output-tokens` | 64000 | 最大出力トークン数 |
+| `--max-map-batches` | - | Mapフェーズの最大バッチ数（API制限対策） |
+| `--log-dir` | `doc` | ログ出力先ディレクトリ |
+| `--pubcom-report` | - | pubcom_compare用: 集約済みパブコメレポート |
+| `--prior-hypothesis` | - | pubcom_compare用: 事前仮説レポート |
+| `--merged-hypothesis` | - | 引用ID解決用の統合仮説ファイル |
+
+## 出力ファイル
+
+| ファイル | 内容 |
+|---------|------|
+| `report_{mode}.md` | 通常のレポート（引用タグのみ） |
+| `report_{mode}_with_references.md` | URLリンク展開版レポート |
+| `citation_registry.json` | 全引用情報のJSON |
+| `pubcom_report.md` | パブコメ集約レポート（再利用可能） |
+| `token_usage.jsonl` | トークン使用量ログ |
 
 ## ディレクトリ構成
 
@@ -238,50 +263,50 @@ i-1-grand-prix/
 │   └── YYYY-MM-DD/
 │       └── run-HHMMSS/
 │           ├── config.json      # 実行設定
+│           ├── token_usage.jsonl # トークン使用量
 │           └── outputs/
-│               └── report.md    # 生成レポート
+│               ├── report.md    # 生成レポート
+│               ├── report_with_references.md  # リンク展開版
+│               ├── citation_registry.json     # 出典情報
+│               └── pubcom_report.md           # パブコメ集約
+├── each_project/                # プロジェクト別データ
+│   └── <project-name>/
+│       ├── shingikai/           # 審議会資料
+│       └── kokkai/              # 国会審議資料
 ├── prompts/                     # プロンプトテンプレート
 │   ├── pre_hypothesis_part1.md  # 論点抽出用
-│   ├── pre_hypothesis_reduce.md # Q&A統合用
+│   ├── pre_hypothesis_part2_iterative.md  # 論点統合用
 │   ├── pubcom_map.md            # パブコメ分析用
 │   ├── pubcom_reduce.md         # パブコメ統合用
-│   └── pubcom_comparison.md     # 比較分析用
+│   ├── pubcom_comparison.md     # 比較分析用
+│   └── legacy/                  # 旧プロンプト
+├── scripts/                     # ユーティリティスクリプト
+│   ├── diet_search.py           # 国会審議検索
+│   ├── diet_download.py         # 議事録ダウンロード
+│   └── convert_transcripts_to_csv.py  # CSV変換
+├── scraping/                    # Webスクレイピング
+│   └── scraper.py               # スクレイパー
 ├── src/
 │   └── interview_analysis/      # メインモジュール
 │       ├── cli.py               # CLIエントリポイント
 │       ├── pipeline.py          # 実行パイプライン
-│       ├── prompts.py           # プロンプト処理
+│       ├── citation.py          # 出典管理
 │       ├── loader.py            # データローダー
-│       └── model_provider.py    # モデルプロバイダー
-├── scraping/                    # Webスクレイピング
-│   └── scraper.py               # スクレイパー
+│       ├── model_provider.py    # モデルプロバイダー
+│       └── token_tracker.py     # トークン追跡
 ├── .env                         # 環境変数（要作成）
-├── CLAUDE.md                    # AIアシスタント向けガイドライン
+├── claude.md                    # AIアシスタント向けガイドライン
 ├── requirements.txt             # Python依存パッケージ
 └── README.md
 ```
 
-## 出力形式
+## チェックポイント機能
 
-### 処理メタデータ
+処理が中断された場合、`doc/checkpoints/` から再開可能。
 
-レポート末尾に処理過程の詳細が記録されます：
-
-```markdown
-## 処理パイプライン: パブリックコメント分析 (pubcom_analysis)
-
-### Map (コメント分析)
-- **入力**: 869 → **出力**: 44
-- **モデル**: `gemini-flash-latest`
-- **詳細**: 44バッチ (並列5ワーカー)
-
-### Tree Reduce (統合)
-- **入力**: 15 → **出力**: 1
-- **モデル**: `gemini-flash-latest`
-- **詳細**: 4レベル並列
-
-### Compare (比較分析)
-- **モデル**: `gemini-3-pro-preview`
+```bash
+# チェックポイントをクリアして最初から実行
+Remove-Item -Recurse -Force "doc\checkpoints\*"
 ```
 
 ## トラブルシューティング
@@ -297,6 +322,13 @@ i-1-grand-prix/
 ### チェックポイントの破損
 
 チェックポイントに問題がある場合は、`doc/checkpoints/` 内の該当ディレクトリを削除して再実行してください。
+
+### focus フィルタリング
+
+`--focus` 引数で指定したテーマに**直接関係のない論点は除外**される:
+- 別テーマの政策議論（税制、社会保障、エネルギー等）
+- 背景として軽く触れられているだけの論点
+- 判断基準: その論点がfocusの実現・決定に**直接影響を与えるか**
 
 ## ライセンス
 
