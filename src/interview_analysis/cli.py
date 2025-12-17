@@ -206,8 +206,34 @@ def main() -> None:
             raise SystemExit("--pubcom-report と --prior-hypothesis (または --previous-report) を指定してください")
         pubcom_report = read_text_file(pubcom_report_path)
         prior_hypothesis = read_text_file(prior_hypothesis_path)
+        
+        # Load prior token stats from prior hypothesis and pubcom aggregate runs
+        prior_token_stats_list = []
+        
+        # Stage 1: prior_hypothesis の token_usage.jsonl
+        prior_hypo_token_path = Path(prior_hypothesis_path).parent.parent / "token_usage.jsonl"
+        if prior_hypo_token_path.exists():
+            try:
+                from .token_tracker import TokenTracker
+                stats = TokenTracker.get_summary(prior_hypo_token_path)
+                prior_token_stats_list.append(("Stage 1 (事前仮説生成)", stats))
+                print(f"Loaded Stage 1 token stats from {prior_hypo_token_path}")
+            except Exception as e:
+                print(f"[WARNING] Failed to load Stage 1 token stats: {e}")
+        
+        # Stage 2: pubcom_report の token_usage.jsonl
+        pubcom_token_path = Path(pubcom_report_path).parent.parent / "token_usage.jsonl"
+        if pubcom_token_path.exists():
+            try:
+                from .token_tracker import TokenTracker
+                stats = TokenTracker.get_summary(pubcom_token_path)
+                prior_token_stats_list.append(("Stage 2 (パブコメ集約)", stats))
+                print(f"Loaded Stage 2 token stats from {pubcom_token_path}")
+            except Exception as e:
+                print(f"[WARNING] Failed to load Stage 2 token stats: {e}")
+        
         from .pipeline import run_pubcom_compare
-        result = run_pubcom_compare(prompt_dir, meta, pubcom_report, prior_hypothesis, cfg, comparison_model=args.comparison_model)
+        result = run_pubcom_compare(prompt_dir, meta, pubcom_report, prior_hypothesis, cfg, comparison_model=args.comparison_model, prior_token_stats_list=prior_token_stats_list)
     else:
         raise ValueError(f"Unknown mode: {cfg.mode}")
 
@@ -231,7 +257,8 @@ def main() -> None:
         report_with_references = finalize_report_citations(
             result["report"], 
             [citation_registry], # finalize_report_citations expects a list
-            merged_hypothesis_path=args.merged_hypothesis
+            merged_hypothesis_path=args.merged_hypothesis,
+            merged_hypothesis_content=result.get("merged_hypothesis_content")  # pubcom_compare等から渡される
         )
         save_text(run_dir / "outputs" / f"report_{cfg.mode}_with_references.md", report_with_references)
         

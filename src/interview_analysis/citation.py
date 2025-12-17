@@ -515,6 +515,58 @@ def parse_legacy_citation(text: str) -> List[Tuple[str, Optional[int]]]:
     return results
 
 
+def _generate_readable_title(filename: str, url: str, date: str) -> str:
+    """
+    URLとファイル名から読みやすいタイトルを生成する
+    
+    例:
+    - www.moj.go.jp → "法務省資料 (2021-04-14)"
+    - www.shojihomu.or.jp + digi01_minutes.pdf → "商事法務研究会 第1回 議事録 (2021-04-14)"
+    """
+    # URL-based source detection
+    source_name = ""
+    doc_type = ""
+    
+    if url:
+        if "moj.go.jp" in url:
+            source_name = "法務省"
+            doc_type = "審議会資料"
+        elif "shojihomu.or.jp" in url:
+            source_name = "商事法務研究会"
+            # Try to extract meeting number from filename
+            match = re.search(r'digi(\d+)', filename)
+            if match:
+                meeting_num = int(match.group(1))
+                doc_type = f"第{meeting_num}回"
+            else:
+                doc_type = ""
+            
+            # Detect document type from filename
+            if "minutes" in filename.lower():
+                doc_type = f"{doc_type} 議事録" if doc_type else "議事録"
+            elif "material" in filename.lower():
+                doc_type = f"{doc_type} 資料" if doc_type else "資料"
+    
+    # Build title
+    parts = []
+    if source_name:
+        parts.append(source_name)
+    if doc_type:
+        parts.append(doc_type)
+    
+    if not parts:
+        # Fallback: just use filename stem
+        parts.append(Path(filename).stem)
+    
+    title = " ".join(parts)
+    
+    # Add date if available
+    if date:
+        title = f"{title} ({date})"
+    
+    return title
+
+
 def finalize_report_citations(
     report_text: str,
     citation_registries: List[CitationRegistry],
@@ -564,14 +616,18 @@ def finalize_report_citations(
         mh_content = merged_hypothesis_path.read_text(encoding="utf-8")
         
     if mh_content:
-        # Regex to capture id, filename, and optionally url
-        matches = re.findall(r'source_doc_id:\s*"([^"]+)"\s*\n\s*source_filename:\s*"([^"]+)"(?:\s*\n\s*source_url:\s*"([^"]+)")?', mh_content)
+        # Regex to capture id, filename, url, and date
+        matches = re.findall(
+            r'source_doc_id:\s*"([^"]+)"\s*\n\s*source_filename:\s*"([^"]+)"(?:\s*\n\s*source_url:\s*"([^"]+)")?(?:\s*\n\s*source_date:\s*"?([^"\n]+)"?)?',
+            mh_content
+        )
         
-        id_to_info = {doc_id: {"filename": filename, "url": url} for doc_id, filename, url in matches}
+        id_to_info = {doc_id: {"filename": filename, "url": url, "date": date.strip() if date else ""} for doc_id, filename, url, date in matches}
         
         for doc_id, info in id_to_info.items():
             filename = info["filename"]
             url = info["url"]
+            date = info.get("date", "")
             
             if doc_id not in citation_map:
                  # Try to find info for filename
@@ -586,11 +642,14 @@ def finalize_report_citations(
                      citation_map[doc_id] = found_info.copy()
                      citation_map[doc_id]["cite_id"] = doc_id
                  else:
+                     # Generate readable title from URL and filename
+                     readable_title = _generate_readable_title(filename, url, date)
+                     
                      fallback_info = {
                          "cite_id": doc_id,
                          "file": filename,
                          "cite_type": "kokkai" if "X" in filename else "shingikai",
-                         "link_text": f"{filename} (ID: {doc_id})"
+                         "link_text": readable_title
                      }
                      if url:
                          fallback_info["url"] = url
@@ -653,10 +712,18 @@ def finalize_report_citations(
             link_text = info.get("link_text", "")
             filename = info.get("file", "")
             url = info.get("url")
+            date = info.get("date", "")
             
-            # Title Logic
+            # Title Logic - prefer readable titles over raw filenames
             generic_terms = ["議事概要", "答申", "参考資料", "説明", "委員名簿", "協議員名簿", "設置要綱"]
-            title = link_text or page_title or filename
+            
+            if link_text:
+                title = link_text
+            elif page_title:
+                title = page_title
+            else:
+                # Use _generate_readable_title for better display
+                title = _generate_readable_title(filename, url, date)
             
             if link_text and page_title:
                 if any(term == link_text.strip() for term in generic_terms):
@@ -725,6 +792,13 @@ def finalize_report_citations(
         return replace_citation(MockMatch())
 
     new_content = re.sub(r'\[(\d{4}-\d{2}-\d{2}_\d+X[^\]]+)\]', replace_bare_citation, new_content)
+    
+    # 6. Remove backticks around links (fixes table cell rendering issue)
+    # Pattern: `[text](url)` -> [text](url)
+    new_content = re.sub(r'`(\[[^\]]+\]\([^\)]+\))`', r'\1', new_content)
+    # Pattern: `[パブコメ: [UUID](URL)]` -> [パブコメ: [UUID](URL)]
+    # Need to handle nested brackets: [パブコメ: [uuid](url)]
+    new_content = re.sub(r'`(\[パブコメ:\s*\[[^\]]+\]\([^\)]+\)\])`', r'\1', new_content)
     
     # Note: Citation appendix generation removed.
     # All citations (shingikai, kokkai, pubcom) are already linked inline in the report body.

@@ -1079,8 +1079,31 @@ def run_pre_hypothesis_iterative(prompt_dir: Path, meta: Dict[str, Any], source_
     # Citation Registry: 出典一覧を生成（実際に引用されている出典のみ）
     citation_appendix = generate_citation_appendix(citation_registry, report_text=final_qa)
 
+    # --- Token Usage Statistics ---
+    from .token_tracker import TokenTracker
+    token_stats = TokenTracker.get_summary()
+    
+    token_stats_md = "\n\n# Token Usage Statistics\n\n| Process / Step | Model | Input Tokens | Output Tokens | Est. Cost (USD) |\n| :--- | :--- | ---: | ---: | ---: |\n"
+    
+    total_input = 0
+    total_output = 0
+    total_cost = 0.0
+    
+    for key in sorted(token_stats.keys()):
+        stats = token_stats[key]
+        model_name = stats.get("model", "unknown")
+        cost = stats.get("cost", 0.0)
+        
+        token_stats_md += f"| {key} | {model_name} | {stats['input_tokens']:,} | {stats['output_tokens']:,} | ${cost:,.2f} |\n"
+        
+        total_input += stats.get('input_tokens', 0)
+        total_output += stats.get('output_tokens', 0)
+        total_cost += cost
+    
+    token_stats_md += f"| **TOTAL** | | **{total_input:,}** | **{total_output:,}** | **${total_cost:,.2f}** |\n"
+
     # Final Report Construction - メタ情報は最後に配置（読者はコンテンツを先に見たい）
-    final_report = "# 最終成果物 (Q&Aリスト)\n\n" + final_qa + "\n\n---\n\n" + citation_appendix + process_metadata + "\n\n" + metadata_header
+    final_report = "# 最終成果物 (Q&Aリスト)\n\n" + final_qa + "\n\n---\n\n" + citation_appendix + token_stats_md + "\n\n" + process_metadata + "\n\n" + metadata_header
 
     # Part 1 Log Construction
     part1_log_content = "# Part 1 Outputs (Individual Document Analysis)\n\n"
@@ -1645,13 +1668,39 @@ def run_pubcom_aggregate(prompt_dir: Path, meta: Dict[str, Any], csv_path: Path,
     if not pubcom_consolidated_report.strip().startswith("```yaml"):
         pubcom_consolidated_report = f"```yaml\n{pubcom_consolidated_report}\n```"
     
+    # --- Token Usage Statistics ---
+    from .token_tracker import TokenTracker
+    token_stats = TokenTracker.get_summary()
+    
+    token_stats_md = "\n\n# Token Usage Statistics\n\n| Process / Step | Model | Input Tokens | Output Tokens | Est. Cost (USD) |\n| :--- | :--- | ---: | ---: | ---: |\n"
+    
+    total_input = 0
+    total_output = 0
+    total_cost = 0.0
+    
+    for key in sorted(token_stats.keys()):
+        stats = token_stats[key]
+        model_name = stats.get("model", "unknown")
+        cost = stats.get("cost", 0.0)
+        
+        token_stats_md += f"| {key} | {model_name} | {stats['input_tokens']:,} | {stats['output_tokens']:,} | ${cost:,.2f} |\n"
+        
+        total_input += stats.get('input_tokens', 0)
+        total_output += stats.get('output_tokens', 0)
+        total_cost += cost
+    
+    token_stats_md += f"| **TOTAL** | | **{total_input:,}** | **{total_output:,}** | **${total_cost:,.2f}** |\n"
+    
+    # レポートにToken Stats追加
+    final_report = pubcom_consolidated_report + token_stats_md
+    
     # チェックポイントをクリア
     if checkpoint:
         checkpoint.clear()
 
     return {
         "prompt": "",
-        "report": pubcom_consolidated_report,
+        "report": final_report,
         "part1_log": part1_log_content,
         "pubcom_consolidated_report": pubcom_consolidated_report,
         "citation_registry": citation_registry,
@@ -1659,13 +1708,14 @@ def run_pubcom_aggregate(prompt_dir: Path, meta: Dict[str, Any], csv_path: Path,
     }
 
 
-def run_pubcom_compare(prompt_dir: Path, meta: Dict[str, Any], pubcom_report: str, prior_hypothesis: str, cfg: RunConfig, comparison_model: Optional[str] = None) -> Dict[str, Any]:
+def run_pubcom_compare(prompt_dir: Path, meta: Dict[str, Any], pubcom_report: str, prior_hypothesis: str, cfg: RunConfig, comparison_model: Optional[str] = None, prior_token_stats_list: Optional[List[Tuple[str, Dict]]] = None) -> Dict[str, Any]:
     """
     pubcom_compare: 比較分析のみ
     
     入力:
         - pubcom_report: 集約済みパブコメレポート（YAML形式）
         - prior_hypothesis: 事前仮説レポート（複数YAMLブロック可）
+        - prior_token_stats_list: 事前ステージのトークン統計 [(stage_name, stats_dict), ...]
     
     出力: 最終比較レポート
     """
@@ -1698,8 +1748,54 @@ def run_pubcom_compare(prompt_dir: Path, meta: Dict[str, Any], pubcom_report: st
     )
     final_insight = _call_model(compare_prompt, compare_cfg, step_name="pubcom_compare")
 
+    # --- Token Usage Statistics ---
+    from .token_tracker import TokenTracker
+    token_stats = TokenTracker.get_summary()
+    
+    token_stats_md = "\n\n# Token Usage Statistics\n\n| Stage | Process / Step | Model | Input Tokens | Output Tokens | Est. Cost (USD) |\n| :--- | :--- | :--- | ---: | ---: | ---: |\n"
+    
+    total_input = 0
+    total_output = 0
+    total_cost = 0.0
+    
+    # Prior stages (Stage 1: 事前仮説生成, Stage 2: パブコメ集約)
+    if prior_token_stats_list:
+        for stage_name, stage_stats in prior_token_stats_list:
+            for key in sorted(stage_stats.keys()):
+                stats = stage_stats[key]
+                model_name = stats.get("model", "unknown")
+                cost = stats.get("cost", 0.0)
+                
+                token_stats_md += f"| {stage_name} | {key} | {model_name} | {stats['input_tokens']:,} | {stats['output_tokens']:,} | ${cost:,.2f} |\n"
+                
+                total_input += stats.get('input_tokens', 0)
+                total_output += stats.get('output_tokens', 0)
+                total_cost += cost
+    
+    # Current stage (Stage 3: 比較分析)
+    for key in sorted(token_stats.keys()):
+        stats = token_stats[key]
+        model_name = stats.get("model", "unknown")
+        cost = stats.get("cost", 0.0)
+        
+        token_stats_md += f"| Stage 3 (比較分析) | {key} | {model_name} | {stats['input_tokens']:,} | {stats['output_tokens']:,} | ${cost:,.2f} |\n"
+        
+        total_input += stats.get('input_tokens', 0)
+        total_output += stats.get('output_tokens', 0)
+        total_cost += cost
+    
+    token_stats_md += f"| **TOTAL** | | | **{total_input:,}** | **{total_output:,}** | **${total_cost:,.2f}** |\n"
+    
+    # レポートにToken Stats追加（finalize_report_citationsはCLI側で一度だけ呼ぶ）
+    final_report = final_insight + token_stats_md
+
+    # CLI側で_with_references.mdを生成するためにcitation_registryを返す（空だがフロー維持）
+    citation_registry = CitationRegistry()
+    
     return {
         "prompt": compare_prompt,
-        "report": final_insight,
-        "pubcom_consolidated_report": pubcom_report
+        "report": final_report,
+        "pubcom_consolidated_report": pubcom_report,
+        "citation_registry": citation_registry,
+        "merged_hypothesis_content": prior_hypothesis  # CLI側でfinalize_report_citationsに渡す
     }

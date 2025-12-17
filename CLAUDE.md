@@ -4,6 +4,16 @@
 
 **事前仮説（審議会・国会での議論）とくらべて、パブリックコメント等に新しいビュー（視点・論点）がないかを見出すこと**
 
+### 現在の分析対象
+
+| プロジェクト | 審議会資料 | 国会審議 | AI対話 |
+|-------------|-----------|---------|--------|
+| **funani**（船荷証券） | `each_project/funani/shingikai/` (91 PDF) | - | `data/bill-of-lading_messages.csv` |
+| **AI基本計画** | `each_project/ai-plan-test/shingikai/` (519 PDF) | `each_project/ai-plan-test/kokkai/diet_speeches.csv` | `data/ai-plan-test_messages.csv` |
+| **議員定数削減** | `each_project/teisuu/shingikai/` (45 PDF) | `each_project/teisuu/diet_speeches.csv` | `data/teisuu_messages.csv` |
+
+> **Note**: AI対話の分析には `*_messages.csv` を使用（`*_interview_sessions.csv` はセッションメタデータのみ）
+
 ### 推奨パイプライン（3段階構成）
 
 ```
