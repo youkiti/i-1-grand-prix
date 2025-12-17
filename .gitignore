@@ -1,3 +1,6 @@
+# 実験レポート出力フォルダ
+/doc/
+
 /data/*
 !/data/.gitkeep
 
