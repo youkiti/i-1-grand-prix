@@ -9,6 +9,10 @@ MODEL_PRICING: Dict[str, Dict[str, Any]] = {
         "input_per_1m": {"default": 2.00, "over_200k": 4.00},
         "output_per_1m": {"default": 12.00, "over_200k": 18.00},
     },
+    "gemini-3-flash-preview": {
+        "input_per_1m": 0.50,
+        "output_per_1m": 3.00,  # 思考トークン含む
+    },
     "gemini-2.5-flash": {
         "input_per_1m": 0.30,
         "output_per_1m": 2.50,

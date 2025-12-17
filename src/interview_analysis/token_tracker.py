@@ -10,6 +10,7 @@ class TokenUsage:
     input_tokens: int
     output_tokens: int
     total_tokens: int
+    thinking_tokens: int = 0  # Gemini 3 思考トークン（出力に含まれる）
 
 
 class TokenTracker:
@@ -55,6 +56,7 @@ class TokenTracker:
             "input_tokens": usage.input_tokens,
             "output_tokens": usage.output_tokens,
             "total_tokens": usage.total_tokens,
+            "thinking_tokens": usage.thinking_tokens,
         }
 
         try:
@@ -98,6 +100,7 @@ class TokenTracker:
                             "input_tokens": 0,
                             "output_tokens": 0,
                             "total_tokens": 0,
+                            "thinking_tokens": 0,
                             "cost": 0.0,
                             "model": model,
                         }
@@ -105,6 +108,7 @@ class TokenTracker:
                     summary[key]["input_tokens"] += input_tokens
                     summary[key]["output_tokens"] += output_tokens
                     summary[key]["total_tokens"] += input_tokens + output_tokens
+                    summary[key]["thinking_tokens"] += data.get("thinking_tokens", 0)
                     summary[key]["cost"] += call_cost
                     # Keep last seen model for this step (usually same for all calls in a step)
                     summary[key]["model"] = model

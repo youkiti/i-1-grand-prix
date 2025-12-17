@@ -1752,10 +1752,11 @@ def run_pubcom_compare(prompt_dir: Path, meta: Dict[str, Any], pubcom_report: st
     from .token_tracker import TokenTracker
     token_stats = TokenTracker.get_summary()
     
-    token_stats_md = "\n\n# Token Usage Statistics\n\n| Stage | Process / Step | Model | Input Tokens | Output Tokens | Est. Cost (USD) |\n| :--- | :--- | :--- | ---: | ---: | ---: |\n"
+    token_stats_md = "\n\n# Token Usage Statistics\n\n| Stage | Process / Step | Model | Input Tokens | Output Tokens | Thinking Tokens | Est. Cost (USD) |\n| :--- | :--- | :--- | ---: | ---: | ---: | ---: |\n"
     
     total_input = 0
     total_output = 0
+    total_thinking = 0
     total_cost = 0.0
     
     # Prior stages (Stage 1: 事前仮説生成, Stage 2: パブコメ集約)
@@ -1765,11 +1766,13 @@ def run_pubcom_compare(prompt_dir: Path, meta: Dict[str, Any], pubcom_report: st
                 stats = stage_stats[key]
                 model_name = stats.get("model", "unknown")
                 cost = stats.get("cost", 0.0)
+                thinking = stats.get("thinking_tokens", 0)
                 
-                token_stats_md += f"| {stage_name} | {key} | {model_name} | {stats['input_tokens']:,} | {stats['output_tokens']:,} | ${cost:,.2f} |\n"
+                token_stats_md += f"| {stage_name} | {key} | {model_name} | {stats['input_tokens']:,} | {stats['output_tokens']:,} | {thinking:,} | ${cost:,.2f} |\n"
                 
                 total_input += stats.get('input_tokens', 0)
                 total_output += stats.get('output_tokens', 0)
+                total_thinking += thinking
                 total_cost += cost
     
     # Current stage (Stage 3: 比較分析)
@@ -1777,14 +1780,16 @@ def run_pubcom_compare(prompt_dir: Path, meta: Dict[str, Any], pubcom_report: st
         stats = token_stats[key]
         model_name = stats.get("model", "unknown")
         cost = stats.get("cost", 0.0)
+        thinking = stats.get("thinking_tokens", 0)
         
-        token_stats_md += f"| Stage 3 (比較分析) | {key} | {model_name} | {stats['input_tokens']:,} | {stats['output_tokens']:,} | ${cost:,.2f} |\n"
+        token_stats_md += f"| Stage 3 (比較分析) | {key} | {model_name} | {stats['input_tokens']:,} | {stats['output_tokens']:,} | {thinking:,} | ${cost:,.2f} |\n"
         
         total_input += stats.get('input_tokens', 0)
         total_output += stats.get('output_tokens', 0)
+        total_thinking += thinking
         total_cost += cost
     
-    token_stats_md += f"| **TOTAL** | | | **{total_input:,}** | **{total_output:,}** | **${total_cost:,.2f}** |\n"
+    token_stats_md += f"| **TOTAL** | | | **{total_input:,}** | **{total_output:,}** | **{total_thinking:,}** | **${total_cost:,.2f}** |\n"
     
     # レポートにToken Stats追加（finalize_report_citationsはCLI側で一度だけ呼ぶ）
     final_report = final_insight + token_stats_md

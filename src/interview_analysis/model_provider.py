@@ -49,14 +49,16 @@ class GeminiProvider(ModelProvider):
         usage = TokenUsage(
             input_tokens=0,
             output_tokens=0,
-            total_tokens=0
+            total_tokens=0,
+            thinking_tokens=0
         )
         
         if response.usage_metadata:
             usage = TokenUsage(
                 input_tokens=response.usage_metadata.prompt_token_count or 0,
                 output_tokens=response.usage_metadata.candidates_token_count or 0,
-                total_tokens=response.usage_metadata.total_token_count or 0
+                total_tokens=response.usage_metadata.total_token_count or 0,
+                thinking_tokens=getattr(response.usage_metadata, 'thoughts_token_count', 0) or 0
             )
 
         return response.text, usage

@@ -177,6 +177,23 @@ python -m src.interview_analysis.cli \
 | `openrouter:` | OpenRouter API | `openrouter:x-ai/grok-4.1-fast:free` |
 | なし | Gemini（後方互換） | `gemini-flash-lite-latest` |
 
+### Gemini モデル価格一覧（2024-12更新）
+
+| モデル | 入力 ($/1M tokens) | 出力 ($/1M tokens) | 備考 |
+|--------|-------------------:|-------------------:|------|
+| `gemini-3-pro-preview` | $2.00 / $4.00 | $12.00 / $18.00 | 200kトークン閾値で段階制、思考トークン含む |
+| `gemini-3-flash-preview` | $0.50 | $3.00 | 思考トークン含む |
+| `gemini-2.5-flash` | $0.30 | $2.50 | |
+| `gemini-2.5-flash-lite` | $0.10 | $0.40 | 推奨: Map/Reduce用 |
+
+### 思考トークン（Thinking Tokens）
+
+Gemini 3 シリーズ（Pro/Flash）は内部推論プロセスを持ち、その「思考トークン」が出力に含まれます:
+
+- Token Usage Statistics テーブルに **Thinking Tokens** 列が表示されます
+- 思考トークンは出力トークンと同じレートで課金されます
+- `token_usage.jsonl` に `thinking_tokens` が記録されます
+
 ## 環境設定
 
 `.env` に必要なAPIキーを設定:
