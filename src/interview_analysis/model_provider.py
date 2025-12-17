@@ -1,12 +1,17 @@
 from abc import ABC, abstractmethod
 from dataclasses import dataclass
-from typing import Optional, Tuple
+from typing import Optional, Tuple, Literal
 import os
 
 from google import genai
+from google.genai import types
 from openai import OpenAI
 
 from .token_tracker import TokenUsage
+
+
+# Thinking level type for Gemini 3 models
+ThinkingLevel = Literal["low", "high", None]
 
 
 @dataclass
@@ -17,6 +22,7 @@ class ModelConfig:
     max_output_tokens: int = 64000
     top_p: float = 0.95
     top_k: int = 40
+    thinking_level: ThinkingLevel = None  # None = default, "low", "medium", "high"
 
 
 class ModelProvider(ABC):
@@ -35,15 +41,30 @@ class GeminiProvider(ModelProvider):
         self.client = genai.Client(api_key=api_key)
 
     def generate(self, prompt: str, config: ModelConfig) -> Tuple[str, TokenUsage]:
+        # Build generation config
+        gen_config = types.GenerateContentConfig(
+            temperature=config.temperature,
+            max_output_tokens=config.max_output_tokens,
+            top_p=config.top_p,
+            top_k=config.top_k,
+        )
+        
+        # Add thinking config if specified (for Gemini 3 models)
+        if config.thinking_level:
+            level_map = {
+                "low": types.ThinkingLevel.LOW,
+                "high": types.ThinkingLevel.HIGH,
+            }
+            thinking_level = level_map.get(config.thinking_level.lower())
+            if thinking_level:
+                gen_config.thinking_config = types.ThinkingConfig(
+                    thinking_level=thinking_level
+                )
+        
         response = self.client.models.generate_content(
             model=config.model,
             contents=prompt,
-            config={
-                "temperature": config.temperature,
-                "max_output_tokens": config.max_output_tokens,
-                "top_p": config.top_p,
-                "top_k": config.top_k,
-            },
+            config=gen_config,
         )
         
         usage = TokenUsage(
@@ -61,7 +82,19 @@ class GeminiProvider(ModelProvider):
                 thinking_tokens=getattr(response.usage_metadata, 'thoughts_token_count', 0) or 0
             )
 
-        return response.text, usage
+        # Check for blocked or failed responses
+        if response.candidates:
+            candidate = response.candidates[0]
+            finish_reason = getattr(candidate, 'finish_reason', None)
+            if finish_reason and str(finish_reason) not in ('FinishReason.STOP', 'STOP'):
+                # Non-standard finish reason - may indicate content blocking
+                raise ValueError(f"Response blocked: {finish_reason}")
+        
+        text = response.text
+        if text is None:
+            raise ValueError("Empty response from API")
+        
+        return text, usage
 
 
 class OpenRouterProvider(ModelProvider):

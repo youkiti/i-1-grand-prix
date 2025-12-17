@@ -68,6 +68,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--pubcom-report", type=Path, default=None, help="pubcom_compare用: 集約済みパブコメレポートのパス")
     parser.add_argument("--prior-hypothesis", type=Path, default=None, help="pubcom_compare用: 事前仮説レポートのパス（--previous-reportと同義）")
     parser.add_argument("--merged-hypothesis", type=Path, default=None, help="引用ID解決用の統合仮説ファイル（オプション）")
+    parser.add_argument("--thinking-level", type=str, default=None, choices=["low", "high"], help="Gemini 3モデルの思考レベル (low/high)")
 
     return parser.parse_args()
 
@@ -84,6 +85,7 @@ def main() -> None:
         max_output_tokens=args.max_output_tokens,
         output_length_guidance=args.output_length_guidance,
         focus=args.focus,  # focus を設定
+        thinking_level=args.thinking_level,  # Gemini 3 thinking level
     )
 
     meta = load_meta(args.meta)

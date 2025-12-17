@@ -35,6 +35,7 @@ class RunConfig:
     top_k: int = 40
     output_length_guidance: str = ""
     focus: str = ""  # 分析のフォーカス（主眼）  # 任意
+    thinking_level: str = None  # "low", "medium", "high", or None (Gemini 3用)
 
 
 def _call_model(prompt: str, cfg: RunConfig, step_name: str = "unknown") -> str:
@@ -53,6 +54,7 @@ def _call_model(prompt: str, cfg: RunConfig, step_name: str = "unknown") -> str:
         max_output_tokens=cfg.max_output_tokens,
         top_p=cfg.top_p,
         top_k=cfg.top_k,
+        thinking_level=cfg.thinking_level,
     )
     text, usage = provider.generate(prompt, model_config)
     
