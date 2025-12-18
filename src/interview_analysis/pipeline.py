@@ -1366,7 +1366,8 @@ def run_pubcom_analysis(prompt_dir: Path, meta: Dict[str, Any], csv_path: Path, 
         top_p=cfg.top_p,
         top_k=cfg.top_k,
         output_length_guidance=cfg.output_length_guidance,
-        focus=cfg.focus
+        focus=cfg.focus,
+        thinking_level=cfg.thinking_level,  # thinking_level を継承
     )
     final_insight = _call_model(compare_prompt, compare_cfg, step_name="pubcom_compare")
 
@@ -1746,7 +1747,8 @@ def run_pubcom_compare(prompt_dir: Path, meta: Dict[str, Any], pubcom_report: st
         top_p=cfg.top_p,
         top_k=cfg.top_k,
         output_length_guidance=cfg.output_length_guidance,
-        focus=cfg.focus
+        focus=cfg.focus,
+        thinking_level=cfg.thinking_level,  # thinking_level を継承
     )
     final_insight = _call_model(compare_prompt, compare_cfg, step_name="pubcom_compare")
 

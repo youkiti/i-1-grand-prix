@@ -57,7 +57,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--batch-reports", type=Path, nargs="*", help="MERGE 用のレポートファイル群")
     parser.add_argument("--prompt-dir", type=Path, default=Path("prompts"))
     parser.add_argument("--model", default="gemini-flash-lite-latest")
-    parser.add_argument("--temperature", type=float, default=0.0, help="Map/Reduceフェーズの温度（デフォルト: 0.0）")
+    parser.add_argument("--temperature", type=float, default=1.0, help="Map/Reduceフェーズの温度（デフォルト: 1.0）")
     parser.add_argument("--comparison-temperature", type=float, default=1.0, help="Comparisonフェーズの温度（デフォルト: 1.0）")
     parser.add_argument("--max-output-tokens", type=int, default=64000)
     parser.add_argument("--output-length-guidance", default="")
@@ -68,7 +68,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--pubcom-report", type=Path, default=None, help="pubcom_compare用: 集約済みパブコメレポートのパス")
     parser.add_argument("--prior-hypothesis", type=Path, default=None, help="pubcom_compare用: 事前仮説レポートのパス（--previous-reportと同義）")
     parser.add_argument("--merged-hypothesis", type=Path, default=None, help="引用ID解決用の統合仮説ファイル（オプション）")
-    parser.add_argument("--thinking-level", type=str, default=None, choices=["low", "high"], help="Gemini 3モデルの思考レベル (low/high)")
+    parser.add_argument("--thinking-level", type=str, default="low", choices=["low", "high"], help="Gemini 3モデルの思考レベル (low/high)")
 
     return parser.parse_args()
 
