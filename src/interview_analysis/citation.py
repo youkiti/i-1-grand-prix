@@ -656,6 +656,20 @@ def finalize_report_citations(
                      citation_map[doc_id] = fallback_info
                      add_to_map(citation_map[doc_id])
 
+        # NEW: Scan for topic IDs and titles (robust regex for CRLF and varying whitespace)
+        topic_matches = re.findall(
+            r'-\s*id:\s*["\']?([\w_]+)["\']?\s+title:\s*["\']([^"\']+)["\']',
+            mh_content,
+            re.MULTILINE
+        )
+        for topic_id, topic_title in topic_matches:
+            if topic_id not in citation_map:
+                citation_map[topic_id] = {
+                    "cite_id": topic_id,
+                    "link_text": topic_title,
+                    "cite_type": "topic"
+                }
+
     # Cache for API calls within this execution
     meta_cache = {}
 
@@ -714,22 +728,25 @@ def finalize_report_citations(
             url = info.get("url")
             date = info.get("date", "")
             
-            # Title Logic - prefer readable titles over raw filenames
-            generic_terms = ["議事概要", "答申", "参考資料", "説明", "委員名簿", "協議員名簿", "設置要綱"]
-            
+            # Title Logic - combine council name (page_title) with document type (link_text)
+            # Clean link_text: remove PDF size info like "(PDF形式:243KB)"
+            clean_link_text = ""
             if link_text:
-                title = link_text
-            elif page_title:
-                title = page_title
-            else:
-                # Use _generate_readable_title for better display
-                title = _generate_readable_title(filename, url, date)
+                clean_link_text = re.sub(r'\s*[\(（][^)）]*(?:PDF|pdf)[^)）]*[\)）]\s*', '', link_text).strip()
             
-            if link_text and page_title:
-                if any(term == link_text.strip() for term in generic_terms):
-                    title = f"{page_title} {link_text}"
-                elif len(link_text) < 10 and page_title not in link_text:
-                    title = f"{page_title} {link_text}"
+            # Build title: prefer "審議会名 ドキュメント種別" format
+            if page_title and clean_link_text:
+                # Extract council name from page_title (often has " - 科学技術・イノベーション - 内閣府" suffix)
+                council_name = page_title.split(' - ')[0].strip()
+                title = f"{council_name} {clean_link_text}"
+            elif page_title:
+                title = page_title.split(' - ')[0].strip()
+            elif clean_link_text:
+                title = clean_link_text
+            elif filename:
+                title = _generate_readable_title(filename, url, date)
+            else:
+                title = content_inner
 
             # Enrich Kokkai Information
             is_kokkai = "kokkai" in info.get("cite_type", "") or \
@@ -769,11 +786,25 @@ def finalize_report_citations(
         
         return full_text
 
-    # 3. Linkify Pubcom UUIDs first (NEW)
+    # 3. Linkify Pubcom UUIDs (avoid already-linked ones)
     def uuid_replacer(m):
         uid = m.group(1)
+        # Check if already inside a markdown link by looking at surrounding context
+        start = m.start()
+        end = m.end()
+        # If preceded by ]( or followed by ), it's already linked
+        if start >= 2 and report_text[start-2:start] == "](":
+            return uid  # Already linked, don't modify
+        if end < len(report_text) and report_text[end] == ')':
+            return uid  # Already linked, don't modify
+        
         used_pubcoms.add(uid)
-        return f"[{uid}](https://depth-interview-ai.vercel.app/report/{uid})"
+        # Check context: if already inside [パブコメ: uuid], just linkify the uuid
+        prefix = report_text[max(0, start-15):start]
+        if "パブコメ:" in prefix or "パブコメ: " in prefix:
+            return f"[{uid}](https://depth-interview-ai.vercel.app/report/{uid})"
+        else:
+            return f"[パブコメ: {uid}](https://depth-interview-ai.vercel.app/report/{uid})"
     
     # Regex for UUID (8-4-4-4-12)
     uuid_pattern = r'\b([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})\b'

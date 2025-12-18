@@ -209,11 +209,24 @@ def main() -> None:
         pubcom_report = read_text_file(pubcom_report_path)
         prior_hypothesis = read_text_file(prior_hypothesis_path)
         
-        # Load prior token stats from prior hypothesis and pubcom aggregate runs
+        # Load prior citation registries and token stats
+        prior_registries = []
         prior_token_stats_list = []
         
-        # Stage 1: prior_hypothesis の token_usage.jsonl
-        prior_hypo_token_path = Path(prior_hypothesis_path).parent.parent / "token_usage.jsonl"
+        # Stage 1: prior_hypothesis
+        prior_hypo_path = Path(prior_hypothesis_path)
+        # Registry
+        prior_hypo_reg_path = prior_hypo_path.parent / "citation_registry.json"
+        if prior_hypo_reg_path.exists():
+            try:
+                from .citation import CitationRegistry
+                reg_data = json.loads(prior_hypo_reg_path.read_text(encoding="utf-8"))
+                prior_registries.append(CitationRegistry.from_dict(reg_data))
+                print(f"Loaded Stage 1 citation registry from {prior_hypo_reg_path}")
+            except Exception as e:
+                print(f"[WARNING] Failed to load Stage 1 citation registry: {e}")
+        # Tokens
+        prior_hypo_token_path = prior_hypo_path.parent.parent / "token_usage.jsonl"
         if prior_hypo_token_path.exists():
             try:
                 from .token_tracker import TokenTracker
@@ -222,9 +235,21 @@ def main() -> None:
                 print(f"Loaded Stage 1 token stats from {prior_hypo_token_path}")
             except Exception as e:
                 print(f"[WARNING] Failed to load Stage 1 token stats: {e}")
-        
-        # Stage 2: pubcom_report の token_usage.jsonl
-        pubcom_token_path = Path(pubcom_report_path).parent.parent / "token_usage.jsonl"
+
+        # Stage 2: pubcom_report
+        pubcom_report_p = Path(pubcom_report_path)
+        # Registry
+        pubcom_reg_path = pubcom_report_p.parent / "citation_registry.json"
+        if pubcom_reg_path.exists():
+            try:
+                from .citation import CitationRegistry
+                reg_data = json.loads(pubcom_reg_path.read_text(encoding="utf-8"))
+                prior_registries.append(CitationRegistry.from_dict(reg_data))
+                print(f"Loaded Stage 2 citation registry from {pubcom_reg_path}")
+            except Exception as e:
+                print(f"[WARNING] Failed to load Stage 2 citation registry: {e}")
+        # Tokens
+        pubcom_token_path = pubcom_report_p.parent.parent / "token_usage.jsonl"
         if pubcom_token_path.exists():
             try:
                 from .token_tracker import TokenTracker
@@ -233,9 +258,11 @@ def main() -> None:
                 print(f"Loaded Stage 2 token stats from {pubcom_token_path}")
             except Exception as e:
                 print(f"[WARNING] Failed to load Stage 2 token stats: {e}")
-        
+
         from .pipeline import run_pubcom_compare
         result = run_pubcom_compare(prompt_dir, meta, pubcom_report, prior_hypothesis, cfg, comparison_model=args.comparison_model, prior_token_stats_list=prior_token_stats_list)
+        # 以前のレジストリを結果に含めて、後のfinalizeで使用するようにする
+        result["all_registries"] = prior_registries + ([result["citation_registry"]] if "citation_registry" in result else [])
     else:
         raise ValueError(f"Unknown mode: {cfg.mode}")
 
@@ -256,9 +283,10 @@ def main() -> None:
 
         # URLリンク展開版レポートを生成
         # finalize_report_citations を使用して、国会API連携や出典一覧生成を含む完全版を作成
+        registries_to_use = result.get("all_registries", [citation_registry])
         report_with_references = finalize_report_citations(
             result["report"], 
-            [citation_registry], # finalize_report_citations expects a list
+            registries_to_use, 
             merged_hypothesis_path=args.merged_hypothesis,
             merged_hypothesis_content=result.get("merged_hypothesis_content")  # pubcom_compare等から渡される
         )
