@@ -662,12 +662,100 @@ def finalize_report_citations(
             mh_content,
             re.MULTILINE
         )
+        
+        # Also extract first source_url for each topic from evidence_chunks
+        # Pattern: find topic block and extract first source_url within it
+        topic_url_map = {}
+        topic_filename_map = {}
+        # Split by topic block - handle both indented YAML and markdown YAML blocks
+        topic_blocks = re.split(r'(?=\s*-\s*id:\s*["\']?topic_)', mh_content)
+        for block in topic_blocks:
+            topic_id_match = re.search(r'id:\s*["\']?(topic_\d+)["\']?', block)
+            if topic_id_match:
+                topic_id = topic_id_match.group(1)
+                # Find first source_url in this topic's evidence_chunks
+                # Handle quoted and unquoted URLs
+                url_match = re.search(r'source_url:\s*["\']?(https?://[^\s"\'\n]+)', block)
+                if url_match:
+                    # Always update if we find a URL (prioritize entries with URLs)
+                    topic_url_map[topic_id] = url_match.group(1)
+                elif topic_id not in topic_url_map:
+                    # Only set empty if not already set
+                    topic_url_map[topic_id] = ""
+
+                # New: Extract source_filename for Diet API lookup
+                filename_match = re.search(r'source_filename:\s*["\']?([^"\'\s\n]+)["\']?', block)
+                if filename_match:
+                    topic_filename_map[topic_id] = filename_match.group(1)
+        
         for topic_id, topic_title in topic_matches:
             if topic_id not in citation_map:
+                topic_url = topic_url_map.get(topic_id, "")
+                topic_filename = topic_filename_map.get(topic_id, "")
+                
+                # Try to find page_title from citation_map entries that match the URL
+                topic_page_title = ""
+                topic_display_url = topic_url
+                
+                if topic_url:
+                    # First try exact or partial URL match
+                    for cite_id, cite_info in citation_map.items():
+                        cite_url = str(cite_info.get("url", ""))
+                        if cite_url and (cite_url == topic_url or topic_url in cite_url or cite_url in topic_url):
+                            if cite_info.get("page_title"):
+                                # Extract council name from page_title
+                                topic_page_title = cite_info["page_title"].split(' - ')[0].strip()
+                                break
+                    
+                    # Fallback: derive council name from URL pattern
+                    if not topic_page_title:
+                        if "senkyoseido" in topic_url.lower() or "shugiin.go.jp" in topic_url:
+                            topic_page_title = "衆議院選挙制度に関する調査会"
+                        elif "cao.go.jp" in topic_url and "ai" in topic_url.lower():
+                            topic_page_title = "AI戦略会議"
+                
+                # If no URL, try to enrich from Diet API using filename
+                if not topic_url and topic_filename:
+                    # Check for Diet Issue ID in filename (e.g. 2016-04-25_119004577X00720160425.txt)
+                    # Issue ID is usually the part after date: 119004577X00720160425
+                    issue_match = re.search(r'_(\d{9}X\d{12})', topic_filename)
+                    if issue_match:
+                        issue_id = issue_match.group(1)
+                        try:
+                            meta = fetch_meeting_meta(issue_id, use_cache=True)
+                            if meta:
+                                # Format: 第190回国会 衆議院 地方創生に関する特別委員会 (2016-04-25)
+                                session = meta.get("session", "")
+                                house = meta.get("house", "")
+                                meeting = meta.get("meeting_name", "")
+                                date = meta.get("date", "")
+                                page_url = meta.get("page_url", "")
+                                
+                                title_parts = []
+                                if session: title_parts.append(f"第{session}回国会")
+                                if house: title_parts.append(house)
+                                if meeting: title_parts.append(meeting)
+                                
+                                topic_page_title = " ".join(title_parts)
+                                if date:
+                                    topic_page_title += f" ({date})"
+                                
+                                if page_url:
+                                    topic_display_url = page_url
+                        except Exception as e:
+                            print(f"[WARNING] Failed to fetch Diet meta for {issue_id}: {e}")
+
+                # If still no title (e.g., Diet transcripts failed lookup), use generic label
+                if not topic_page_title:
+                    if not topic_url:
+                         topic_page_title = "国会会議録"
+
                 citation_map[topic_id] = {
                     "cite_id": topic_id,
                     "link_text": topic_title,
-                    "cite_type": "topic"
+                    "page_title": topic_page_title,  # Council name or Diet info
+                    "cite_type": "topic",
+                    "url": topic_display_url
                 }
 
     # Cache for API calls within this execution
@@ -735,7 +823,25 @@ def finalize_report_citations(
                 clean_link_text = re.sub(r'\s*[\(（][^)）]*(?:PDF|pdf)[^)）]*[\)）]\s*', '', link_text).strip()
             
             # Build title: prefer "審議会名 ドキュメント種別" format
-            if page_title and clean_link_text:
+            cite_type = info.get("cite_type", "")
+            
+            # For topics: use page_title if URL available, else combine with topic title for context
+            if cite_type == "topic":
+                if page_title and url:
+                    # Has URL (e.g., shingikai) - just show council name
+                    title = page_title
+                elif page_title and clean_link_text:
+                    # No URL (e.g., Diet) - show "source: topic title" for more context
+                    # Truncate long topic titles
+                    short_title = clean_link_text[:40] + "..." if len(clean_link_text) > 40 else clean_link_text
+                    title = f"{page_title}: {short_title}"
+                elif page_title:
+                    title = page_title
+                elif clean_link_text:
+                    title = clean_link_text
+                else:
+                    title = topic_id
+            elif page_title and clean_link_text:
                 # Extract council name from page_title (often has " - 科学技術・イノベーション - 内閣府" suffix)
                 council_name = page_title.split(' - ')[0].strip()
                 title = f"{council_name} {clean_link_text}"

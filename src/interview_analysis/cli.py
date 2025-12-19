@@ -68,6 +68,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--pubcom-report", type=Path, default=None, help="pubcom_compare用: 集約済みパブコメレポートのパス")
     parser.add_argument("--prior-hypothesis", type=Path, default=None, help="pubcom_compare用: 事前仮説レポートのパス（--previous-reportと同義）")
     parser.add_argument("--merged-hypothesis", type=Path, default=None, help="引用ID解決用の統合仮説ファイル（オプション）")
+    parser.add_argument("--additional-citation-registries", type=Path, nargs="*", default=[], help="追加のcitation_registry.jsonファイルパス（複数指定可）")
     parser.add_argument("--thinking-level", type=str, default="low", choices=["low", "high"], help="Gemini 3モデルの思考レベル (low/high)")
 
     return parser.parse_args()
@@ -258,6 +259,19 @@ def main() -> None:
                 print(f"Loaded Stage 2 token stats from {pubcom_token_path}")
             except Exception as e:
                 print(f"[WARNING] Failed to load Stage 2 token stats: {e}")
+
+        # Load additional citation registries (e.g., from other Stage 1 runs)
+        for additional_reg_path in args.additional_citation_registries:
+            if additional_reg_path.exists():
+                try:
+                    from .citation import CitationRegistry
+                    reg_data = json.loads(additional_reg_path.read_text(encoding="utf-8"))
+                    prior_registries.append(CitationRegistry.from_dict(reg_data))
+                    print(f"Loaded additional citation registry from {additional_reg_path}")
+                except Exception as e:
+                    print(f"[WARNING] Failed to load additional citation registry from {additional_reg_path}: {e}")
+            else:
+                print(f"[WARNING] Additional citation registry not found: {additional_reg_path}")
 
         from .pipeline import run_pubcom_compare
         result = run_pubcom_compare(prompt_dir, meta, pubcom_report, prior_hypothesis, cfg, comparison_model=args.comparison_model, prior_token_stats_list=prior_token_stats_list)
