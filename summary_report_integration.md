@@ -2,7 +2,6 @@
 
 本レポートは、直近2日間に処理された「船荷 (Funani)」「AI基本計画 (AI Basic Plan)」「国会医銀定数削減 (Teisuu)」の3つの案件に関する最終成果物の概要をまとめたものです。
 
-
 ## 1. 船荷 (Bill of Landing)
 
 **対象レポート**: [Funani Final Report (Updated)](file:///C:/Users/youki/codes/i-1-grand-prix/doc/2025-12-18/run-114532/outputs/report_pubcom_compare_with_references.md)
@@ -31,7 +30,7 @@ AI事業者ガイドラインおよびAIセーフティ・インスティテュ�
 
 ---
 
-## 3. 国会医銀定数削減 (Teisuu / Reduction of Diet Members)
+## 3. 国会議員定数削減 (Teisuu / Reduction of Diet Members)
 
 **対象レポート**: [Teisuu Final Report (Current)](file:///C:/Users/youki/codes/i-1-grand-prix/doc/2025-12-19/run-103551/outputs/report_pubcom_compare_with_references.md)
 
